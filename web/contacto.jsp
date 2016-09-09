@@ -63,7 +63,7 @@
                 </div> 
                 <div class="row contact-wrap"> 
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form" name="contactarMINCIT" method=POST action="">
+                    <form id="main-contact-form" class="contact-form" name="contactar" method="POST" action="javascript:contactarMINCIT()">
                         <div class="col-sm-5 col-sm-offset-1">
                             <div class="form-group">
                                 <label>Nombre de la Empresa *</label>
@@ -87,6 +87,7 @@
                                 <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Enviar Mensaje</button>
                             </div>
                         </div>
+                        <label id="campo"></label>
                     </form> 
                 </div><!--/.row-->
             </div><!--/.container-->

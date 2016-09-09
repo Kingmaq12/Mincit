@@ -19,12 +19,12 @@ body {
     margin-left:500px;
     margin-right:500px;
     padding:39px;
-    background-color: #3CD69C;
     border-bottom: 3px solid #3CD69C;
     border-top: 3px solid #3CD69C;
     border-right: 3px solid #3CD69C;
     border-left: 3px solid #3CD69C;
 }
+
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 80%;

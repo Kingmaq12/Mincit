@@ -60,7 +60,8 @@
                     <h1>Login</h1>
                     <p><input type="text" name="cedula" id="cedula" value="" placeholder="Cedula"></p>
                     <p><input type="password" name="contrasenia" id="contrasenia" value="" placeholder="Contraseña"></p>
-                    <button class= "btn btn-success active">Entrar</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Entrar</button>
+                    <br>
                     <label name="campo" id="campo" >
                     </label>
                 </form>    

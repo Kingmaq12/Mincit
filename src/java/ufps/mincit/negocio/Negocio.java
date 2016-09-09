@@ -7,6 +7,7 @@ package ufps.mincit.negocio;
 
 import ufps.mincit.dao.AdministradorDAO;
 import ufps.mincit.dao.ComentarioDAO;
+import ufps.mincit.dto.ComentarioDTO;
 
 /**
  *
@@ -24,6 +25,7 @@ public class Negocio {
     public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje)throws Exception{
         
         ComentarioDAO dao = new ComentarioDAO();
-        return dao.recibirMensaje(nombre_empresa, email, asunto, mensaje);        
+        ComentarioDTO dto = new ComentarioDTO(nombre_empresa, email, asunto, mensaje);
+        return dao.recibirMensaje(dto);        
     }
 }

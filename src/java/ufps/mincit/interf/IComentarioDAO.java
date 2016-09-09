@@ -5,11 +5,13 @@
  */
 package ufps.mincit.interf;
 
+import ufps.mincit.dto.ComentarioDTO;
+
 /**
  *
  * @author user
  */
 public interface IComentarioDAO {
     
-    public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje) throws Exception;
+    public boolean recibirMensaje(ComentarioDTO dto) throws Exception;
 }

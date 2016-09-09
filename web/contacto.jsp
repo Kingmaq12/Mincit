@@ -63,25 +63,25 @@
                 </div> 
                 <div class="row contact-wrap"> 
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <form id="main-contact-form" class="contact-form" name="contactarMINCIT" method=POST action="">
                         <div class="col-sm-5 col-sm-offset-1">
                             <div class="form-group">
                                 <label>Nombre de la Empresa *</label>
-                                <input type="text" name="name" class="form-control" required="required">
+                                <input type="text" id="nombre_empresa" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Correo Electronico *</label>
-                                <input type="email" name="email" class="form-control" required="required">
+                                <input type="email" id="email" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Asunto</label>
-                                <input type="text" class="form-control">
+                                <input type="text" id="asunto" class="form-control">
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <div class="form-group">
                                 <label>Mensaje *</label>
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                <textarea  id="mensaje" required="required" class="form-control" rows="8"></textarea>
                             </div>                        
                             <div class="form-group">
                                 <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Enviar Mensaje</button>

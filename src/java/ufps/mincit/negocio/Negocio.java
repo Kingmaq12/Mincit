@@ -6,6 +6,7 @@
 package ufps.mincit.negocio;
 
 import ufps.mincit.dao.AdministradorDAO;
+import ufps.mincit.dao.ComentarioDAO;
 
 /**
  *
@@ -20,5 +21,9 @@ public class Negocio {
         return dao.iniciarSesion(cedula, contraseña);
     }
     
-    
+    public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje)throws Exception{
+        
+        ComentarioDAO dao = new ComentarioDAO();
+        return dao.recibirMensaje(nombre_empresa, email, asunto, mensaje);        
+    }
 }

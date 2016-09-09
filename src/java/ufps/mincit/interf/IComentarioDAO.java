@@ -11,4 +11,5 @@ package ufps.mincit.interf;
  */
 public interface IComentarioDAO {
     
+    public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje) throws Exception;
 }

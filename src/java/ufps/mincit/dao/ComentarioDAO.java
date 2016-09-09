@@ -12,5 +12,12 @@ import ufps.mincit.interf.IComentarioDAO;
  * @author user
  */
 public class ComentarioDAO implements IComentarioDAO{
+
+    @Override
+    public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje) throws Exception {
+        
+        
+
+    }
     
 }

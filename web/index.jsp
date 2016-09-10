@@ -51,15 +51,9 @@
                 </div>			
             </div>
         </nav>
-        
-         <div class="bajar">
-                <div class="col-md-4 col-md-offset-3">
-                        <h2>¡Bienvenido!</h2>
-            </div>
-        </div>
-        
-        <section>
-            <div class="carrusel">
+               
+        <section class="dar-color" >
+            <div  class="carrusel">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
                             <ol class="carousel-indicators">
@@ -97,7 +91,7 @@
                             </div>
 
                             <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
@@ -109,7 +103,7 @@
             </div>
         </section>
         
-        <div class="container">
+        <div class="bajar">
             <div class="row ">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="text-center">

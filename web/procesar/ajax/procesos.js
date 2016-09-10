@@ -71,16 +71,16 @@ function iniciarSesion() {
 
 }
 
-function contactarMINCIT() {
+function contactar() {
 
     var nombre_empresa = document.getElementById("nombre_empresa");
     var email = document.getElementById("email");
     var asunto = document.getElementById("asunto");
     var mensaje = document.getElementById("mensaje");
-
+    
+    alert(mensaje)
     ajax = nuevoAjax();
-    parametros = "nombre_empresa=" + nombre_empresa.value + "&email=" + email.value + "&asunto=" + asunto.value
-    "&mensaje=" + mensaje.value;
+    parametros = "nombre_empresa=" + nombre_empresa.value + "&email=" + email.value + "&asunto=" + asunto.value + "&mensaje=" + mensaje.value;
     url = "procesar/contactar.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

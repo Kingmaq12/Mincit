@@ -16,7 +16,7 @@
     String mensaje = request.getParameter("mensaje");
 
     Negocio nego = new Negocio();
-    boolean sesion = nego.recibirMensaje(nombre_empresa,email,asunto,mensaje);
+    boolean sesion = nego.recibirMensaje(nombre_empresa, email, asunto, mensaje);
 
     String rta = "";
     if (sesion) {

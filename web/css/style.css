@@ -9,20 +9,21 @@ body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
 	font-weight:300;
-	line-height:1.6em;
+	line-height:1.3em;
 	color:#333;
 	background-color:#fff;
 }
+
 .login {
-    margin-bottom:50px;
-    margin-top:125px;
+    margin-top:108px;
     margin-left:500px;
     margin-right:500px;
-    padding:39px;
-    border-bottom: 3px solid #3CD69C;
-    border-top: 3px solid #3CD69C;
-    border-right: 3px solid #3CD69C;
-    border-left: 3px solid #3CD69C;
+    padding:36px;
+    background: #FAFAFA;
+    border-bottom: 3px solid #FAFAFA;
+    border-top: 3px solid #FAFAFA;
+    border-right: 3px solid #FAFAFA;
+    border-left: 3px solid #FAFAFA;
 }
 
 .carousel-inner > .item > img,
@@ -439,7 +440,9 @@ a.navbar-brand span {
 	margin:0 0 -5px 0;
 	padding:0;
 }
-
+.contacto{
+  margin-top: 61px;  
+}
 
 #contact-page{
   padding-top: 0;
@@ -484,7 +487,7 @@ footer {
   color: #000;
   font-weight: 600;
   margin-top: 40px;
-  margin-bottom: 40px; 
+  margin-bottom: 10px; 
 }
 .f-about a h1 {
 	text-align:center;

@@ -78,7 +78,6 @@ function contactar() {
     var asunto = document.getElementById("asunto");
     var mensaje = document.getElementById("mensaje");
     
-    alert(mensaje)
     ajax = nuevoAjax();
     parametros = "nombre_empresa=" + nombre_empresa.value + "&email=" + email.value + "&asunto=" + asunto.value + "&mensaje=" + mensaje.value;
     url = "procesar/contactar.jsp";

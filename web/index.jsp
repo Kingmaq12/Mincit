@@ -53,7 +53,6 @@
         </nav>
 
         <div class="container ">
-            <div class="row">
                 <div class="slider ">
                     <div class="img-responsive ">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -71,7 +70,7 @@
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
                                         <h2>Nombre</h2>
-                                        <button class= "btn btn-success active">Leer más</button>
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
                                 <!-- LAS IMAGENES DEBEN SER DEL MISMO TAMAÑO -->
@@ -79,14 +78,14 @@
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
                                         <h2>Nombre</h2>
-                                        <button class= "btn btn-success active">Leer más</button>
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
                                         <h2>Nombre</h2>
-                                        <button class= "btn btn-success active">Leer más</button>
+                                         <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
 
@@ -103,7 +102,6 @@
                             </a>
                         </div>
 
-                    </div>	
                 </div>
             </div>
         </div>

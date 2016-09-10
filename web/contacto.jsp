@@ -55,10 +55,10 @@
 
 
         <section>
-            <div class="container">
+            <div class="container contacto">
                 <div class="center">   
-                    <br> <br> <br>  <br> <br>
-                    <h2>¡Dejanos tu Mensaje!</h2>
+                    <h1>¡Dejanos tu Mensaje!</h1>
+                    <br>
                     <p>Escribenos tus dudas o preguntas  y el MINCIT te contactará.</p>
                 </div> 
                 <div class="row contact-wrap"> 
@@ -82,13 +82,14 @@
                             <div class="form-group">
                                 <label>Mensaje *</label>
                                 <textarea id="mensaje" name="mensaje" required="required" class="form-control" rows="8"></textarea>
-                            </div>                        
-                            <div class="form-group">
-                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Enviar Mensaje</button>
-                            </div>
+                            </div>                                                  
                         </div>
-                        <br>
-                        <label id="campo" name="campo"></label>
+                        <div class="col-sm-12">
+                            <br>
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Enviar Mensaje</button>
+                            <br>
+                            <label id="campo" name="campo"></label>
+                        </div>
                     </form> 
                 </div><!--/.row-->
             </div><!--/.container-->
@@ -133,7 +134,7 @@
         <script type="text/javascript" src="js/fliplightbox.min.js"></script>
         <script src="js/functions.js"></script>
         <script type="text/javascript">$('.portfolio').flipLightBox()</script>
-        
+
         <script src="procesar/ajax/procesos.js"></script>
     </body>
 </html>

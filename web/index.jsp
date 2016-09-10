@@ -26,7 +26,7 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -41,11 +41,11 @@
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="index.jsp">Inicio</a></li>
+                            <li role="presentation"  class="active"><a href="index.jsp">Inicio</a></li>
                             <li role="presentation"><a href="busqueda.jsp">Busqueda</a></li>
                             <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
                             <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>							
+                            <li role="presentation" ><a href="login.jsp">Login</a></li>											
                         </ul>
                     </div>
                 </div>			
@@ -68,7 +68,6 @@
                                 <div class="item active carousel-inner">
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
-                                        <h2>Nombre</h2>
                                         <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
@@ -76,14 +75,12 @@
                                 <div class="item">
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
-                                        <h2>Nombre</h2>
                                         <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
-                                        <h2>Nombre</h2>
                                         <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>

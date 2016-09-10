@@ -51,10 +51,15 @@
                 </div>			
             </div>
         </nav>
-
-        <div class="container ">
-                <div class="slider ">
-                    <div class="img-responsive ">
+        
+         <div class="bajar">
+                <div class="col-md-4 col-md-offset-3">
+                        <h2>¡Bienvenido!</h2>
+            </div>
+        </div>
+        
+        <section>
+            <div class="carrusel">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
                             <ol class="carousel-indicators">
@@ -85,7 +90,7 @@
                                     <img  src="img/02.jpg" alt="Chania">
                                     <div class="carousel-caption">
                                         <h2>Nombre</h2>
-                                         <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                                     </div>
                                 </div>
 
@@ -101,11 +106,9 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-
-                </div>
             </div>
-        </div>
-
+        </section>
+        
         <div class="container">
             <div class="row ">
                 <div class="col-md-6 col-md-offset-3">

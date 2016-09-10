@@ -25,10 +25,17 @@ body {
     border-right: 3px solid #FAFAFA;
     border-left: 3px solid #FAFAFA;
 }
-
+.bajar{
+    margin-top: 60px;
+}
+.carrusel{
+    margin-top: 70px;
+    margin-left:90px;
+    margin-right:90px;
+}
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 80%;
+      width: 70%;
       margin: auto;
   }
 
@@ -443,6 +450,7 @@ a.navbar-brand span {
 .contacto{
   margin-top: 61px;  
 }
+
 
 #contact-page{
   padding-top: 0;

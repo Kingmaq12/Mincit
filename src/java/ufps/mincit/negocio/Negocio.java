@@ -23,8 +23,9 @@ public class Negocio {
     }
     
     public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje)throws Exception{
-        
+
         ComentarioDAO dao = new ComentarioDAO();
+        System.out.println("-------------------------------------------------------------"+mensaje);
         ComentarioDTO dto = new ComentarioDTO(nombre_empresa, email, asunto, mensaje);
         return dao.recibirMensaje(dto);        
     }

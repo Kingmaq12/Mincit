@@ -27,7 +27,7 @@ public class ComentarioDAO implements IComentarioDAO{
         boolean exito =false;
         PreparedStatement stmt = null;
         try{
-              stmt = conn.prepareStatement("INSERT INTO comentario (nombre_empresa, email, asunto, mensaje) values(?,?,?,?)");
+              stmt = conn.prepareStatement("INSERT INTO Comentario (nombre_empresa, email, asunto, mensaje) values(?,?,?,?)");
             stmt.setString(1, dto.getNombre_empresa());
             stmt.setString(2, dto.getEmail());
             stmt.setString(3, dto.getAsunto());
@@ -42,7 +42,6 @@ public class ComentarioDAO implements IComentarioDAO{
           e.printStackTrace();
         }
         return exito;
-
     }
     
 }

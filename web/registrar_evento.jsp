@@ -53,9 +53,7 @@
                     <h2>Registrar Eventos</h2>
                     <p>Realiza el registro por medio de las siguientes opciones.</p>
                 </div>
-
             </div>
-
             <div class="container delinear">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#menu1">Manualmente</a></li>
@@ -63,6 +61,7 @@
                 </ul>
                 <section id="contact-page delinear">
                     <div class="tab-content delinear">	
+                        <br>
                         <div id="menu1" class="tab-pane fade in active">
                             <div class="col-sm-5 col-sm-offset-1">
                                 <div class="form-group">

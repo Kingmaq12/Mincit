@@ -142,31 +142,6 @@
     </div>
 
     <footer>
-        <div class="inner-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 f-about">
-                        <a href="index.html"><h1><span></span>Eventos</h1></a>
-                        <p>blablablabalbala</p>
-                    </div>
-                    <div class="col-md-4 l-posts">
-                        <h3 class="widgetheading">Ultimas Noticias</h3>
-                        <ul>
-                            <li><a href="#">adslaksjdlkajsldkajsl</a></li>
-                            <li><a href="#">adslaksjdlkajsldkajsl</a></li>
-                            <li><a href="#">adslaksjdlkajsldkajsle</a></li>
-                            <li><a href="#">adslaksjdlkajsldkajsl</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 f-contact">
-                        <h3 class="widgetheading">Contacto</h3>
-                        <a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
-                        <p><i class="fa fa-phone"></i>  00000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="last-div">
             <div class="container">
                 <div class="row">

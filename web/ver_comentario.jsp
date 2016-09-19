@@ -26,7 +26,6 @@
     </head>
 
     <body>
-
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,455 +43,145 @@
                         </ul>
                     </div>
                 </div>	
-                 <div class="navbar-perfil">
+                <div class="navbar-perfil">
                     <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
             </div>
         </nav>
-
-        <div class="container">
-            <div class="row">
-                <div class="slider">
-                    <div class="img-responsive text-center">
-                        <ul class="bxslider">            
-                            <li>
-                                <h4>Comentario 1</h4>
-
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                            </li>
-
-                            <li>
-                                <h4>Comentario 2</h4>      
-
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button> 
-                            </li> 
-
-                            <li>
-                                <h4>Comentario 3</h4>      
-
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                            </li>       
-                        </ul>
-                    </div>   
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 text-center">
-            <h2>Comentarios</h2><br>
-        </div>
-
-
-        <table id="example" >
-
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-            <div class="col-md-4 text-center">
-                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                    <div class="media-body">
-                        <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                            <div class="ficon  text-center">
-                                <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                            </div>
-                        </th>
+        <section>
+            <div class="container contacto delinear">
+                <div class="row">
+                    <div class="slider">
+                        <div class="img-responsive text-center">
+                            <ul class="bxslider">            
+                                <li>
+                                    <h4>Comentario 1</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
+                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                </li>
+                                <li>
+                                    <h4>Comentario 2</h4>      
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
+                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button> 
+                                </li> 
+                                <li>
+                                    <h4>Comentario 3</h4>      
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
+                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                </li>       
+                            </ul>
+                        </div>   
                     </div>
                 </div>
             </div>
+        </section>
 
-
-            <div class="col-md-4  text-center">
-                <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                    <div class="media-body">
-                        <th><h4 class="media-heading  text-center">Comentario 44</h4>
-
-                            <div class="ficon  text-center">
-                                <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                            </div>
-                        </th>
-                    </div>
-                </div>
-            </div>
-
-        </tr>
-
-        <tr>
-        <div class="col-md-4 text-center">
-            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                <div class="media-body">
-                    <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                        <div class="ficon  text-center">
-                            <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+        <section>
+            <div class="container delinear">
+                <table id="example" >
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+                                <div class="ficon  text-center2">
+                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                </div>
+                            </th>
                         </div>
-                    </th>
-                </div>
-            </div>
-        </div>
+                    </div>
+                    <div class="col-md-4  text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
 
-
-        <div class="col-md-4  text-center">
-            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                <div class="media-body">
-                    <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                        <div class="ficon  text-center">
-                            <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
                         </div>
-                    </th>
-                </div>
-            </div>
-        </div>
-
-    </tr>
-    <tr>
-    <div class="col-md-4 text-center">
-        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-            <div class="media-body">
-                <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                    <div class="ficon  text-center">
-                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
                     </div>
-                </th>
-            </div>
-        </div>
-    </div>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
 
-
-    <div class="col-md-4  text-center">
-        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-            <div class="media-body">
-                <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                    <div class="ficon  text-center">
-                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
+                        </div>
                     </div>
-                </th>
+                    <div class="col-md-4  text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
+                        </div>
+                    </div>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal1" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-<tr>
-<div class="col-md-4 text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-md-4  text-center">
-    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-        <div class="media-body">
-            <th><h4 class="media-heading  text-center">Comentario 1</h4>
-
-                <div class="ficon  text-center">
-                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                </div>
-            </th>
-        </div>
-    </div>
-</div>
-
-</tr>
-
-</tbody>
-</table>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header 1</h4>
-            </div>
-            <div class="modal-body">
-                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header 1</h4>
-            </div>
-            <div class="modal-body">
-                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
+        </section>
 
         <footer>
             <div class="last-div">
@@ -520,42 +209,42 @@
             </div>	
         </footer>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!--<script src="js/jquery-2.1.1.min.js"></script> por esta mierda no me servia el datatable-->
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.isotope.min.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="js/fliplightbox.min.js"></script>
-<script src="js/functions.js"></script>   
-<script type="text/javascript">$('.portfolio').flipLightBox()</script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="js/jquery-2.1.1.min.js"></script> por esta mierda no me servia el datatable-->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="js/fliplightbox.min.js"></script>
+        <script src="js/functions.js"></script>   
+        <script type="text/javascript">$('.portfolio').flipLightBox()</script>
 
 
 
-<script>
-    $(document).ready(function () {
-        $("#myBtn").click(function () {
-            $("#myModal").modal("show");
-        });
-        $("#myModal").on('show.bs.modal', function () {
-            //alert('The modal is about to be shown.');
-        });
-    });
-</script>
+        <script>
+            $(document).ready(function () {
+                $("#myBtn").click(function () {
+                    $("#myModal").modal("show");
+                });
+                $("#myModal").on('show.bs.modal', function () {
+                    //alert('The modal is about to be shown.');
+                });
+            });
+        </script>
 
-<script>
-    $(document).ready(function () {
-        $("#myBtn1").click(function () {
-            $("#myModal1").modal("show");
-        });
-        $("#myModal1").on('show.bs.modal', function () {
-            //alert('The modal is about to be shown.');
-        });
-    });
-</script>
+        <script>
+            $(document).ready(function () {
+                $("#myBtn1").click(function () {
+                    $("#myModal1").modal("show");
+                });
+                $("#myModal1").on('show.bs.modal', function () {
+                    //alert('The modal is about to be shown.');
+                });
+            });
+        </script>
 
 
-</body>
+    </body>
 </html>

@@ -47,8 +47,9 @@
                             <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation" class="active" ><a href="calendario.jsp">Calendario</a></li>
                             <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>
                             <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
+                            <li role="presentation" ><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	                           
+
                         </ul>
                     </div>
                 </div>			

@@ -47,17 +47,33 @@
                             <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation"  ><a href="calendario.jsp">Calendario</a></li>
                             <li role="presentation" class="active"><a href="cuestionario.jsp">Evaluate</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>
                             <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
+                            <li role="presentation" ><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	                           
+
                         </ul>
                     </div>
                 </div>			
             </div>
         </nav>
 
-        
-        
-        
+        <section>
+            <div class="container contacto delinear">
+                <div class="center">   
+                    <h1>EVALUATE</h1>
+                    <p>Responde el siguiente cuestionario</p>
+                </div> 
+                <ul class="pagination pagination-lg">
+                    <li><a href="#">Anterior</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Siguiente</a></li>
+                </ul>
+            </div>  
+        </section>
+
         <footer>
             <div class="inner-footer">
                 <div class="container">

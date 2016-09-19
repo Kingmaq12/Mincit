@@ -87,11 +87,9 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
                     <div class="col-md-4 text-center2">
                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+                            <th><h4 class="media-heading  text-center2 ">Comentario 1</h4>
                                 <div class="ficon  text-center2">
                                     <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
                                 </div>
@@ -134,8 +132,8 @@
                             </div>
                         </div>
                     </div>
-                    </tr>
-                    </tbody>
+                    
+                    
                 </table>
 
 

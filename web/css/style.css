@@ -271,6 +271,9 @@ input{
 .text-center2 {
     text-align:left;
 }
+.text-center3 {
+    text-align:center;
+}
 .text-center p {
     color:#8a8d94;
     font-size:15px;

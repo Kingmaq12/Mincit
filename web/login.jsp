@@ -37,16 +37,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><span>Eventos</span></a>
+                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a> 
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" ><a href="index.jsp">Inicio</a></li>
-                            <li role="presentation"><a href="busqueda.jsp">Busqueda</a></li>
+                            <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
+                            <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
+                            <li role="presentation" class="active" ><a href="login.jsp">Login</a></li>	
                             <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation" class="active" ><a href="login.jsp">Login</a></li>											
                         </ul>
                     </div>
                 </div>			
@@ -55,7 +56,7 @@
 
 
         <section>
-            <div class="login">
+            <div class="login delinear">
                 <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()"> 
                     <h1>Login</h1>
                     <label for="email">Cedula: </label>
@@ -64,13 +65,13 @@
                     <p><input class="form-control" type="password" name="contrasenia" id="contrasenia" ></p>
                     <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Ingresar</button>
                     <br>
-                    <label  name="campo" id="campo" ></label>
+                    <label class="label-danger" name="campo" id="campo" ></label>
                 </form>    
             </div>  
         </section>
 
-
         <footer>
+                       
             <div class="last-div">
                 <div class="container">
                     <div class="row">

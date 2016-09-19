@@ -38,26 +38,50 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><span>Eventos</span></a>
+                     <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" ><a href="index.jsp">Inicio</a></li>
-                            <li role="presentation"><a href="busqueda.jsp">Busqueda</a></li>
+                            <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation" class="active" ><a href="calendario.jsp">Calendario</a></li>
+                            <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
+                            <li role="presentation"><a href="login.jsp">Login</a></li>
                             <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>											
                         </ul>
                     </div>
                 </div>			
             </div>
         </nav>
 
-
-
-
         <footer>
+            
+                        <div class="inner-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 f-about">
+                            <a href="index.html"><h1><span></span>Eventos</h1></a>
+                            <p>blablablabalbala</p>
+                        </div>
+                        <div class="col-md-4 l-posts">
+                            <h3 class="widgetheading">Ultimas Noticias</h3>
+                            <ul>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsle</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 f-contact">
+                            <h3 class="widgetheading">Contacto</h3>
+                            <a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
+                            <p><i class="fa fa-phone"></i>  00000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="last-div">
                 <div class="container">
                     <div class="row">

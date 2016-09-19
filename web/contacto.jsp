@@ -37,16 +37,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><span>Eventos</span></a>
+                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" ><a href="index.jsp">Inicio</a></li>
-                            <li role="presentation"><a href="busqueda.jsp">Busqueda</a></li>
+                            <li role="presentation"><a href="busqueda.jsp">Evento</a></li>
                             <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
+                            <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
+                            <li role="presentation"><a href="login.jsp">Login</a></li>
                             <li role="presentation" class="active"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>											
                         </ul>
                     </div>
                 </div>			
@@ -55,10 +56,9 @@
 
 
         <section>
-            <div class="container contacto">
+            <div class="container contacto delinear">
                 <div class="center">   
                     <h1>¡Dejanos tu Mensaje!</h1>
-                    <br>
                     <p>Escribenos tus dudas o preguntas  y el MINCIT te contactará.</p>
                 </div> 
                 <div class="row contact-wrap"> 
@@ -66,11 +66,11 @@
                     <form  class="contact-form" name="contactar" id="contactar" method="POST" action="javascript:contactar()">
                         <div class="col-sm-5 col-sm-offset-1">
                             <div class="form-group">
-                                <label>Nombre de la Empresa *</label>
+                                <label>Nombre de la Empresa </label>
                                 <input type="text" id="nombre_empresa" name="nombre_empresa"class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Correo Electronico *</label>
+                                <label>Correo Electronico </label>
                                 <input type="email" id="email" name="email" class="form-control" required="required">
                             </div>
                             <div class="form-group">
@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-sm-5">
                             <div class="form-group">
-                                <label>Mensaje *</label>
+                                <label>Mensaje </label>
                                 <textarea id="mensaje" name="mensaje" required="required" class="form-control" rows="8"></textarea>
                             </div>                                                  
                         </div>
@@ -95,8 +95,37 @@
             </div><!--/.container-->
         </section><!--/#contact-page-->
 
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4699.7052608608265!2d-72.48919292226732!3d7.898693478920445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645102f9b7269%3A0xab4b03ed6c85830e!2sUniversidad+Francisco+de+Paula+Santander!5e0!3m2!1ses!2sco!4v1474236570137" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
 
         <footer>
+
+            <div class="inner-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 f-about">
+                            <a href="index.html"><h1><span></span>Eventos</h1></a>
+                            <p>blablablabalbala</p>
+                        </div>
+                        <div class="col-md-4 l-posts">
+                            <h3 class="widgetheading">Ultimas Noticias</h3>
+                            <ul>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsle</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 f-contact">
+                            <h3 class="widgetheading">Contacto</h3>
+                            <a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
+                            <p><i class="fa fa-phone"></i>  00000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="last-div">
                 <div class="container">
                     <div class="row">

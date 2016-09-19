@@ -26,7 +26,7 @@
 
     </head>
     <body>
-         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -36,83 +36,192 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><span>Eventos</span></a>
+                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation"  class="active"><a href="index.jsp">Inicio</a></li>
-                            <li role="presentation"><a href="busqueda.jsp">Busqueda</a></li>
+                            <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
-                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation" ><a href="login.jsp">Login</a></li>											
+                            <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
+                            <li role="presentation" ><a href="login.jsp">Login</a></li>	
+                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>										
                         </ul>
                     </div>
                 </div>			
             </div>
         </nav>
-               
-        <section class="dar-color" >
-            <div  class="carrusel">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
+        <section>
+            <div  class="carrusel dar-color">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-                                <div class="item active carousel-inner">
-                                    <img  src="img/02.jpg" alt="Chania">
-                                    <div class="carousel-caption">
-                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
-                                    </div>
-                                </div>
-                                <!-- LAS IMAGENES DEBEN SER DEL MISMO TAMAÑO -->
-                                <div class="item">
-                                    <img  src="img/02.jpg" alt="Chania">
-                                    <div class="carousel-caption">
-                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img  src="img/02.jpg" alt="Chania">
-                                    <div class="carousel-caption">
-                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
-                                    </div>
-                                </div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
 
+                        <div class="item active carousel-inner">
+                            <img  src="img/02.jpg" alt="Chania">
+                            <div class="carousel-caption">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
                             </div>
-
-                            <!-- Left and right controls -->
-                             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
+                        <!-- LAS IMAGENES DEBEN SER DEL MISMO TAMAÑO -->
+                        <div class="item">
+                            <img  src="img/02.jpg" alt="Chania">
+                            <div class="carousel-caption ">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img  src="img/02.jpg" alt="Chania">
+                            <div class="carousel-caption ">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </section>
-        
-        <div class="bajar">
-            <div class="row ">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="text-center">
-                        <h2>¡Evaluate Emprendedor!</h2>
-                        <p>Has la prueba y Evalua tus habilidades</p>
-                        <button class= "btn btn-success active">Entrar</button>
+
+        <div class="services">
+            <div class="container">
+                <div class="row">
+                    <hr>
+                    <div class="col-md-4 ">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>					
+                    </div>
+                    <hr>
+                    <div class="col-md-4 ">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <hr>
+                            <h4>NOMBRE EVENTO</h4>					
+                            <div class="icon">
+                                <i class="fa fa-location-arrow fa-3x"></i>
+                            </div>						
+                            <p>fecha, lugar, tipo evento, tipo sector</p>
+                            <div class="ficon">
+                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                <hr>
+                            </div>
+                        </div>					
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
+            <div class="inner-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 f-about">
+                            <a href="index.html"><h1><span></span>Eventos</h1></a>
+                            <p>blablablabalbala</p>
+                        </div>
+                        <div class="col-md-4 l-posts">
+                            <h3 class="widgetheading">Ultimas Noticias</h3>
+                            <ul>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsle</a></li>
+                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 f-contact">
+                            <h3 class="widgetheading">Contacto</h3>
+                            <a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
+                            <p><i class="fa fa-phone"></i>  00000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="last-div">
                 <div class="container">
                     <div class="row">
@@ -126,12 +235,10 @@
                         <ul class="social-network">
                             <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
                             <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
                         </ul>
                     </div>
                 </div>
+
 
                 <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 

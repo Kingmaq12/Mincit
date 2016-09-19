@@ -41,12 +41,13 @@
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"  class="active"><a href="index.jsp">Inicio</a></li>
+                            <li role="presentation"  class="active"><a href="index.jsp">Inicio</a></li>                             
                             <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
                             <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
                             <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
                             <li role="presentation" ><a href="login.jsp">Login</a></li>	
-                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>										
+                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>	
+                           
                         </ul>
                     </div>
                 </div>			
@@ -226,15 +227,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            © 2016 MINCIT| <a target="_blank" href=""> MINCIT Eventos</a>
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
                         </div>		
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
                         <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                            <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/mincomerciocolombia" data-placement ="top" title="Youtube"><i class="fa fa-youtube fa ix"></i></a></li>
                         </ul>
                     </div>
                 </div>

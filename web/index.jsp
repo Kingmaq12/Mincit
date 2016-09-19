@@ -106,7 +106,7 @@
             <div class="container">
                 <div class="row">
                     <hr>
-                    <div class="col-md-4 ">
+                    <div class="col-md-4">
                         <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                             <hr>
                             <h4>NOMBRE EVENTO</h4>					

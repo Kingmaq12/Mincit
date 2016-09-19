@@ -30,20 +30,18 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
-                    <div class="menu">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>	                           
-                            <li role="presentation" ><a  href="perfil.jsp"><img  src="img/usuario.png"></a></li>
-
+                    <div class="menu dropdown">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h2>Admin <span class="caret"></span></h2></li>
+                        <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="#">Registrar Evento</a></li>
+                            <li><a href="#">Buscar Eventos</a></li>
+                            <li><a href="#">Ver Comentarios</a></li>
+                            <li><a href="#">Ver Alertas</a></li>
+                            <li><a href="#">Ver Estadisitcas</a></li>
+                            <li><a href="#">Configuración</a></li>
                         </ul>
                     </div>
                 </div>			

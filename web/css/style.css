@@ -600,7 +600,7 @@ ul.social-network li a:hover {
 }
 
 a.scrollup{
-    color:#fff;
+    color:#109173;
     height:55px;
     width:55px;
     font-size:22px;
@@ -616,6 +616,6 @@ a.scrollup{
 }
 a.scrollup:hover{
     opacity:1;
-    background-color:#109173;
-    color:#fff;;	
+    background-color:#6EE5A1;
+    color:#109173;
 }

@@ -38,7 +38,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                     <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
@@ -56,8 +56,7 @@
         </nav>
 
         <footer>
-            
-                        <div class="inner-footer">
+            <div class="inner-footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 f-about">
@@ -81,26 +80,25 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="last-div">
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            © 2016 MINCIT| <a target="_blank" href=""> MINCIT Eventos</a>
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
                         </div>		
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
                         <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+                            <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                            <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/mincomerciocolombia" data-placement ="top" title="Youtube"><i class="fa fa-youtube fa ix"></i></a></li>
                         </ul>
                     </div>
                 </div>
+
 
                 <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 

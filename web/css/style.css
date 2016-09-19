@@ -10,9 +10,9 @@ body {
     font-size:14px;
     font-weight:300;
     line-height:1.7em;
-  /* ==== background-color:#54A693;==== */
-  /* ==== background-color:#5FB699;==== */
-   background-color:#79A999;
+    /* ==== background-color:#54A693;==== */
+    /* ==== background-color:#5FB699;==== */
+    background-color:#79A999;
 }
 
 .login {
@@ -21,6 +21,7 @@ body {
     margin-right:450px;
     padding:40px;
 }
+
 .delinear{
     background: #FAFAFA;
     border-bottom: 3px solid #FAFAFA;
@@ -50,25 +51,8 @@ td, th{
     color: #000;
 }
 
-.navegador ul{
-   list-style-type: none;
-   text-align: center;
-}
-.navegador li{
-   display: inline;
-   text-align: center;
-   margin: 0 10px 0 0;
-}
-.navegador li a:hover{
-   background-color: #333333;
-   color: #ffffff;
-}
-.navegador li a {
-   padding: 2px 7px 2px 7px;
-   color: #666;
-   background-color: #eeeeee;
-   border: 1px solid #ccc;
-   text-decoration: none;
+.drop{
+    cursor: pointer;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -183,13 +167,18 @@ hr {
     height: 50px;
     padding: 15px 15px;
     font-size: 30px;
-   
+
 }
 a.navbar-brand span {
     color:#fff;
     font-size:28px;	
 }
-
+.navbar-perfil{
+    float:left;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 0;
+}
 .navbar-collapse {
     float:right;
     padding-right: 15px;
@@ -199,6 +188,21 @@ a.navbar-brand span {
     border-top: 0;
 
 }
+.navbar-header{
+    float:left;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 0;
+}
+.navbar-header2{
+    float:right;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 0;
+}
+
 .navbar-fixed-top {
     top: 0;
     border-width: 0 0 0;
@@ -220,6 +224,12 @@ a.navbar-brand span {
     text-transform:uppercase;
     font-weight:600;
     color:#000;
+}
+
+.nav-tabss>li{
+    position: relative;
+    display: block;
+    font-weight:400;
 }
 .nav-tabs > li > a:hover {
     background-color: #79A999;
@@ -246,7 +256,6 @@ a.navbar-brand span {
 }
 .bxslider li {
     margin-left:40px;
-
 }
 
 .content {

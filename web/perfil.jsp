@@ -29,22 +29,23 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
-                </div>
-                <div class="navbar-collapse collapse">							
-                    <div class="menu dropdown">
-                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador <span class="caret"></span></h1></li>
+                <div class="navbar-header2 ">							
+                    <div class="menu dropdown drop nav-tabss">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="perfil.jsp">Inicio</a></li>
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
-                            <li><a href="busqueda.jsp">Buscar Eventos</a></li>
+                            <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
                             <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
                             <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
-                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
                             <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
-                </div>			
+                </div>	
+                 <div class="navbar-perfil">
+                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                </div>
             </div>
         </nav>
 
@@ -96,100 +97,100 @@
             </div>
         </section>
 
-        <div class="services">
-            <div class="container">
-                <div class="row">
-                    <hr>
-                    <div class="col-md-4">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+       <section>
+            <div class="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                 <hr>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                        <div class="col-md-4">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                 <hr>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-md-4 ">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <hr>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
+                            </div>					
+                        </div>
+                        <hr>
+                        <div class="col-md-4 ">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <hr>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <hr>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4 ">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                        <div class="col-md-4 ">
+                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                 <hr>
-                            </div>
-                        </div>					
-                    </div>
-                    <hr>
-                    <div class="col-md-4 ">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
-                                <hr>
-                            </div>
+                                <h4>NOMBRE EVENTO</h4>					
+                                <div class="icon">
+                                    <img  src="img/03.png" alt="evento">
+                                </div>						
+                                <p>fecha, lugar, tipo evento, tipo sector</p>
+                                <div class="ficon">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <hr>
+                                </div>
+                            </div>					
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 ">
-                        <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <hr>
-                            <h4>NOMBRE EVENTO</h4>					
-                            <div class="icon">
-                                <i class="fa fa-location-arrow fa-3x"></i>
-                            </div>						
-                            <p>fecha, lugar, tipo evento, tipo sector</p>
-                            <div class="ficon">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
-                                <hr>
-                            </div>
-                        </div>					
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <footer>
             <div class="inner-footer">

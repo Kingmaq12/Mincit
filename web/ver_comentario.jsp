@@ -30,22 +30,23 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
-                </div>
-                <div class="navbar-collapse collapse">							
-                    <div class="menu dropdown">
-                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador <span class="caret"></span></h1></li>
+                <div class="navbar-header2 ">							
+                    <div class="menu dropdown drop nav-tabss">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="perfil.jsp">Inicio</a></li>
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
-                            <li><a href="busqueda.jsp">Buscar Eventos</a></li>
+                            <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
                             <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
                             <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
-                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
                             <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
-                </div>			
+                </div>	
+                 <div class="navbar-perfil">
+                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                </div>
             </div>
         </nav>
 
@@ -493,68 +494,31 @@
 </div>
 
 
-<footer>
-    <div class="inner-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 f-about">
-                    <a href="index.html"><h1><span>e</span>Nno</h1></a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero
-                        vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam  consectetur adipiscing elit Cras suscipit arcu libero
-                    </p>
+        <footer>
+            <div class="last-div">
+                <div class="container">
+                    <div class="row">
+                        <div class="copyright">
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
+                        </div>		
+                    </div>
                 </div>
-                <div class="col-md-4 l-posts">
-                    <h3 class="widgetheading">Latest Posts</h3>
-                    <ul>
-                        <li><a href="#">This is awesome post title</a></li>
-                        <li><a href="#">Awesome features are awesome</a></li>
-                        <li><a href="#">Create your own awesome website</a></li>
-                        <li><a href="#">Wow, this is fourth post title</a></li>
-                    </ul>
+                <div class="container">
+                    <div class="row">
+                        <ul class="social-network">
+                            <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                            <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/mincomerciocolombia" data-placement ="top" title="Youtube"><i class="fa fa-youtube fa ix"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-4 f-contact">
-                    <h3 class="widgetheading">Stay in touch</h3>
-                    <a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
-                    <p><i class="fa fa-phone"></i>  +345 578 59 45 416</p>
-                    <p><i class="fa fa-home"></i> Enno inc  |  PO Box 23456 
-                        Little Lonsdale St, New York <br>
-                        Victoria 8011 USA</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="last-div">
-        <div class="container">
-            <div class="row">
-                <div class="copyright">
-                    Â© 2014 eNno Multi-purpose theme | <a target="_blank" href="http://bootstraptaste.com">Bootstraptaste</a>
-                </div>	
-                <!-- 
-                    All links in the footer should remain intact. 
-                    Licenseing information is available at: http://bootstraptaste.com/license/
-                    You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=eNno
-                -->				
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <ul class="social-network">
-                    <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                    <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                    <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-                    <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-                    <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+                <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 
 
-    </div>	
-</footer>
+            </div>	
+        </footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--<script src="js/jquery-2.1.1.min.js"></script> por esta mierda no me servia el datatable-->

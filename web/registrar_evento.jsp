@@ -27,31 +27,27 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><span>eNno</span></a>
-                </div>
-                <div class="navbar-collapse collapse">							
-                    <div class="menu dropdown">
-                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><a><h2>Admin <span class="caret"></span></h2></a></li>
+                <div class="navbar-header2 ">							
+                    <div class="menu dropdown drop nav-tabss">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="perfil.jsp">Inicio</a></li>
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
                             <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
                             <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
                             <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
-                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
                             <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
-                </div>			
+                </div>	
+                 <div class="navbar-perfil">
+                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                </div>
             </div>
         </nav>
 
-        <br>
-        <br>
-        <br>
-
-
-
+        <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -213,39 +209,29 @@
         </div>
 
         <footer>
-
-
             <div class="last-div">
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            Â© 2014 eNno Multi-purpose theme | <a target="_blank" href="http://bootstraptaste.com">Bootstraptaste</a>
-                        </div>	
-                        <!-- 
-                            All links in the footer should remain intact. 
-                            Licenseing information is available at: http://bootstraptaste.com/license/
-                            You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=eNno
-                        -->				
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
+                        </div>		
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
                         <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+                            <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                            <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/mincomerciocolombia" data-placement ="top" title="Youtube"><i class="fa fa-youtube fa ix"></i></a></li>
                         </ul>
                     </div>
                 </div>
+
 
                 <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 
 
             </div>	
-
-
         </footer>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

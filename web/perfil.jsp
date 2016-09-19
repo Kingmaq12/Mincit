@@ -40,6 +40,7 @@
                             <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
                             <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
                             <li><a href="configuracion.jsp">Configuración</a></li>
+                            <li><a href="index.jsp">Cerrar Sesión</a></li>                            
                         </ul>
                     </div>
                 </div>	

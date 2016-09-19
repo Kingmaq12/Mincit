@@ -13,6 +13,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>MINCIT Eventos</title>
+        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +28,12 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/set1.css" />
         <link href="css/style.css" rel="stylesheet">
+
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
 
     </head>
     <body>
@@ -52,20 +61,104 @@
 
         <section>
             <div class="container contacto delinear">
-                <div class="center">   
-                    <h1>EVALUATE</h1>
-                    <p>Responde el siguiente cuestionario</p>
-                </div> 
-                <ul class="pagination pagination-lg">
-                    <li><a href="#">Anterior</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">Siguiente</a></li>
-                </ul>
-            </div>  
+                <table id="example" >
+                    <thead>
+                        <tr>
+                            <th>Pregunta</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <th><h4 class="media-heading  text-center2 ">Comentario 1</h4>
+                                <div class="ficon  text-center2">
+                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                </div>
+                            </th>
+                        </div>
+                    </div>
+                    <div class="col-md-4  text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4  text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
+
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                                    </div>
+                                </th>
+                            </div>
+                        </div>
+                    </div>
+                </table>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal1" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
 
         <footer>
@@ -120,7 +213,6 @@
         </footer>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-2.1.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/wow.min.js"></script>
@@ -130,6 +222,29 @@
         <script type="text/javascript" src="js/fliplightbox.min.js"></script>
         <script src="js/functions.js"></script>
         <script type="text/javascript">$('.portfolio').flipLightBox()</script>
+
+        <script>
+            $(document).ready(function () {
+                $("#myBtn").click(function () {
+                    $("#myModal").modal("show");
+                });
+                $("#myModal").on('show.bs.modal', function () {
+                    //alert('The modal is about to be shown.');
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#myBtn1").click(function () {
+                    $("#myModal1").modal("show");
+                });
+                $("#myModal1").on('show.bs.modal', function () {
+                    //alert('The modal is about to be shown.');
+                });
+            });
+        </script>
+
     </body>
 </html>
 

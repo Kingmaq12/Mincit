@@ -47,147 +47,123 @@
             </div>
         </nav>
 
-        <br><br><br><br>
         <section id="contact-page">
-
-            <div class="col-sm-5 col-sm-offset-1">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#menu1">Registrar Alerta</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Modificar Alerta</a></li>
-                </ul>
-            </div>
-
-            <div class="tab-content">	
-
-
-                <div id="menu1" class="tab-pane fade in active">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="text-center">
-                                    <h2>Registrar Alerta</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                                        vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                                    </p>
+            <div class="container contacto delinear">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#menu1">Registrar Alerta</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Modificar Alerta</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">	
+                    <div id="menu1" class="tab-pane fade in active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <div class="text-center">
+                                        <h2>Registrar Alerta</h2>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
+                                            vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
+                                        </p>
+                                    </div>
+                                    <hr>
                                 </div>
-                                <hr>
                             </div>
                         </div>
+                        <div>
+                            <div class="col-sm-6 ">
+
+                                <div class="form-group">
+                                    <label>Fecha *</label>
+                                    <input type="date" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Evento *</label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="col-sm-12">
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
+                                </div>			
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <table class="table table-hover col-sm-6">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre Evento</th>
+                                        <th>Descripción</th>
+                                        <th>Opcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Alerta 1 </td>
+                                        <td>alguna descripción</td>
+                                        <td><button type="button" class="btn btn-info btn-lg" id="myBtn">Consultar y/o Modificar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Alerta 2</td>
+                                        <td>alguna descripción</td>
+                                        <td><button type="button" class="btn btn-info btn-lg" id="myBtn2">Consultar y/o Modificar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Alerta 3</td>
+                                        <td>alguna descripción</td>
+                                        <td><button type="button" class="btn btn-info btn-lg" id="myBtn3">Consultar y/o Modificar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
-
-                    <div>
+                    <div id="menu2" class="tab-pane fade">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <div class="text-center">
+                                        <h2>Modificar Alerta</h2>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
+                                            vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
+                                        </p>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-sm-6 ">
-
                             <div class="form-group">
                                 <label>Fecha *</label>
                                 <input type="date" name="name" class="form-control" required="required">
                             </div>
-
                             <div class="form-group">
                                 <label>Evento *</label>
                                 <input type="text" name="name" class="form-control" required="required">
                             </div>
                             <div class="col-sm-12">
-                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
                             </div>			
                         </div>
 
+                        <div class="col-sm-6">
 
-                    </div>
-
-                    <div class="col-sm-6">
-
-
-                        <table class="table table-hover col-sm-6">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nombre Evento</th>
-                                    <th>Descripción</th>
-                                    <th>Opcion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Alerta 1 </td>
-                                    <td>alguna descripción</td>
-                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn">Consultar y/o Modificar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Alerta 2</td>
-                                    <td>alguna descripción</td>
-                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn2">Consultar y/o Modificar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Alerta 3</td>
-                                    <td>alguna descripción</td>
-                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn3">Consultar y/o Modificar</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                    </div>
-
-
-
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="text-center">
-                                    <h2>Modificar Alerta</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                                        vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                                    </p>
-                                </div>
-                                <hr>
+                            <div class="text-center">
+                                <h4>Alerta del sistema: Descripcion</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
+                                    vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
+                                </p>
                             </div>
-                        </div>
+
+                        </div>	
+
+
                     </div>
-
-
-                    <div class="col-sm-6 ">
-
-                        <div class="form-group">
-                            <label>Fecha *</label>
-                            <input type="date" name="name" class="form-control" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Evento *</label>
-                            <input type="text" name="name" class="form-control" required="required">
-                        </div>
-                        <div class="col-sm-12">
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
-                        </div>			
-                    </div>
-
-                    <div class="col-sm-6">
-
-                        <div class="text-center">
-                            <h4>Alerta del sistema: Descripcion</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                                vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                            </p>
-                        </div>
-
-                    </div>	
 
 
                 </div>
-
-
             </div>
-
         </section>		
 
         <footer>

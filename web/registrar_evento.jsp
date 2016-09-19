@@ -46,21 +46,22 @@
                 </div>
             </div>
         </nav>
-        
+
         <section>
             <div class="container  bajar contacto delinear">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <h2>Registrar Eventos</h2>
                     <p>Realiza el registro por medio de las siguientes opciones.</p>
                 </div>
+
             </div>
-            <br>
+
             <div class="container delinear">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#menu1">Manualmente</a></li>
                     <li><a data-toggle="tab" href="#menu2">Microsoft Excel</a></li>
                 </ul>
-                <section id="contact-page">
+                <section id="contact-page delinear">
                     <div class="tab-content delinear">	
                         <div id="menu1" class="tab-pane fade in active">
                             <div class="col-sm-5 col-sm-offset-1">
@@ -148,10 +149,10 @@
                                 </div>				
                             </div>
                             <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Descripción</label>
-                                        <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                </div>
                             </div>	
                             <br>
                             <div class="col-sm-12">

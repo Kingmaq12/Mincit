@@ -46,6 +46,7 @@
                 </div>
             </div>
         </nav>
+        
         <section>
             <div class="container  bajar contacto delinear">
                 <div class="col-md-6 col-md-offset-3 text-center">
@@ -53,10 +54,11 @@
                     <p>Realiza el registro por medio de las siguientes opciones.</p>
                 </div>
             </div>
+            <br>
             <div class="container delinear">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#menu1">Manualmente</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Microsoft Excell</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Microsoft Excel</a></li>
                 </ul>
                 <section id="contact-page">
                     <div class="tab-content delinear">	
@@ -83,7 +85,7 @@
                                     <input type="text" name="name" class="form-control" required="required">
                                 </div>	
                                 <div class="form-group">
-                                    <label>Pais</label>
+                                    <label>País</label>
                                     <input type="text" name="name" class="form-control" required="required">
                                 </div>
                                 <div class="form-group">
@@ -117,7 +119,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Sector Economico </label><br>
+                                    <label>Sector Económico </label><br>
                                     <select class="form-control">
                                         <option value="volvo">-No seleccionado-</option>
                                         <option value="volvo">Sector Primario</option>
@@ -146,12 +148,10 @@
                                 </div>				
                             </div>
                             <div class="col-sm-12">
-                                <div>
                                     <div class="form-group">
                                         <label>Descripción</label>
                                         <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
                                     </div>
-                                </div>	
                             </div>	
                             <br>
                             <div class="col-sm-12">
@@ -162,10 +162,9 @@
                             </div>
                         </div>	
                         <div id="menu2" class="tab-pane fade delinear">
-                            <br>
                             <div class="col-sm-4 col-sm-offset-1">
                                 <div class="form-group">
-                                    <label>Archivo Excel </label> <br>
+                                    <label>Archivo Microsoft Excel </label> <br>
                                     <input type="file" class="filestyle" data-icon="false" >
                                 </div>
                             </div>
@@ -176,8 +175,11 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="form-group">
-                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
+                            <div class="col-sm-12">
+                                <br>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
+                                <br>
+                                <label id="campo" name="campo"></label>
                             </div>
                         </div>
                     </div>

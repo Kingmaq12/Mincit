@@ -42,13 +42,15 @@
                     <a class="navbar-brand" href="index.html"><span>eNno</span></a>
                 </div>
                 <div class="navbar-collapse collapse">                   
-                    <div class="menu">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="index.html">Home</a></li>
-                            <li role="presentation"><a href="services.html">Services</a></li>
-                            <li role="presentation"><a href="blog.html">Blog</a></li>
-                            <li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-                            <li role="presentation"><a href="contact.html">Contact</a></li>                  
+                    <div class="menu dropdown">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><a><h2>Admin <span class="caret"></span></h2></a></li>
+                        <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="busqueda.jsp">Buscar Eventos</a></li>
+                            <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
                 </div>         

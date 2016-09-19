@@ -34,14 +34,14 @@
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu dropdown">
-                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h2>Admin <span class="caret"></span></h2></li>
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><a><h2>Admin <span class="caret"></span></h2></a></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
-                            <li><a href="#">Registrar Evento</a></li>
-                            <li><a href="#">Buscar Eventos</a></li>
-                            <li><a href="#">Ver Comentarios</a></li>
-                            <li><a href="#">Ver Alertas</a></li>
-                            <li><a href="#">Ver Estadisitcas</a></li>
-                            <li><a href="#">Configuración</a></li>
+                            <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="busqueda.jsp">Buscar Eventos</a></li>
+                            <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
                 </div>			

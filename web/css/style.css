@@ -10,7 +10,9 @@ body {
     font-size:14px;
     font-weight:300;
     line-height:1.7em;
-   background-color:#ccc;
+  /* ==== background-color:#54A693;==== */
+  /* ==== background-color:#5FB699;==== */
+   background-color:#79A999;
 }
 
 .login {

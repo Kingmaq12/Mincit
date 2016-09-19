@@ -4,20 +4,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>eNno Bootstrap Template</title>
-
-
+         <title>MINCIT Eventos</title>
         <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
         <script>
             $(document).ready(function () {
                 $('#example').DataTable();
             });
         </script>
-
-
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/animate.css">

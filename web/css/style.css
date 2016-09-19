@@ -225,7 +225,9 @@ a.navbar-brand span {
     font-weight:600;
     color:#000;
 }
-
+input{
+    color: #000;
+}
 .nav-tabss>li{
     position: relative;
     display: block;

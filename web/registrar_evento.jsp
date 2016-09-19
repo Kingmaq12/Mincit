@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>eNno Bootstrap Template</title>
+        <title>MINCIT Eventos</title>
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,172 +41,149 @@
                         </ul>
                     </div>
                 </div>	
-                 <div class="navbar-perfil">
+                <div class="navbar-perfil">
                     <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
             </div>
         </nav>
-
         <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="text-center">
-                        <h2>Registrar Evento</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                            vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                        </p>
-                    </div>
-                    <hr>
+            <div class="container  bajar contacto delinear">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h2>Registrar Eventos</h2>
+                    <p>Realiza el registro por medio de las siguientes opciones.</p>
                 </div>
             </div>
-        </div>
-
-        <div class="panel panel-default">
-
-
-            <div class="col-sm-5 col-sm-offset-1">
+            <div class="container delinear">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#menu1">Manual</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Excel</a></li>
+                    <li class="active"><a data-toggle="tab" href="#menu1">Manualmente</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Microsoft Excell</a></li>
                 </ul>
-            </div>
-
-            <br><br><br><br><br>
-
-            <section id="contact-page">
-
-                <div class="tab-content">	
-
-                    <div id="menu1" class="tab-pane fade in active">
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="form-group">
-                                <label>Nombre *</label>
-                                <input type="text" name="name" class="form-control" required="required" placeholder="...">
-                            </div>
-                            <div class="form-group">
-                                <label>Fecha *</label>
-                                <input type="date" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Hora *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Lugar *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Patrocinadores *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>	
-                            <div class="form-group">
-                                <label>Pais *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Ciudad *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>				
-                        </div>
-
-
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="form-group">
-                                <label>Participantes *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Tipo de Evento *</label><br>
-                                <select>
-                                    <option value="volvo">-No seleccionado-</option>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Sector Economico *</label><br>
-                                <select>
-                                    <option value="volvo">-No seleccionado-</option>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Url *</label>
-                                <input type="text" name="name" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Imagen *</label> <br>
-
-                                <input type="file" class="filestyle" data-icon="false" >
-
-
-                            </div>
-                            <div class="form-group">
-                                <label>Logros *</label>
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
-                            </div>				
-                        </div>
-                        <div class="col-sm-10 col-sm-offset-1">
-                            <div>
+                <section id="contact-page">
+                    <div class="tab-content delinear">	
+                        <div id="menu1" class="tab-pane fade in active">
+                            <div class="col-sm-5 col-sm-offset-1">
                                 <div class="form-group">
-                                    <label>DescripciÃ³n*</label>
-                                    <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                    <label>Nombre </label>
+                                    <input type="text" name="name" class="form-control" required="required" placeholder="...">
                                 </div>
+                                <div class="form-group">
+                                    <label>Fecha </label>
+                                    <input type="date" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Hora </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Lugar </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Patrocinadores </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>	
+                                <div class="form-group">
+                                    <label>Pais</label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>				
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1 delinear">
+                                <div class="form-group">
+                                    <label>Participantes </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo de Evento </label><br>
+                                    <select class="form-control">
+                                        <option value="volvo">-No seleccionado-</option>
+                                        <option value="volvo">Capacitación</option>
+                                        <option value="saab">Evento</option>
+                                        <option value="mercedes">Simposio</option>
+                                        <option value="audi">Foro</option>
+                                        <option value="audi">Rueda</option>
+                                        <option value="audi">Seminario</option>
+                                        <option value="audi">Entrevista</option>
+                                        <option value="audi">Concurso</option>
+                                        <option value="audi">Feria</option>
+                                        <option value="audi">Aniversario</option>
+                                        <option value="audi">Congreso</option>
+                                        <option value="audi">Cumbre</option>
+                                        <option value="audi">Conferencia</option>
+                                        <option value="audi">Exposición</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sector Economico </label><br>
+                                    <select class="form-control">
+                                        <option value="volvo">-No seleccionado-</option>
+                                        <option value="volvo">Sector Primario</option>
+                                        <option value="saab">Sector Secundario</option>
+                                        <option value="mercedes">Sector Terciario</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>URL </label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Imagen </label> <br>
+                                    <input type="file" class="filestyle" data-icon="false" >
+                                </div>
+                                <div class="form-group">
+                                    <label>Logros </label>
+                                    <select class="form-control">
+                                        <option value="volvo">-No seleccionado-</option>
+                                        <option value="volvo">Formalización</option>
+                                        <option value="saab">Certificación Nacional</option>
+                                        <option value="mercedes">Certificación Internacional</option>
+                                        <option value="audi">Exportar</option>
+                                        <option value="audi">Acceso a Lineas de Crédito</option>
+                                    </select>
+                                </div>				
+                            </div>
+                            <div class="col-sm-12">
+                                <div>
+                                    <div class="form-group">
+                                        <label>Descripción</label>
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                    </div>
+                                </div>	
                             </div>	
+                            <br>
+                            <div class="col-sm-12">
+                                <br>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
+                                <br>
+                                <label id="campo" name="campo"></label>
+                            </div>
                         </div>	
-
-                        <br>
-
-                        <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
-                        </div>
-                    </div>	
-
-                    <div id="menu2" class="tab-pane fade">
-                        <br>
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="form-group">
-                                <label>Archivo Excel *</label> <br>
-
-                                <input type="file" class="filestyle" data-icon="false" >
-
+                        <div id="menu2" class="tab-pane fade delinear">
+                            <br>
+                            <div class="col-sm-4 col-sm-offset-1">
+                                <div class="form-group">
+                                    <label>Archivo Excel </label> <br>
+                                    <input type="file" class="filestyle" data-icon="false" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="form-group">
-                                <label>Imagen *</label> <br>
-
-                                <input type="file" class="filestyle" data-icon="false" >
-
+                            <div class="col-sm-4 col-sm-offset-1">
+                                <div class="form-group">
+                                    <label>Imagen </label> <br>
+                                    <input type="file" class="filestyle" data-icon="false" >
+                                </div>
                             </div>
-                        </div>
-
-                        <br>
-
-                        <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
+                            <br>
+                            <div class="form-group">
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
+                            </div>
                         </div>
                     </div>
-
-
-                </div>
-
-            </section>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-
-        </div>
+                </section>
+            </div>
+        </section>
 
         <footer>
             <div class="last-div">

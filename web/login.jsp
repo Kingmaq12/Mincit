@@ -59,9 +59,9 @@
             <div class="login delinear">
                 <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()"> 
                     <h1>LOGIN</h1>
-                    <label for="email">Cedula: </label>
+                    <label for="email">Cedula </label>
                     <p><input class="form-control" type="text" name="cedula" id="cedula" ></p>
-                    <label for="pwd">Contraseña: </label>
+                    <label for="pwd">Contraseña </label>
                     <p><input class="form-control" type="password" name="contrasenia" id="contrasenia" ></p>
                     <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Ingresar</button>
                     <br>

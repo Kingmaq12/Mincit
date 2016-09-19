@@ -80,6 +80,7 @@
                 </div>
                 <div class="col-sm-12 text-center">
                     <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar</button>
+                <br><br>
                 </div>
             </div>
         </section>                

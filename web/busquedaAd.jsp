@@ -47,7 +47,7 @@
             <div class="container contacto delinear">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="text-center">
-                        <h2>Consultar Eventos</h2>
+                        <h2>Buscar Eventos</h2>
                     </div>
                     <hr>
                 </div>

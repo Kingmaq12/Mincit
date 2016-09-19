@@ -33,7 +33,7 @@
                     <div class="menu dropdown drop nav-tabss">
                         <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
-                            <li><a href="perfil.jsp">Inicio</a></li>
+                            <li><a href="perfil.jsp">Pagina Inicial</a></li>
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
                             <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
                             <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>

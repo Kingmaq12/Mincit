@@ -61,60 +61,77 @@
 
         <section>
             <div class="container contacto delinear">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <h2>Encuesta ¡Evaluate!</h2>
+                                <p>Resuelve el cuestionario.</p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 <table id="example" >
                     <thead>
                         <tr>
-                            <th>Pregunta</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>-Pregunta-</th>
+                            <th>Si</th>
+                            <th>No</th>
+                            <th>Quizas</th>
                         </tr>
                     </thead>
                     <div class="col-md-4 text-center2">
                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <th><h4 class="media-heading  text-center2 ">Comentario 1</h4>
-                                <div class="ficon  text-center2">
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                </div>
-                            </th>
-                        </div>
-                    </div>
-                    <div class="col-md-4  text-center2">
-                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <div class="media-body">
-                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                    <div class="ficon  text-center2">
-                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                            <tr>
+                                <td><h4 class="media-heading  text-center2 ">Pregunta X</h4></td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio">Option 1</label>
                                     </div>
-                                </th>
-                            </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio">Option 2</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio">Option 3</label>
+                                    </div>
+                                </td>
+                            </tr>
                         </div>
                     </div>
+
                     <div class="col-md-4 text-center2">
                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <div class="media-body">
-                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                    <div class="ficon  text-center2">
-                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
+                            <tr>
+                                <td><h4 class="media-heading  text-center2 ">Pregunta Y</h4></td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio1">Option 1</label>
                                     </div>
-                                </th>
-                            </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio1">Option 2</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio1">Option 3</label>
+                                    </div>
+                                </td>
+                            </tr>
                         </div>
                     </div>
-                    <div class="col-md-4  text-center2">
-                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <div class="media-body">
-                                <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                    <div class="ficon  text-center2">
-                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                    </div>
-                                </th>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </table>
 
                 <!-- Modal -->

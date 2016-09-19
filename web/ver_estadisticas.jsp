@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <title>MINCIT Eventos</title>
+        <title>MINCIT Eventos</title>
         <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -38,7 +38,7 @@
                     <div class="menu dropdown drop nav-tabss">
                         <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
-                            <li><a href="perfil.jsp">Inicio</a></li>
+                            <li><a href="perfil.jsp">Pagina Inicial</a></li>
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
                             <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
                             <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
@@ -48,16 +48,14 @@
                         </ul>
                     </div>
                 </div>	
-                 <div class="navbar-perfil">
+                <div class="navbar-perfil">
                     <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
             </div>
         </nav>
 
-        <br><br><br>
-
         <section>
-            <div class="container bajar delinear">
+            <div class="container contacto delinear">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="text-center">
                         <h2>Consultar Estadisticas</h2>
@@ -79,100 +77,89 @@
                         <label>Fecha </label><br>
                         <input type="date" name="name" class="form-control" required="required">
                     </div>
-
                 </div>
-                <br>
                 <div class="col-sm-12 text-center">
                     <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar</button>
                 </div>
             </div>
         </section>                
-        <br>
 
         <section>
-
-            <table id="example" >
-
-                <thead>
+            <div class="container delinear">
+                <table id="example" >
+                    <thead>
+                        <tr>
+                            <th class="text-center">Tablas</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <td><h4 class="media-heading  text-center2">Torta</h4></td>
+                                <td>
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
+                                    </div>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                    </tr>    
                     <tr>
-                        <th class="text-center">Tablas</th>
-                        <th></th>
-
-
-                    </tr>
-                </thead>
-                <tbody>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <td><h4 class="media-heading  text-center2">Barra</h4></td>
+                                <td>
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
+                                    </div>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                    </tr> 
                     <tr>
-                <div class="col-md-4 text-center">
-                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                        <div class="media-body">
-                            <td><h4 class="media-heading  text-center">Torta</h4></td>
-
-                            <td>
-                                <div class="ficon  text-center">
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                </div>
-                            </td>
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <div class="media-body">
+                                <td><h4 class="media-heading  text-center2">Puntos</h4></td>
+                                <td>
+                                    <div class="ficon  text-center2">
+                                        <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
+                                    </div>
+                                </td>
+                            </div>
                         </div>
                     </div>
-                </div>
-                </tr>    
-                <tr>
-                <div class="col-md-4 text-center">
-                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                        <div class="media-body">
-                            <td><h4 class="media-heading  text-center">Barra</h4></td>
+                    </tr> 
+                    </tbody>
+                </table>
 
-                            <td>
-                                <div class="ficon  text-center">
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                </div>
-                            </td>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Diagra de Torta</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="img/pastel.jpeg" alt=""/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-                </tr> 
-                <tr>
-                <div class="col-md-4 text-center">
-                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                        <div class="media-body">
-                            <td><h4 class="media-heading  text-center">Puntos</h4></td>
-
-                            <td>
-                                <div class="ficon  text-center">
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                </div>
-                            </td>
-                        </div>
-                    </div>
-                </div>
-                </tr> 
-
-
-                </tbody>
-            </table>
-        </section>
-
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Diagra de Torta</h4>
-                    </div>
-                    <div class="modal-body">
-                        <img src="img/pastel.jpeg" alt=""/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
             </div>
-        </div>
-
+        </section>
         <footer>
             <div class="last-div">
                 <div class="container">

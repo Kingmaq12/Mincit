@@ -26,28 +26,24 @@
   <body>
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html"><span>eNno</span></a>
-			</div>
-			<div class="navbar-collapse collapse">							
-				<div class="menu">
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="index.html">Home</a></li>
-						<li role="presentation"><a href="services.html">Services</a></li>
-						<li role="presentation"><a href="blog.html">Blog</a></li>
-						<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-						<li role="presentation"><a href="contact.html">Contact</a></li>						
-					</ul>
-				</div>
-			</div>			
-		</div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                </div>
+                <div class="navbar-collapse collapse">							
+                    <div class="menu dropdown">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador <span class="caret"></span></h1></li>
+                        <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="busqueda.jsp">Buscar Eventos</a></li>
+                            <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="ver_estadisticas.jsp">Ver Estadisitcas</a></li>
+                            <li><a href="configuracion.jsp">Configuración</a></li>
+                        </ul>
+                    </div>
+                </div>			
+            </div>
 	</nav>
 	
 	<div class="container">

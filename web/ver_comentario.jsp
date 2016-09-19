@@ -32,18 +32,17 @@
 
     </head>
 
-
     <body>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><span>eNno</span></a>
+                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
-                <div class="navbar-collapse collapse">                   
+                <div class="navbar-collapse collapse">							
                     <div class="menu dropdown">
-                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><a><h2>Admin <span class="caret"></span></h2></a></li>
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador <span class="caret"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
                             <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
                             <li><a href="busqueda.jsp">Buscar Eventos</a></li>
@@ -53,7 +52,7 @@
                             <li><a href="configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
-                </div>         
+                </div>			
             </div>
         </nav>
 

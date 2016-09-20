@@ -194,15 +194,15 @@
                     <div class="row">
                         <div class="col-md-4 f-about">
                             <a href="index.html"><h1><span></span>Eventos</h1></a>
-                            <p>blablablabalbala</p>
+                            <p>Envento X</p>
                         </div>
                         <div class="col-md-4 l-posts">
                             <h3 class="widgetheading">Ultimas Noticias</h3>
                             <ul>
-                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
-                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
-                                <li><a href="#">adslaksjdlkajsldkajsle</a></li>
-                                <li><a href="#">adslaksjdlkajsldkajsl</a></li>
+                                <li><a href="#">"Se culmino evento X"</a></li>
+                                <li><a href="#">"Inicia 16avo Evento W"</a></li>
+                                <li><a href="#">"Se espera Evento Y con muchas ancias"</a></li>
+                                <li><a href="#">"Se cancela Evento A por problemas de seguridad"</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4 f-contact">

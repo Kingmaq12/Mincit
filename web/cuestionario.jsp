@@ -89,20 +89,20 @@
                     <div class="col-md-4 text-center2">
                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                             <tr>
-                                <td><h4 class="media-heading  text-center2 ">Pregunta X</h4></td>
+                                <td><h4 class="media-heading  text-center2 ">Percibo los problemas como desafíos y oportunidades.</h4></td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio">Option 1</label>
+                                      <label><input type="radio" name="optradio"></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio">Option 2</label>
+                                      <label><input type="radio" name="optradio"></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio">Option 3</label>
+                                      <label><input type="radio" name="optradio"></label>
                                     </div>
                                 </td>
                             </tr>
@@ -112,20 +112,43 @@
                     <div class="col-md-4 text-center2">
                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                             <tr>
-                                <td><h4 class="media-heading  text-center2 ">Pregunta Y</h4></td>
+                                <td><h4 class="media-heading  text-center2 ">Tengo capital o activos para invertir y estoy dispuesto a perder gran parte de mis ahorros.</h4></td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio1">Option 1</label>
+                                      <label><input type="radio" name="optradio1"></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio1">Option 2</label>
+                                      <label><input type="radio" name="optradio1"></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="radio">
-                                      <label><input type="radio" name="optradio1">Option 3</label>
+                                      <label><input type="radio" name="optradio1"></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 text-center2">
+                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                            <tr>
+                                <td><h4 class="media-heading  text-center2 ">Tengo buen juicio y seré capaz de emplear a la gente indicada para mi negocio.</h4></td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio2"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio2"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="radio">
+                                      <label><input type="radio" name="optradio2"></label>
                                     </div>
                                 </td>
                             </tr>
@@ -133,48 +156,6 @@
                     </div>
                     
                 </table>
-
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header 1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="myModal1" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header 1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </section>
 

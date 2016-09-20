@@ -49,36 +49,9 @@
                 </div>
             </div>
         </nav>
-        <section>
-            <div class="container contacto delinear">
-                <div class="row">
-                    <div class="slider">
-                        <div class="img-responsive text-center">
-                            <ul class="bxslider">            
-                                <li>
-                                    <h4>Comentario 1</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                </li>
-                                <li>
-                                    <h4>Comentario 2</h4>      
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button> 
-                                </li> 
-                                <li>
-                                    <h4>Comentario 3</h4>      
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p><br>
-                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                </li>       
-                            </ul>
-                        </div>   
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section>
-            <div class="container delinear">
+            <div class="container contacto delinear">
                 <table id="example" >
                     <thead>
                         <tr>
@@ -133,10 +106,8 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
+                   
                 </table>
-
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" role="dialog">

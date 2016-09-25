@@ -30,6 +30,12 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
@@ -48,144 +54,146 @@
         </nav>
 
         <section>
-            <div  class="carrusel dar-color">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
+            <div class="row">
+                <div  class="carrusel dar-color">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators BOLITAS DEBAJO DEL BOTON LEER MAS -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
 
-                        <div class="item active carousel-inner">
-                            <img  src="img/02.jpg" alt="Chania">
-                            <div class="carousel-caption">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
+                            <div class="item active carousel-inner">
+                                <img  src="img/02.jpg">
+                                <div class="carousel-caption">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
+                                </div>
+                            </div>
+                            <!-- LAS IMAGENES DEBEN SER DEL MISMO TAMAÑO -->
+                            <div class="item">
+                                <img  src="img/02.jpg">
+                                <div class="carousel-caption ">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img  src="img/02.jpg">
+                                <div class="carousel-caption ">
+                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                </div>
                             </div>
                         </div>
-                        <!-- LAS IMAGENES DEBEN SER DEL MISMO TAMAÑO -->
-                        <div class="item">
-                            <img  src="img/02.jpg" alt="Chania">
-                            <div class="carousel-caption ">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>Leer más</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img  src="img/02.jpg" alt="Chania">
-                            <div class="carousel-caption ">
-                                <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
-                            </div>
-                        </div>
-
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+                </div>                
             </div>
         </section>
         <section>
-            <div class="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+            <div class="row">
+                <div class="services">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                            <div class="col-md-4">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                            <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
-                                </div>
-                            </div>					
-                        </div>
-                        <hr>
-                        <div class="col-md-4 ">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
+                                </div>					
+                            </div>
+                            <hr>
+                            <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                            <div class="col-md-4">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-4 ">
-                            <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                <hr>
-                                <h4>NOMBRE EVENTO</h4>					
-                                <div class="icon">
-                                    <img  src="img/03.png" alt="evento">
-                                </div>						
-                                <p>fecha, lugar, tipo evento, tipo sector</p>
-                                <div class="ficon">
-                                    <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                            <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
-                                </div>
-                            </div>					
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
+                                </div>					
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>                            
             </div>
         </section>
         <footer>
@@ -218,8 +226,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
-                        </div>		
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co">MINCIT Eventos.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://www.ufps.edu.co/ufps/index.php"><span class="glyphicon glyphicon-arrow-right"></span>Universidad Francisco de Paula Santander.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://ingsistemas.ufps.edu.co/index.php"><span class="glyphicon glyphicon-book"></span>Ingenieria de Sistemas.</a>
+                        </div>
                     </div>
                 </div>
                 <div class="container">

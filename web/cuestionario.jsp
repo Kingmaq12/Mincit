@@ -74,9 +74,6 @@
                     </div>
                 </div>
 
-
-
-
                 <table id="example" >
                     <thead>
                         <tr>

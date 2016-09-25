@@ -133,8 +133,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
-                        </div>		
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co">MINCIT Eventos.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://www.ufps.edu.co/ufps/index.php"><span class="glyphicon glyphicon-arrow-right"></span>Universidad Francisco de Paula Santander.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://ingsistemas.ufps.edu.co/index.php"><span class="glyphicon glyphicon-book"></span>Ingenieria de Sistemas.</a>
+                        </div>
                     </div>
                 </div>
                 <div class="container">

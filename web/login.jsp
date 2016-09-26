@@ -57,7 +57,7 @@
 
 
         <section>
-            <div class="login delinear">
+            <div class="row login delinear">
                 <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()"> 
                     <h1>LOGIN</h1>
                     <label for="email">Cedula </label>

@@ -38,7 +38,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
                         </button>
                         <a  href="index.jsp"><img class="bajar-img " src="img/lg.png"></a>
                     </div>
@@ -58,68 +57,71 @@
                 </div>			
             </div>
         </nav>
-        <div class="container calendario delinear">
-            <br> <br>
-            <div class="col-md-6">
-                <div class="month"> 
-                    <ul>
-                        <li class="prev">&#10094;</li>
-                        <li class="next">&#10095;</li>
-                        <li> August<br><span>2016</span></li>
-                    </ul>
+        <section>
+            <div class="container  calendario delinear">
+                <div class="row">
+                    <br> <br>
+                    <div class="col-md-6">
+                        <div class="month"> 
+                            <ul>
+                                <li class="prev">&#10094;</li>
+                                <li class="next">&#10095;</li>
+                                <li> August<br><span>2016</span></li>
+                            </ul>
+                        </div>
+
+                        <ul class="weekdays">
+                            <li>Mo</li>
+                            <li>Tu</li>
+                            <li>We</li>
+                            <li>Th</li>
+                            <li>Fr</li>
+                            <li>Sa</li>
+                            <li>Su</li>
+                        </ul>
+
+                        <ul class="days"> 
+                            <li>1</li> <li>2</li> <li>3</li> <li>4</li> <li>5</li>
+                            <li>6</li> <li>7</li> <li>8</li> <li>9</li> <li><span class="active">10</span></li>
+                            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li>
+                            <li>18</li> <li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
+                            <li>25</li><li>26</li><li>27</li><li>28</li> <li>29</li> <li>30</li>
+                        </ul>
+                        <br> <br>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>NOMBRE</th>
+                                    <th>FECHA</th>
+                                    <th>LUGAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Evento1</td>
+                                    <td>Evento1</td>
+                                    <td>Evento1</td>
+                                </tr>
+                                <tr c>
+                                    <td>Evento2</td>
+                                    <td>Evento2</td>
+                                    <td>Evento2</td>
+                                </tr>
+                                <tr >
+                                    <td>Evento3</td>
+                                    <td>Evento3</td>
+                                    <td>Evento3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br> <br><br> <br>
                 </div>
-
-                <ul class="weekdays">
-                    <li>Mo</li>
-                    <li>Tu</li>
-                    <li>We</li>
-                    <li>Th</li>
-                    <li>Fr</li>
-                    <li>Sa</li>
-                    <li>Su</li>
-                </ul>
-
-                <ul class="days"> 
-                    <li>1</li> <li>2</li> <li>3</li> <li>4</li> <li>5</li>
-                    <li>6</li> <li>7</li> <li>8</li> <li>9</li> <li><span class="active">10</span></li>
-                    <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li>
-                    <li>18</li> <li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li>
-                    <li>25</li><li>26</li><li>27</li><li>28</li> <li>29</li> <li>30</li>
-                </ul>
-                <br> <br>
             </div>
-
-            <div class="col-sm-6">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>NOMBRE</th>
-                            <th>FECHA</th>
-                            <th>LUGAR</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Evento1</td>
-                            <td>Evento1</td>
-                            <td>Evento1</td>
-                        </tr>
-                        <tr c>
-                            <td>Evento2</td>
-                            <td>Evento2</td>
-                            <td>Evento2</td>
-                        </tr>
-                        <tr >
-                            <td>Evento3</td>
-                            <td>Evento3</td>
-                            <td>Evento3</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <br> <br><br> <br>
-        </div>
-
+        </section>
         <footer>
             <div class="inner-footer">
                 <div class="container">

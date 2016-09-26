@@ -30,7 +30,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
                         </button>
                         <a  href="index.jsp"><img class="bajar-img " src="img/lg.png"></a>
                     </div>

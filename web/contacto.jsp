@@ -37,7 +37,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
                         </button>
                         <a  href="index.jsp"><img class="bajar-img " src="img/lg.png"></a>
                     </div>
@@ -60,44 +59,46 @@
 
 
         <section>
-            <div class="container contacto delinear">
-                <div class="center">   
-                    <h1>¡Dejanos tu Mensaje!</h1>
-                    <p>Escribenos tus dudas o preguntas  y el MINCIT te contactará.</p>
-                </div> 
-                <div class="row contact-wrap"> 
-                    <div class="status alert alert-success" style="display: none"></div>
-                    <form  class="contact-form" name="contactar" id="contactar" method="POST" action="javascript:contactar()">
-                        <div class="col-sm-5 col-sm-offset-1">
-                            <div class="form-group">
-                                <label>Nombre de la Empresa </label>
-                                <input type="text" id="nombre_empresa" name="nombre_empresa"class="form-control" required="required">
+            <div class="container  contacto delinear">
+                <div class="row">
+                    <div class="center">   
+                        <h1>¡Dejanos tu Mensaje!</h1>
+                        <p>Escribenos tus dudas o preguntas  y el MINCIT te contactará.</p>
+                    </div> 
+                    <div class="row contact-wrap"> 
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form  class="contact-form" name="contactar" id="contactar" method="POST" action="javascript:contactar()">
+                            <div class="col-sm-5 col-sm-offset-1">
+                                <div class="form-group">
+                                    <label>Nombre de la Empresa </label>
+                                    <input type="text" id="nombre_empresa" name="nombre_empresa"class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo Electronico </label>
+                                    <input type="email" id="email" name="email" class="form-control" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Asunto</label>
+                                    <input type="text" id="asunto" name="asunto"class="form-control">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Correo Electronico </label>
-                                <input type="email" id="email" name="email" class="form-control" required="required">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label>Mensaje </label>
+                                    <textarea id="mensaje" name="mensaje" required="required" class="form-control" rows="8"></textarea>
+                                </div>                                                  
                             </div>
-                            <div class="form-group">
-                                <label>Asunto</label>
-                                <input type="text" id="asunto" name="asunto"class="form-control">
+                            <div class="col-sm-12">
+                                <br>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Enviar Mensaje</button>
+                                <br>
+                                <label id="campo" name="campo"></label>
                             </div>
-                        </div>
-                        <div class="col-sm-5">
-                            <div class="form-group">
-                                <label>Mensaje </label>
-                                <textarea id="mensaje" name="mensaje" required="required" class="form-control" rows="8"></textarea>
-                            </div>                                                  
-                        </div>
-                        <div class="col-sm-12">
-                            <br>
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Enviar Mensaje</button>
-                            <br>
-                            <label id="campo" name="campo"></label>
-                        </div>
-                    </form> 
-                </div><!--/.row-->
-            </div><!--/.container-->
-        </section><!--/#contact-page-->
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4699.7052608608265!2d-72.48919292226732!3d7.898693478920445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645102f9b7269%3A0xab4b03ed6c85830e!2sUniversidad+Francisco+de+Paula+Santander!5e0!3m2!1ses!2sco!4v1474236570137" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

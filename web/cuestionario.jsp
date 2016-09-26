@@ -67,98 +67,99 @@
 
         <section>
             <div class="container contacto delinear">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="text-center">
-                                <h2>Encuesta ¡Evaluate!</h2>
-                                <p>Resuelve el cuestionario.</p>
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="text-center">
+                                    <h2>Encuesta ¡Evaluate!</h2>
+                                    <p>Resuelve el cuestionario.</p>
+                                </div>
+                                <hr>
                             </div>
-                            <hr>
                         </div>
                     </div>
+
+                    <table id="example" >
+                        <thead>
+                            <tr>
+                                <th>-Pregunta-</th>
+                                <th>Si</th>
+                                <th>No</th>
+                                <th>Quizas</th>
+                            </tr>
+                        </thead>
+                        <div class="col-md-4 text-center2">
+                            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <tr>
+                                    <td><h4 class="media-heading  text-center2 ">Percibo los problemas como desafíos y oportunidades.</h4></td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 text-center2">
+                            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <tr>
+                                    <td><h4 class="media-heading  text-center2 ">Tengo capital o activos para invertir y estoy dispuesto a perder gran parte de mis ahorros.</h4></td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio1"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio1"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 text-center2">
+                            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                <tr>
+                                    <td><h4 class="media-heading  text-center2 ">Tengo buen juicio y seré capaz de emplear a la gente indicada para mi negocio.</h4></td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio2"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio2"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio2"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+
+                    </table>
                 </div>
-
-                <table id="example" >
-                    <thead>
-                        <tr>
-                            <th>-Pregunta-</th>
-                            <th>Si</th>
-                            <th>No</th>
-                            <th>Quizas</th>
-                        </tr>
-                    </thead>
-                    <div class="col-md-4 text-center2">
-                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <tr>
-                                <td><h4 class="media-heading  text-center2 ">Percibo los problemas como desafíos y oportunidades.</h4></td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center2">
-                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <tr>
-                                <td><h4 class="media-heading  text-center2 ">Tengo capital o activos para invertir y estoy dispuesto a perder gran parte de mis ahorros.</h4></td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio1"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio1"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio1"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 text-center2">
-                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                            <tr>
-                                <td><h4 class="media-heading  text-center2 ">Tengo buen juicio y seré capaz de emplear a la gente indicada para mi negocio.</h4></td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio2"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio2"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="radio">
-                                      <label><input type="radio" name="optradio2"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
-                    </div>
-                    
-                </table>
             </div>
         </section>
 

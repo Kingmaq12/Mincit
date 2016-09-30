@@ -36,17 +36,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                    <a  href="1.index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="index.jsp">Inicio</a></li>                             
-                            <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
-                            <li role="presentation"><a href="calendario.jsp">Calendario</a></li>
-                            <li role="presentation"><a href="cuestionario.jsp">Evaluate</a></li>
-                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
-                            <li role="presentation" ><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	                           
+                            <li role="presentation" class="active"><a href="1.index.jsp">Inicio</a></li>                             
+                            <li role="presentation"><a href="2.busqueda.jsp">Eventos</a></li>
+                            <li role="presentation"><a href="3.calendario.jsp">Calendario</a></li>
+                            <li role="presentation"><a href="4.contacto.jsp">Contactenos</a></li>
+                            <li role="presentation" ><a href="5.login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	                           
                         </ul>
                     </div>
                 </div>			

@@ -12,7 +12,10 @@ body {
     line-height:1.7em;
     /* ==== background-color:#54A693;==== */
     /* ==== background-color:#5FB699;==== */
-    background-color:#00a65a;
+    background-color:#79A999;
+}
+.dar-color2{
+    background-color:#79A999;
 }
 
 .login {
@@ -51,6 +54,23 @@ label{
 td, th{
     color: #000;
 }
+h1.page-header {
+    margin-top: -5px;
+}
+
+.sidebar {
+    padding-left: 0;
+}
+
+.main-container { 
+    background: #FFF;
+    padding-top: 15px;
+    margin-top: -20px;
+}
+
+.footer {
+    width: 100%;
+}  
 
 .drop{
     cursor: pointer;
@@ -71,7 +91,7 @@ td, th{
 .month {
     padding: 70px 25px;
     width: 100%;
-    background: #00a65a;
+    background: #79A999;
 }
 
 /* Month list */
@@ -134,7 +154,7 @@ td, th{
 /* Highlight the "current" day */
 .days li .active {
     padding: 5px;
-    background: #00a65a;
+    background: #79A999;
     color: white !important
 }
 
@@ -157,7 +177,7 @@ a {
 }
 a:hover {
     text-decoration: none;
-    color:#00a65a;	
+    color:#79A999;	
 }
 
 hr {
@@ -233,12 +253,12 @@ input{
     font-weight:400;
 }
 .nav-tabs > li > a:hover {
-    background-color: #00a65a;
+    background-color: #79A999;
 }
 .nav-tabs > li.active > a {
     color: #000;
     cursor: default;
-    background-color:#00a65a;
+    background-color:#79A999;
     border: 0;
     border-bottom-color: transparent;
 
@@ -246,7 +266,7 @@ input{
 .nav-tabs > li.active > a:hover {
     color: #000;
     border: 0;
-    background-color: #00a65a;
+    background-color: #79A999;
     cursor: pointer;
 }
 
@@ -284,7 +304,7 @@ input{
 }
 
 .icon {
-    color:#00a65a;
+    color:#79A999;
     margin-top:10px;
     margin-bottom:10px;
 }
@@ -293,7 +313,7 @@ input{
     margin-bottom:10px;
 }
 .ficon i {
-    color:#00a65a;	
+    color:#79A999;	
 }
 .ficon a {
     color:#333;
@@ -327,7 +347,7 @@ input{
 .btn:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #00a65a;
+    background-color: #79A999;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -342,7 +362,7 @@ input{
 
 .btn-primary {
     padding: 8px 20px;
-    background: #00a65a;
+    background: #79A999;
     color: #fff;
     border:none;
     margin-top: 10px;
@@ -350,7 +370,7 @@ input{
 
 .btn-primary:hover, 
 .btn-primary:focus{
-    background: #00a65a;
+    background: #79A999;
     outline: none;
     box-shadow: none;
 } 
@@ -410,7 +430,7 @@ input{
     margin-bottom:30px;
 }
 .blog .ficon a:hover {
-    color:#00a65a;
+    color:#79A999;
 }
 
 .form-search .form-control {
@@ -426,7 +446,7 @@ input{
     margin-right:30px;
 }
 .media-body .ficon a:hover {
-    color:#00a65a;
+    color:#79A999;
 }
 .media-body h4 {
     color:#000;
@@ -462,7 +482,7 @@ input{
 }
 .panel-default > .panel-heading {
     color: #fff;
-    background-color: #00a65a;
+    background-color: #79A999;
     border-color: #eee;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
@@ -477,7 +497,7 @@ input{
     color:#fff;
     text-align:center;
     margin-bottom:-5px;
-    background:#00a65a;
+    background:#79A999;
 
     padding:15px 20px;
 }
@@ -510,7 +530,7 @@ input{
     margin-bottom:50px;
 }
 .popular-tags h5 {
-    color:#00a65a;
+    color:#79A999;
     margin-bottom:30px;
     text-align:center;
 }
@@ -533,7 +553,7 @@ input{
 .popular-tags ul.tags li a:hover {
     text-decoration:none;
     color:#fff;
-    background-color:#00a65a;
+    background-color:#79A999;
 }
 
 /* --- Portfolio --- */
@@ -632,10 +652,10 @@ footer{
     text-align:center;
     margin-top: 40px;
     margin-bottom: 40px;
-    color: #00a65a;	
+    color: #79A999;	
 }
 .f-about a h1 span {
-    color: #00a65a;	
+    color: #79A999;	
 }
 .f-about p {
     font-size: 14px;
@@ -657,7 +677,7 @@ footer{
 }
 
 .l-posts li a:hover  {
-    color: #00a65a;
+    color: #79A999;
 }
 
 .f-contact p {
@@ -676,7 +696,7 @@ footer{
 }
 
 .f-contact a:hover p{
-    color: #00a65a;
+    color: #79A999;
 }
 .last-div {
     margin-top:40px;
@@ -697,7 +717,7 @@ footer{
 }
 .copyright a:hover {
     text-decoration: underline;
-    color: #00a65a;
+    color: #79A999;
 }
 
 ul.social-network {
@@ -717,11 +737,11 @@ ul.social-network li a {
     color:#6EE5A1;	
 }
 ul.social-network li a:hover {	
-    color:#109173;	
+    color:#79A999;	
 }
 
 a.scrollup{
-    color:#109173;
+    color:#79A999;
     height:55px;
     width:55px;
     font-size:22px;
@@ -738,5 +758,5 @@ a.scrollup{
 a.scrollup:hover{
     opacity:1;
     background-color:#6EE5A1;
-    color:#109173;
+    color:#79A999;
 }

@@ -48,7 +48,119 @@
 
     </head>
     <body>
-      
+        <nav class="navbar navbar-default navbar-static-top ">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        Administrador MINCIT
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Buscar">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Opciones
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header">Configuracion</li>
+                                <li class="divider"></li>
+                                <li><a href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container-fluid dar-color3">
+            <div class="col-md-2 sidebar dar-color2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="header">Menú Principal</li>
+                    <!-- Opcionalmente, se puede añadir iconos a los enlaces -->
+                    <li class="active"><a href="6.perfil.jsp"><i class="fa fa-book"></i>Perfil</a></li>
+                    <li><a href="7.registrar_evento.jsp"><i class="fa fa-book"></i>Registrar Evento</a></li>
+                    <li><a href="8.busquedaAd.jsp"><i class="fa fa-search"></i> <span>Buscar Eventos</span></a></li>
+                    <li><a href="9.ver_comentario.jsp"><i class="fa fa-eye"></i> <span>Ver comentarios</span></a></li>
+                    <li><a href="10.ver_alertas.jsp"><i class="fa fa-eye"></i> <span>Ver Alertas</span></a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-question-circle"></i> <span>Emprendedor</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="11.cuestionario.jsp">Realizar Cuestionario</a></li>
+                            <li><a href="12.ver_estadistica.jsp">Ver Estadisticas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="13.configuracion.jsp"><i class="fa fa-edit"></i> <span>Configuración</span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-10 content">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="services ">
+                             <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                    <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
+                                </div>					
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <div class="last-div">
+                <div class="container">
+                    <div class="row">
+                        <div class="copyright">
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co">MINCIT Eventos.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://www.ufps.edu.co/ufps/index.php"><span class="glyphicon glyphicon-arrow-right"></span>Universidad Francisco de Paula Santander.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://ingsistemas.ufps.edu.co/index.php"><span class="glyphicon glyphicon-book"></span>Ingenieria de Sistemas.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="pull-right hidden-xs">
+                            <ul class="social-network">
+                                <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                                <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </footer>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/wow.min.js"></script>

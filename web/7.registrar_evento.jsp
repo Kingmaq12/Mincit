@@ -31,19 +31,18 @@
                     <div class="menu dropdown drop nav-tabss">
                         <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
-                            <li><a href="perfil.jsp">Pagina Inicial</a></li>
-                            <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
-                            <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
-                            <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
-                            <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
-                            <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
-                            <li><a href="configuracion.jsp">Configuración</a></li>
-                            <li><a href="index.jsp">Cerrar Sesión</a></li>
+                            <li><a href="7.registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="8.busquedaAd.jsp">Buscar Eventos</a></li>
+                            <li><a href="9.ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="10.ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="11.cuestionario.jsp">Registrar Cuestionario</a></li>
+                            <li><a href="12.ver_estadisticas.jsp">Ver Estadisticas</a></li>
+                            <li><a href="13.configuracion.jsp">Configuración</a></li>
                         </ul>
                     </div>
                 </div>	
                 <div class="navbar-perfil">
-                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                    <a  href="6.perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
             </div>
         </nav>
@@ -193,24 +192,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="copyright">
-                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co"> MINCIT Eventos</a>
-                        </div>		
+                            © 2016 MINCIT| <a target="_blank" href="http://mincit.gov.co">MINCIT Eventos.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://www.ufps.edu.co/ufps/index.php"><span class="glyphicon glyphicon-arrow-right"></span>Universidad Francisco de Paula Santander.</a>
+                        </div>
+                        <div class="copyright">
+                            <a target="_blank" href="http://ingsistemas.ufps.edu.co/index.php"><span class="glyphicon glyphicon-book"></span>Ingenieria de Sistemas.</a>
+                        </div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="row">
-                        <ul class="social-network">
-                            <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                            <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                            <li><a href="https://www.youtube.com/c/mincomerciocolombia" data-placement ="top" title="Youtube"><i class="fa fa-youtube fa ix"></i></a></li>
-                        </ul>
+                        <div class="pull-right hidden-xs">
+                            <ul class="social-network">
+                                <li><a href="https://www.facebook.com/MincomercioCo/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+                                <li><a href="https://twitter.com/MincomercioCo" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-
-                <a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
-
-
             </div>	
         </footer>
 

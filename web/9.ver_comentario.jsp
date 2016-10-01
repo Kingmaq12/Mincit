@@ -33,19 +33,20 @@
                     <div class="menu dropdown drop nav-tabss">
                         <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
                         <ul class="dropdown-menu nav nav-tabs" role="tablist">
-                            <li><a href="perfil.jsp">Pagina Inicial</a></li>
-                            <li><a href="registrar_evento.jsp">Registrar Evento</a></li>
-                            <li><a href="busquedaAd.jsp">Buscar Eventos</a></li>
-                            <li><a href="ver_comentario.jsp">Ver Comentarios</a></li>
-                            <li><a href="ver_alertas.jsp">Ver Alertas</a></li>
-                            <li><a href="ver_estadisticas.jsp">Ver Estadisticas</a></li>
-                            <li><a href="configuracion.jsp">Configuración</a></li>
-                            <li><a href="index.jsp">Cerrar Sesión</a></li>
+                            <li><a href="6.perfil.jsp">Perfil</a></li>
+                            <li><a href="7.registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="8.busquedaAd.jsp">Buscar Eventos</a></li>
+                            <li><a href="9.ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="10.ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="11.cuestionario.jsp">Registrar Cuestionario</a></li>
+                            <li><a href="12.ver_estadisticas.jsp">Ver Estadisticas</a></li>
+                            <li><a href="13.configuracion.jsp">Configuración</a></li>
+                            <li><a href="1.index.jsp">Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>	
                 <div class="navbar-perfil">
-                    <a  href="perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                    <a  href="6.perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
             </div>
         </nav>

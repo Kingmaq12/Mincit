@@ -31,21 +31,25 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.jsp"><span>Eventos</span></a>
-                </div>
-                <div class="navbar-collapse collapse">							
-                    <div class="menu">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" ><a href="index.jsp">Inicio</a></li>
-                            <li role="presentation"><a href="busqueda.jsp">Eventos</a></li>
-                            <li role="presentation" class="active" ><a href="calendario.jsp">Calendario</a></li>
-                            <li role="presentation" class="active" ><a href="cuestionario.jsp">Evaluate</a></li>
-                            <li role="presentation"><a href="login.jsp">Login</a></li>
-                            <li role="presentation"><a href="contacto.jsp">Contactenos</a></li>
+                <div class="navbar-header2 ">							
+                    <div class="menu dropdown drop nav-tabss">
+                        <li role="presentation" data-toggle="dropdown" class="nav nav-tabs active"><h1>Administrador   <span class="glyphicon glyphicon-align-justify"></span></h1></li>
+                        <ul class="dropdown-menu nav nav-tabs" role="tablist">
+                            <li><a href="6.perfil.jsp">Perfil</a></li>
+                            <li><a href="7.registrar_evento.jsp">Registrar Evento</a></li>
+                            <li><a href="8.busquedaAd.jsp">Buscar Eventos</a></li>
+                            <li><a href="9.ver_comentario.jsp">Ver Comentarios</a></li>
+                            <li><a href="10.ver_alertas.jsp">Ver Alertas</a></li>
+                            <li><a href="11.cuestionario.jsp">Registrar Cuestionario</a></li>
+                            <li><a href="12.ver_estadisticas.jsp">Ver Estadisticas</a></li>
+                            <li><a href="13.configuracion.jsp">Configuración</a></li>
+                            <li><a href="1.index.jsp">Cerrar Sesión</a></li>
                         </ul>
                     </div>
-                </div>			
+                </div>	
+                 <div class="navbar-perfil">
+                    <a  href="6.perfil.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                </div>
             </div>
         </nav>
 

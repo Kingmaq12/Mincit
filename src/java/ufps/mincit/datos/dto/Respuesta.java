@@ -11,4 +11,42 @@ package ufps.mincit.datos.dto;
  */
 public class Respuesta {
     
+    private int id;
+    private String rango;
+    private String descripcion;
+
+    public Respuesta() {
+    }
+
+    public Respuesta(int id, String rango, String descripcion) {
+        this.id = id;
+        this.rango = rango;
+        this.descripcion = descripcion;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRango() {
+        return rango;
+    }
+
+    public void setRango(String rango) {
+        this.rango = rango;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    
 }

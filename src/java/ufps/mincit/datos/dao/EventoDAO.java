@@ -11,6 +11,6 @@ import ufps.mincit.datos.interf.IEventoDAO;
  *
  * @author user
  */
-public class EventoDAO implements IEventoDAO {
+public class EventoDAO implements IEventoDAO{
     
 }

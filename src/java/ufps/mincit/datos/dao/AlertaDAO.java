@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.datos.interf;
+package ufps.mincit.datos.dao;
+
+import ufps.mincit.datos.interf.IAlertaDAO;
 
 /**
  *
  * @author user
  */
-public interface IEstadisticaDAO {
+public class AlertaDAO implements IAlertaDAO{
     
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.datos.interf;
+package ufps.mincit.datos.dto;
 
 /**
  *
  * @author user
  */
-public interface IPreguntaDAO {
+public class Comentario {
     
 }

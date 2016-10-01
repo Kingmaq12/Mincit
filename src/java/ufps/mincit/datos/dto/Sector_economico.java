@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.datos.dao;
-
-import ufps.mincit.datos.interf.IComentarioDAO;
+package ufps.mincit.datos.dto;
 
 /**
  *
  * @author user
  */
-public class ComentarioDAO implements IComentarioDAO{
+public class Sector_economico {
     
 }

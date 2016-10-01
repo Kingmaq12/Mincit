@@ -5,12 +5,12 @@
  */
 package ufps.mincit.datos.dao;
 
-import ufps.mincit.datos.interf.IComentarioDAO;
+import ufps.mincit.datos.interf.ICuestionarioDAO;
 
 /**
  *
  * @author user
  */
-public class ComentarioDAO implements IComentarioDAO{
+public class CuestionarioDAO implements ICuestionarioDAO{
     
 }

@@ -41,7 +41,7 @@
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="1.index.jsp">Inicio</a></li>                             
+                            <li role="presentation" class="active"><a href="index.jsp">Inicio</a></li>                             
                             <li role="presentation"><a href="2.busqueda.jsp">Eventos</a></li>
                             <li role="presentation"><a href="3.calendario.jsp">Calendario</a></li>
                             <li role="presentation"><a href="4.contacto.jsp">Contactenos</a></li>

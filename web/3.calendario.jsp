@@ -38,12 +38,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a  href="1.index.jsp"><img class="bajar-img" src="img/lg.png"></a>
+                    <a  href="index.jsp"><img class="bajar-img" src="img/lg.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">							
                     <div class="menu">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="1.index.jsp">Inicio</a></li>                             
+                            <li role="presentation"><a href="index.jsp">Inicio</a></li>                             
                             <li role="presentation"><a href="2.busqueda.jsp">Eventos</a></li>
                             <li role="presentation" class="active"><a href="3.calendario.jsp">Calendario</a></li>
                             <li role="presentation"><a href="4.contacto.jsp">Contactenos</a></li>

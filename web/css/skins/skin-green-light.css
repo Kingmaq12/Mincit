@@ -3,7 +3,7 @@
  * -----------
  */
 .skin-green-light .main-header .navbar {
-  background-color: #79A999;
+  background-color: #00a65a;
 }
 .skin-green-light .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -29,7 +29,7 @@
   color: #fff;
 }
 .skin-green-light .main-header .navbar .sidebar-toggle:hover {
-  background-color: #79A999;
+  background-color: #00a65a9;
 }
 @media (max-width: 767px) {
   .skin-green-light .main-header .navbar .dropdown-menu li.divider {
@@ -39,19 +39,19 @@
     color: #fff;
   }
   .skin-green-light .main-header .navbar .dropdown-menu li a:hover {
-    background: #79A999;
+    background: #00a65a;
   }
 }
 .skin-green-light .main-header .logo {
-  background-color: #79A999;
+  background-color: #00a65a;
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }
 .skin-green-light .main-header .logo:hover {
-  background-color: #79A999;
+  background-color: #00a65a;
 }
 .skin-green-light .main-header li.user-header {
-  background-color: #79A999;
+  background-color: #00a65a;
 }
 .skin-green-light .content-header {
   background: transparent;
@@ -88,7 +88,7 @@
   background: #f4f4f5;
 }
 .skin-green-light .sidebar-menu > li.active {
-  border-left-color: #79A999;
+  border-left-color: #00a65a;
 }
 .skin-green-light .sidebar-menu > li.active > a {
   font-weight: 600;

@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.interf;
+package ufps.mincit.datos.dao;
+
+import ufps.mincit.datos.interf.IEstadisticaDAO;
 
 /**
  *
  * @author user
  */
-public interface IEmpresaDAO {
+public class EstadisticaDAO implements IEstadisticaDAO{
     
 }

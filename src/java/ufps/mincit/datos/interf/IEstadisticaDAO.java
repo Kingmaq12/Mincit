@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.interf;
-
-import ufps.mincit.dto.ComentarioDTO;
+package ufps.mincit.datos.interf;
 
 /**
  *
  * @author user
  */
-public interface IComentarioDAO {
+public interface IEstadisticaDAO {
     
-    public boolean recibirMensaje(ComentarioDTO dto) throws Exception;
 }

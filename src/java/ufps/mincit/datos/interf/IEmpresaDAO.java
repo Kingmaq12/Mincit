@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.dao;
-
-import ufps.mincit.interf.IRangoDAO;
+package ufps.mincit.datos.interf;
 
 /**
  *
  * @author user
  */
-public class RangoDAO implements IRangoDAO {
+public interface IEmpresaDAO {
     
 }

@@ -110,10 +110,11 @@
                 </ul>
             </div>
             <div class="col-md-10 content">
-                <div class="panel-body">
+                <div class="panel-body delinear">
                     <div class="row">
                         <div class="services ">
-                             <div class="col-md-4 ">
+                            <h2>Bienvenido</h2>
+                            <div class="col-md-4 ">
                                 <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
                                     <hr>
                                     <h4>NOMBRE EVENTO</h4>					
@@ -127,12 +128,38 @@
                                     </div>
                                 </div>					
                             </div>
-                            
+                            <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                    <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
+                                </div>					
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" dar-color wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                    <hr>
+                                    <h4>NOMBRE EVENTO</h4>					
+                                    <div class="icon">
+                                        <img  src="img/03.png" alt="evento">
+                                    </div>						
+                                    <p>fecha, lugar, tipo evento, tipo sector</p>
+                                    <div class="icon">
+                                        <button type="submit" name="submit" class="btn btn-primary" required="required"><span class="glyphicon glyphicon-ok-circle"></span>  Leer más</button>
+                                        <hr>
+                                    </div>
+                                </div>					
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <footer>
             <div class="last-div">

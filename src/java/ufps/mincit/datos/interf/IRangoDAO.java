@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.interf;
+package ufps.mincit.datos.interf;
 
 /**
  *
- * @author CESAR
+ * @author user
  */
-public interface IAdministradorDAO {
-    
-    public boolean iniciarSesion(String cedula, String contraseña) throws Exception;
+public interface IRangoDAO {
     
 }

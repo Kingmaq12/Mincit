@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.dto;
+package ufps.mincit.datos.dto;
 
 import java.sql.Date;
 

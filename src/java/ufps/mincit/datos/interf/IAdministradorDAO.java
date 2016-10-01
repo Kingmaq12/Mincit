@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.dao;
-
-import ufps.mincit.interf.IEventoDAO;
+package ufps.mincit.datos.interf;
 
 /**
  *
- * @author user
+ * @author CESAR
  */
-public class EventoDAO implements IEventoDAO {
+public interface IAdministradorDAO {
+    
+    public boolean iniciarSesion(String cedula, String contraseña) throws Exception;
     
 }

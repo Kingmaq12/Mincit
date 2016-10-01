@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.negocio;
+package ufps.mincit.negocio.business;
 
-import ufps.mincit.dao.AdministradorDAO;
-import ufps.mincit.dao.ComentarioDAO;
-import ufps.mincit.dto.ComentarioDTO;
+import ufps.mincit.datos.dao.AdministradorDAO;
+import ufps.mincit.datos.dao.ComentarioDAO;
+import ufps.mincit.datos.dto.ComentarioDTO;
 
 /**
  *

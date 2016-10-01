@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.dao;
+package ufps.mincit.datos.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import ufps.mincit.cons.ConexionSQL;
-import ufps.mincit.dto.ComentarioDTO;
-import ufps.mincit.interf.IComentarioDAO;
+import ufps.mincit.negocio.cons.ConexionSQL;
+import ufps.mincit.datos.dto.ComentarioDTO;
+import ufps.mincit.datos.interf.IComentarioDAO;
 
 /**
  *

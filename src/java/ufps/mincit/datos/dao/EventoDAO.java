@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.interf;
+package ufps.mincit.datos.dao;
+
+import ufps.mincit.datos.interf.IEventoDAO;
 
 /**
  *
  * @author user
  */
-public interface IEventoDAO {
+public class EventoDAO implements IEventoDAO {
     
 }

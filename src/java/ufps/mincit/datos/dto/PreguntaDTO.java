@@ -3,31 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.dto;
+package ufps.mincit.datos.dto;
 
 /**
  *
  * @author user
  */
-public class RangoDTO {
+public class PreguntaDTO {
     
-    private String rango;
-    private String descripcion;
+    private int id;
+    private String descripcion; 
 
-    public RangoDTO(String rango, String descripcion) {
-        this.rango = rango;
+    public PreguntaDTO(int id, String descripcion) {
+        this.id = id;
         this.descripcion = descripcion;
     }
 
-    public RangoDTO() {
+    public PreguntaDTO() {
     }
     
-    public String getRango() {
-        return rango;
+    public int getId() {
+        return id;
     }
 
-    public void setRango(String rango) {
-        this.rango = rango;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescripcion() {
@@ -37,6 +37,7 @@ public class RangoDTO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
     
     
 }

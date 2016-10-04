@@ -187,11 +187,7 @@
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">
-                                    
-                                  
-                                   
-                                    
-                                    
+                                 
                                 </section>
                             </section>
                         </section>

@@ -3,12 +3,16 @@ html {
   overflow-x: hidden;
 }
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family:'Open Sans', Arial, sans-serif;
+  font-size: 14px;
   color: #717171;
   background-color: transparent;
   -webkit-font-smoothing: antialiased;
 }
+.dar-color{
+    background-color: #fff;
+}
+
 .h1,
 .h2,
 .h3,
@@ -1650,6 +1654,7 @@ fieldset[disabled] .btn-gplus.active {
 .btn-rounded {
   border-radius: 50px;
 }
+
 .btn > i.pull-left,
 .btn > i.pull-right {
   line-height: 1.428571429;

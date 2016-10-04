@@ -41,7 +41,7 @@ function iniciarSesion() {
             {
                 var rta = ajax.responseText;
                 if (rta.indexOf("S") > 0) {
-                    window.location = "perfil.jsp";
+                    window.location = "6.perfil.jsp";
                 } else {
 
                     document.getElementById("campo").innerHTML = "Datos incorrectos";

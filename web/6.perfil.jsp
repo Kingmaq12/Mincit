@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="css/font.css" type="text/css" />
 
         <link rel="stylesheet" href="css/app.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery.bxslider.css">        
 
     </head>
     <body>
@@ -29,7 +30,7 @@
                 <ul class="nav navbar-nav hidden-xs">
                     <li>
                         <div class="m-t m-l">
-                            <a href="index.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
+                            <a href="6.perfil.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
                         </div>
                     </li>
                 </ul>      
@@ -81,7 +82,7 @@
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button>
+                                    <button type="button" class="btn btn-sm btn-dark btn-icon" title="New event"><i class="fa fa-plus"></i></button>
                                     <div class="btn-group hidden-nav-xs">
                                         <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
                                             Publicar un Evento
@@ -174,28 +175,27 @@
                                     <i class="fa fa-angle-left text"></i>
                                     <i class="fa fa-angle-right text-active"></i>
                                 </a>
-                                <div class="btn-group hidden-nav-xs">
-                                    <button type="button" title="Chats" class="btn btn-icon btn-sm btn-default" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
-                                    <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-default" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
-                                </div>
+
                             </footer>
                         </section>
                     </aside>
                     <!-- /.aside -->
                     <section id="content">
                         <section class="vbox">
-
-
-
-
-
-
-
-
+                            <header class="header bg-white b-b b-light">
+                                <p>Perfil del Administrador. Bienvenido.</p>
+                            </header>
+                            <section class="scrollable">
+                                <section class="hbox stretch">
+                                    
+                                  
+                                   
+                                    
+                                    
+                                </section>
+                            </section>
                         </section>
-                        <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
                     </section>
-
                 </section>
             </section>
         </section>
@@ -206,5 +206,6 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
     </body>
 </html>

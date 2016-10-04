@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.negocio.business;
+package ufps.mincit.negocio;
 
 /**
  *

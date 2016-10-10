@@ -55,7 +55,7 @@ function iniciarSesion() {
                 if (rta.indexOf("S") > 0) {
                     /** document.getElementById(campo).innerHTML = "Asignacion exitosa";
                      $("#formAsignarEstudiante")[0].reset(); **/
-                    window.location = "perfil.jsp";
+                    window.location = "6.perfil.jsp";
                 } else {
 
                     document.getElementById("campo").innerHTML = "Datos incorrectos";

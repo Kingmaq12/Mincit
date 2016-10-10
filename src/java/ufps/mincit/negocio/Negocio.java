@@ -13,6 +13,7 @@ public class Negocio {
     
     
     public boolean iniciarSesion(String cedula, String contraseña) throws Exception{
+        
     return true;
     }
     

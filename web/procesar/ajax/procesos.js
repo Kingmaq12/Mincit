@@ -40,8 +40,9 @@ function iniciarSesion(){
                 var rta = ajax.responseText;
                 if (rta.indexOf("S") > 0) {
                     window.location = "6.perfil.jsp";
-                } else {
-
+                } else if(rta.indexOf("A") > 0) {
+                    window.location = "6.perfil2.jsp";
+                } else{
                     document.getElementById("campo").innerHTML = "Datos incorrectos";
                     $("#iniciarSesion")[0].reset();
                 }
@@ -54,8 +55,9 @@ function iniciarSesion(){
                     /** document.getElementById(campo).innerHTML = "Asignacion exitosa";
                      $("#formAsignarEstudiante")[0].reset(); **/
                     window.location = "6.perfil.jsp";
-                } else {
-
+                }  else if(rta.indexOf("A") > 0) {
+                    window.location = "6.perfil2.jsp";
+                } else{
                     document.getElementById("campo").innerHTML = "Datos incorrectos";
                     $("#iniciarSesion")[0].reset();
                 }

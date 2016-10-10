@@ -15,14 +15,8 @@
     String contraseña = request.getParameter("contrasenia");
 
     Negocio nego = new Negocio();
-    boolean sesion = nego.iniciarSesion(cedula, contraseña);
-
-    String rta = "";
-    if (sesion) {
-        rta = "S";
-    } else {
-        rta = "N";
-    }
+    String rta = nego.iniciarSesion(cedula, contraseña);
+    
 %>
 
 <%= rta%>

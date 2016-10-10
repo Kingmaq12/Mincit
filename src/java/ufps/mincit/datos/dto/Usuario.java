@@ -17,9 +17,15 @@ public class Usuario {
     private int tipo_usuario;
     private String contraseña;
 
-    public Usuario() {
+    public Usuario(String cedula, String contraseña) {
+        this.nombre = "";
+        this.email = "";
+        this.cedula = cedula;
+        this.tipo_usuario = -1;
+        this.contraseña = contraseña;
     }
 
+    
     public Usuario(String nombre, String email, String cedula, int tipo_usuario, String contraseña) {
         this.nombre = nombre;
         this.email = email;

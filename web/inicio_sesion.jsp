@@ -3,13 +3,11 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="robots" content="all,follow">
-        <meta name="googlebot" content="index,follow,snippet,archive">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
         <title>Mincit Eventos</title>
 
-        <meta name="keywords" content="">
+
 
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
@@ -47,7 +45,7 @@
         <link href="css/owl.carousel.css" rel="stylesheet">
         <link href="css/owl.theme.css" rel="stylesheet">
 
-        <script src="procesar/ajax/procesos.js"></script>
+
 
     </head>
 
@@ -154,19 +152,19 @@
                             <h4 class="modal-title" id="Login">Inicio Sesion</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="customer-orders.html" method="post">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="email_modal" placeholder="email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="password_modal" placeholder="password">
-                                </div>
 
-                                <p class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
-                                </p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                            </div>
 
-                            </form>
+                            <p class="text-center">
+                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                            </p>
+
+
 
                             <p class="text-center text-muted">Olvido su contraseña?</p>
 
@@ -200,19 +198,19 @@
                 <div class="container">
 
                     <div class="row">
+                        <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()">
+                            <div class="col-md-12">
 
-                        <div class="col-md-12">
+                                <div class="box">
+                                    <h2 class="text-uppercase">Login</h2>
 
-                            <div class="box">
-                                <h2 class="text-uppercase">Login</h2>
+                                    <p class="lead">Already our customer?</p>
+                                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                                        ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
-                                <p class="lead">Already our customer?</p>
-                                <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                    <hr>
 
-                                <hr>
 
-                                <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()">
                                     <div class="form-group">
                                         <label for="email">Cedula</label>
                                         <input type="text" class="form-control" id="cedula" name="cedula">
@@ -222,15 +220,15 @@
                                         <input type="password" class="form-control" id="contrasenia" name="contrasenia">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" name="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i>Iniciar Sesion</button>
+                                        <button type="submit" name="submit" class="btn btn-template-main" required="required"><i class="fa fa-sign-in"></i>Iniciar Sesion</button>
                                     </div>
                                     <br>
                                     <label class="label-danger" name="campo" id="campo" ></label>
-                                </form>
+
+                                </div>
+
                             </div>
-
-                        </div>
-
+                        </form>
                     </div>
                     <!-- /.row -->
 
@@ -413,19 +411,25 @@
         <!-- #### JAVASCRIPT FILES ### -->
 
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>
-            window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
-        </script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/jquery.cookie.js"></script>
         <script src="js/waypoints.min.js"></script>
         <script src="js/jquery.counterup.min.js"></script>
         <script src="js/jquery.parallax-1.1.3.js"></script>
-        <script src="js/front.js"></script>
-        <script src="js/jquery.min.js"></script>
+
+        <script>
+            window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        </script>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
         <script src="js/bootstrap.js"></script>
+
+        <script src="js/front.js"></script>
+
+        
+        <script src="procesar/ajax/procesos.js"></script>
 
     </body>
 

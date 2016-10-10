@@ -21,17 +21,11 @@ function nuevoAjax() {
     return xmlhttp;
 }
 
-function prueba(){
-    alert("entro prueba");
-    alert("me cago en la puta");
-}
 
 function iniciarSesion(){
-    var cedula = document.getElementById("cedula");
-    var contraseña = document.getElementById("contrasenia");
-
+        
     ajax = nuevoAjax();
-    parametros = "cedula=" + cedula.value + "&contrasenia=" + contraseña.value;
+    parametros = "cedula=" + document.getElementById("cedula").value + "&contrasenia=" + document.getElementById("contrasenia").value ;
     url = "procesar/iniciar.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -71,10 +65,9 @@ function iniciarSesion(){
             document.getElementById(campo).value = "Procesando registro";
         }
     }
-
-
+    
+    
 }
-
 function contactar() {
 
     var nombre_empresa = document.getElementById("nombre_empresa");

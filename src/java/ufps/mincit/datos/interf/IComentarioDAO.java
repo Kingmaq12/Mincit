@@ -5,10 +5,14 @@
  */
 package ufps.mincit.datos.interf;
 
+import ufps.mincit.datos.dto.Comentario;
+
 /**
  *
  * @author user
  */
 public interface IComentarioDAO {
     
+    
+    public boolean recibirMensaje(Comentario comen) throws Exception;
 }

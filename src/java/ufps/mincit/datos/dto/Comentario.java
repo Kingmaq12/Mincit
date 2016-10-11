@@ -13,6 +13,7 @@ public class Comentario {
  
     private int id;
     private String nombre_empresa;
+    private String nombre_empleado;
     private String email;
     private String asunsto;
     private String mensaje;
@@ -21,9 +22,10 @@ public class Comentario {
     public Comentario() {
     }
 
-    public Comentario(int id, String nombre_empresa, String email, String asunsto, String mensaje, boolean estado) {
-        this.id = id;
+    public Comentario(String nombre_empresa,String nombre_empleado, String email, String asunsto, String mensaje, boolean estado) {
+        this.id=-1;
         this.nombre_empresa = nombre_empresa;
+        this.nombre_empleado = nombre_empleado;
         this.email = email;
         this.asunsto = asunsto;
         this.mensaje = mensaje;
@@ -44,6 +46,14 @@ public class Comentario {
 
     public void setNombre_empresa(String nombre_empresa) {
         this.nombre_empresa = nombre_empresa;
+    }
+
+    public String getNombre_empleado() {
+        return nombre_empleado;
+    }
+
+    public void setNombre_empleado(String nombre_empleado) {
+        this.nombre_empleado = nombre_empleado;
     }
 
     public String getEmail() {

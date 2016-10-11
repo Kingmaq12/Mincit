@@ -70,15 +70,11 @@ function iniciarSesion(){
     
     
 }
+
 function contactar() {
 
-    var nombre_empresa = document.getElementById("nombre_empresa");
-    var email = document.getElementById("email");
-    var asunto = document.getElementById("asunto");
-    var mensaje = document.getElementById("mensaje");
-    
     ajax = nuevoAjax();
-    parametros = "nombre_empresa=" + nombre_empresa.value + "&email=" + email.value + "&asunto=" + asunto.value + "&mensaje=" + mensaje.value;
+    parametros = "nombre_empresa=" + document.getElementById("nombre_empresa").value +"&nombre_empleado=" +document.getElementById("nombre_empleado").value +"&email=" + document.getElementById("email").value + "&asunto=" + document.getElementById("asunto").value + "&mensaje=" + document.getElementById("mensaje").value;
     url = "procesar/contactar.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

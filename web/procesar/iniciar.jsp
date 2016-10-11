@@ -5,7 +5,7 @@
 --%>
 
 <!--@page import="ufps.mincit.dto.AdministradorDTO" -->
-<%@page import="ufps.mincit.negocio.Negocio"%>
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -14,8 +14,8 @@
     String cedula = request.getParameter("cedula");
     String contraseña = request.getParameter("contrasenia");
 
-    Negocio nego = new Negocio();
-    String rta = nego.iniciarSesion(cedula, contraseña);
+    Administrador admin = new Administrador();
+    String rta = admin.iniciarSesion(cedula, contraseña);
     
 %>
 

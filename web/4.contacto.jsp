@@ -213,36 +213,36 @@ _________________________________________________________ -->
                                 <h3>Formulario</h3>
                             </div>
 
-                            <form>
+                            <form name="contactar" id="contactar" method="POST" action="javascript:contactar()">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="firstname">Nombre empresa</label>
-                                            <input type="text" class="form-control" id="firstname">
+                                            <input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="lastname">Nombre empleado</label>
-                                            <input type="text" class="form-control" id="lastname">
+                                            <input type="text" class="form-control" id="nombre_empleado" name="nombre_empleado" required="required">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email">
+                                            <input type="email" class="form-control" id="email" name="email" required="required">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="subject">Asunto</label>
-                                            <input type="text" class="form-control" id="subject">
+                                            <input type="text" class="form-control" id="asunto" name="asunto">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="message">Mensaje</label>
-                                            <textarea id="message" class="form-control"></textarea>
+                                            <textarea id="mensaje" name="mensaje" class="form-control" required="required" ></textarea>
                                         </div>
                                     </div>
 
@@ -251,6 +251,9 @@ _________________________________________________________ -->
 
                                     </div>
                                 </div>
+                                <br><br>
+                                <label name="campo" id="campo" ></label>
+                                
                                 <!-- /.row -->
                             </form>
 
@@ -490,7 +493,7 @@ _________________________________________________________ -->
 
     <!-- gmaps end -->
 
-
+   <script src="procesar/ajax/procesos.js"></script>
 
 
 

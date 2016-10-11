@@ -5,15 +5,27 @@
  */
 package ufps.mincit.negocio;
 
+import ufps.mincit.datos.dao.UsuarioDAO;
+import ufps.mincit.datos.dto.Usuario;
+
 /**
  *
  * @author CESAR
  */
 public class Negocio {
     
+    private Administrador admin;
+    private Visitante visi;
     
-    public boolean iniciarSesion(String cedula, String contraseña) throws Exception{
-    return true;
+    Negocio(){
+        admin=new Administrador();
+        visi=new Visitante();
+    }
+    
+    public String iniciarSesion(String cedula, String contraseña) throws Exception{
+
+       return admin.iniciarSesion(cedula, contraseña);
+       
     }
     
     public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje)throws Exception{

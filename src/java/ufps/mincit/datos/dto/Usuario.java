@@ -9,7 +9,7 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class UsuarioDTO {
+public class Usuario {
     
     private String nombre;
     private String email;
@@ -17,7 +17,7 @@ public class UsuarioDTO {
     private int tipo_usuario;
     private String contraseña;
 
-    public UsuarioDTO(String cedula, String contraseña) {
+    public Usuario(String cedula, String contraseña) {
         this.nombre = "";
         this.email = "";
         this.cedula = cedula;
@@ -26,7 +26,7 @@ public class UsuarioDTO {
     }
 
     
-    public UsuarioDTO(String nombre, String email, String cedula, int tipo_usuario, String contraseña) {
+    public Usuario(String nombre, String email, String cedula, int tipo_usuario, String contraseña) {
         this.nombre = nombre;
         this.email = email;
         this.cedula = cedula;

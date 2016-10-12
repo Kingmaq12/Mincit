@@ -10,7 +10,7 @@ package ufps.mincit.negocio.administrador;
  * @author user
  */
 import ufps.mincit.datos.dao.UsuarioDAO;
-import ufps.mincit.datos.dto.UsuarioDTO;
+import ufps.mincit.datos.dto.Usuario;
 
 /**
  *
@@ -24,7 +24,7 @@ public class Administrador {
 
         String result="";
         
-        UsuarioDTO usu = new UsuarioDTO(cedula,contraseña);
+        Usuario usu = new Usuario(cedula,contraseña);
         UsuarioDAO aux = new UsuarioDAO();
         
         String usuario =aux.iniciarSesion(usu);

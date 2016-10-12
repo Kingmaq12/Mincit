@@ -6,7 +6,9 @@
 package ufps.mincit.negocio;
 
 import ufps.mincit.datos.dao.UsuarioDAO;
-import ufps.mincit.datos.dto.UsuarioDTO;
+import ufps.mincit.datos.dto.Usuario;
+import ufps.mincit.negocio.administrador.Administrador;
+import ufps.mincit.negocio.visitante.Visitante;
 
 /**
  *

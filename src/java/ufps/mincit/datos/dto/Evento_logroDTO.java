@@ -9,25 +9,17 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Evento_Entidad {
+public class Evento_logroDTO {
     
-    private String nit_entidad;
     private int id_evento;
+    private int id_logro;
 
-    public Evento_Entidad() {
+    public Evento_logroDTO() {
     }
 
-    public Evento_Entidad(String nit_entidad, int id_evento) {
-        this.nit_entidad = nit_entidad;
+    public Evento_logroDTO(int id_evento, int id_logro) {
         this.id_evento = id_evento;
-    }
-
-    public String getNit_entidad() {
-        return nit_entidad;
-    }
-
-    public void setNit_entidad(String nit_entidad) {
-        this.nit_entidad = nit_entidad;
+        this.id_logro = id_logro;
     }
 
     public int getId_evento() {
@@ -36,6 +28,14 @@ public class Evento_Entidad {
 
     public void setId_evento(int id_evento) {
         this.id_evento = id_evento;
+    }
+
+    public int getId_logro() {
+        return id_logro;
+    }
+
+    public void setId_logro(int id_logro) {
+        this.id_logro = id_logro;
     }
     
     

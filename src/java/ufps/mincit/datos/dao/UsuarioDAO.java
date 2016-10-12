@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import ufps.mincit.datos.conexion.ConexionSQL;
-import ufps.mincit.datos.dto.Usuario;
+import ufps.mincit.datos.dto.UsuarioDTO;
 import ufps.mincit.datos.interf.IUsuarioDAO;
 
 /**
@@ -21,7 +21,7 @@ public class UsuarioDAO implements IUsuarioDAO{
     
      private Connection conn = null;
     
-    public String iniciarSesion(Usuario usu) throws Exception{
+    public String iniciarSesion(UsuarioDTO usu) throws Exception{
         
         conn = ConexionSQL.conectar();
         String resul= "";

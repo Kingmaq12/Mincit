@@ -11,17 +11,17 @@ import java.util.Date;
  *
  * @author user
  */
-public class Alerta {
+public class AlertaDTO {
     
     private int id_evento;
     private Date fecha;
     private int repetir;
     private String descripcion;
 
-    public Alerta() {
+    public AlertaDTO() {
     }
 
-    public Alerta(int id_evento, Date fecha, int repetir, String descripcion) {
+    public AlertaDTO(int id_evento, Date fecha, int repetir, String descripcion) {
         this.id_evento = id_evento;
         this.fecha = fecha;
         this.repetir = repetir;

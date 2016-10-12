@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author user
  */
-public class Evento {
+public class EventoDTO {
     
     private int id;
     private String nombre;
@@ -27,10 +27,10 @@ public class Evento {
     private String continente;
     private boolean estado;
 
-    public Evento() {
+    public EventoDTO() {
     }
 
-    public Evento(int id, String nombre, Date fecha, String hora, String lugar, String tipo_evento, String URL, String img, String descripcion, String pais, String ciudad, String continente, boolean estado) {
+    public EventoDTO(int id, String nombre, Date fecha, String hora, String lugar, String tipo_evento, String URL, String img, String descripcion, String pais, String ciudad, String continente, boolean estado) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;

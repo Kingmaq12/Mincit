@@ -9,7 +9,7 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Comentario {
+public class ComentarioDTO {
  
     private int id;
     private String nombre_empresa;
@@ -19,10 +19,10 @@ public class Comentario {
     private String mensaje;
     private boolean estado;
 
-    public Comentario() {
+    public ComentarioDTO() {
     }
 
-    public Comentario(String nombre_empresa,String nombre_empleado, String email, String asunsto, String mensaje, boolean estado) {
+    public ComentarioDTO(String nombre_empresa,String nombre_empleado, String email, String asunsto, String mensaje, boolean estado) {
         this.id=-1;
         this.nombre_empresa = nombre_empresa;
         this.nombre_empleado = nombre_empleado;

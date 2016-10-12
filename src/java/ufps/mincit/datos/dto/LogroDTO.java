@@ -9,17 +9,17 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Pregunta {
+public class LogroDTO {
     
     private int id;
-    private String descripcion;
+    private String titulo;
 
-    public Pregunta() {
+    public LogroDTO() {
     }
 
-    public Pregunta(int id, String descripcion) {
+    public LogroDTO(int id, String titulo) {
         this.id = id;
-        this.descripcion = descripcion;
+        this.titulo = titulo;
     }
 
     public int getId() {
@@ -30,12 +30,12 @@ public class Pregunta {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
     
     

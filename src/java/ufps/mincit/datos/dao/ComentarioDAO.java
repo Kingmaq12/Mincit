@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import ufps.mincit.datos.conexion.ConexionSQL;
 import ufps.mincit.datos.interf.IComentarioDAO;
-import ufps.mincit.datos.dto.Comentario;
+import ufps.mincit.datos.dto.ComentarioDTO;
 
 
 /**
@@ -24,7 +24,7 @@ public class ComentarioDAO implements IComentarioDAO{
     private Connection conn = null;
     
     @Override
-    public boolean recibirMensaje(Comentario comen) throws Exception{
+    public boolean recibirMensaje(ComentarioDTO comen) throws Exception{
         
         conn = ConexionSQL.conectar();
         boolean exito =false;

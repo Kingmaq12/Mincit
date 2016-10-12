@@ -6,7 +6,7 @@
 package ufps.mincit.negocio.visitante;
 
 import ufps.mincit.datos.dao.ComentarioDAO;
-import ufps.mincit.datos.dto.Comentario;
+import ufps.mincit.datos.dto.ComentarioDTO;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Visitante {
     
      public boolean recibirMensaje(String nombre_empresa,String nombre_empleado,String email, String asunto, String mensaje)throws Exception{
          
-     Comentario comen = new Comentario(nombre_empresa, nombre_empleado, email, asunto, mensaje, true);
+     ComentarioDTO comen = new ComentarioDTO(nombre_empresa, nombre_empleado, email, asunto, mensaje, true);
      ComentarioDAO dao = new ComentarioDAO();
          
         return dao.recibirMensaje(comen);

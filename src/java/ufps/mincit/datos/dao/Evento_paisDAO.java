@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ufps.mincit.datos.interf;
+package ufps.mincit.datos.dao;
 
-import ufps.mincit.datos.dto.ComentarioDTO;
+import ufps.mincit.datos.interf.IEvento_paisDAO;
 
 /**
  *
  * @author user
  */
-public interface IComentarioDAO {
+public class Evento_paisDAO implements IEvento_paisDAO{
     
-    
-    public boolean recibirMensaje(ComentarioDTO comen) throws Exception;
 }

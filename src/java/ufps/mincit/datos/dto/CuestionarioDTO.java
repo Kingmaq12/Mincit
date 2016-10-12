@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author user
  */
-public class Cuestionario {
+public class CuestionarioDTO {
     
     private int id;
     private String cedula_usuario;
@@ -19,10 +19,10 @@ public class Cuestionario {
     private Date fecha;
     private int valor;
 
-    public Cuestionario() {
+    public CuestionarioDTO() {
     }
 
-    public Cuestionario(int id, String cedula_usuario, int respuesta, int valor) {
+    public CuestionarioDTO(int id, String cedula_usuario, int respuesta, int valor) {
         this.id = id;
         this.cedula_usuario = cedula_usuario;
         this.respuesta = respuesta;

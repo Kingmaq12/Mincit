@@ -9,15 +9,15 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Sector_economico {
+public class Sector_economicoDTO {
     
     private int id;
     private String nombre;
 
-    public Sector_economico() {
+    public Sector_economicoDTO() {
     }
 
-    public Sector_economico(int id, String nombre) {
+    public Sector_economicoDTO(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }

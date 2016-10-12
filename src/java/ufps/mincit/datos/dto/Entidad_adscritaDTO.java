@@ -9,27 +9,19 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Empresa {
-    
-    private String nombre;
+public class Entidad_adscritaDTO {
+ 
     private String nit;
+    private String nombre;
     private String email;
 
-    public Empresa() {
+    public Entidad_adscritaDTO() {
     }
 
-    public Empresa(String nombre, String nit, String email) {
-        this.nombre = nombre;
+    public Entidad_adscritaDTO(String nit, String nombre, String email) {
         this.nit = nit;
-        this.email = email;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
         this.nombre = nombre;
+        this.email = email;
     }
 
     public String getNit() {
@@ -40,6 +32,14 @@ public class Empresa {
         this.nit = nit;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -47,7 +47,6 @@ public class Empresa {
     public void setEmail(String email) {
         this.email = email;
     }
-    
     
     
 }

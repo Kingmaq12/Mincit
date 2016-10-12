@@ -9,17 +9,17 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Evento_sector {
+public class Evento_paisDTO {
     
-    private int id_evento;
-    private int id_sector;
+ private int id_evento;
+ private int id_pais;
 
-    public Evento_sector() {
+    public Evento_paisDTO() {
     }
 
-    public Evento_sector(int id_evento, int id_sector) {
+    public Evento_paisDTO(int id_evento, int id_pais) {
         this.id_evento = id_evento;
-        this.id_sector = id_sector;
+        this.id_pais = id_pais;
     }
 
     public int getId_evento() {
@@ -30,14 +30,14 @@ public class Evento_sector {
         this.id_evento = id_evento;
     }
 
-    public int getId_sector() {
-        return id_sector;
+    public int getId_pais() {
+        return id_pais;
     }
 
-    public void setId_sector(int id_sector) {
-        this.id_sector = id_sector;
+    public void setId_pais(int id_pais) {
+        this.id_pais = id_pais;
     }
-    
-    
+ 
+ 
     
 }

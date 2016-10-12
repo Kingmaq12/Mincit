@@ -9,16 +9,16 @@ package ufps.mincit.datos.dto;
  *
  * @author user
  */
-public class Respuesta {
+public class RespuestaDTO {
     
     private int id;
     private String rango;
     private String descripcion;
 
-    public Respuesta() {
+    public RespuestaDTO() {
     }
 
-    public Respuesta(int id, String rango, String descripcion) {
+    public RespuestaDTO(int id, String rango, String descripcion) {
         this.id = id;
         this.rango = rango;
         this.descripcion = descripcion;

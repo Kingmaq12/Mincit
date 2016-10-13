@@ -33,7 +33,7 @@
 <![endif]-->
 
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logoMincit.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
@@ -73,8 +73,7 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 1</span></a>
-                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 2</span></a>
+                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion</span></a>
                             </div>
 
                         </div>
@@ -94,9 +93,9 @@ _________________________________________________________ -->
                     <div class="container">
                         <div class="navbar-header">
 
-                            <a class="navbar-brand home" href="index.html">
-                                <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Mincit Eventos - Inicio</span>
+                            <a class="navbar-brand home" href="index.jsp">
+                                <img src="img/1.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Mincit Eventos - Busqueda</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -139,43 +138,7 @@ _________________________________________________________ -->
 
         </header>
 
-        <!-- *** LOGIN MODAL ***
-_________________________________________________________ -->
-
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Inicio Sesion</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
-                            </div>
-
-                            <p class="text-center">
-                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
-
-                        </form>
-
-                        <p class="text-center text-muted">Olvido su contraseña?</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- *** LOGIN MODAL END *** -->
-
-
+        
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -184,7 +147,7 @@ _________________________________________________________ -->
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Inicio</a>
+                            <li><a href="index.jsp">Inicio</a>
                             </li>
                             <li>Consulta de Eventos</li>
                         </ul>
@@ -515,7 +478,7 @@ _________________________________________________________ -->
                     <h3>Quieres mostrar tu evento en esta pagina?</h3>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <a href="contact2.html" class="btn btn-template-transparent-primary">Contactanos</a>
+                    <a href="4contacto.jsp" class="btn btn-template-transparent-primary">Contactanos</a>
                 </div>
             </div>
         </div>
@@ -529,7 +492,7 @@ _________________________________________________________ -->
 
          <footer id="footer">
             <div class="container">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-5 col-sm-6">
                     <h4>Acerca de nosotros</h4>
 
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
@@ -538,66 +501,21 @@ _________________________________________________________ -->
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
-                <!-- /.col-md-3 -->
-
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Blog</h4>
-
-                    <div class="blog-entries">
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Blog post name</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Blog post name</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Very very long blog post name</a></h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="hidden-md hidden-lg">
-
-                </div>
-                <!-- /.col-md-3 -->
-
-                <div class="col-md-3 col-sm-6">
+                
+                <div class="col-md-5 col-sm-6">
 
                     <h4>Contactenos</h4>
 
-                    <p><strong>Universal Ltd.</strong>
-                        <br>13/25 New Avenue
-                        <br>Newtown upon River
-                        <br>45Y 73J
-                        <br>England
+                    <p><strong>Mincit Eventos Ltd.</strong>
+                        <br>Avenida Gran Colombia # 12E - 96
+                        <br>Universidad Francisco de Paula Santander
+                        <br>Cucuta
+                        <br>Norte de Santander
                         <br>
-                        <strong>Great Britain</strong>
+                        <strong>Colombia</strong>
                     </p>
 
-                    <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
+                    <a href="4.contacto.jsp" class="btn btn-small btn-template-main">Ir a la pagina de Contactenos</a>
 
                     <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -605,47 +523,6 @@ _________________________________________________________ -->
                 <!-- /.col-md-3 -->
 
 
-
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Photostream</h4>
-
-                    <div class="photostream">
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.col-md-3 -->
-            </div>
             <!-- /.container -->
         </footer>
         <!-- /#footer -->

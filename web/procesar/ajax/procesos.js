@@ -115,7 +115,7 @@ function contactar() {
 
 }
 
-function registrarEvento(){
+function guardarDatos(){
     
     
     alert("entro a registrar Evento");

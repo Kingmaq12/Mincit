@@ -5,6 +5,11 @@
  */
 package ufps.mincit.negocio;
 
+import java.util.ArrayList;
+import ufps.mincit.datos.dao.Entidad_adscritaDAO;
+import ufps.mincit.datos.dao.LogroDAO;
+import ufps.mincit.datos.dao.PaisesDAO;
+import ufps.mincit.datos.dao.Sector_economicoDAO;
 import ufps.mincit.datos.dao.UsuarioDAO;
 import ufps.mincit.datos.dto.Usuario;
 import ufps.mincit.negocio.administrador.Administrador;
@@ -19,7 +24,7 @@ public class Negocio {
     private Administrador admin;
     private Visitante visi;
     
-    Negocio(){
+    public Negocio(){
         admin=new Administrador();
         visi=new Visitante();
     }
@@ -32,5 +37,36 @@ public class Negocio {
     
     public boolean recibirMensaje(String nombre_empresa, String email, String asunto, String mensaje)throws Exception{
         return true;
+    }
+    
+    public ArrayList<String> mostrarPaises()throws Exception{
+        
+        PaisesDAO dao = new PaisesDAO();
+        
+        return dao.mostrarPaises();
+    }
+    
+    public ArrayList<String> mostrarEntidades()throws Exception{
+        
+        Entidad_adscritaDAO dao = new Entidad_adscritaDAO();
+        
+        return dao.mostrarEntidades();
+        
+    }
+    
+    public ArrayList<String> mostrarSectores()throws Exception{
+        
+        Sector_economicoDAO dao = new Sector_economicoDAO();
+        
+        return dao.mostrarSectores();
+        
+    }
+    
+    public ArrayList<String> mostrarLogros()throws Exception{
+        
+        LogroDAO dao = new LogroDAO();
+        
+        return dao.mostrarLogros();
+        
     }
 }

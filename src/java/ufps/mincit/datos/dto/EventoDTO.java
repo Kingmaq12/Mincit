@@ -13,45 +13,44 @@ import java.util.Date;
  */
 public class EventoDTO {
     
-    private int id;
-    private String nombre;
-    private Date fecha;
+    
+    private String nombre; 
+    private String fecha; 
     private String hora;
-    private String lugar;
-    private String tipo_evento;
-    private String URL;
-    private String img;
-    private String descripcion;
-    private String pais;
+    private String lugar ;
+    private String patrocinadores ;
+    private String continente ;
+    private String pais ;
     private String ciudad;
-    private String continente;
-    private boolean estado;
+    private String participantes;
+    private String tipo_evento ;
+    private String sector_economico ;
+    private String url;
+    private String imagen ;
+    private String logros ;
+    private String descripcion;
+    private String estado;
 
     public EventoDTO() {
     }
 
-    public EventoDTO(int id, String nombre, Date fecha, String hora, String lugar, String tipo_evento, String URL, String img, String descripcion, String pais, String ciudad, String continente, boolean estado) {
-        this.id = id;
+    public EventoDTO(String nombre, String fecha, String hora, String lugar, String patrocinadores, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico,String url, String imagen, String logros, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
-        this.tipo_evento = tipo_evento;
-        this.URL = URL;
-        this.img = img;
-        this.descripcion = descripcion;
+        this.patrocinadores = patrocinadores;
+        this.continente = continente;
         this.pais = pais;
         this.ciudad = ciudad;
-        this.continente = continente;
-        this.estado = estado;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.participantes = participantes;
+        this.tipo_evento = tipo_evento;
+        this.sector_economico = sector_economico;
+        this.url=url;
+        this.imagen = imagen;
+        this.logros = logros;
+        this.descripcion = descripcion;
+        this.estado = "1";
     }
 
     public String getNombre() {
@@ -62,11 +61,11 @@ public class EventoDTO {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -86,36 +85,20 @@ public class EventoDTO {
         this.lugar = lugar;
     }
 
-    public String getTipo_evento() {
-        return tipo_evento;
+    public String getPatrocinadores() {
+        return patrocinadores;
     }
 
-    public void setTipo_evento(String tipo_evento) {
-        this.tipo_evento = tipo_evento;
+    public void setPatrocinadores(String patrocinadores) {
+        this.patrocinadores = patrocinadores;
     }
 
-    public String getURL() {
-        return URL;
+    public String getContinente() {
+        return continente;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setContinente(String continente) {
+        this.continente = continente;
     }
 
     public String getPais() {
@@ -134,22 +117,69 @@ public class EventoDTO {
         this.ciudad = ciudad;
     }
 
-    public String getContinente() {
-        return continente;
+    public String getParticipantes() {
+        return participantes;
     }
 
-    public void setContinente(String continente) {
-        this.continente = continente;
+    public void setParticipantes(String participantes) {
+        this.participantes = participantes;
     }
 
-    public boolean isEstado() {
+    public String getTipo_evento() {
+        return tipo_evento;
+    }
+
+    public void setTipo_evento(String tipo_evento) {
+        this.tipo_evento = tipo_evento;
+    }
+
+    public String getSector_economico() {
+        return sector_economico;
+    }
+
+    public void setSector_economico(String sector_economico) {
+        this.sector_economico = sector_economico;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+    
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getLogros() {
+        return logros;
+    }
+
+    public void setLogros(String logros) {
+        this.logros = logros;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+
     
 }

@@ -9,7 +9,9 @@ package ufps.mincit.negocio.administrador;
  *
  * @author user
  */
+import ufps.mincit.datos.dao.EventoDAO;
 import ufps.mincit.datos.dao.UsuarioDAO;
+import ufps.mincit.datos.dto.EventoDTO;
 import ufps.mincit.datos.dto.Usuario;
 
 /**
@@ -19,9 +21,6 @@ import ufps.mincit.datos.dto.Usuario;
 public class Administrador {
     
      public String iniciarSesion(String cedula, String contraseña) throws Exception{
-//        System.out.println(cedula);
-//        System.out.println(contraseña);
-
         String result="";
         
         Usuario usu = new Usuario(cedula,contraseña);
@@ -41,4 +40,18 @@ public class Administrador {
         return "N";
     }
     
+     public String registrarEvento(String nombre,String fecha,String hora,String lugar,String patrocinadores,String continente,String pais,String ciudad,String participantes,String tipo_evento,String sector_economico,String url,String imagen, String logros,String descripcion) throws Exception{
+         
+         System.out.println("Negocio, RegistrarEvento");
+         EventoDTO dto = new EventoDTO(nombre, fecha, hora, lugar, patrocinadores, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url, imagen, logros, descripcion);
+         EventoDAO dao = new EventoDAO();
+         
+         boolean resp = dao.registrarEvento(dto);
+         if(resp){
+             return "S";
+         }
+         
+         return "N";
+     }
+     
 }

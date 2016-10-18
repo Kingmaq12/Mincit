@@ -10,8 +10,6 @@ import ufps.mincit.datos.dao.Entidad_adscritaDAO;
 import ufps.mincit.datos.dao.LogroDAO;
 import ufps.mincit.datos.dao.PaisesDAO;
 import ufps.mincit.datos.dao.Sector_economicoDAO;
-import ufps.mincit.datos.dao.UsuarioDAO;
-import ufps.mincit.datos.dto.Usuario;
 import ufps.mincit.negocio.administrador.Administrador;
 import ufps.mincit.negocio.visitante.Visitante;
 

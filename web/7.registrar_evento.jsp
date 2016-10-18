@@ -350,7 +350,7 @@
                                                                         </div>			
                                                                     </div>
 
-                                                                    <div class="col-sm-10">
+                                                                    <div class="col-sm-8">
                                                                         <div class="form-group">
                                                                             <label>Descripción</label>
                                                                             <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
@@ -374,10 +374,13 @@
                                                                 <br>
                                                                 <br>
                                                                 <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="estimarCarga.jsp" enctype="multipart/form-data">
+                                                                    <%                                                                        if (session.getAttribute("nombre_imagen") != null) {
+                                                                    %>
                                                                     <div class="col-sm-4 col-sm-offset-1">
+
                                                                         <div class="form-group">
                                                                             <label>Imagen </label> <br>
-                                                                            <input type="file" class="filestyle" data-icon="false" >
+                                                                            <input type="file" class="filestyle" name="" id="" data-icon="false" >
                                                                         </div>
                                                                     </div>
                                                                     <br>
@@ -387,6 +390,13 @@
                                                                         <br>
                                                                         <label id="campo" name="campo"></label>
                                                                     </div>
+                                                                    <%
+                                                                    } else {
+                                                                    %>
+                                                                    <h3>Primero termine el paso 1</h3>
+                                                                    <%
+                                                                        }
+                                                                    %>
                                                                 </form>
                                                             </div> 
                                                         </div>

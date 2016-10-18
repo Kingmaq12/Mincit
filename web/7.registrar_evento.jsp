@@ -202,105 +202,149 @@
                                             <section id="contact-page">
                                                 <div class="tab-content delinear">	
                                                     <br>
+
                                                     <div id="menu1" class="tab-pane fade in active">
-                                                        <div class="col-sm-4 col-sm-offset-1">
-                                                            <div class="form-group">
-                                                                <label>Nombre </label>
-                                                                <input type="text" name="name" class="form-control" required="required" placeholder="...">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Fecha </label>
-                                                                <input type="date" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Hora </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Lugar </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Patrocinadores </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>	
-                                                            <div class="form-group">
-                                                                <label>País</label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Ciudad </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>				
+
+                                                        <ul class="nav nav-tabs">
+                                                            <li class="active"><a data-toggle="tab" href="#menu3">Primer Paso</a></li>
+                                                            <li><a data-toggle="tab" href="#menu4">Segundo Paso</a></li>
+                                                        </ul>
+                                                        <div id="menu3" class="tab-pane fade in active">
+                                                            <form name="registrar" id="registrar" method="POST" action="javascript:registrarEvento()">
+                                                                <div class="col-sm-4 col-sm-offset-1">
+                                                                    <div class="form-group">
+                                                                        <label>Nombre </label>
+                                                                        <input type="text" name="nombre" id="nombre" class="form-control" required="required" placeholder="...">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Fecha </label>
+                                                                        <input type="date" name="fecha" id="fecha" class="form-control" required="required">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Hora </label>
+                                                                        <input type="text" name="hora" id="hora" class="form-control" required="required">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Lugar </label>
+                                                                        <input type="text" name="lugar" id="lugar" class="form-control" required="required">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Patrocinadores </label>
+                                                                        <input type="text" name="patrocinadores" id="patrocinadores" class="form-control" required="required">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Continente </label><br>
+                                                                        <select class="form-control" name="continente" id="continente">
+                                                                            <option value="ninguno">-No seleccionado-</option>
+                                                                            <option value="america">America</option>
+                                                                            <option value="europa">Europa</option>
+                                                                            <option value="asia">Asia</option>
+                                                                            <option value="oceania">Oceania</option>
+                                                                            <option value="africa">Africa</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>País</label>
+                                                                        <input type="text" name="pais" id="pais" class="form-control" required="required" >
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Ciudad </label>
+                                                                        <input type="text" name="ciudad" id="ciudad" class="form-control" required="required">
+                                                                    </div>				
+                                                                </div>
+
+                                                                <div class="col-sm-4 col-sm-offset-1 delinear">
+                                                                    <div class="form-group">
+                                                                        <label>Participantes </label>
+                                                                        <input type="text" name="participantes" id="participantes" class="form-control" required="required">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Tipo de Evento </label><br>
+                                                                        <select class="form-control" name="tipo_evento" id="tipo_evento">
+                                                                            <option value="volvo">-No seleccionado-</option>
+                                                                            <option value="volvo">Capacitación</option>
+                                                                            <option value="saab">Evento</option>
+                                                                            <option value="mercedes">Simposio</option>
+                                                                            <option value="audi">Foro</option>
+                                                                            <option value="audi">Rueda</option>
+                                                                            <option value="audi">Seminario</option>
+                                                                            <option value="audi">Entrevista</option>
+                                                                            <option value="audi">Concurso</option>
+                                                                            <option value="audi">Feria</option>
+                                                                            <option value="audi">Aniversario</option>
+                                                                            <option value="audi">Congreso</option>
+                                                                            <option value="audi">Cumbre</option>
+                                                                            <option value="audi">Conferencia</option>
+                                                                            <option value="audi">Exposición</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Sector Económico </label><br>
+                                                                        <select class="form-control" name="sector_economico" id="sector_economico" >
+                                                                            <option value="volvo">-No seleccionado-</option>
+                                                                            <option value="volvo">Sector Primario</option>
+                                                                            <option value="saab">Sector Secundario</option>
+                                                                            <option value="mercedes">Sector Terciario</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>URL </label>
+                                                                        <input type="text" name="url" id="url" class="form-control" required="required">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Logros </label>
+                                                                        <select class="form-control" name="logros" id="logros">
+                                                                            <option value="volvo">-No seleccionado-</option>
+                                                                            <option value="volvo">Formalización</option>
+                                                                            <option value="saab">Certificación Nacional</option>
+                                                                            <option value="mercedes">Certificación Internacional</option>
+                                                                            <option value="audi">Exportar</option>
+                                                                            <option value="audi">Acceso a Lineas de Crédito</option>
+                                                                        </select>
+                                                                    </div>				
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="form-group">
+                                                                        <label>Descripción</label>
+                                                                        <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+
+                                                                <div class="col-sm-12">
+                                                                    <br>
+                                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
+                                                                    <br>
+                                                                    <label id="campo" name="campo"></label>
+                                                                </div>
+                                                            </form> 
                                                         </div>
-                                                        <div class="col-sm-4 col-sm-offset-1 delinear">
-                                                            <div class="form-group">
-                                                                <label>Participantes </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Tipo de Evento </label><br>
-                                                                <select class="form-control">
-                                                                    <option value="volvo">-No seleccionado-</option>
-                                                                    <option value="volvo">Capacitación</option>
-                                                                    <option value="saab">Evento</option>
-                                                                    <option value="mercedes">Simposio</option>
-                                                                    <option value="audi">Foro</option>
-                                                                    <option value="audi">Rueda</option>
-                                                                    <option value="audi">Seminario</option>
-                                                                    <option value="audi">Entrevista</option>
-                                                                    <option value="audi">Concurso</option>
-                                                                    <option value="audi">Feria</option>
-                                                                    <option value="audi">Aniversario</option>
-                                                                    <option value="audi">Congreso</option>
-                                                                    <option value="audi">Cumbre</option>
-                                                                    <option value="audi">Conferencia</option>
-                                                                    <option value="audi">Exposición</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Sector Económico </label><br>
-                                                                <select class="form-control">
-                                                                    <option value="volvo">-No seleccionado-</option>
-                                                                    <option value="volvo">Sector Primario</option>
-                                                                    <option value="saab">Sector Secundario</option>
-                                                                    <option value="mercedes">Sector Terciario</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>URL </label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Imagen </label> <br>
-                                                                <input type="file" class="filestyle" data-icon="false" >
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Logros </label>
-                                                                <select class="form-control">
-                                                                    <option value="volvo">-No seleccionado-</option>
-                                                                    <option value="volvo">Formalización</option>
-                                                                    <option value="saab">Certificación Nacional</option>
-                                                                    <option value="mercedes">Certificación Internacional</option>
-                                                                    <option value="audi">Exportar</option>
-                                                                    <option value="audi">Acceso a Lineas de Crédito</option>
-                                                                </select>
-                                                            </div>				
-                                                        </div>
-                                                        <div class="col-sm-10">
-                                                            <div class="form-group">
-                                                                <label>Descripción</label>
-                                                                <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
-                                                            </div>
-                                                        </div>	
-                                                        <br>
-                                                        <div class="col-sm-12">
-                                                            <br>
-                                                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
-                                                            <br>
-                                                            <label id="campo" name="campo"></label>
-                                                        </div>
-                                                    </div>	
+
+                                                        <div id="menu4" class="tab-pane fade in active">
+                                                            <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="estimarCarga.jsp" enctype="multipart/form-data">
+                                                                <div class="form-group">
+                                                                    <label>Imagen </label> <br>
+                                                                    <input type="file" class="filestyle" name="imagen" id="imagen" data-icon="false" >
+                                                                </div>
+
+                                                                <br>
+
+                                                                <div class="col-sm-12">
+                                                                    <br>
+                                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
+                                                                    <br>
+                                                                    <label id="campo" name="campo"></label>
+                                                                </div>
+                                                            </form>
+                                                        </div>    
+
+
+
+
+                                                    </div>
+
                                                     <div id="menu2" class="tab-pane fade delinear">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
@@ -345,5 +389,6 @@
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
+        <script src="procesar/ajax/procesos.js"></script>
     </body>
 </html>

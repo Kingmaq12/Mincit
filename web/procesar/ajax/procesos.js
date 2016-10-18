@@ -114,3 +114,50 @@ function contactar() {
     }
 
 }
+
+function registrarEvento(){
+    
+    
+    alert("entro a registrar Evento");
+    
+    ajax = nuevoAjax();
+    parametros = "nombre=" + document.getElementById("nombre").value +"&fecha=" +document.getElementById("fecha").value + "&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&patrocinadores=" + document.getElementById("patrocinadores").value + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participanetes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + document.getElementById("sector_economico").value + "&url=" + document.getElementById("url").value + "&imagen=" + document.getElementById("imagen").value + "&logros=" + document.getElementById("logros").value + "&descripcion=" + document.getElementById("descripcion").value;
+    url = "procesar/registrar.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function () {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    document.getElementById("campo").innerHTML = "Evento Registrado Exitosamente.";
+                    $("#registrar")[0].reset();
+                } else {
+
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrar")[0].reset();
+                }
+            } else
+            {
+
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    document.getElementById("campo").innerHTML = "Evento Registrado Exitosamente.";
+                    $("#registrar")[0].reset();
+                } else {
+
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrar")[0].reset();
+                }
+            }
+        } else
+        {
+            document.getElementById(campo).value = "Procesando registro";
+        }
+    }
+    
+}

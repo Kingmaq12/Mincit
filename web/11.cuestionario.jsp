@@ -277,6 +277,10 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        <div class="col-sm-12 text-center">
+                                            <button type="submit" name="submit" class="btn btn-primary btn-s-sm" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
+                                            <br><br>
+                                        </div>
                                     </section>
 
                                 </section>
@@ -287,6 +291,12 @@
             </section>
         </section>
 
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.js"></script>
+        <!-- App -->
+        <script src="js/app.js"></script>
+        <script src="js/app.plugin.js"></script>
+        <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
 
         <script>

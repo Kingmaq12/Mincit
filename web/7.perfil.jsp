@@ -78,7 +78,7 @@
             <section>
                 <section class="hbox stretch">
                     <!-- .aside -->
-                    <aside class="bg-light lter b-r aside-md hidden-print" id="nav">          
+                    <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">
@@ -105,7 +105,7 @@
                                                     <i class="fa fa-envelope-o icon">
                                                         <b class="bg-primary dker"></b>
                                                     </i>
-                                                    <span>Agregar Cuestionario</span>
+                                                    <span>Emprendedor</span>
                                                 </a>
                                             </li>
                                             <li >
@@ -116,7 +116,7 @@
                                                     <span>Estadisticas</span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <a href="14.configuracion.jsp"  >
                                                     <i class="fa fa-edit icon">
                                                         <b class="bg-success"></b>
@@ -147,20 +147,20 @@
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">
-                                 
+
                                 </section>
                             </section>
                         </section>
                     </section>
                 </section>
-            </section>
-        </section>
-        <script src="js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="js/bootstrap.js"></script>
-        <!-- App -->
-        <script src="js/app.js"></script>
-        <script src="js/app.plugin.js"></script>
-        <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-    </body>
-</html>
+                <script src="js/jquery.min.js"></script>
+                <!-- Bootstrap -->
+                <script src="js/bootstrap.js"></script>
+                <!-- App -->
+                <script src="js/app.js"></script>
+                <script src="js/app.plugin.js"></script>
+                <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
+                </body>
+                </html>
+

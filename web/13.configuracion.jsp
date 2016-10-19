@@ -178,7 +178,7 @@
                                                                 <i class="fa fa-desktop fa-3x"></i>
                                                             </div>						
                                                             <div class="ficon">
-                                                                <button type="button" class="btn btn-primary btn-lg" id="myBtn" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
+                                                                <button type="button" class="btn btn-primary btn-s-sm" id="myBtn" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -189,7 +189,7 @@
                                                                 <i class="fa fa-desktop fa-3x"></i>
                                                             </div>
                                                             <div class="ficon">
-                                                                <button type="button" class="btn btn-primary btn-lg" id="myBtn" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
+                                                                <button type="button" class="btn btn-primary btn-s-sm" id="myBtn" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
                                                             </div>
                                                         </div>
                                                     </div>

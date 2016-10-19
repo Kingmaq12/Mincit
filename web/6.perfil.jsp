@@ -3,7 +3,7 @@
 <html lang="en" class="app">
     <head>
         <meta charset="utf-8" />
-        <title>Notebook | Web Application</title>
+        <title>MINCIT PERFIL</title>
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -72,7 +72,7 @@
             <section>
                 <section class="hbox stretch">
                     <!-- .aside -->
-                    <aside class="bg-light lter b-r aside-md hidden-print" id="nav">          
+                    <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">

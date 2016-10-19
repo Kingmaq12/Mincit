@@ -9,6 +9,8 @@ package ufps.mincit.negocio.administrador;
  *
  * @author user
  */
+import java.util.ArrayList;
+import java.util.Date;
 import ufps.mincit.datos.dao.EventoDAO;
 import ufps.mincit.datos.dao.UsuarioDAO;
 import ufps.mincit.datos.dto.EventoDTO;
@@ -54,4 +56,12 @@ public class Administrador {
          return "N";
      }
      
+          
+     public ArrayList<EventoDTO> consultarEventos(Date Fecha, String Entidad, String Pais, String Cuidad, String Continente, String Sector, String logro) throws Exception{
+         
+         
+         
+         
+         return null;
+     }
 }

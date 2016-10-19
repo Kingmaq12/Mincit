@@ -6,10 +6,12 @@
 package ufps.mincit.negocio;
 
 import java.util.ArrayList;
+import java.util.Date;
 import ufps.mincit.datos.dao.Entidad_adscritaDAO;
 import ufps.mincit.datos.dao.LogroDAO;
 import ufps.mincit.datos.dao.PaisesDAO;
 import ufps.mincit.datos.dao.Sector_economicoDAO;
+import ufps.mincit.datos.dto.EventoDTO;
 import ufps.mincit.negocio.administrador.Administrador;
 import ufps.mincit.negocio.visitante.Visitante;
 
@@ -66,5 +68,10 @@ public class Negocio {
         
         return dao.mostrarLogros();
         
+    }
+   
+    public ArrayList<EventoDTO> consultarEventos (Date Fecha, String Entidad, String Pais, String Cuidad, String Continente, String Sector, String logro) throws Exception{
+        
+        return this.admin.consultarEventos(Fecha, Entidad, Pais, Cuidad, Continente, Sector,  logro);
     }
 }

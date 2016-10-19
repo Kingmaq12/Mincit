@@ -78,7 +78,7 @@
             <section>
                 <section class="hbox stretch">
                     <!-- .aside -->
-                    <aside class="bg-light lter b-r aside-md hidden-print" id="nav">          
+                    <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">

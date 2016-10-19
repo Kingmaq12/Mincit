@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/animate.css" type="text/css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
         <link rel="stylesheet" href="css/font.css" type="text/css" />
-
+        <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
         <link rel="stylesheet" href="css/app.css" type="text/css" />
         <link rel="stylesheet" href="css/jquery.bxslider.css">      
 
@@ -74,7 +74,7 @@
             <section>
                 <section class="hbox stretch">
                     <!-- .aside -->
-                    <aside class="bg-light lter b-r aside-md hidden-print" id="nav">          
+                    <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">
@@ -210,7 +210,7 @@
                                                                                     Negocio n1 = new Negocio();
                                                                                     ArrayList<String> entidades = n1.mostrarEntidades();
                                                                                     for (String e : entidades) {
-                                                                                        String[] a= e.split(",");
+                                                                                        String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
                                                                                     <input type="checkbox"  name="entidad_adscrita" values="<%=a[0]%>"> <%=a[1]%> 
@@ -347,9 +347,8 @@
                                                                 <br>
                                                                 <br>
                                                                 <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="estimarCarga.jsp" enctype="multipart/form-data">
-                                                                    <% 
-                                                                      if (session.getAttribute("nombre_imagen") != null) {
-                                                                          String nombre= (String)session.getAttribute("nombre");
+                                                                    <%                                                                        if (session.getAttribute("nombre_imagen") != null) {
+                                                                            String nombre = (String) session.getAttribute("nombre");
                                                                     %>
                                                                     <div class="col-sm-4 col-sm-offset-1">
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,9 +95,9 @@
                                     <!-- nav -->
                                     <nav class="nav-primary hidden-xs">
                                         <ul class="nav">
-                                           <li>
+                                            <li>
                                                 <a href="7.registrar_evento.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
+                                                    <i class="fa fa-pencil icon">
                                                         <b class="bg-danger"></b>
                                                     </i>
                                                     <span>Nuevo Evento</span>
@@ -105,32 +105,33 @@
                                             </li>
                                             <li>
                                                 <a href="8.busquedaAd.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
-                                                        <b class="bg-danger"></b>
+                                                    <i class="fa fa-search icon">
+                                                        <b class="bg-info"></b>
                                                     </i>
-                                                    <span>Consultar Eventos</span>
+                                                    <span>Consultar Evento</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="9.ver_comentario.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
-                                                        <b class="bg-danger"></b>
+                                                    <i class="fa fa-book icon">
+                                                        <b class="bg-primary"></b>
                                                     </i>
                                                     <span>Comentarios</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="10.ver_alertas.jsp"  >
-                                                    <i class="fa fa-archive icon">
+                                                    <i class="fa fa-ticket icon">
                                                         <b class="bg-warning"></b>
                                                     </i>
                                                     <span>Alertas</span>
                                                 </a>
                                             </li>
+
                                             <li class="active">
                                                 <a href="13.configuracion.jsp"  >
-                                                    <i class="fa fa-edit icon">
-                                                        <b class="bg-success"></b>
+                                                    <i class="fa fa-wrench icon">
+                                                        <b class="bg-dark"></b>
                                                     </i>
                                                     <span>Configuración</span>
                                                 </a>
@@ -142,7 +143,6 @@
                             </section>
 
                             <footer class="footer lt hidden-xs b-t b-light">
-
                                 <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-default btn-icon">
                                     <i class="fa fa-angle-left text"></i>
                                     <i class="fa fa-angle-right text-active"></i>

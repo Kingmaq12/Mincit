@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
                 <ul class="nav navbar-nav hidden-xs">
                     <li>
                         <div class="m-t m-l">
-                            <a href="6.perfil.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
+                            <a href="index.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
                         </div>
                     </li>
                 </ul>      
@@ -64,19 +64,19 @@
                             <span class="thumb-sm avatar pull-left">
                                 <img src="img/user.jpg">
                             </span>
-                            Administrador <b class="caret"></b>
+                            Asesor <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight">
                             <span class="arrow top"></span>
                             <li>
-                                <a href="13.configuracion.jsp">Configuración</a>
+                                <a href="14.configuracion.jsp">Configuración</a>
                             </li>
                             <li>
-                                <a href="6.perfil.jsp">Perfil</a>
+                                <a href="7.perfil.jsp">Perfil</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="index.jsp" data-toggle="ajaxModal" >Cerrar Sesión</a>
+                                <a href="index.jsp">Cerrar Sesión</a>
                             </li>
                         </ul>
                     </li>
@@ -152,13 +152,13 @@
                     <section id="content">
                         <section class="vbox">
                             <header class="header bg-white b-b b-light">
-                                <p>Perfil del Administrador. Bienvenido.</p>
+                                <p>Aquí puede ver las Estadisticas de los Cuestionarios registrados.</p>
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">
 
-                                    <section>
-                                        <div class="container contacto delinear">
+                                    <section class="vbox">
+                                        <div >
                                             <div class="col-md-6 col-md-offset-3">
                                                 <div class="text-center">
                                                     <h2>Consultar Estadisticas</h2>
@@ -186,86 +186,8 @@
                                                 <br><br>
                                             </div>
                                         </div>
-                                    </section>                
-
-                                        <div class="container delinear">
-                                            <table id="example" >
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">Tablas</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                <div class="col-md-4 text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <td><h4 class="media-heading  text-center2">Torta</h4></td>
-                                                            <td>
-                                                                <div class="ficon  text-center2">
-                                                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                                                </div>
-                                                            </td>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </tr>    
-                                                <tr>
-                                                <div class="col-md-4 text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <td><h4 class="media-heading  text-center2">Barra</h4></td>
-                                                            <td>
-                                                                <div class="ficon  text-center2">
-                                                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                                                </div>
-                                                            </td>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </tr> 
-                                                <tr>
-                                                <div class="col-md-4 text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <td><h4 class="media-heading  text-center2">Puntos</h4></td>
-                                                            <td>
-                                                                <div class="ficon  text-center2">
-                                                                    <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Ver tabla</button>
-                                                                </div>
-                                                            </td>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </tr> 
-                                                </tbody>
-                                            </table>
-
-                                            <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Diagra de Torta</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <img src="img/pastel.jpeg" alt=""/>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
+                                    </section> 
+                                    
 
                                 </section>
                             </section>

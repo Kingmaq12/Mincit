@@ -117,12 +117,25 @@ function contactar() {
 
 function guardarDatos(){
     
+    alert("entra a guardar datos");
     
-    alert("entro a registrar Evento");
     
+        String entidad_adscrita="";
+        ArrayList<String> enAd = new ArrayList<>();
+    
+    for(int i=1;i<13;i++){
+        String x=i+"."+i;
+        var ii= document.getElementById(x).checked;
+        if(ii){
+        entidad_adscrita+=i+",";
+        }
+    }
+    
+    //SE PUEDE MANDAR TODO CONCATENADO EN UN STRING Y EL GUARDARDATOS LO RESIVE ASI Y LO MANDO A NEGOCIO
+    //Y EN NEGOCIO LE HAGO SPLIT
     ajax = nuevoAjax();
-    parametros = "nombre=" + document.getElementById("nombre").value +"&fecha=" +document.getElementById("fecha").value + "&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&patrocinadores=" + document.getElementById("patrocinadores").value + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participanetes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + document.getElementById("sector_economico").value + "&url=" + document.getElementById("url").value + "&imagen=" + document.getElementById("imagen").value + "&logros=" + document.getElementById("logros").value + "&descripcion=" + document.getElementById("descripcion").value;
-    url = "procesar/registrar.jsp";
+    parametros = "nombre=" + document.getElementById("nombre").value +"&fecha=" +document.getElementById("fecha").value + +"&hora=" +document.getElementById("hora").value +"&fecha=" +document.getElementById("fecha").value + +"&lugar=" +document.getElementById("lugar").value;
+    url = "procesar/guardarDatos.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
@@ -134,24 +147,27 @@ function guardarDatos(){
             {
                 var rta = ajax.responseText;
                 if (rta.indexOf("S") > 0) {
-                    document.getElementById("campo").innerHTML = "Evento Registrado Exitosamente.";
-                    $("#registrar")[0].reset();
+                    document.getElementById("campo").innerHTML = "Datos Guardados, puede hacer Paso 2.";
+                    $("#registrarManual")[0].reset();
+                    $("#registrarManualImagen")[0].reset();
                 } else {
 
                     document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
-                    $("#registrar")[0].reset();
+                    $("#registrarManual")[0].reset();
                 }
             } else
             {
 
                 var rta = ajax.responseText;
                 if (rta.indexOf("S") > 0) {
-                    document.getElementById("campo").innerHTML = "Evento Registrado Exitosamente.";
-                    $("#registrar")[0].reset();
+                    document.getElementById("campo").innerHTML = "Datos Guardados, puede hacer Paso 2.";
+                    $("#registrarManual")[0].reset();
+                    $("#registrarManualImagen")[0].reset();
+                    
                 } else {
 
                     document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
-                    $("#registrar")[0].reset();
+                    $("#registrarManual")[0].reset();
                 }
             }
         } else

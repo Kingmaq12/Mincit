@@ -29,7 +29,8 @@ public class Entidad_adscritaDAO implements IEntidad_adscritaDAO{
             stmt = conn.prepareStatement("SELECT * FROM  `Entidad adscrita`" );
             ResultSet res = stmt.executeQuery();
             while(res.next()){
-               resul.add(res.getString(2));
+               String cad=res.getString(1)+","+res.getString(3);
+               resul.add(cad);
             }
             stmt.close();
             res.close();

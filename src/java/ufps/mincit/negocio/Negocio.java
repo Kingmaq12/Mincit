@@ -39,7 +39,7 @@ public class Negocio {
         return true;
     }
     
-    public ArrayList<String> mostrarPaises()throws Exception{
+     public ArrayList<String> mostrarPaises()throws Exception{
         
         PaisesDAO dao = new PaisesDAO();
         

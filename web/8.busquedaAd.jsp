@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 6/09/2016, 08:23:30 PM
-    Author     : user
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
@@ -102,41 +96,41 @@
                                         <ul class="nav">
                                             <li>
                                                 <a href="7.registrar_evento.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
+                                                    <i class="fa fa-pencil icon">
                                                         <b class="bg-danger"></b>
                                                     </i>
                                                     <span>Nuevo Evento</span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <li class="active">
                                                 <a href="8.busquedaAd.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
-                                                        <b class="bg-danger"></b>
+                                                    <i class="fa fa-search icon">
+                                                        <b class="bg-info"></b>
                                                     </i>
                                                     <span>Consultar Evento</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="9.ver_comentario.jsp"  >
-                                                    <i class="fa fa-dashboard icon">
-                                                        <b class="bg-danger"></b>
+                                                    <i class="fa fa-book icon">
+                                                        <b class="bg-primary"></b>
                                                     </i>
                                                     <span>Comentarios</span>
                                                 </a>
                                             </li>
-                                            <li class="active">
+                                            <li>
                                                 <a href="10.ver_alertas.jsp"  >
-                                                    <i class="fa fa-archive icon">
+                                                    <i class="fa fa-ticket icon">
                                                         <b class="bg-warning"></b>
                                                     </i>
                                                     <span>Alertas</span>
                                                 </a>
                                             </li>
-                                          
+
                                             <li>
                                                 <a href="13.configuracion.jsp"  >
-                                                    <i class="fa fa-edit icon">
-                                                        <b class="bg-success"></b>
+                                                    <i class="fa fa-wrench icon">
+                                                        <b class="bg-dark"></b>
                                                     </i>
                                                     <span>Configuración</span>
                                                 </a>
@@ -148,30 +142,6 @@
                             </section>
 
                             <footer class="footer lt hidden-xs b-t b-light">
-                                <div id="chat" class="dropup">
-                                    <section class="dropdown-menu on aside-md m-l-n">
-                                        <section class="panel bg-white">
-                                            <header class="panel-heading b-b b-light">Active chats</header>
-                                            <div class="panel-body animated fadeInRight">
-                                                <p class="text-sm">No active chats.</p>
-                                                <p><a href="#" class="btn btn-sm btn-default">Start a chat</a></p>
-                                            </div>
-                                        </section>
-                                    </section>
-                                </div>
-                                <div id="invite" class="dropup">                
-                                    <section class="dropdown-menu on aside-md m-l-n">
-                                        <section class="panel bg-white">
-                                            <header class="panel-heading b-b b-light">
-                                                John <i class="fa fa-circle text-success"></i>
-                                            </header>
-                                            <div class="panel-body animated fadeInRight">
-                                                <p class="text-sm">No contacts in your lists.</p>
-                                                <p><a href="#" class="btn btn-sm btn-facebook"><i class="fa fa-fw fa-facebook"></i> Invite from Facebook</a></p>
-                                            </div>
-                                        </section>
-                                    </section>
-                                </div>
                                 <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-default btn-icon">
                                     <i class="fa fa-angle-left text"></i>
                                     <i class="fa fa-angle-right text-active"></i>
@@ -191,6 +161,13 @@
 
 
                                     <section>
+                                        <div class="container  bajar contacto">
+                                            <div class="col-md-6 col-md-offset-3 text-center">
+                                                <h2>Consultar Evento</h2>
+                                                <hr>
+                                            </div>
+
+                                        </div>
                                         <div class="container">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
@@ -260,17 +237,63 @@
                                                     <tr>
                                                         <td>1</td>
                                                         <td>Evento 1 </td>
-                                                        <td><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button></td>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                                        data-toggle="dropdown">
+                                                                    Opciones <span class="glyphicon caret"></span>
+                                                                </button>
+
+                                                                <ul class="dropdown-menu" role="menu">
+                                                                    <li><a href="#">Editar</a></li>
+                                                                    <li><a href="#">Agregar Alerta</a></li>
+                                                                    <li><a href="#">Enviar Invitaciones</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
+                                                                </ul>
+                                                            </div> 
+                                                           <!-- <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button> -->
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
                                                         <td>Evento 2</td>
-                                                        <td><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn2"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button></td>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                                        data-toggle="dropdown">
+                                                                    Opciones <span class="glyphicon caret"></span>
+                                                                </button>
+
+                                                                <ul class="dropdown-menu" role="menu">
+                                                                    <li><a href="#">Editar</a></li>
+                                                                    <li><a href="#">Agregar Alerta</a></li>
+                                                                    <li><a href="#">Enviar Invitaciones</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
                                                         <td>Evento 3</td>
-                                                        <td><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn3"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button></td>
+                                                        <td>
+                                                             <div class="btn-group">
+                                                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                                                        data-toggle="dropdown">
+                                                                    Opciones <span class="glyphicon caret"></span>
+                                                                </button>
+
+                                                                <ul class="dropdown-menu" role="menu">
+                                                                    <li><a href="#">Editar</a></li>
+                                                                    <li><a href="#">Agregar Alerta</a></li>
+                                                                    <li><a href="#">Enviar Invitaciones</a></li>
+                                                                    <li class="divider"></li>
+                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>

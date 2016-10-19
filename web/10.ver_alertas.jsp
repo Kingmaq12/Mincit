@@ -101,6 +101,22 @@
                                     <nav class="nav-primary hidden-xs">
                                         <ul class="nav">
                                             <li>
+                                                <a href="7.registrar_evento.jsp"  >
+                                                    <i class="fa fa-dashboard icon">
+                                                        <b class="bg-danger"></b>
+                                                    </i>
+                                                    <span>Nuevo Evento</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="8.busquedaAd.jsp"  >
+                                                    <i class="fa fa-dashboard icon">
+                                                        <b class="bg-danger"></b>
+                                                    </i>
+                                                    <span>Consultar Evento</span>
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="9.ver_comentario.jsp"  >
                                                     <i class="fa fa-dashboard icon">
                                                         <b class="bg-danger"></b>
@@ -116,22 +132,7 @@
                                                     <span>Alertas</span>
                                                 </a>
                                             </li>
-                                            <li >
-                                                <a href="11.cuestionario.jsp"  >
-                                                    <i class="fa fa-envelope-o icon">
-                                                        <b class="bg-primary dker"></b>
-                                                    </i>
-                                                    <span>Emprendedor</span>
-                                                </a>
-                                            </li>
-                                            <li >
-                                                <a href="12.ver_estadisticas.jsp"  >
-                                                    <i class="fa fa-pencil icon">
-                                                        <b class="bg-info"></b>
-                                                    </i>
-                                                    <span>Estadisticas</span>
-                                                </a>
-                                            </li>
+                                          
                                             <li>
                                                 <a href="13.configuracion.jsp"  >
                                                     <i class="fa fa-edit icon">

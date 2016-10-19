@@ -205,7 +205,12 @@ _________________________________________________________ -->
                                                 <input type="text" class="form-control" id="subject">
                                             </div>
                                         </div>
-                                        
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="subject">Logro</label>
+                                                <input type="text" class="form-control" id="subject">
+                                            </div>
+                                        </div>
 
                                         <div class="col-sm-12 text-center">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-send"></i> Consultar</button>

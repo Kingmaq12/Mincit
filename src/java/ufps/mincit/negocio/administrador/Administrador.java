@@ -57,9 +57,11 @@ public class Administrador {
      }
      
           
-     public ArrayList<EventoDTO> consultarEventos(Date Fecha, String Entidad, String Pais, String Cuidad, String Continente, String Sector, String logro) throws Exception{
+     public ArrayList<EventoDTO> consultarEventos(Date fecha, String entidad, String pais, String cuidad, String continente, String sector, String logro) throws Exception{
          
-         
+         if(fecha!=null ){
+             
+         }
          
          
          return null;

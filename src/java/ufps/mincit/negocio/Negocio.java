@@ -70,8 +70,8 @@ public class Negocio {
         
     }
    
-    public ArrayList<EventoDTO> consultarEventos (Date Fecha, String Entidad, String Pais, String Cuidad, String Continente, String Sector, String logro) throws Exception{
+    public ArrayList<EventoDTO> consultarEventos (Date fecha, String entidad, String pais, String cuidad, String continente, String sector, String logro) throws Exception{
         
-        return this.admin.consultarEventos(Fecha, Entidad, Pais, Cuidad, Continente, Sector,  logro);
+        return this.admin.consultarEventos(fecha, entidad, pais, cuidad, continente, sector,  logro);
     }
 }

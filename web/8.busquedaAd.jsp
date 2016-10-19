@@ -190,43 +190,53 @@
 
 
                                     <section>
-                                        <div class="container contacto delinear">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                <div class="text-center">
-                                                    <h2>Buscar Eventos</h2>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="firstname">Fecha</label>
+                                                    <input type="date" class="form-control" id="firstname">
                                                 </div>
-                                                <hr>
                                             </div>
-                                            <div class="col-sm-4 col-sm-offset-1">
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Fecha </label>
-                                                    <input type="date" name="name" class="form-control" required="required">
+                                                    <label for="lastname">Entidad</label>
+                                                    <input type="text" class="form-control" id="lastname">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Entidad </label>
-                                                    <input type="text" name="name" class="form-control" required="required">
-                                                </div>	
-                                                <div class="form-group">
-                                                    <label>País </label>
-                                                    <input type="text" name="name" class="form-control" required="required">
-                                                </div>				
                                             </div>
-                                            <div class="col-sm-4 col-sm-offset-1">
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Ciudad </label>
-                                                    <input type="text" name="name" class="form-control" required="required">
+                                                    <label for="email">Pais</label>
+                                                    <input type="text" class="form-control" id="email">
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Sector Económico </label><br>
-                                                    <select class="form-control">
-                                                        <option value="volvo">Sector Primario</option>
-                                                        <option value="volvo">Sector Secundario</option>
-                                                        <option value="saab">Sector Terciario</option>
-                                                    </select>
+                                                    <label for="subject">Ciudad</label>
+                                                    <input type="text" class="form-control" id="subject">
                                                 </div>
-                                                <div class="form-group text-center">
-                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar</button>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="subject">Continente</label>
+                                                    <input type="text" class="form-control" id="subject">
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="subject">Sector Economico</label>
+                                                    <input type="text" class="form-control" id="subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="subject">Logro</label>
+                                                    <input type="text" class="form-control" id="subject">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 text-center">
+                                                <button type="submit" class="btn btn-template-main"><i class="fa fa-send"></i> Consultar</button>
+
                                             </div>
                                         </div>
 

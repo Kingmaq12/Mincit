@@ -74,8 +74,7 @@
                                 </div>
 
                                 <div class="login">
-                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 1</span></a>
-                                    <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 2</span></a>
+                                    <a href="inicio_sesion.jsp"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicio de Sesion </span></a>
                                 </div>
 
                             </div>
@@ -111,7 +110,7 @@
                             <div class="navbar-collapse collapse" id="navigation">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown active">
+                                    <li class="dropdown">
                                         <a href="index.jsp">Inicio </a>
                                     </li>
                                     <li class="dropdown use-yamm yamm-fw">
@@ -163,7 +162,6 @@
                             <p class="text-center">
                                 <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
                             </p>
-
 
 
                             <p class="text-center text-muted">Olvido su contraseña?</p>
@@ -247,7 +245,7 @@
                         <h3>Quieres mostrar tu evento en esta pagina?</h3>
                     </div>
                     <div class="col-md-4 col-sm-12">
-                        <a href="contact2.html" class="btn btn-template-transparent-primary">Contactanos</a>
+                        <a href="4.contacto.jsp" class="btn btn-template-transparent-primary">Contactanos</a>
                     </div>
                 </div>
             </div>
@@ -329,7 +327,7 @@
                             <strong>Great Britain</strong>
                         </p>
 
-                        <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
+                        <a href="4contacto.jsp" class="btn btn-small btn-template-main">Go to contact page</a>
 
                         <hr class="hidden-md hidden-lg hidden-sm">
 

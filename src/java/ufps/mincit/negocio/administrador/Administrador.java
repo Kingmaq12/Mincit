@@ -59,10 +59,12 @@ public class Administrador {
           
      public ArrayList<EventoDTO> consultarEventos(Date fecha, String entidad, String pais, String cuidad, String continente, String sector, String logro) throws Exception{
          
-         if(fecha!=null ){
+         if(fecha!=null && !entidad.isEmpty() && !pais.isEmpty()&& !cuidad.isEmpty()&& !continente.isEmpty()&& !sector.isEmpty() && !logro.isEmpty()){
+             EventoDTO dto = new EventoDTO ();
+         }
+         if(fecha!=null && entidad.isEmpty() &&pais.isEmpty()&& cuidad.isEmpty()&& continente.isEmpty()&&sector.isEmpty()&&  logro.isEmpty()){
              
          }
-         
          
          return null;
      }

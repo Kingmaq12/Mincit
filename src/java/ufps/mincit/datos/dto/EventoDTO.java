@@ -53,6 +53,25 @@ public class EventoDTO {
         this.estado = "1";
     }
 
+        public EventoDTO(String fecha, String hora, String lugar, String patrocinadores, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico,String url, String imagen, String logros, String descripcion) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.lugar = lugar;
+        this.patrocinadores = patrocinadores;
+        this.continente = continente;
+        this.pais = pais;
+        this.ciudad = ciudad;
+        this.participantes = participantes;
+        this.tipo_evento = tipo_evento;
+        this.sector_economico = sector_economico;
+        this.url=url;
+        this.imagen = imagen;
+        this.logros = logros;
+        this.descripcion = descripcion;
+        this.estado = "1";
+    }
+    
     public String getNombre() {
         return nombre;
     }

@@ -70,7 +70,7 @@ public class Negocio {
         
     }
    
-    public ArrayList<EventoDTO> consultarEventos (Date fecha, String entidad, String pais, String cuidad, String continente, String sector, String logro) throws Exception{
+    public ArrayList<EventoDTO> consultarEventos (String fecha, String entidad, String pais, String cuidad, String continente, String sector, String logro) throws Exception{
         
         return this.admin.consultarEventos(fecha, entidad, pais, cuidad, continente, sector,  logro);
     }

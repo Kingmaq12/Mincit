@@ -45,8 +45,6 @@
         <link href="css/owl.carousel.css" rel="stylesheet">
         <link href="css/owl.theme.css" rel="stylesheet">
 
-
-
     </head>
 
     <body>
@@ -196,7 +194,7 @@
                 <div class="container">
 
                     <div class="row">
-                        <form name="iniciarSesion" id="iniciarSesion" method="POST" action="javascript:iniciarSesion()">
+                        <form name="iniciarSesion" id="iniciarSesion" method="post" action="javascript:iniciarSesion()">
                             <div class="col-md-12">
 
                                 <div class="box">
@@ -218,7 +216,7 @@
                                         <input type="password" class="form-control" id="contrasenia" name="contrasenia">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" name="submit" class="btn btn-template-main" required="required"><i class="fa fa-sign-in"></i>Iniciar Sesion</button>
+                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i>Iniciar Sesion</button>
                                     </div>
                                     <br>
                                     <label class="label-danger" name="campo" id="campo" ></label>

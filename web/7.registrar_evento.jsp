@@ -213,7 +213,7 @@
                                                                                         String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox"  name="entidad_adscrita" values="<%=a[0]%>"> <%=a[1]%> 
+                                                                                    <input type="checkbox"  name="entidad_adscrita" values="<%=a[0]%>.1"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -290,9 +290,10 @@
                                                                                     Negocio n2 = new Negocio();
                                                                                     ArrayList<String> sectores = n2.mostrarSectores();
                                                                                     for (String e : sectores) {
+                                                                                         String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox"name="sector_economico" values="<%=e%>"> <%=e%> 
+                                                                                    <input type="checkbox"name="sector_economico" values="<%=a[0]%>.2"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -300,6 +301,7 @@
                                                                                 %>
                                                                             </div>
                                                                         </div>
+                                                                         
                                                                         <div class="form-group">
                                                                             <label>URL </label>
                                                                             <input type="text" name="url" id="url" class="form-control" required="required">
@@ -311,9 +313,10 @@
                                                                                     Negocio n3 = new Negocio();
                                                                                     ArrayList<String> logros = n3.mostrarLogros();
                                                                                     for (String e : logros) {
+                                                                                        String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox" name="logros" values="<%=e%>"> <%=e%> 
+                                                                                    <input type="checkbox" name="logros" values="<%=a[0]%>.3"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -322,33 +325,29 @@
                                                                             </div>
                                                                         </div>			
                                                                     </div>
-
-                                                                    <div class="col-sm-8">
-                                                                        <div class="form-group">
-                                                                            <label>Descripción</label>
-                                                                            <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
+                                                                    <div class="container">
+                                                                        <div class="col-sm-8">
+                                                                                <label>Descripción</label>
+                                                                                <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="col-sm-3">
+                                                                            <br><br><br><br><br>    
+                                                                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
+                                                                            <br>
+                                                                            <label id="campo" name="campo"></label>
                                                                         </div>
                                                                     </div>
-                                                                    <br>
-
-                                                                    <div class="col-sm-12">
-                                                                        <br>
-                                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
-                                                                        <br>
-                                                                        <label id="campo" name="campo"></label>
-                                                                    </div>
+                                                                            <br><br>
                                                                 </form> 
                                                             </div>
 
                                                             <div id="menu4" class="tab-pane fade delinear">
-                                                                <%
-
-                                                                %>
                                                                 <br>
                                                                 <br>
                                                                 <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="estimarCarga.jsp" enctype="multipart/form-data">
-                                                                    <%                                                                        if (session.getAttribute("nombre_imagen") != null) {
-                                                                            String nombre = (String) session.getAttribute("nombre");
+                                                                    <%      if (session.getAttribute("nombre_imagen") != null) {
+                                                                            String nombre = (String) session.getAttribute("nombre_imagen");
                                                                     %>
                                                                     <div class="col-sm-4 col-sm-offset-1">
 

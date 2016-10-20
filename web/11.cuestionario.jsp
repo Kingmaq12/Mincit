@@ -41,7 +41,7 @@
                 <ul class="nav navbar-nav hidden-xs">
                     <li>
                         <div class="m-t m-l">
-                            <a href="index.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
+                            <a href="7.perfil.jsp" class="dropdown-toggle btn btn-xs btn-primary" title="Inicio"><i class="fa fa-long-arrow-up"></i></a>
                         </div>
                     </li>
                 </ul>      
@@ -154,7 +154,7 @@
                     <section id="content">
                         <section class="vbox">
                             <header class="header bg-white b-b b-light">
-                                <p>Realiza la siguiente encuensta al Emprendedor.</p>
+                                <p>Realiza la siguiente encuesta al Emprendedor.</p>
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">

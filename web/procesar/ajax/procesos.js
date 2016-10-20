@@ -22,10 +22,10 @@ function nuevoAjax() {
 }
 
 
-function iniciarSesion(){
-        
+function iniciarSesion() {
+
     ajax = nuevoAjax();
-    parametros = "cedula=" + document.getElementById("cedula").value + "&contrasenia=" + document.getElementById("contrasenia").value ;
+    parametros = "cedula=" + document.getElementById("cedula").value + "&contrasenia=" + document.getElementById("contrasenia").value;
     url = "procesar/iniciar.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -40,9 +40,9 @@ function iniciarSesion(){
                 var rta = ajax.responseText;
                 if (rta.indexOf("S") > 0) {
                     window.location = "6.perfil.jsp";
-                } else if(rta.indexOf("A") > 0) {
-                    window.location = "6.perfil2.jsp";
-                } else{
+                } else if (rta.indexOf("A") > 0) {
+                    window.location = "7.perfil.jsp";
+                } else {
                     document.getElementById("campo").innerHTML = "Datos incorrectos";
                     $("#iniciarSesion")[0].reset();
                 }
@@ -55,9 +55,9 @@ function iniciarSesion(){
                     /** document.getElementById(campo).innerHTML = "Asignacion exitosa";
                      $("#formAsignarEstudiante")[0].reset(); **/
                     window.location = "6.perfil.jsp";
-                }  else if(rta.indexOf("A") > 0) {
-                    window.location = "6.perfil2.jsp";
-                } else{
+                } else if (rta.indexOf("A") > 0) {
+                    window.location = "7.perfil.jsp";
+                } else {
                     document.getElementById("campo").innerHTML = "Datos incorrectos";
                     $("#iniciarSesion")[0].reset();
                 }
@@ -67,14 +67,14 @@ function iniciarSesion(){
             document.getElementById(campo).value = "Procesando registro";
         }
     }
-    
-    
+
+
 }
 
 function contactar() {
 
     ajax = nuevoAjax();
-    parametros = "nombre_empresa=" + document.getElementById("nombre_empresa").value +"&nombre_empleado=" +document.getElementById("nombre_empleado").value +"&email=" + document.getElementById("email").value + "&asunto=" + document.getElementById("asunto").value + "&mensaje=" + document.getElementById("mensaje").value;
+    parametros = "nombre_empresa=" + document.getElementById("nombre_empresa").value + "&nombre_empleado=" + document.getElementById("nombre_empleado").value + "&email=" + document.getElementById("email").value + "&asunto=" + document.getElementById("asunto").value + "&mensaje=" + document.getElementById("mensaje").value;
     url = "procesar/contactar.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -115,26 +115,47 @@ function contactar() {
 
 }
 
-function guardarDatos(){
+function guardarDatos() {
     
-    alert("entra a guardar datos");
-    
-    
-        String entidad_adscrita="";
-        ArrayList<String> enAd = new ArrayList<>();
-    
-    for(int i=1;i<13;i++){
-        String x=i+"."+i;
-        var ii= document.getElementById(x).checked;
-        if(ii){
-        entidad_adscrita+=i+",";
+    alert("entro a guardarDatos()");
+
+    var entidad_adscrita = "";
+    var i;
+    for (i = 1; i < 13; i++) {
+        x = i + ".1" ;
+        var ii = document.getElementById(x).checked;
+        if (ii) {
+            alert("encontro checked");
+            entidad_adscrita += i + ",";
+        }
+    }
+
+
+    var sector_economico = "";
+    var j;
+    for (j = 1; j < 13; j++) {
+        x = j + ".2" ;
+        var ii = document.getElementById(x).checked;
+        if (ii) {
+            sector_economico += j + ",";
         }
     }
     
-    //SE PUEDE MANDAR TODO CONCATENADO EN UN STRING Y EL GUARDARDATOS LO RESIVE ASI Y LO MANDO A NEGOCIO
-    //Y EN NEGOCIO LE HAGO SPLIT
+    var logros = "";
+    var s;
+    for (s = 1; s < 13; s++) {
+        z = s + ".3" ;
+        var ii = document.getElementById(z).checked;
+        if (ii) {
+            logros += s + ",";
+        }
+    }
+    
+//SE PUEDE MANDAR TODO CONCATENADO EN UN STRING Y EL GUARDARDATOS LO RESIVE ASI Y LO MANDO A NEGOCIO
+//Y EN NEGOCIO LE HAGO SPLIT
     ajax = nuevoAjax();
-    parametros = "nombre=" + document.getElementById("nombre").value +"&fecha=" +document.getElementById("fecha").value + +"&hora=" +document.getElementById("hora").value +"&fecha=" +document.getElementById("fecha").value + +"&lugar=" +document.getElementById("lugar").value;
+    parametros = "nombre=" + document.getElementById("nombre").value + "&fecha=" + document.getElementById("fecha").value +"&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&entidad_adscrita=" + entidad_adscrita + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("participantes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + sector_economico + "&url=" + document.getElementById("url").value + "&logros=" + logros + "&descripcion=" + document.getElementById("descripcion").value;
+    
     url = "procesar/guardarDatos.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -163,7 +184,7 @@ function guardarDatos(){
                     document.getElementById("campo").innerHTML = "Datos Guardados, puede hacer Paso 2.";
                     $("#registrarManual")[0].reset();
                     $("#registrarManualImagen")[0].reset();
-                    
+
                 } else {
 
                     document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
@@ -175,5 +196,5 @@ function guardarDatos(){
             document.getElementById(campo).value = "Procesando registro";
         }
     }
-    
+
 }

@@ -29,7 +29,8 @@ public class Sector_economicoDAO implements ISector_economicoDAO{
             stmt = conn.prepareStatement("SELECT * FROM  `Sector_economico`" );
             ResultSet res = stmt.executeQuery();
             while(res.next()){
-               resul.add(res.getString(2));
+                String cad=res.getString(1)+","+res.getString(2);
+               resul.add(cad);
             }
             stmt.close();
             res.close();

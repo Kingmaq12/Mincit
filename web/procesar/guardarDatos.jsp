@@ -10,6 +10,9 @@
 
 
 <%
+    
+    System.out.println("ENTRO A JSP GUARDARDATOS");
+    
     String nombre = request.getParameter("nombre");
     String fecha = request.getParameter("fecha");
     String hora = request.getParameter("hora");
@@ -20,9 +23,9 @@
     String ciudad = request.getParameter("ciudad");
     String participantes = request.getParameter("participantes");
     String tipo_evento = request.getParameter("tipo_evento");
-    String[] sector_economico = request.getParameterValues("sector_economico");
+    String sector_economico = request.getParameter("sector_economico");
     String url = request.getParameter("url");
-    String[] logros = request.getParameterValues("logros");
+    String logros = request.getParameter("logros");
     String descripcion = request.getParameter("descripcion");
    
     session.setAttribute("nombre", nombre );

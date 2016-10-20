@@ -29,7 +29,8 @@ public class LogroDAO implements ILogroDAO{
             stmt = conn.prepareStatement("SELECT * FROM  `Logro`" );
             ResultSet res = stmt.executeQuery();
             while(res.next()){
-               resul.add(res.getString(2));
+                String cad=res.getString(1)+","+res.getString(2);
+               resul.add(cad);
             }
             stmt.close();
             res.close();

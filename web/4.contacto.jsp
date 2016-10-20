@@ -73,7 +73,7 @@
                                 </div>
 
                                 <div class="login">
-                                    <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion</span></a>
+                                    <a href="inicio_sesion.jsp"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion</span></a>
                                 </div>
 
                             </div>

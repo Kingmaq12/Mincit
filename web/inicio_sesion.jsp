@@ -257,7 +257,7 @@
 
             <footer id="footer">
                 <div class="container">
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-5 col-sm-6">
                         <h4>Acerca de nosotros</h4>
 
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
@@ -268,64 +268,23 @@
                     </div>
                     <!-- /.col-md-3 -->
 
-                    <div class="col-md-3 col-sm-6">
 
-                        <h4>Blog</h4>
-
-                        <div class="blog-entries">
-                            <div class="item same-height-row clearfix">
-                                <div class="image same-height-always">
-                                    <a href="#">
-                                        <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="name same-height-always">
-                                    <h5><a href="#">Blog post name</a></h5>
-                                </div>
-                            </div>
-
-                            <div class="item same-height-row clearfix">
-                                <div class="image same-height-always">
-                                    <a href="#">
-                                        <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="name same-height-always">
-                                    <h5><a href="#">Blog post name</a></h5>
-                                </div>
-                            </div>
-
-                            <div class="item same-height-row clearfix">
-                                <div class="image same-height-always">
-                                    <a href="#">
-                                        <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="name same-height-always">
-                                    <h5><a href="#">Very very long blog post name</a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="hidden-md hidden-lg">
-
-                    </div>
                     <!-- /.col-md-3 -->
 
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-5 col-sm-6">
 
                         <h4>Contactenos</h4>
 
-                        <p><strong>Universal Ltd.</strong>
-                            <br>13/25 New Avenue
-                            <br>Newtown upon River
-                            <br>45Y 73J
-                            <br>England
+                        <p><strong>Mincit Eventos Ltd.</strong>
+                            <br>Avenida Gran Colombia # 12E - 96
+                            <br>Universidad Francisco de Paula Santander
+                            <br>Cucuta
+                            <br>Norte de Santander
                             <br>
-                            <strong>Great Britain</strong>
+                            <strong>Colombia</strong>
                         </p>
 
-                        <a href="4contacto.jsp" class="btn btn-small btn-template-main">Go to contact page</a>
+                        <a href="4.contacto.jsp" class="btn btn-small btn-template-main">Ir a la pagina de Contactenos</a>
 
                         <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -333,45 +292,6 @@
                     <!-- /.col-md-3 -->
 
 
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Photostream</h4>
-
-                        <div class="photostream">
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare3.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare2.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#">
-                                    <img src="img/detailsquare.jpg" class="img-responsive" alt="#">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
                     <!-- /.col-md-3 -->
                 </div>
                 <!-- /.container -->
@@ -424,7 +344,7 @@
 
         <script src="js/front.js"></script>
 
-        
+
         <script src="procesar/ajax/procesos.js"></script>
 
     </body>

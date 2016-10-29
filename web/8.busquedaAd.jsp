@@ -15,6 +15,7 @@
 
         <link rel="stylesheet" href="css/app.css" type="text/css" />
         <link rel="stylesheet" href="css/jquery.bxslider.css">        
+        <script src="procesar/ajax/procesos.js"></script>
 
     </head>
     <body>
@@ -171,116 +172,122 @@
 
                                         </div>
                                         <div class="container">
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="firstname">Fecha</label>
-                                                    <input type="date" class="form-control" id="firstname">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>Entidad Adscrita</label>
-                                                    <select class="form-control" name="entidad_adscrita" id="pais">
-                                                        <option value="ninguno">-No seleccionado-</option>
-                                                        <%
-                                                            Negocio n1 = new Negocio();
-                                                            ArrayList<String> entidades = n1.mostrarEntidades();
-                                                            for (String e : entidades) {
-                                                        %>
-                                                        
-                                                       <option value="<%=e%>"><%=e%></option>
-                                                       
-                                                        <%
-                                                            }
-                                                        %>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>País</label>
-                                                    <select class="form-control" name="pais" id="pais">
-                                                        <option value="ninguno">-No seleccionado-</option>
-                                                        <%
-                                                            Negocio n = new Negocio();
-                                                            ArrayList<String> paises = n.mostrarPaises();
-                                                            for (String e : paises) {
-                                                        %>
+                                            <form  id="consultar" action="javascript:consultar()" method="post">
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label for="firstname">Fecha</label>
+                                                            <input type="date" class="form-control" id="fecha">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label>Entidad Adscrita</label>
+                                                            <select class="form-control" id="entidad">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <%
+                                                                    Negocio n1 = new Negocio();
+                                                                    ArrayList<String> entidades = n1.mostrarEntidades();
+                                                                    for (String e : entidades) {
+                                                                %>
 
-                                                        <option value="<%=e%>"><%=e%></option>
+                                                                <option value="<%=e%>"><%=e%></option>
+
+                                                                <%
+                                                                    }
+                                                                %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label>País</label>
+                                                            <select class="form-control" name="pais" id="pais">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <%
+                                                                    Negocio n = new Negocio();
+                                                                    ArrayList<String> paises = n.mostrarPaises();
+                                                                    for (String e : paises) {
+                                                                %>
+
+                                                                <option value="<%=e%>"><%=e%></option>
 
 
-                                                        <%
-                                                            }
-                                                        %>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="subject">Ciudad</label>
-                                                    <input type="text" class="form-control" id="subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>Continente </label><br>
-                                                    <select class="form-control" name="continente" id="continente">
-                                                        <option value="ninguno">-No seleccionado-</option>
-                                                        <option value="america">America</option>
-                                                        <option value="europa">Europa</option>
-                                                        <option value="asia">Asia</option>
-                                                        <option value="oceania">Oceania</option>
-                                                        <option value="africa">Africa</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>Sector Economico</label>
-                                                    <select class="form-control" name="sector_economico" id="pais">
-                                                        <option value="ninguno">-No seleccionado-</option>
-                                                        <%
-                                                            Negocio n2 = new Negocio();
-                                                            ArrayList<String> sectores = n2.mostrarSectores();
-                                                            for (String e : sectores) {
-                                                                
-                                                        %>
-                                                         <option value="<%=e%>"><%=e%></option>
-                                                        
-                                                        <%
-                                                            }
-                                                        %>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>Logros</label>
-                                                    <select class="form-control" name="logros" id="pais">
-                                                        <option value="ninguno">-No seleccionado-</option>
-                                                        <%
-                                                            Negocio n3 = new Negocio();
-                                                            ArrayList<String> logros = n3.mostrarLogros();
-                                                            for (String e : logros) {
-                                                                
-                                                        %>
-                                                        
-                                                        <option value="<%=e%>"><%=e%></option>
-                                                        
-                                                        <%
-                                                            }
-                                                        %>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                                                <%
+                                                                    }
+                                                                %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label for="subject">Ciudad</label>
+                                                            <input type="text" class="form-control" id="ciudad">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label>Continente </label><br>
+                                                            <select class="form-control" id="continente">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <option value="america">America</option>
+                                                                <option value="europa">Europa</option>
+                                                                <option value="asia">Asia</option>
+                                                                <option value="oceania">Oceania</option>
+                                                                <option value="africa">Africa</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label>Sector Economico</label>
+                                                            <select class="form-control"  id="sector">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <%
+                                                                    Negocio n2 = new Negocio();
+                                                                    ArrayList<String> sectores = n2.mostrarSectores();
+                                                                    for (String e : sectores) {
+                                                                %>
+                                                                <option value="<%=e%>"><%=e%></option>
 
-                                            <div class="col-sm-10 text-center">
-                                                <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-send"></i> Consultar</button>
+                                                                <%
+                                                                    }
+                                                                %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group">
+                                                            <label>Logro</label>
+                                                            <select class="form-control" name="logros" id="logro">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <%
+                                                                    Negocio n3 = new Negocio();
+                                                                    ArrayList<String> logros = n3.mostrarLogros();
+                                                                    for (String e : logros) {
+                                                                %>
 
-                                            </div>
+                                                                <option value="<%=e%>"><%=e%></option>
+
+                                                                <%
+                                                                    }
+                                                                %>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 text-center">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar Eventos</button>                                            <br><br>
+                                                        <label id="campo" name="campo"></label>
+                                                    </div>
+                                                    <br><br>
+                                                </div>
+                                                <!-- /.row -->
+                                            </form>
                                         </div>
 
+                                                            
+                                                            
                                         <div class="container  delinear">
                                             <div class="col-md-6 col-md-offset-3">
                                                 <div class="text-center">

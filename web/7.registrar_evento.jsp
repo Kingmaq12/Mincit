@@ -18,6 +18,24 @@
 
     </head>
     <body>
+        <%
+            session.removeAttribute("nombre");
+            session.removeAttribute("fecha");
+            session.removeAttribute("hora");
+            session.removeAttribute("lugar");
+            session.removeAttribute("entidad_adscrita");
+            session.removeAttribute("continente");
+            session.removeAttribute("pais");
+            session.removeAttribute("ciudad");
+            session.removeAttribute("participantes");
+            session.removeAttribute("tipo_evento");
+            session.removeAttribute("sector_economico");
+            session.removeAttribute("url");
+            session.removeAttribute("logros");
+            session.removeAttribute("descripcion");
+            %>
+        
+        
         <section class="vbox">
             <header class="bg-dark dk header navbar navbar-fixed-top-xs">
                 <div class="navbar-header aside-md">
@@ -213,7 +231,7 @@
                                                                                         String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox"  name="entidad_adscrita" values="<%=a[0]%>.1"> <%=a[1]%> 
+                                                                                    <input type="checkbox"  name="entidad_adscrita" id ="<%=a[0]%>.1" values="<%=a[0]%>.1"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -266,21 +284,21 @@
                                                                         <div class="form-group">
                                                                             <label>Tipo de Evento </label><br>
                                                                             <select class="form-control" name="tipo_evento" id="tipo_evento">
-                                                                                <option value="volvo">-No seleccionado-</option>
-                                                                                <option value="volvo">Capacitación</option>
-                                                                                <option value="saab">Evento</option>
-                                                                                <option value="mercedes">Simposio</option>
-                                                                                <option value="audi">Foro</option>
-                                                                                <option value="audi">Rueda</option>
-                                                                                <option value="audi">Seminario</option>
-                                                                                <option value="audi">Entrevista</option>
-                                                                                <option value="audi">Concurso</option>
-                                                                                <option value="audi">Feria</option>
-                                                                                <option value="audi">Aniversario</option>
-                                                                                <option value="audi">Congreso</option>
-                                                                                <option value="audi">Cumbre</option>
-                                                                                <option value="audi">Conferencia</option>
-                                                                                <option value="audi">Exposición</option>
+                                                                                <option value="Ninguno">-No seleccionado-</option>
+                                                                                <option value="Capacitacion">Capacitación</option>
+                                                                                <option value="Evento">Evento</option>
+                                                                                <option value="Simposio">Simposio</option>
+                                                                                <option value="Foro">Foro</option>
+                                                                                <option value="Rueda">Rueda</option>
+                                                                                <option value="Seminario">Seminario</option>
+                                                                                <option value="Entrevista">Entrevista</option>
+                                                                                <option value="Concurso">Concurso</option>
+                                                                                <option value="Feria">Feria</option>
+                                                                                <option value="Aniversario">Aniversario</option>
+                                                                                <option value="Congreso">Congreso</option>
+                                                                                <option value="Cumbre">Cumbre</option>
+                                                                                <option value="Conferencia">Conferencia</option>
+                                                                                <option value="Exposicion">Exposición</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">
@@ -293,7 +311,7 @@
                                                                                          String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox"name="sector_economico" values="<%=a[0]%>.2"> <%=a[1]%> 
+                                                                                    <input type="checkbox"name="sector_economico" id="<%=a[0]%>.2" values="<%=a[0]%>.2"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -316,7 +334,7 @@
                                                                                         String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
-                                                                                    <input type="checkbox" name="logros" values="<%=a[0]%>.3"> <%=a[1]%> 
+                                                                                    <input type="checkbox" name="logros" id="<%=a[0]%>.3" values="<%=a[0]%>.3"> <%=a[1]%> 
                                                                                 </label>
                                                                                 <br>
                                                                                 <%
@@ -345,31 +363,12 @@
                                                             <div id="menu4" class="tab-pane fade delinear">
                                                                 <br>
                                                                 <br>
-                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="estimarCarga.jsp" enctype="multipart/form-data">
-                                                                    <%      if (session.getAttribute("nombre_imagen") != null) {
-                                                                            String nombre = (String) session.getAttribute("nombre_imagen");
-                                                                    %>
-                                                                    <div class="col-sm-4 col-sm-offset-1">
-
-                                                                        <div class="form-group">
-                                                                            <label>Imagen </label> <br>
-                                                                            <input type="file" class="filestyle" name="<%=nombre%>" id="<%=nombre%>" data-icon="false" >
-                                                                        </div>
-                                                                    </div>
-                                                                    <br>
-                                                                    <div class="col-sm-12">
-                                                                        <br>
-                                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
-                                                                        <br>
-                                                                        <label id="campo" name="campo"></label>
-                                                                    </div>
-                                                                    <%
-                                                                    } else {
-                                                                    %>
+                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
+                                                                <div id="resetear">
+                                                                
                                                                     <h3>Primero termine el paso 1</h3>
-                                                                    <%
-                                                                        }
-                                                                    %>
+                                                                
+                                                                </div>
                                                                 </form>
                                                             </div> 
                                                         </div>
@@ -420,5 +419,36 @@
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
         <script src="procesar/ajax/procesos.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!--<script>
+        $(function(){
+
+            $("#registrarManualImagen").on("submit", function(e){
+                e.preventDefault();
+                var f = $(this);
+                String nombre = (String) session.getAttribute("nombre");
+                var formData = new FormData(document.getElementById(nombre));
+                formData.append("dato", "valor");
+                //formData.append(f.attr("name"), $(this)[0].files[0]);
+                $.ajax({
+                    url: "registrarEventoManual.jsp",
+                    type: "post",
+                    dataType: "html",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                 processData: false
+                })
+                    .done(function(res){
+                        document.getElementById("campo").innerHTML = "Mensaje Enviado Exitosamente.";
+                        $("#registrarManualImagen")[0].reset();
+                    }else{
+                        document.getElementById("campo").innerHTML = "Hubo un error en el registro";
+                        $("#registrarManualImagen")[0].reset();
+                    });
+            });
+        });
+        </script>
+        -->
     </body>
 </html>

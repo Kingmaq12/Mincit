@@ -45,4 +45,28 @@ public class PaisesDAO implements IPaisesDAO{
     }
     
     
+    public String buscarPais(String pais)throws Exception{ 
+        conn = ConexionSQL.conectar();
+        String resul="";
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * FROM `paises` WHERE `nombre` = ?" );
+            stmt.setString(1, pais);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+               resul= res.getString(1);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+         
+     }
+    
 }

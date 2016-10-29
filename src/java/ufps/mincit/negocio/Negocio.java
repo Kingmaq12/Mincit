@@ -74,4 +74,21 @@ public class Negocio {
         
         return this.admin.consultarEventos(fecha, entidad, pais, cuidad, continente, sector,  logro);
     }
+    
+    public ArrayList<EventoDTO> consultarEventos2 (String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception{
+        System.out.println(fecha+"-"+entidad+"-"+pais+"-"+ciudad+"-"+continente+"-"+sector+"-"+logro);
+        return  this.visi.consultarEventos(fecha, entidad, pais, ciudad, continente, sector,  logro);
+
+    }
+    
+    public String registrarEvento(String nombre, String fecha,String hora,String lugar,String entidad_adscrita,String continente,String pais,String ciudad,String participantes,String tipo_evento,String sector_economico,String url,String imagen,String logros,String descripcion) throws Exception{
+        
+     return this.admin.registrarEvento(nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url, imagen, logros, descripcion);
+     
+    }
+    
+    
+    
 }
+
+

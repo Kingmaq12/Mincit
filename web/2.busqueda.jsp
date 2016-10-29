@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ufps.mincit.negocio.Negocio"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
         <meta name="robots" content="all,follow">
         <meta name="googlebot" content="index,follow,snippet,archive">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
         <title>Mincit Eventos</title>
 
         <meta name="keywords" content="">
@@ -48,6 +49,7 @@
 
         <link href="css/owl.carousel.css" rel="stylesheet">
         <link href="css/owl.theme.css" rel="stylesheet">
+        <script src="procesar/ajax/procesos.js"></script>
     </head>
 
     <body>
@@ -169,26 +171,29 @@
                                 <div class="heading">
                                     <h2>Consulta</h2>
                                 </div>
-                                <form>
+                                <form accept-charset="UTF-8" id="consultar" action="javascript:consultar()" method="post">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="firstname">Fecha</label>
-                                                <input type="date" class="form-control" id="firstname">
+                                                <input type="date" class="form-control" id="fecha">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Entidad Adscrita</label>
-                                                <select class="form-control" name="entidad_adscrita" id="pais">
+                                                <select class="form-control" id="entidad">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
                                                         Negocio n1 = new Negocio();
                                                         ArrayList<String> entidades = n1.mostrarEntidades();
                                                         for (String e : entidades) {
+                                                            String[] x = e.split(",");
+                                                            String a = x[0];
+                                                            String b = x[1];
                                                     %>
 
-                                                    <option value="<%=e%>"><%=e%></option>
+                                                    <option value="<%=a%>"><%=b%></option>
 
                                                     <%
                                                         }
@@ -198,16 +203,19 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>País</label>
+                                                <label>PaÃ­s</label>
                                                 <select class="form-control" name="pais" id="pais">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
                                                         Negocio n = new Negocio();
                                                         ArrayList<String> paises = n.mostrarPaises();
                                                         for (String e : paises) {
+                                                            String[] x = e.split(",");
+                                                            String a = x[0];
+                                                            String b = x[1];
                                                     %>
 
-                                                    <option value="<%=e%>"><%=e%></option>
+                                                    <option value="<%=a%>"><%=b%></option>
 
 
                                                     <%
@@ -219,13 +227,13 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="subject">Ciudad</label>
-                                                <input type="text" class="form-control" id="subject">
+                                                <input type="text" class="form-control" id="ciudad">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Continente </label><br>
-                                                <select class="form-control" name="continente" id="continente">
+                                                <select class="form-control" id="continente">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <option value="america">America</option>
                                                     <option value="europa">Europa</option>
@@ -238,15 +246,18 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Sector Economico</label>
-                                                <select class="form-control" name="sector_economico" id="pais">
+                                                <select class="form-control"  id="sector">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
                                                         Negocio n2 = new Negocio();
                                                         ArrayList<String> sectores = n2.mostrarSectores();
                                                         for (String e : sectores) {
-
+                                                            String[] x = e.split(",");
+                                                            String a = x[0];
+                                                            String b = x[1];
                                                     %>
-                                                    <option value="<%=e%>"><%=e%></option>
+
+                                                    <option value="<%=a%>"><%=b%></option>
 
                                                     <%
                                                         }
@@ -256,17 +267,19 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>Logros</label>
-                                                <select class="form-control" name="logros" id="pais">
+                                                <label>Logro</label>
+                                                <select class="form-control" name="logros" id="logro">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
                                                         Negocio n3 = new Negocio();
                                                         ArrayList<String> logros = n3.mostrarLogros();
                                                         for (String e : logros) {
-
+                                                            String[] x = e.split(",");
+                                                            String a = x[0];
+                                                            String b = x[1];
                                                     %>
 
-                                                    <option value="<%=e%>"><%=e%></option>
+                                                    <option value="<%=a%>"><%=b%></option>
 
                                                     <%
                                                         }
@@ -277,18 +290,18 @@
 
                                         <div class="col-sm-12 text-center">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-send"></i> Consultar</button>
-
                                         </div>
                                     </div>
                                     <!-- /.row -->
                                 </form>
                             </div>
                         </div>
-
-
-
+                        <div class="container">
+                            <div id="tabla">
+                                <hr>    
+                            </div>
+                        </div>
                         <div class="row portfolio">
-
                             <div class="col-sm-6 col-md-3">
                                 <div class="box-image">
                                     <div class="image">
@@ -631,8 +644,6 @@
 
         <!-- owl carousel -->
         <script src="js/owl.carousel.min.js"></script>
-
-
 
     </body>
 

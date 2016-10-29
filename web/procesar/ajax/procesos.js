@@ -222,3 +222,47 @@ function consultar() {
     }
 
 }
+
+function cambiarContrasenia() {
+
+    ajax = nuevoAjax();
+    parametros = "antigua=" + document.getElementById("antigua").value + "&nueva=" + document.getElementById("nueva").value + "&nueva2=" + document.getElementById("nueva2").value;
+    url = "procesar/cambiarContrasenia.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function ()
+    {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    document.getElementById("campo").innerHTML = "Contraseña cambiada";
+                    $("#cambiarContrasenia")[0].reset();
+                } else {
+                    document.getElementById("campo").innerHTML = "Datos incorrectos";
+                    
+                }
+            } else
+            {
+
+                var rta = ajax.responseText;
+
+                if (rta.indexOf("S") > 0) {
+                   document.getElementById("campo").innerHTML = "Contraseña cambiada";
+                    $("#cambiarContrasenia")[0].reset();
+                } else {
+                    document.getElementById("campo").innerHTML = "Datos incorrectos";
+                }
+            }
+        } else
+        {
+            document.getElementById(campo).value = "Procesando registro";
+        }
+    }
+
+
+}

@@ -11,7 +11,9 @@ import ufps.mincit.datos.dao.Entidad_adscritaDAO;
 import ufps.mincit.datos.dao.LogroDAO;
 import ufps.mincit.datos.dao.PaisesDAO;
 import ufps.mincit.datos.dao.Sector_economicoDAO;
+import ufps.mincit.datos.dao.UsuarioDAO;
 import ufps.mincit.datos.dto.EventoDTO;
+import ufps.mincit.datos.dto.Usuario;
 import ufps.mincit.negocio.administrador.Administrador;
 import ufps.mincit.negocio.visitante.Visitante;
 
@@ -87,6 +89,30 @@ public class Negocio {
      
     }
     
+    public Usuario consultarUsuarioTipo(int tipoUsuario)throws Exception{
+        
+        UsuarioDAO dao = new UsuarioDAO();
+        
+        return dao.consultarUsuarioTipo(tipoUsuario);
+        
+        
+    } 
+    
+    public boolean consultarContraseña(String cedula, String antigua)throws Exception{
+        
+        UsuarioDAO dao = new UsuarioDAO();
+        
+        return dao.consultarContraseña(cedula,antigua);
+        
+    }
+    
+    public boolean cambiarContraseña(String cedula,String tipo_usuario,String nueva)throws Exception{
+        
+        UsuarioDAO dao = new UsuarioDAO();
+        
+        return dao.cambiarContraseña(cedula,tipo_usuario,nueva);
+        
+    }
     
     
 }

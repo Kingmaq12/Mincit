@@ -498,6 +498,8 @@ body.boxed .navbar-affixed-top.affix {
 #login-modal {
   overflow: hidden;
 }
+
+
 #login-modal .modal-header h4 {
   text-transform: uppercase;
 }

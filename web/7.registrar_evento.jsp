@@ -33,8 +33,48 @@
             session.removeAttribute("url");
             session.removeAttribute("logros");
             session.removeAttribute("descripcion");
-            %>
+
+            String evento_registrado = (String) session.getAttribute("evento_registrado");
+            
+            
+            if(evento_registrado!=null){
+                if(evento_registrado.equalsIgnoreCase("S")){
+            
+        %>
+
+        <script>
+            
+            
+            alert("Evento Registrado Existosamente");
+            
+        </script>
         
+        
+        <%
+        
+            }else{
+                
+            
+        %>
+        
+        
+        <script>
+            
+            
+            alert("Hubo un error en el registro");
+            
+        </script>
+        
+        
+        
+        <%
+        
+            }
+                session.removeAttribute("evento_registrado");
+            }
+            
+        
+        %>
         
         <section class="vbox">
             <header class="bg-dark dk header navbar navbar-fixed-top-xs">
@@ -176,6 +216,8 @@
                             <header class="header bg-white b-b b-light">
                                 <p>Realiza el registro por medio de las siguientes opciones.</p>
                             </header>
+
+
                             <section class="scrollable">
                                 <section class="hbox stretch">
 
@@ -308,7 +350,7 @@
                                                                                     Negocio n2 = new Negocio();
                                                                                     ArrayList<String> sectores = n2.mostrarSectores();
                                                                                     for (String e : sectores) {
-                                                                                         String[] a = e.split(",");
+                                                                                        String[] a = e.split(",");
                                                                                 %>
                                                                                 <label>
                                                                                     <input type="checkbox"name="sector_economico" id="<%=a[0]%>.2" values="<%=a[0]%>.2"> <%=a[1]%> 
@@ -319,7 +361,7 @@
                                                                                 %>
                                                                             </div>
                                                                         </div>
-                                                                         
+
                                                                         <div class="form-group">
                                                                             <label>URL </label>
                                                                             <input type="text" name="url" id="url" class="form-control" required="required">
@@ -345,8 +387,8 @@
                                                                     </div>
                                                                     <div class="container">
                                                                         <div class="col-sm-8">
-                                                                                <label>Descripción</label>
-                                                                                <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
+                                                                            <label>Descripción</label>
+                                                                            <textarea name="descripcion" id="descripcion" required="required" class="form-control" rows="8"></textarea>
                                                                         </div>
                                                                         <br>
                                                                         <div class="col-sm-3">
@@ -356,7 +398,7 @@
                                                                             <label id="campo" name="campo"></label>
                                                                         </div>
                                                                     </div>
-                                                                            <br><br>
+                                                                    <br><br>
                                                                 </form> 
                                                             </div>
 
@@ -364,26 +406,21 @@
                                                                 <br>
                                                                 <br>
                                                                 <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
-                                                                <div id="resetear">
-                                                                
-                                                                    <h3>Primero termine el paso 1</h3>
-                                                                
-                                                                </div>
+                                                                    <div id="resetear">
+
+                                                                        <h3>Primero termine el paso 1</h3>
+
+                                                                    </div>
                                                                 </form>
                                                             </div> 
                                                         </div>
                                                     </div>
 
-                                                    <div id="menu2" class="tab-pane fade delinear">
+                                                    <div id="menu2" class="tab-pane fade ">
+                                                        <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
                                                                 <label>Archivo Microsoft Excel </label> <br>
-                                                                <input type="file" class="filestyle" data-icon="false" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-sm-offset-1">
-                                                            <div class="form-group">
-                                                                <label>Imagen </label> <br>
                                                                 <input type="file" class="filestyle" data-icon="false" >
                                                             </div>
                                                         </div>
@@ -394,6 +431,7 @@
                                                             <br>
                                                             <label id="campo" name="campo"></label>
                                                         </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </section>
@@ -420,35 +458,6 @@
 
         <script src="procesar/ajax/procesos.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <!--<script>
-        $(function(){
-
-            $("#registrarManualImagen").on("submit", function(e){
-                e.preventDefault();
-                var f = $(this);
-                String nombre = (String) session.getAttribute("nombre");
-                var formData = new FormData(document.getElementById(nombre));
-                formData.append("dato", "valor");
-                //formData.append(f.attr("name"), $(this)[0].files[0]);
-                $.ajax({
-                    url: "registrarEventoManual.jsp",
-                    type: "post",
-                    dataType: "html",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                 processData: false
-                })
-                    .done(function(res){
-                        document.getElementById("campo").innerHTML = "Mensaje Enviado Exitosamente.";
-                        $("#registrarManualImagen")[0].reset();
-                    }else{
-                        document.getElementById("campo").innerHTML = "Hubo un error en el registro";
-                        $("#registrarManualImagen")[0].reset();
-                    });
-            });
-        });
-        </script>
-        -->
+        
     </body>
 </html>

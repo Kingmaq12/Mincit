@@ -108,9 +108,9 @@ public class Administrador {
                 }
             }
 
-            return "Registro Exitoso";
+            return "S";
         }
-        return "A ocurrido un error";
+        return "N";
 
     }
 

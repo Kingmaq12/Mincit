@@ -5,10 +5,18 @@
  */
 package ufps.mincit.datos.interf;
 
+import ufps.mincit.datos.dto.Usuario;
+
 /**
  *
  * @author user
  */
 public interface IUsuarioDAO {
+    
+    public Usuario consultarUsuarioTipo(int tipoUsuario)throws Exception;
+    
+    public boolean consultarContraseña(String cedula, String antigua)throws Exception;
+    
+    public boolean cambiarContraseña(String cedula,String tipo_usuario,String nueva)throws Exception;
     
 }

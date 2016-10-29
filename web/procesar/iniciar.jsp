@@ -4,7 +4,6 @@
     Author     : CESAR
 --%>
 
-<!--@page import="ufps.mincit.dto.AdministradorDTO" -->
 <%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 

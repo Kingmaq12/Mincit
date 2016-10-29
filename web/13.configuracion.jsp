@@ -1,3 +1,5 @@
+<%@page import="ufps.mincit.datos.dto.Usuario"%>
+<%@page import="ufps.mincit.negocio.Negocio"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
     <head>
@@ -73,7 +75,7 @@
             <section>
                 <section class="hbox stretch">
                     <!-- .aside -->
-                   <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
+                    <aside class="bg-dark lter b-r aside-md hidden-print" id="nav">          
                         <section class="vbox">
                             <header class="header bg-primary lter text-center clearfix">
                                 <div class="btn-group">
@@ -184,34 +186,44 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
-                                                            <h4>Cambiar Nombre:</h4>
+                                                            <h4>Cambiar Datos:</h4>
                                                             <div class="icon">
                                                                 <i class="fa fa-desktop fa-3x"></i>
                                                             </div>
                                                             <div class="ficon">
-                                                                <button type="button" class="btn btn-primary btn-s-sm" id="myBtn" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
+                                                                <button type="button" class="btn btn-primary btn-s-sm" id="myBtn2" ><span class="glyphicon glyphicon-ok-circle"></span> Abrir</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <%
+
+                                                    Negocio neg = new Negocio();
+
+                                                    Usuario usu = neg.consultarUsuarioTipo(1);
+                                                    session.setAttribute("cedula", usu.getCedula());
+                                                    session.setAttribute("tipo", usu.getTipo_usuario());
+                                                %>
 
                                                 <div class="col-sm-12">
                                                     <hr>
                                                     <h3>Información Personal</h3><br>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <h4>Usuario:</h4>
+                                                    <h4>Nombre de Usuario:</h4>
 
-                                                    <p>Nombre Administrador</p>
+                                                    <p><%=usu.getNombre()%></p>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <h4>Contraseña Actual:</h4>
+                                                    <h4>Email:</h4>
 
-                                                    <p>**********</p>	
+                                                    <p><%=usu.getEmail()%></p>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <h4>Otro:</h4>
-                                                    <p>Otro...</p>				
+                                                    <h4>Cedula:</h4>
+
+                                                    <p><%=usu.getCedula()%></p>
                                                 </div>
 
                                             </div>
@@ -222,9 +234,44 @@
 
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
+                                                        <div class="modal-header" ALIGN=center>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Cambiar Contraseña</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form name="cambiarContrasenia" id="cambiarContrasenia" method="POST" action="javascript:cambiarContrasenia()">
+                                                                <label>Contraseña antigua: </label>
+                                                                <input type="text" name="antigua" id="antigua" class="form-control" required="required" >
+                                                                <br>
+                                                                <label>Contraseña nueva: </label>
+                                                                <input type="text" name="nueva" id="nueva" class="form-control" required="required" >
+                                                                <br>
+                                                                <label>Confirme contraseña nueva: </label>
+                                                                <input type="text" name="nueva2" id="nueva2" class="form-control" required="required" >
+                                                                <br>
+                                                                <br>
+                                                                <div ALIGN=center>
+                                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Cambiar Contraseña</button>
+                                                                </div>
+                                                                <br>
+                                                                <label id="campo" name="campo"></label>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal fade" id="myModal2" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Modal Header 1</h4>
+                                                            <h4 class="modal-title">Cambiar Datos</h4>
                                                         </div>
                                                         <div class="modal-body">
                                                             <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
@@ -253,21 +300,32 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-
+         <script src="procesar/ajax/procesos.js"></script>
 
 
 
         <script>
-            $(document).ready(function () {
-                $("#myBtn").click(function () {
+            $(document).ready(function() {
+                $("#myBtn").click(function() {
                     $("#myModal").modal("show");
                 });
-                $("#myModal").on('show.bs.modal', function () {
+                $("#myModal").on('show.bs.modal', function() {
                     //alert('The modal is about to be shown.');
                 });
             });
         </script>
 
+        <script>
+            $(document).ready(function() {
+                $("#myBtn2").click(function() {
+                    $("#myModal2").modal("show");
+                });
+                $("#myModal").on('show.bs.modal', function() {
+                    //alert('The modal is about to be shown.');
+                });
+            });
+        </script>
 
+       
     </body>
 </html>

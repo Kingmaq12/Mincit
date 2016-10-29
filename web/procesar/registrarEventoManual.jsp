@@ -102,21 +102,7 @@
     
     String respuesta = nego.registrarEvento(nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url,imagen, logros, descripcion);
     
+    session.setAttribute("evento_registrado", respuesta);
+    response.sendRedirect("../7.registrar_evento.jsp");
+    
 %>    
-
-<html>
-    <head>
-        <script type="text/javascript">
-        alert(<%=respuesta%>);
-        window.location = "../7.registrar_evento.jsp";
-        </script>
-        
-    <body>
-      
-        
-    </body>
-        
-    </head>
-    
-    
-</html>

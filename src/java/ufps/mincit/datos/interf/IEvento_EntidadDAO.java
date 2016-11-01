@@ -10,5 +10,9 @@ package ufps.mincit.datos.interf;
  * @author user
  */
 public interface IEvento_EntidadDAO {
+ 
+    public String consultarPorId(String id)throws Exception;
+    
+    public boolean borrarEve_Entidad(int id)throws Exception;
     
 }

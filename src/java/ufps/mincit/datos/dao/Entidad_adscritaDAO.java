@@ -69,4 +69,27 @@ public class Entidad_adscritaDAO implements IEntidad_adscritaDAO{
         return resul;
     }
     
+    public String consultarEntidadNombre(String nombre)throws Exception{
+        conn = ConexionSQL.conectar();
+        String resul= "";
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * FROM  `Entidad adscrita` WHERE  `nombre` = ? " );
+            stmt.setString(1, nombre);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+              resul=res.getString(2);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+    }
+    
 }

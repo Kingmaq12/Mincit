@@ -45,5 +45,27 @@ public class Sector_economicoDAO implements ISector_economicoDAO{
         
     }
     
+    public String buscarSectorNombre(String nombre)throws Exception{
+        conn = ConexionSQL.conectar();
+        String resul= "";
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * FROM  `Sector_economico` WHERE  `nombre` = ? " );
+            stmt.setString(1, nombre);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+              resul=res.getString(1);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+    }
     
 }

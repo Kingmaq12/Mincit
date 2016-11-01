@@ -66,7 +66,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="index.jsp" data-toggle="ajaxModal" >Cerrar Sesión</a>
+                                <a href="index.jsp" >Cerrar Sesión</a>
                             </li>
                         </ul>
                     </li>
@@ -189,9 +189,10 @@
                                                                     Negocio n1 = new Negocio();
                                                                     ArrayList<String> entidades = n1.mostrarEntidades();
                                                                     for (String e : entidades) {
+                                                                        String[] x =e.split(",");
                                                                 %>
 
-                                                                <option value="<%=e%>"><%=e%></option>
+                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
 
                                                                 <%
                                                                     }
@@ -206,11 +207,12 @@
                                                                 <option value="ninguno">-No seleccionado-</option>
                                                                 <%
                                                                     Negocio n = new Negocio();
-                                                                    ArrayList<String> paises = n.mostrarPaises();
+                                                                    ArrayList<String> paises = n.mostrarPaisesC();
                                                                     for (String e : paises) {
+                                                                        String[] x =e.split(",");
                                                                 %>
 
-                                                                <option value="<%=e%>"><%=e%></option>
+                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
 
 
                                                                 <%
@@ -247,8 +249,9 @@
                                                                     Negocio n2 = new Negocio();
                                                                     ArrayList<String> sectores = n2.mostrarSectores();
                                                                     for (String e : sectores) {
+                                                                        String[] x =e.split(",");
                                                                 %>
-                                                                <option value="<%=e%>"><%=e%></option>
+                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
 
                                                                 <%
                                                                     }
@@ -265,9 +268,10 @@
                                                                     Negocio n3 = new Negocio();
                                                                     ArrayList<String> logros = n3.mostrarLogros();
                                                                     for (String e : logros) {
+                                                                        String[] x =e.split(",");
                                                                 %>
 
-                                                                <option value="<%=e%>"><%=e%></option>
+                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
 
                                                                 <%
                                                                     }
@@ -278,7 +282,6 @@
 
                                                     <div class="col-sm-12 text-center">
                                                         <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar Eventos</button>                                            <br><br>
-                                                        <label id="campo" name="campo"></label>
                                                     </div>
                                                     <br><br>
                                                 </div>
@@ -286,91 +289,9 @@
                                             </form>
                                         </div>
 
-                                                            
-                                                            
-                                        <div class="container  delinear">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                <div class="text-center">
-                                                    <h2>Eventos Encontrados</h2>
-                                                </div>
-                                                <hr>
-                                            </div>
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Nombre Evento</th>
-                                                        <th>Opción</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Evento 1 </td>
-                                                        <td>
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-primary dropdown-toggle"
-                                                                        data-toggle="dropdown">
-                                                                    Opciones <span class="glyphicon caret"></span>
-                                                                </button>
-
-                                                                <ul class="dropdown-menu" role="menu">
-                                                                    <li><a href="#">Editar</a></li>
-                                                                    <li><a href="#">Agregar Alerta</a></li>
-                                                                    <li><a href="#">Enviar Invitaciones</a></li>
-                                                                    <li class="divider"></li>
-                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
-                                                                </ul>
-                                                            </div> 
-                                                            <!-- <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button> -->
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Evento 2</td>
-                                                        <td>
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-primary dropdown-toggle"
-                                                                        data-toggle="dropdown">
-                                                                    Opciones <span class="glyphicon caret"></span>
-                                                                </button>
-
-                                                                <ul class="dropdown-menu" role="menu">
-                                                                    <li><a href="#">Editar</a></li>
-                                                                    <li><a href="#">Agregar Alerta</a></li>
-                                                                    <li><a href="#">Enviar Invitaciones</a></li>
-                                                                    <li class="divider"></li>
-                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Evento 3</td>
-                                                        <td>
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-primary dropdown-toggle"
-                                                                        data-toggle="dropdown">
-                                                                    Opciones <span class="glyphicon caret"></span>
-                                                                </button>
-
-                                                                <ul class="dropdown-menu" role="menu">
-                                                                    <li><a href="#">Editar</a></li>
-                                                                    <li><a href="#">Agregar Alerta</a></li>
-                                                                    <li><a href="#">Enviar Invitaciones</a></li>
-                                                                    <li class="divider"></li>
-                                                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div id="tabla" class="container">
                                         </div>
                                     </section>
-
-
 
                                 </section>
                             </section>

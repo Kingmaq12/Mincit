@@ -44,4 +44,50 @@ public class Evento_EntidadDAO implements IEvento_EntidadDAO{
         return exito;
     }
     
+    @Override
+    public String consultarPorId(String id) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        String resul ="";
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento_Entidad` WHERE  `id_evento` =?");
+            stmt.setInt(1, Integer.parseInt(id));
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                resul+=res.getString(1)+",";
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return resul;
+
+    }
+    
+    @Override 
+    public boolean borrarEve_Entidad(int id)throws Exception{
+        conn = ConexionSQL.conectar();
+        boolean exito =false;
+        PreparedStatement stmt = null;
+        try{
+              stmt = conn.prepareStatement("DELETE FROM  `Evento_Entidad` WHERE  `id_evento` = ?" );
+            stmt.setInt(1, id);
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+             stmt.close();
+        }catch(Exception e){
+          e.printStackTrace();
+        }
+        return exito;
+    }
+    
 }

@@ -5,6 +5,7 @@
  */
 package ufps.mincit.datos.interf;
 
+import java.util.ArrayList;
 import ufps.mincit.datos.dto.ComentarioDTO;
 
 /**
@@ -15,4 +16,6 @@ public interface IComentarioDAO {
     
     
     public boolean recibirMensaje(ComentarioDTO comen) throws Exception;
+    
+    public ArrayList<String> mostrarComentario() throws Exception;
 }

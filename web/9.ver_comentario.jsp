@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="ufps.mincit.negocio.Negocio"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
     <head>
@@ -16,11 +18,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $('#example').DataTable();
             });
         </script>
-         
+
     </head>
 
     <body>
@@ -168,106 +170,73 @@
                                 <section class="hbox stretch">
 
                                     <section>
-                                        <div class="container contacto delinear">
+                                        <div class="container col-md-12">
                                             <table id="example" >
+                                                <%
+                                                    Negocio n = new Negocio();
+                                                    ArrayList<String> p = n.mostrarComentario();
+                                                    if (p != null) {
+                                                %>
+
                                                 <thead>
                                                     <tr>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
+                                                        <th>Empresa</th>
+                                                        <th>Email</th>
+                                                        <th>Asunto</th>
+                                                        <th>Opción</th>
                                                     </tr>
                                                 </thead>
-                                                <div class="col-md-4 text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <th><h4 class="media-heading  text-center2 ">Comentario 1</h4>
-                                                        <div class="ficon  text-center2">
-                                                            <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                                        </div>
-                                                        </th>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4  text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                                            <div class="ficon  text-center2">
-                                                                <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                                            </div>
-                                                            </th>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                                            <div class="ficon  text-center2">
-                                                                <button type="button"class="btn btn-primary btn-lg" required="required" id="myBtn1"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                                            </div>
-                                                            </th>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4  text-center2">
-                                                    <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                        <div class="media-body">
-                                                            <th><h4 class="media-heading  text-center2">Comentario 1</h4>
-
-                                                            <div class="ficon  text-center2">
-                                                                <button type="button"class="btn btn-primary btn-lg" required="required" id="my"><span class="glyphicon glyphicon-ok-circle"></span> Leer mas</button>
-                                                            </div>
-                                                            </th>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                                <tbody>
+                                                    <%     for (String e : p) {
+                                                            String[] s = e.split(",");
+                                                    %>     
+                                                    <tr>
+                                                        <td><%=s[1]%></td>
+                                                        <td><%=s[2]%></td>
+                                                        <td><%=s[3]%></td>
+                                                        <td>
+                                                            <button type="submit" name="submit" class="btn btn-primary" required="required" id="<%=s[0]%>" value="<%=s[0]%>"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button>                                                         </td>
+                                                    </tr>
+                                                    <%
+                                                        }
+                                                    %>  
+                                                </tbody>
                                             </table>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Modal Header 1</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                            <%
+                                            } else {
+                                            %>  
+                                            <div class="container-fluid text-center">
+                                                <br><br>
+                                                <label class="label label-warning" id="campo" name="campo">No se hay Eventos.</label>
+                                                <br><br>
                                             </div>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal1" role="dialog">
-                                                <div class="modal-dialog">
-
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Modal Header 1</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
+                                            <%    }
+                                            %>
+                                        </div>
+                                        <%     for (String e : p) {
+                                                String[] s2 = e.split(",");
+                                        %>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="<%=s2[0]%>" role="dialog">
+                                            <div class="modal-dialog">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header" ALIGN=center>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Leer Comentario:</h4>
                                                     </div>
+                                                    <div class="modal-body">
 
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-primary" type="button" class="close" data-dismiss="modal"> Leido</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <%
+                                            }
+                                        %>
                                     </section>
                                 </section>
                             </section>
@@ -283,29 +252,21 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-
+        <%     for (String ee : p) {
+                String[] s1 = ee.split(",");
+        %>  
         <script>
-            $(document).ready(function () {
-                $("#myBtn").click(function () {
-                    $("#myModal").modal("show");
+            $(document).ready(function() {
+                $("#<%=s1[0]%>").click(function() {
+                    $("#<%=s1[0]%>").modal("show");
                 });
-                $("#myModal").on('show.bs.modal', function () {
-                    //alert('The modal is about to be shown.');
+                $("#myModal").on('show.bs.modal', function() {
+                    
                 });
             });
         </script>
-
-        <script>
-            $(document).ready(function () {
-                $("#myBtn1").click(function () {
-                    $("#myModal1").modal("show");
-                });
-                $("#myModal1").on('show.bs.modal', function () {
-                    //alert('The modal is about to be shown.');
-                });
-            });
-        </script>
-
-
+        <%
+            }
+        %>
     </body>
 </html>

@@ -49,5 +49,29 @@ public class ComentarioDAO implements IComentarioDAO{
         }
         return exito;
     }
+    
+    public ArrayList<String> mostrarComentario() throws Exception {
+        conn = ConexionSQL.conectar();
+        ArrayList<String> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM  `Comentario` where `estado` = 0");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //mostrar id(para modal), empresa, email, asunto
+                resul.add(res.getString(1)+","+res.getString(2)+","+res.getString(4)+","+res.getString(5));
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return resul;
+
+    }
      
 }

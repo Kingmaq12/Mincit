@@ -171,7 +171,7 @@
                                 <div class="heading">
                                     <h2>Consulta</h2>
                                 </div>
-                                <form accept-charset="UTF-8" id="consultar" action="javascript:consultar()" method="post">
+                                <form accept-charset="UTF-8" id="consultar" action="javascript:consultar2()" method="post">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
@@ -208,7 +208,7 @@
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
                                                         Negocio n = new Negocio();
-                                                        ArrayList<String> paises = n.mostrarPaises();
+                                                        ArrayList<String> paises = n.mostrarPaisesC();
                                                         for (String e : paises) {
                                                             String[] x = e.split(",");
                                                             String a = x[0];
@@ -297,195 +297,13 @@
                             </div>
                         </div>
                         <div class="container">
+                            <div class="center<">
+                                <h2>Resultados</h2>
+                            </div>
                             <div id="tabla">
                                 <hr>    
                             </div>
                         </div>
-                        <div class="row portfolio">
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-1.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="p" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-2.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-3.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-5.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-6.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-7.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-9.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="box-image">
-                                    <div class="image">
-                                        <img src="img/portfolio-8.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="name">
-                                        <h3><a href="">Portfolio box-image</a></h3> 
-                                    </div>
-                                    <div class="text">
-                                        <p class="hidden-sm hidden-lg hidden-md">Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary">View</a>
-                                            <a href="#" class="btn btn-template-transparent-primary">Website</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- /.box-image -->
-                            </div>
-
-
-                        </div>
-
                     </section>
 
                 </div>

@@ -159,7 +159,7 @@
                                         <br />Patrocinadores: Empresa X.</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/2.png" alt="">
+                                    <img class="img-responsive" src="img/eve1.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                             <div class="row">
 
                                 <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/template-mac.png" alt="">
+                                    <img class="img-responsive" src="img/eve2.jpg" alt="">
                                 </div>
 
                                 <div class="col-sm-5">
@@ -194,14 +194,14 @@
                                     </ul>
                                 </div>
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-customize.png" alt="">
+                                    <img class="img-responsive" src="img/eve3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="row">
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-code.png" alt="">
+                                    <img class="img-responsive" src="img/eve4.jpg" alt="">
                                 </div>
                                 <div class="col-sm-5">
                                     <h1>Evento 400</h1>

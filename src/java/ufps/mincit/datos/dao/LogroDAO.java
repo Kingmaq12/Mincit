@@ -45,4 +45,28 @@ public class LogroDAO implements ILogroDAO{
         
     }
     
+    public String buscarLogroNombre(String nombre)throws Exception{
+        conn = ConexionSQL.conectar();
+        String resul= "";
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * FROM  `Logro` WHERE  `titulo` = ? " );
+            stmt.setString(1, nombre);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+              resul=res.getString(1);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+    }
+    
+    
 }

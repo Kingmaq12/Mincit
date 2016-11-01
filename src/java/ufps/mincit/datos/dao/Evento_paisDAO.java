@@ -41,4 +41,24 @@ public class Evento_paisDAO implements IEvento_paisDAO{
         return exito;
     }
     
+    @Override 
+    public boolean borrarEve_Pais(int id)throws Exception{
+        conn = ConexionSQL.conectar();
+        boolean exito =false;
+        PreparedStatement stmt = null;
+        try{
+              stmt = conn.prepareStatement("DELETE FROM  `Evento_pais` WHERE  `id_evento` = ?" );
+            stmt.setInt(1, id);
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+             stmt.close();
+        }catch(Exception e){
+          e.printStackTrace();
+        }
+        return exito;
+    }
+    
 }

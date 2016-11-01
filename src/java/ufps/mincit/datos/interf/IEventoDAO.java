@@ -17,6 +17,7 @@ public interface IEventoDAO {
     
     public boolean registrarEvento(EventoDTO dto) throws Exception;
     public int consultarId() throws Exception;
+    public EventoDTO consultarPorId(String id)throws Exception;
     public ArrayList<EventoDTO> consultar1 (String fecha, String entidad,String pais,String ciudad, String continente,String sector,String logro ) throws Exception;
     public ArrayList<EventoDTO> consultar2 (String fecha) throws Exception;
     public ArrayList<EventoDTO> consultar3 (String fecha, String entidad) throws Exception;
@@ -45,6 +46,7 @@ public interface IEventoDAO {
     public ArrayList<EventoDTO> consultar26 (String sector) throws Exception;
     public ArrayList<EventoDTO> consultar27 (String sector, String logro) throws Exception;
     public ArrayList<EventoDTO> consultar28 (String logro) throws Exception;
+    public boolean actualizarDatos(String id,String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento,String url,String descripcion) throws Exception;
     
     
 }

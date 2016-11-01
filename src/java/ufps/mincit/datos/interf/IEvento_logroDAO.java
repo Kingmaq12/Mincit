@@ -11,4 +11,8 @@ package ufps.mincit.datos.interf;
  */
 public interface IEvento_logroDAO {
     
+    
+    public String consultarPorId(String id)throws Exception;
+    
+    public boolean borrarEve_Logros(int id)throws Exception;
 }

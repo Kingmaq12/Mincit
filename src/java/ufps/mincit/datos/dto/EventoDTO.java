@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class EventoDTO {
     
-    
+    private String id;
     private String nombre; 
     private String fecha; 
     private String hora;
@@ -27,19 +27,21 @@ public class EventoDTO {
     private String imagen ;
     private String descripcion;
     private String estado;
+    private String entidades_adscritas;
+    private String logros;
+    private String sectores_economicos;
 
     public EventoDTO() {
     }
 
-     public EventoDTO (String nombre, String fecha, String hora, String ciudad, String URL){
+     public EventoDTO (String id,String nombre, String lugar,  String fecha ,String hora, String ciudad){
+        this.id=id;
         this.nombre=nombre;
         this.fecha=fecha;
+        this.lugar =lugar;
         this.hora=hora;
         this.ciudad=ciudad;
-        this.url=URL;
     }
-    
-    
     public EventoDTO(String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;
@@ -55,6 +57,26 @@ public class EventoDTO {
         this.descripcion = descripcion;
         this.estado = "1";
     }
+    
+    public EventoDTO(String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion,String entidades_adscritas,String logros,String sectores_economicos){
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.lugar = lugar;
+        this.continente = continente;
+        this.pais = pais;
+        this.ciudad = ciudad;
+        this.participantes = participantes;
+        this.tipo_evento = tipo_evento;
+        this.url = url;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
+        this.estado = "1";
+        this.entidades_adscritas=entidades_adscritas;
+        this.logros=logros;
+        this.sectores_economicos=sectores_economicos;
+    }
+    
 
     public String getTipo_evento() {
         return tipo_evento;
@@ -162,5 +184,38 @@ public class EventoDTO {
         this.estado = estado;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEntidades_adscritas() {
+        return entidades_adscritas;
+    }
+
+    public void setEntidades_adscritas(String entidades_adscritas) {
+        this.entidades_adscritas = entidades_adscritas;
+    }
+
+    public String getLogros() {
+        return logros;
+    }
+
+    public void setLogros(String logros) {
+        this.logros = logros;
+    }
+
+    public String getSectores_economicos() {
+        return sectores_economicos;
+    }
+
+    public void setSectores_economicos(String sectores_economicos) {
+        this.sectores_economicos = sectores_economicos;
+    }
+
+    
     
 }

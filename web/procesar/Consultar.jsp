@@ -9,7 +9,7 @@
 <%@page import="ufps.mincit.negocio.Negocio"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="app">
 
     <head>
         <meta charset="utf-8">
@@ -19,43 +19,15 @@
         <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
         <title>Mincit Eventos</title>
 
-        <meta name="keywords" content="">
+        <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/font.css" type="text/css" />
 
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- Bootstrap and Font Awesome css -->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-        <!-- Css animations  -->
-        <link href="css/animate.css" rel="stylesheet">
-
-        <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-        <link href="css/style.green.css" rel="stylesheet" id="theme-stylesheet">
-
-        <!-- Custom stylesheet - for your changes -->
-        <link href="css/custom.css" rel="stylesheet">
-
-        <!-- Responsivity for older IE -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-        <!-- Favicon and apple touch icons-->
-        <link rel="shortcut icon" href="img/logoMincit.png" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-        <!-- owl carousel css -->
-
-        <link href="css/owl.carousel.css" rel="stylesheet">
-        <link href="css/owl.theme.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/app.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery.bxslider.css">    
         <script src="procesar/ajax/procesos.js"></script>
     </head>
 
@@ -71,32 +43,50 @@
             String sector = request.getParameter("sector");
             String logro = request.getParameter("logro");
             Negocio n = new Negocio();
-            ArrayList<EventoDTO> p = n.consultarEventos2(fecha, entidad, pais, ciudad, continente, sector, logro);
+            ArrayList<EventoDTO> p = n.consultarEventos(fecha, entidad, pais, ciudad, continente, sector, logro);
             if (p != null) {
         %>
-        <div class="container">
+        <div class="container col-md-10">
+            <div class="col-md-12 ">
+                <div class="text-center">
+                    <h2>Eventos Encontrados</h2>
+                </div>
+                <hr>
+            </div>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
-                        <th>FECHA</th>
-                        <th>LUGAR</th>
-                        <th>HORA</th>
-                        <th>CIUDAD</th>
-                        <th>URL</th>
+                        <th>FECHA Y HORA</th>
+                        <th>LUGAR Y CIUDAD</th>
+                        <th>Opción</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <%      for (EventoDTO e : p) {
-                            System.out.println("..." + e.getNombre());
+                    <%     for (EventoDTO e : p) {
+                        
                     %>     
                     <tr>
                         <td><%=e.getNombre()%></td>
-                        <td><%=e.getFecha()%></td>
-                        <td><%=e.getLugar()%></td>
-                        <td><%=e.getHora()%></td>
-                        <td><%=e.getCiudad()%></td>
-                        <td><%=e.getUrl()%></td>
+                        <td><%=e.getFecha()%> <%=e.getHora()%></td>
+                        <td><%=e.getLugar()%> <%=e.getCiudad()%></td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    Opciones <span class="glyphicon caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="procesar/editar.jsp?id=<%=e.getId()%>">Editar</a></li>
+                                    <li><a href="#">Agregar Alerta</a></li>
+                                    <li><a href="#">Enviar Invitaciones</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
+                                </ul>
+                            </div> 
+                            <!-- <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button> -->
+                        </td>
                     </tr>
                     <%
                         }
@@ -116,21 +106,19 @@
         <%          }
         %>
 
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
             window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
         </script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-        <script src="js/jquery.cookie.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/jquery.parallax-1.1.3.js"></script>
-        <script src="js/front.js"></script>
-
-        <!-- owl carousel -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.js"></script>
+        <!-- App -->
+        <script src="js/app.js"></script>
+        <script src="js/app.plugin.js"></script>
+        <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
     </body>
 

@@ -63,7 +63,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="index.jsp" data-toggle="ajaxModal" >Cerrar Sesión</a>
+                                <a href="index.jsp"  >Cerrar Sesión</a>
                             </li>
                         </ul>
                     </li>

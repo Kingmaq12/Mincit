@@ -417,11 +417,11 @@
                                                     </div>
 
                                                     <div id="menu2" class="tab-pane fade ">
-                                                        <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
+                                                        <form name="registrarExcel" id="registrarExcel" method="post" action="procesar/registrarEventoExcel.jsp"enctype="multipart/form-data">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
                                                                 <label>Archivo Microsoft Excel </label> <br>
-                                                                <input type="file" class="filestyle" data-icon="false" >
+                                                                <input type="file" id="archivo_excel" name="archivo_excel" class="filestyle" data-icon="false" >
                                                             </div>
                                                         </div>
                                                         <br>

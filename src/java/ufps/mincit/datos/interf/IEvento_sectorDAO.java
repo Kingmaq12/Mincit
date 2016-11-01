@@ -11,4 +11,7 @@ package ufps.mincit.datos.interf;
  */
 public interface IEvento_sectorDAO {
     
+    public String consultarPorId(String id)throws Exception;
+    
+    public boolean borrarEve_Sectores(int id)throws Exception;
 }

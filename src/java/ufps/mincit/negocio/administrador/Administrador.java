@@ -17,7 +17,9 @@ import ufps.mincit.datos.dao.Evento_EntidadDAO;
 import ufps.mincit.datos.dao.Evento_logroDAO;
 import ufps.mincit.datos.dao.Evento_paisDAO;
 import ufps.mincit.datos.dao.Evento_sectorDAO;
+import ufps.mincit.datos.dao.LogroDAO;
 import ufps.mincit.datos.dao.PaisesDAO;
+import ufps.mincit.datos.dao.Sector_economicoDAO;
 import ufps.mincit.datos.dao.UsuarioDAO;
 import ufps.mincit.datos.dto.EventoDTO;
 import ufps.mincit.datos.dto.Evento_EntidadDTO;
@@ -50,6 +52,86 @@ public class Administrador {
             }
         }
         return "N";
+    }
+
+    public String registrarEventoExcel(String[] evento) throws Exception {
+
+        String res = "N";
+        
+        String[] nombre = evento[0].split("=");
+        String[] fecha = evento[1].split("=");
+        String[] hora = evento[2].split("=");
+        String[] lugar= evento[3].split("=");
+        String[] continente= evento[4].split("=");
+        String[] pais= evento[5].split("=");
+        String[] ciudad= evento[6].split("=");
+        String[] participantes= evento[7].split("=");
+        String[] tipo_evento= evento[8].split("=");
+        String[] url= evento[9].split("=");
+        String[] imagen= evento[10].split("=");
+        String[] descripcion= evento[11].split("=");
+        
+        EventoDTO dto = new EventoDTO(nombre[1], fecha[1], hora[1], lugar[1], continente[1], pais[1], ciudad[1], participantes[1], tipo_evento[1], url[1], imagen[1], descripcion[1]);
+        EventoDAO dao = new EventoDAO();
+        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
+        Evento_logroDAO eveLog = new Evento_logroDAO();
+        Evento_paisDAO evePais = new Evento_paisDAO();
+        Evento_sectorDAO eveSec = new Evento_sectorDAO();
+        
+
+        boolean resp = dao.registrarEvento(dto);
+
+        if (resp) {
+            int id = dao.consultarId();
+            
+            String[] ent = evento[12].split("=");
+            String[] entidades_adscritas= ent[1].split(",");
+            
+            Entidad_adscritaDAO entiDAO = new Entidad_adscritaDAO();
+            for (int i = 0; i < entidades_adscritas.length; i++) {
+                
+                    String nit_entidad = entiDAO.consultarEntidadNombre(entidades_adscritas[i]);
+                    Evento_EntidadDTO eveDTO = new Evento_EntidadDTO(nit_entidad, id);
+                    eveEnt.registrarEve_Entidad(eveDTO);
+            }
+            
+            String[] logros= evento[13].split("=");
+            String[] logross = logros[1].split(",");
+
+            LogroDAO logDao = new LogroDAO();
+            for (int i = 0; i < logross.length; i++) {
+                
+                    String id_logro = logDao.buscarLogroNombre(logross[i]);
+                    Evento_logroDTO eveDTO = new Evento_logroDTO(id, Integer.parseInt(id_logro));
+                    eveLog.registrarEve_Logro(eveDTO);
+                
+
+            }
+            
+            
+            
+            PaisesDAO paises = new PaisesDAO();
+            String id_pais = paises.buscarPais(pais[1]);
+            Evento_paisDTO evePaisDTO = new Evento_paisDTO(id, Integer.parseInt(id_pais));
+            evePais.registrarEve_Pais(evePaisDTO);
+            
+            
+            
+            
+            String[] sect = evento[14].split("=");
+            String[] sectores= sect[1].split(",");
+
+            Sector_economicoDAO secDao = new Sector_economicoDAO();
+            for (int i = 0; i < sectores.length; i++) {
+                
+                    String id_sector = secDao.buscarSectorNombre(sectores[i]);
+                    Evento_sectorDTO eveDTO = new Evento_sectorDTO(id, Integer.parseInt(id_sector));
+                    eveSec.registrarEve_Sec(eveDTO);
+                
+            }
+            res = "S";
+        }    
+        return res;
     }
 
     public String registrarEvento(String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
@@ -237,11 +319,105 @@ public class Administrador {
             return dao.consultar28(logro);
 
         }
-//        ArrayList<EventoDTO> M =new ArrayList<>();
-//        EventoDTO o = new EventoDTO();
-//        o.setNombre("laskdjfalksjdal");
-//        M.add(o);
+
         return null;
     }
 
+    public EventoDTO consultarId(String id)throws Exception{
+        
+        EventoDAO dao = new EventoDAO();
+        EventoDTO dto = dao.consultarPorId(id);
+        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
+        Evento_logroDAO eveLog = new Evento_logroDAO();
+        Evento_sectorDAO eveSec = new Evento_sectorDAO();
+        
+        String id_entidades_adscritas=eveEnt.consultarPorId(id);
+        String logros=eveLog.consultarPorId(id);
+        String sectores_economicos=eveSec.consultarPorId(id);
+        
+        dto.setEntidades_adscritas(id_entidades_adscritas);
+        dto.setLogros(logros);
+        dto.setSectores_economicos(sectores_economicos);
+        return dto;
+        
+    }
+    
+    public String actualizarDatos(String idi,String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
+        
+        EventoDAO dao = new EventoDAO();
+        boolean evento= dao.actualizarDatos(idi, nombre, fecha, hora, lugar, continente, pais, ciudad, participantes, tipo_evento, url, descripcion);
+        int id = Integer.parseInt(idi);
+        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
+        Evento_logroDAO eveLog = new Evento_logroDAO();
+        Evento_paisDAO evePais = new Evento_paisDAO();
+        Evento_sectorDAO eveSec = new Evento_sectorDAO();
+        
+        
+        
+        if (evento) {
+            
+            eveEnt.borrarEve_Entidad(id);
+            eveLog.borrarEve_Logros(id);
+            evePais.borrarEve_Pais(id);
+            eveSec.borrarEve_Sectores(id);
+            
+            String[] entidades = entidad_adscrita.split(",");
+
+            Entidad_adscritaDAO entiDAO = new Entidad_adscritaDAO();
+            for (int i = 0; i < entidades.length; i++) {
+                if (!entidades[i].isEmpty()) {
+                    String nit_entidad = entiDAO.consultarEntidad(entidades[i]);
+                    Evento_EntidadDTO eveDTO = new Evento_EntidadDTO(nit_entidad, id);
+                    eveEnt.registrarEve_Entidad(eveDTO);
+                }
+
+            }
+
+            String[] logross = logros.split(",");
+
+            for (int i = 0; i < logross.length; i++) {
+                if (!logross[i].isEmpty()) {
+                    Evento_logroDTO eveDTO = new Evento_logroDTO(id, Integer.parseInt(logross[i]));
+                    eveLog.registrarEve_Logro(eveDTO);
+                }
+
+            }
+
+            PaisesDAO paises = new PaisesDAO();
+            String id_pais = paises.buscarPais(pais);
+            Evento_paisDTO evePaisDTO = new Evento_paisDTO(id, Integer.parseInt(id_pais));
+            evePais.registrarEve_Pais(evePaisDTO);
+
+            String[] sectores = sector_economico.split(",");
+
+            for (int i = 0; i < sectores.length; i++) {
+                if (!sectores[i].isEmpty()) {
+                    Evento_sectorDTO eveDTO = new Evento_sectorDTO(id, Integer.parseInt(sectores[i]));
+                    eveSec.registrarEve_Sec(eveDTO);
+                }
+            }
+
+            return "S";
+        }
+        return "N";
+        
+    }
+    
+    public EventoDTO verEvento(String id)throws Exception{
+        
+        EventoDAO dao = new EventoDAO();
+        EventoDTO dto = dao.consultarPorId(id);
+        
+        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
+        Evento_logroDAO eveLog = new Evento_logroDAO();
+        Evento_sectorDAO eveSec = new Evento_sectorDAO();
+        
+        String id_entidades_adscritas=eveEnt.consultarPorId(id);
+        String logros=eveLog.consultarPorId(id);
+        String sectores_economicos=eveSec.consultarPorId(id);
+        
+        
+        return dto;
+        
+    }    
 }

@@ -11,4 +11,5 @@ package ufps.mincit.datos.interf;
  */
 public interface IEvento_paisDAO {
     
+    public boolean borrarEve_Pais(int id)throws Exception;
 }

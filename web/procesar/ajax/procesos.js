@@ -223,6 +223,33 @@ function consultar() {
 
 }
 
+function consultar2() {
+
+    ajax = nuevoAjax();
+    parametros = "fecha=" + document.getElementById("fecha").value + "&entidad=" + document.getElementById("entidad").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&continente=" + document.getElementById("continente").value + "&sector=" + document.getElementById("sector").value + "&logro=" + document.getElementById("logro").value;
+    var tabla = "tabla";
+    url = "procesar/Consultar2.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function() {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                    document.getElementById(tabla).innerHTML = ajax.responseText;
+            }
+                document.getElementById(tabla).innerHTML = ajax.responseText;
+
+        } else
+        {
+            document.getElementById(tabla).value = "Cargando ";
+        }
+    }
+
+}
+
 function cambiarContrasenia() {
 
     ajax = nuevoAjax();
@@ -264,5 +291,85 @@ function cambiarContrasenia() {
         }
     }
 
+
+}
+
+function guardarDatos2() {
+    
+    var entidad_adscrita = "";
+    var i=0;
+    for (i = 1; i < 13; i++) {
+        var x = i + ".1" ;
+        var ii = document.getElementById(x).checked;
+        if (ii==true){
+            entidad_adscrita += i + ",";
+        }
+    }
+    
+
+    var sector_economico = "";
+    var j=0;
+    for (j = 1; j < 11; j++) {
+        var k = j + ".2" ;
+        var oo = document.getElementById(k).checked;
+        if (oo==true){
+            sector_economico += j + ",";
+        }
+    }
+    
+    var logros = "";
+    var s=0;
+    for (s = 1; s < 16; s++) {
+        var z = s + ".3" ;
+        var pipi = document.getElementById(z).checked;
+        if (pipi==true) {
+            logros += s + ",";
+        }
+    }
+    
+    ajax = nuevoAjax();
+    parametros = "nombre=" + document.getElementById("nombre").value + "&fecha=" + document.getElementById("fecha").value +"&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&entidad_adscrita=" + entidad_adscrita + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value +"&ciudad="+document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participantes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + sector_economico + "&url=" + document.getElementById("url").value + "&logros=" + logros + "&descripcion=" + document.getElementById("descripcion").value;
+    
+    url = "procesar/actualizarDatos.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function () {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    alert("Datos Actualizados");
+                    window.location = "8.busquedaAd.jsp";
+                    $("#registrarManual")[0].reset();
+                    
+                } else {
+                     
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrarManual")[0].reset();
+                }
+            } else
+            {
+
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    alert("Datos Actualizados");
+                    window.location = "8.busquedaAd.jsp";
+                    $("#registrarManual")[0].reset();
+
+                } else {
+
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrarManual")[0].reset();
+                }
+            }
+        } else
+        {
+            document.getElementById(campo).value = "Procesando registro";
+        }
+    }
 
 }

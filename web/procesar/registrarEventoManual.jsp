@@ -8,16 +8,11 @@
 <%@page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
 <%@page import="java.io.File"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 
 <%
-    
-    response.setContentType("text/html;charset-UTF-8");
-    request.setCharacterEncoding("UTF-8");
- 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 	double areaEquivalente=0;
-	String mensaje="";
+        String mensaje="";
 	String estado= request.getParameter("hdEstado");
 	String directory="";
 	String nombreImagen="";
@@ -27,7 +22,7 @@
 	if(estado.equals("")){
 		try{
 			if (isMultipart) {
-				FileItemFactory factory = new DiskFileItemFactory();
+                                FileItemFactory factory = new DiskFileItemFactory();
 				ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 				servletFileUpload.setSizeMax(100000*1012);		
 				String  fileName="";	  			  			  		
@@ -42,8 +37,7 @@
 		  		Iterator iter = items.iterator();
 		  		int i=0;
 		  		while (iter.hasNext()) {
-		  			
-		  		FileItem item = (FileItem) iter.next();
+                                FileItem item = (FileItem) iter.next();
 		  	    	String name = item.getFieldName();
 	  	        	fileName = name;
 	  	        	if (name.equalsIgnoreCase("directory")) { directory = item.getString(); }
@@ -97,7 +91,10 @@
             String logros= (String)session.getAttribute("logros");
             String descripcion= (String) session.getAttribute("descripcion");
             String imagen = (String) session.getAttribute("imagen");
-        
+            
+            System.out.println("IMAGEN EN JSP:"+imagen);
+            
+            
     Negocio nego = new Negocio();
     
     String respuesta = nego.registrarEvento(nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url,imagen, logros, descripcion);

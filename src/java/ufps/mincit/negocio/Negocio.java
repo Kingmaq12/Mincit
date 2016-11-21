@@ -65,11 +65,11 @@ public class Negocio {
         return true;
     }
 
-    public ArrayList<String> mostrarPaises() throws Exception {
+    public ArrayList<String> mostrarPaises(String continente) throws Exception {
 
         PaisesDAO dao = new PaisesDAO();
 
-        return dao.mostrarPaises();
+        return dao.mostrarPaises(continente);
     }
 
     public ArrayList<String> mostrarEntidades() throws Exception {
@@ -228,7 +228,7 @@ public class Negocio {
     }
      public EventoDTO consultarVerEvento(String id)throws Exception{
         
-       return admin.verEvento(id);
+       return visi.verEvento(id);
         
     }
 }

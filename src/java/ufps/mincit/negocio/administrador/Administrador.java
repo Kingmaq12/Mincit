@@ -403,21 +403,5 @@ public class Administrador {
         
     }
     
-    public EventoDTO verEvento(String id)throws Exception{
-        
-        EventoDAO dao = new EventoDAO();
-        EventoDTO dto = dao.consultarPorId(id);
-        
-        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
-        Evento_logroDAO eveLog = new Evento_logroDAO();
-        Evento_sectorDAO eveSec = new Evento_sectorDAO();
-        
-        String id_entidades_adscritas=eveEnt.consultarPorId(id);
-        String logros=eveLog.consultarPorId(id);
-        String sectores_economicos=eveSec.consultarPorId(id);
-        
-        
-        return dto;
-        
-    }    
+    
 }

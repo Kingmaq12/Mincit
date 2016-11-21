@@ -8,6 +8,9 @@ package ufps.mincit.negocio.visitante;
 import java.util.ArrayList;
 import ufps.mincit.datos.dao.ComentarioDAO;
 import ufps.mincit.datos.dao.EventoDAO;
+import ufps.mincit.datos.dao.Evento_EntidadDAO;
+import ufps.mincit.datos.dao.Evento_logroDAO;
+import ufps.mincit.datos.dao.Evento_sectorDAO;
 import ufps.mincit.datos.dto.ComentarioDTO;
 import ufps.mincit.datos.dto.EventoDTO;
 
@@ -16,16 +19,16 @@ import ufps.mincit.datos.dto.EventoDTO;
  * @author user
  */
 public class Visitante {
-    
-     public boolean recibirMensaje(String nombre_empresa,String nombre_empleado,String email, String asunto, String mensaje)throws Exception{
-         
-     ComentarioDTO comen = new ComentarioDTO(nombre_empresa, nombre_empleado, email, asunto, mensaje, true);
-     ComentarioDAO dao = new ComentarioDAO();
-         
+
+    public boolean recibirMensaje(String nombre_empresa, String nombre_empleado, String email, String asunto, String mensaje) throws Exception {
+
+        ComentarioDTO comen = new ComentarioDTO(nombre_empresa, nombre_empleado, email, asunto, mensaje, true);
+        ComentarioDAO dao = new ComentarioDAO();
+
         return dao.recibirMensaje(comen);
     }
-    
-     public ArrayList<EventoDTO> consultarEventos(String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
+
+    public ArrayList<EventoDTO> consultarEventos(String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
 
         //todos llenos -------------------------------------------------------------------------------------------------------------------------------------------------------
         if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
@@ -155,5 +158,44 @@ public class Visitante {
         return null;
     }
 
+    public EventoDTO verEvento(String id) throws Exception {
+
+        EventoDAO dao = new EventoDAO();
+        EventoDTO dto = dao.consultarPorId(id);
+
+        Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
+        Evento_logroDAO eveLog = new Evento_logroDAO();
+        Evento_sectorDAO eveSec = new Evento_sectorDAO();
+
+        String id_entidades_adscritas = eveEnt.consultarPorId(id);
+        String logros = eveLog.consultarPorId(id);
+        String sectores_economicos = eveSec.consultarPorId(id);
+
+        String[] nitEntidad = id_entidades_adscritas.split(",");
+        String[] idLogro = logros.split(",");
+        String[] idSector = sectores_economicos.split(",");
+        //obtengo nombres de las entidades
+        String nombreEntidad = "";
+       for (int x=0;x<nitEntidad.length;x++ ) {
+           nombreEntidad += eveEnt.consultarPorId2(nitEntidad[x]) + ",";
+        }
+        //obtengo nombre de los logros
+        String nombreLogro = "";
+        for (int x=0;x<idLogro.length;x++ ) {
+            nombreLogro += eveLog.consultarPorId2(idLogro[x])+",";
+        }
+        //obtengo nombre de los sectores
+        String nombreSector = "";
+       for (int x=0;x<idSector.length;x++ ) {
+          nombreSector += eveSec.consultarPorId2(idSector[x]) + ",";
+        }
+        System.out.println(nombreEntidad);
+        System.out.println(nombreLogro);
+        System.out.println(nombreSector);
+        dto.setEntidades_adscritas(nombreEntidad);
+        dto.setLogros(nombreLogro);
+        dto.setSectores_economicos(nombreSector);
+        
+        return dto;
+    }
 }
- 

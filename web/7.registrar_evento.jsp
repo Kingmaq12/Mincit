@@ -284,33 +284,23 @@
 
                                                                         <div class="form-group">
                                                                             <label>Continente </label><br>
-                                                                            <select class="form-control" name="continente" id="continente">
+                                                                            <select class="form-control" name="continente" id="continente" onChange="playVideo(this)">
                                                                                 <option value="ninguno">-No seleccionado-</option>
-                                                                                <option value="america">America</option>
-                                                                                <option value="europa">Europa</option>
-                                                                                <option value="asia">Asia</option>
-                                                                                <option value="oceania">Oceania</option>
-                                                                                <option value="africa">Africa</option>
+                                                                                <option value="NA">Norte America</option>
+                                                                                <option value="SA">Sur America</option>
+                                                                                <option value="EU">Europa</option>
+                                                                                <option value="AS">Asia</option>
+                                                                                <option value="OC">Oceania</option>
+                                                                                <option value="AF">Africa</option>
+                                                                                <option value="AN">Antartida</option>
                                                                             </select>
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <label>País</label>
-                                                                            <select class="form-control" name="pais" id="pais">
-                                                                                <option value="ninguno">-No seleccionado-</option>
-                                                                                <%
-                                                                                    Negocio n = new Negocio();
-                                                                                    ArrayList<String> paises = n.mostrarPaises();
-                                                                                    for (String e : paises) {
-                                                                                %>
-
-                                                                                <option value="<%=e%>"><%=e%></option>
-
-
-                                                                                <%
-                                                                                    }
-                                                                                %>
-                                                                            </select>
+                                                                            
+                                                                            <div id="paises" name="paises">
+                                                                            
+                                                                            </div>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label>Ciudad </label>
@@ -458,6 +448,36 @@
 
         <script src="procesar/ajax/procesos.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+        <script type='text/javascript'>
+            function playVideo(a) {
+                
+                b = document.getElementById("paises");
+                
+                ajax = nuevoAjax();
+                parametros = "continente=" + document.getElementById("continente").value;
+                url = "procesar/mostrarPaises.jsp";
+                ajax.open("POST", url, true);
+                ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                ajax.send(parametros);
+                ajax.onreadystatechange = function() {
+
+                    if (ajax.readyState == 4)
+                    {
+                        if (ajax.status == 200)
+                        {
+                                b.innerHTML  = ajax.responseText;
+                        }
+                            b.innerHTML = ajax.responseText;
+
+                    } else
+                    {
+                        b.innerHTML  = "Cargando ";
+                    }
+                }
+                
+                
+                
+            }
+        </script>
     </body>
 </html>

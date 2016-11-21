@@ -15,4 +15,5 @@ public interface IEvento_logroDAO {
     public String consultarPorId(String id)throws Exception;
     
     public boolean borrarEve_Logros(int id)throws Exception;
+     public String consultarPorId2(String id) throws Exception; 
 }

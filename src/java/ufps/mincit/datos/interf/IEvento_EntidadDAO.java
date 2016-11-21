@@ -14,5 +14,6 @@ public interface IEvento_EntidadDAO {
     public String consultarPorId(String id)throws Exception;
     
     public boolean borrarEve_Entidad(int id)throws Exception;
+    public String consultarPorId2(String id) throws Exception;
     
 }

@@ -14,4 +14,5 @@ public interface IEvento_sectorDAO {
     public String consultarPorId(String id)throws Exception;
     
     public boolean borrarEve_Sectores(int id)throws Exception;
+    public String consultarPorId2(String id) throws Exception;
 }

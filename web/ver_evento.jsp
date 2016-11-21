@@ -14,7 +14,7 @@
     String id = request.getParameter("id");
         
     Negocio neg = new Negocio();
-    EventoDTO dto = neg.consultarVerEvento(id);
+    EventoDTO e = neg.consultarVerEvento(id);
     
     %>
     
@@ -90,8 +90,7 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 1</span></a>
-                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion 2</span></a>
+                                <a href="inicio_sesion.jsp"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Inicia Sesion </span></a>
                             </div>
 
                         </div>
@@ -156,47 +155,13 @@ _________________________________________________________ -->
 
         </header>
 
-        <!-- *** LOGIN MODAL ***
-_________________________________________________________ -->
-
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Inicio Sesion</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
-                            </div>
-
-                            <p class="text-center">
-                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
-
-                        </form>
-
-                        <p class="text-center text-muted">Olvido su contraseña?</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- *** LOGIN MODAL END *** -->
+ 
 
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Portfolio item detail</h1>
+                        <h1><%=e.getNombre()%></h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
@@ -204,7 +169,7 @@ _________________________________________________________ -->
                             </li>
                             <li><a href="portfolio-2.html">Portfolio</a>
                             </li>
-                            <li>Portfolio item detail</li>
+                            <li><%=e.getNombre()%></li>
                         </ul>
 
                     </div>
@@ -219,8 +184,6 @@ _________________________________________________________ -->
                     <div class="row">
                         <div class="col-md-12">
 
-                            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                         </div>
                     </div>
                 </section>
@@ -247,28 +210,26 @@ _________________________________________________________ -->
                     <div class="row portfolio-project">
                         <div class="col-md-8">
                             <div class="heading">
-                                <h3>Project description</h3>
+                                <h3>Descripción</h3>
                             </div>
 
-                            <p>Bringing unlocked me an striking ye perceive. Mr by wound hours oh happy. Me in resolution pianoforte continuing we. Most my no spot felt by no. He he in forfeited furniture sweetness he arranging. Me tedious so to behaved
-                                written account ferrars moments. Too objection for elsewhere her preferred allowance her. Marianne shutters mr steepest to me. Up mr ignorant produced distance although is sociable blessing. Ham whom call all lain like.</p>
-
-                            <p>To sorry world an at do spoil along. Incommode he depending do frankness remainder to. Edward day almost active him friend thirty piqued. People as period twenty my extent as. Set was better abroad ham plenty secure had horses.
-                                Admiration has sir decisively excellence say everything inhabiting acceptance. Sooner settle add put you sudden him.</p>
+                            <p><%=e.getDescripcion()%></p>
 
                         </div>
                         <div class="col-md-4 project-more">
                             <div class="heading">
-                                <h3>More</h3>
+                                <h3>Más</h3>
                             </div>
-                            <h4>Client</h4>
-                            <p>Pietro Filippi</p>
-                            <h4>Services</h4>
-                            <p>Consulting, Webdesign, Print</p>
-                            <h4>Technologies</h4>
-                            <p>PHP, HipHop, Break-dance</p>
-                            <h4>Dates</h4>
-                            <p>10/2013 - 06/2014</p>
+                            <h4>Entidades</h4>
+                            <p><%=e.getEntidades_adscritas()%></p>
+                            <h4>Sectores</h4>
+                            <p><%=e.getSectores_economicos()%></p>
+                            <h4>Logros</h4>
+                            <p><%=e.getLogros()%></p>
+                            <h4>Lugar</h4>
+                            <p><%=e.getLugar()%></p>
+                            <h4>Fecha</h4>
+                            <p><%=e.getFecha()%>- <%=e.getHora()%></p>
                         </div>
                     </div>
                 </section>
@@ -278,7 +239,7 @@ _________________________________________________________ -->
 
                         <div class="col-md-12">
                             <div class="heading">
-                                <h3>Related projects</h3>
+                                <h3>Eventos Similares</h3>
                             </div>
                         </div>
 

@@ -181,6 +181,14 @@
                                             <section id="contact-page">
                                                 <div class="tab-content">	
                                                     <br>
+                                                    <%
+                                                    
+                                                    String fecha=(String)session.getAttribute("fecha");
+                                                    String[] f = fecha.split("/");
+                                                    String fech = f[2]+"-"+f[1]+"-"+f[0];
+                                                    
+                                                    %>
+                                                    
                                                     <form name="registrarManual" id="registrarManual" method="POST" action="javascript:guardarDatos2()">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
@@ -188,8 +196,8 @@
                                                                 <input type="text" name="nombre" id="nombre" class="form-control" required="required" value="<%=session.getAttribute("nombre")%>" >
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Fecha: <%=session.getAttribute("fecha")%> </label>
-                                                                <input type="date" name="fecha" id="fecha" class="form-control" required="required" >
+                                                                <label>Fecha </label>
+                                                                <input type="date" name="fecha" id="fecha" class="form-control" required="required" value="<%=fech%>" >
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Hora </label>

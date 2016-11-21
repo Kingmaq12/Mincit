@@ -297,7 +297,7 @@
                             </div>
                         </div>
                         <div class="container">
-                            <div class="center<">
+                            <div class="center">
                                 <h2>Resultados</h2>
                             </div>
                             <div id="tabla">

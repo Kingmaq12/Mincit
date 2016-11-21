@@ -7,9 +7,12 @@ package ufps.mincit.datos.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import static javax.print.attribute.Size2DSyntax.MM;
 import ufps.mincit.datos.conexion.ConexionSQL;
 import ufps.mincit.datos.dto.EventoDTO;
 import ufps.mincit.datos.interf.IEventoDAO;
@@ -28,6 +31,7 @@ public class EventoDAO implements IEventoDAO {
         conn = ConexionSQL.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
+
         try {
             stmt = conn.prepareStatement("INSERT INTO Evento(`id` ,`nombre` ,`fecha` ,`hora` ,`lugar` ,`continente` ,`pais` ,`ciudad` ,`participantes` ,`tipo_evento`,`url` ,`ruta_imagen` ,`descripcion` ,`estado`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, null);

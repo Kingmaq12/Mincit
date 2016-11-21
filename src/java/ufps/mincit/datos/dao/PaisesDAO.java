@@ -20,12 +20,13 @@ public class PaisesDAO implements IPaisesDAO {
 
     private Connection conn = null;
 
-    public ArrayList<String> mostrarPaises() throws Exception {
+    public ArrayList<String> mostrarPaises(String continente) throws Exception {
         conn = ConexionSQL.conectar();
         ArrayList<String> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM  `paises`");
+            stmt = conn.prepareStatement("SELECT * FROM  `countries` WHERE continent_code = ?");
+            stmt.setString(1, continente);
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 resul.add(res.getString(3));
@@ -71,7 +72,7 @@ public class PaisesDAO implements IPaisesDAO {
         String resul = "";
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `paises` WHERE `nombre` = ?");
+            stmt = conn.prepareStatement("SELECT * FROM `countries` WHERE `name` = ?");
             stmt.setString(1, pais);
             ResultSet res = stmt.executeQuery();
             while (res.next()) {

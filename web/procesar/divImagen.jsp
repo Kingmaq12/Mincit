@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <%      
         String nombre = (String) session.getAttribute("nombre");
+        System.out.println("nombre en divImagen: "+nombre);
 %>
 <div class="col-sm-4 col-sm-offset-1">
 

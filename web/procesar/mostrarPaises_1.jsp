@@ -12,13 +12,13 @@
 <%
 
     String continente = request.getParameter("continente");
-
+    
     Negocio neg = new Negocio();
     ArrayList<String> paises = neg.mostrarPaisesC(continente);
 
 %>
 
-    <label>Paises</label>    
+    <label>Paises de este Continente</label>    
     <select class="form-control" name="pais" id="pais" >
         <option value="ninguno">-No seleccionado-</option>
         <%        for (String e : paises) {

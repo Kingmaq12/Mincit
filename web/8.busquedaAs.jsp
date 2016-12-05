@@ -174,7 +174,7 @@
                                                                 <option value="ninguno">-No seleccionado-</option>
                                                                 <%
                                                                     Negocio n1 = new Negocio();
-                                                                    ArrayList<String> entidades = n1.mostrarEntidades();
+                                                                    ArrayList<String> entidades = n1.mostrarEntidades2();
                                                                     for (String e : entidades) {
                                                                         String[] x = e.split(",");
                                                                         String a = x[0];

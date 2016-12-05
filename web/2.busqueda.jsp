@@ -220,7 +220,19 @@
                                             <div class="form-group">
 
                                                 <div id="paises" name="paises">
+                                                    <%
+                                                        ArrayList<String> p = n1.mostrarPaises();
+                                                        for (String e : p) {
+                                                            String[] x = e.split(",");
+                                                            String a = x[0];
+                                                            String b = x[1];
+                                                    %>
 
+                                                    <option value="<%=a%>"><%=b%></option>
+
+                                                    <%
+                                                        }
+                                                    %>
                                                 </div>
                                             </div>
                                         </div>
@@ -237,8 +249,7 @@
                                                 <select class="form-control"  id="sector">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
-                                                        Negocio n2 = new Negocio();
-                                                        ArrayList<String> sectores = n2.mostrarSectores();
+                                                        ArrayList<String> sectores = n1.mostrarSectores();
                                                         for (String e : sectores) {
                                                             String[] x = e.split(",");
                                                             String a = x[0];
@@ -259,8 +270,7 @@
                                                 <select class="form-control" name="logros" id="logro">
                                                     <option value="ninguno">-No seleccionado-</option>
                                                     <%
-                                                        Negocio n3 = new Negocio();
-                                                        ArrayList<String> logros = n3.mostrarLogros();
+                                                        ArrayList<String> logros = n1.mostrarLogros();
                                                         for (String e : logros) {
                                                             String[] x = e.split(",");
                                                             String a = x[0];

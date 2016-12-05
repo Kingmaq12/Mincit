@@ -6,7 +6,7 @@
 
 <%@page import="ufps.mincit.datos.dto.EventoDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="ufps.mincit.negocio.Negocio"%>
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
@@ -35,15 +35,18 @@
         <%
             response.setContentType("text/html;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
-            String fecha = request.getParameter("fecha");
+
+            String fechaI = request.getParameter("fechaI");
+            String fechaF = request.getParameter("fechaF");
             String entidad = request.getParameter("entidad");
             String pais = request.getParameter("pais");
             String ciudad = request.getParameter("ciudad");
             String continente = request.getParameter("continente");
             String sector = request.getParameter("sector");
             String logro = request.getParameter("logro");
-            Negocio n = new Negocio();
-            ArrayList<EventoDTO> p = n.consultarEventos(fecha, entidad, pais, ciudad, continente, sector, logro);
+
+            Administrador n = new Administrador();
+            ArrayList<EventoDTO> p = n.consultarEventos(fechaI, fechaF, entidad, pais, ciudad, continente, sector, logro);
             if (p != null) {
         %>
         <div class="container col-md-10">
@@ -64,7 +67,7 @@
                 </thead>
                 <tbody>
                     <%     for (EventoDTO e : p) {
-                        
+
                     %>     
                     <tr>
                         <td><%=e.getNombre()%></td>
@@ -98,11 +101,12 @@
         <%
         } else {
         %>  
-        <div class="container-fluid text-center">
-            <br><br>
-            <label class="label label-warning" id="campo" name="campo">No se hay Eventos.</label>
-            <br><br>
-        </div>
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>¡Advertencia!</strong> No se han encontrado Eventos con esta descripción.
+        </div>    
         <%          }
         %>
 

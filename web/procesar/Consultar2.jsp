@@ -6,7 +6,7 @@
 
 <%@page import="ufps.mincit.datos.dto.EventoDTO"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="ufps.mincit.negocio.Negocio"%>
+<%@page import="ufps.mincit.negocio.visitante.Visitante"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,15 +63,19 @@
         <%
             response.setContentType("text/html;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
-            String fecha = request.getParameter("fecha");
+
+            String fechaI = request.getParameter("fechaI");
+            String fechaF = request.getParameter("fechaF");
             String entidad = request.getParameter("entidad");
             String pais = request.getParameter("pais");
             String ciudad = request.getParameter("ciudad");
             String continente = request.getParameter("continente");
             String sector = request.getParameter("sector");
             String logro = request.getParameter("logro");
-            Negocio n = new Negocio();
-            ArrayList<EventoDTO> p = n.consultarEventos2(fecha, entidad, pais, ciudad, continente, sector, logro);
+
+            Visitante n = new Visitante();
+
+            ArrayList<EventoDTO> p = n.consultarEventos(fechaI, fechaF, entidad, pais, ciudad, continente, sector, logro);
             if (p != null) {
         %>
         <div class="row portfolio">
@@ -79,19 +83,20 @@
 
             %> 
             <div class="col-sm-6 col-md-3">
+                <div class="name">
+                    <h3><a href="ver_evento.jsp?id=<%=e.getId()%>"><%=e.getNombre()%></a></h3> 
+                </div>
                 <div class="box-image">
                     <div class="image">
                         <img src="img/portfolio-2.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="bg"></div>
-                    <div class="name">
-                        <h3><a href=""><%=e.getNombre()%></a></h3> 
-                    </div>
+
                     <div class="text">
                         <p class="hidden-sm hidden-lg hidden-md">Fecha: <%=e.getFecha()%>, <%=e.getHora()%>, Ñugar:<%=e.getLugar()%></p>
                         <p class="buttons">
                             <a href="ver_evento.jsp?id=<%=e.getId()%>" class="btn btn-template-transparent-primary">Ver Detalles </a>
-                            <label></label>
+                            <br> <br>
                             <a href="#" class="btn btn-template-transparent-primary">Página del Evento</a>
                         </p>
                     </div>
@@ -105,11 +110,12 @@
         <%
         } else {
         %>  
-        <div class="container-fluid text-center">
-            <br><br>
-            <label class="label label-warning" id="campo" name="campo">No se hay Eventos.</label>
-            <br><br>
-        </div>
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>¡Advertencia!</strong> No se han encontrado Eventos con esta descripción.
+        </div>   
         <%          }
         %>
 

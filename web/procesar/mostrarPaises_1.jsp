@@ -8,23 +8,26 @@
 <%@page import="ufps.mincit.negocio.Negocio"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+        <script src="procesar/ajax/procesos.js"></script>
 <%
 
     String continente = request.getParameter("continente");
-    System.out.println("continente:" + continente);
+
     Negocio neg = new Negocio();
     ArrayList<String> paises = neg.mostrarPaisesC(continente);
 
 %>
 
-<label>País</label>    
-<select class="form-control" name="pais" id="pais">
-    <option value="ninguno">-No seleccionado-</option>
-    <%        for (String e : paises) {
-            String[] x = e.split(",");
-    %>
-    <option value="<%=x[0]%>"><%=x[1]%></option>
-    <%
-        }
-    %>
-</select>
+    <label>País</label>    
+    <select class="form-control" name="pais" id="pais" >
+        <option value="ninguno">-No seleccionado-</option>
+        <%        for (String e : paises) {
+
+                String[] x = e.split("-");
+
+        %>
+        <option value="<%=x[0]%>"><%=x[1]%></option>
+        <%
+            }
+        %>
+    </select>

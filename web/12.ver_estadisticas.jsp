@@ -1,17 +1,13 @@
+<%@page import="ufps.mincit.datos.dto.CuestionarioDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>MINCIT Eventos</title>
-        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#example').DataTable();
-            });
-        </script>
+
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -19,14 +15,8 @@
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
         <link rel="stylesheet" href="css/font.css" type="text/css" />
 
-        <link rel="stylesheet" href="css/app.css" type="text/css" />
-        <link rel="stylesheet" href="css/jquery.bxslider.css">   
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="css/app.css" type="text/css" />  
+
     </head>
     <body>
         <section class="vbox">
@@ -107,7 +97,6 @@
                                     <!-- nav -->
                                     <nav class="nav-primary hidden-xs">
                                         <ul class="nav">
-
                                             <li >
                                                 <a href="11.cuestionario.jsp"  >
                                                     <i class="fa fa-envelope-o icon">
@@ -124,12 +113,20 @@
                                                     <span>Estadisticas</span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <a href="14.configuracion.jsp"  >
                                                     <i class="fa fa-edit icon">
                                                         <b class="bg-success"></b>
                                                     </i>
                                                     <span>Configuración</span>
+                                                </a>
+                                            </li>
+                                            <li >
+                                                <a href="8.busquedaAs.jsp"  >
+                                                    <i class="fa fa-envelope-o icon">
+                                                        <b class="bg-primary dker"></b>
+                                                    </i>
+                                                    <span>Consultar Eventos</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -156,42 +153,88 @@
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">
-
                                     <section class="vbox">
+                                        <div class="col-sm-6 col-md-offset-3 ">  
+                                            <div class="text-center">
+                                                <h5>Estadisticas Encontradas hasta el momento:</h5>
+                                            </div>
+                                            <section class="panel panel-default">
+                                                <%
+                                                    Administrador a = new Administrador();
+                                                    int alto = a.contarAlto();
+                                                    int medio = a.contarMedio();
+                                                    int bajo = a.contarBajo();
+                                                %>
+                                                <div class="text-center wrapper bg-light lt" style="background-color: white;">
+                                                    <div class="sparkline inline" data-type="pie" data-height="165" data-slice-colors="['#77c587','#41586e','#f2f2f2']"><%=alto%>,<%=medio%>,<%=bajo%></div>
+                                                </div>
+                                                <ul class="list-group no-radius">
+                                                    <li class="list-group-item">
+                                                        <span class="pull-right"><%=alto%></span>
+                                                        <span class="label bg-primary">72-100</span>
+                                                        Comience su negocio y programa una cita con un asesor.
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="pull-right"><%=medio%></span>
+                                                        <span class="label bg-dark">58-71</span>
+                                                        Usted tiene potencial pero necesita mayor esfuerzo. 
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="pull-right"><%=bajo%></span>
+                                                        <span class="label bg-light">0-57</span>
+                                                        Se recomienda que usted busque un socio.
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                        </div>
                                         <div >
                                             <div class="col-md-6 col-md-offset-3">
                                                 <div class="text-center">
-                                                    <h2>Consultar Estadisticas</h2>
+                                                    <h2>Estadisticas Ordenadas por Fecha</h2>
                                                 </div>
                                                 <hr>
                                             </div>
-                                            <div class="col-sm-6 ">
-                                                <div class="form-group">
-                                                    <label>Datos estadisticos </label><br>
-                                                    <select class="form-control">
-                                                        <option value="volvo">Mayores que 70</option>
-                                                        <option value="volvo">Menores de 15</option>
-                                                        <option value="saab">Entre 16 y 69</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">    
-                                                <div class="form-group">
-                                                    <label>Fecha </label><br>
-                                                    <input type="date" name="name" class="form-control" required="required">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 text-center">
-                                                <button type="submit" name="submit" class="btn btn-primary btn-s-sm" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar</button>
-                                                <br><br>
+                                            <div class="col-sm-12 ">
+                                                <%                                                    ArrayList<CuestionarioDTO> c = a.mostrarCuestionario();
+                                                    if (c != null) {
+                                                %>
+                                                <div class="col-md-12">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Emprendedor</th>
+                                                                <th>Respuesta</th>
+                                                                <th>Valor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%     for (CuestionarioDTO e : c) {
+
+                                                            %>     
+                                                            <tr>
+                                                                <td><%=e.getFecha()%></td>
+                                                                <td><%=a.consultarEmprendedor(e.getCedula_usuario())%></td>
+                                                                <td><%=e.getRespuesta()%></td>
+                                                                <td><%=e.getValor()%></td>
+                                                            </tr>
+                                                            <%
+                                                                }
+                                                            %>  
+                                                        </tbody>
+                                                    </table>
+                                                </div>   
+
+                                                <%
+                                                    }
+                                                %>  
                                             </div>
                                         </div>
                                     </section> 
-                                    
-
                                 </section>
                             </section>
                         </section>
+
                     </section>
                 </section>
             </section>
@@ -203,22 +246,8 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-
-
-
-
-        <script>
-            $(document).ready(function () {
-                $("#myBtn").click(function () {
-                    $("#myModal").modal("show");
-                });
-                $("#myModal").on('show.bs.modal', function () {
-                    //alert('The modal is about to be shown.');
-                });
-            });
-        </script>
-
-
+        <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+        <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
 
     </body>
 </html>

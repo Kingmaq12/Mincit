@@ -911,3 +911,72 @@ function modificarAlerta3() {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function consultar() {
+
+    ajax = nuevoAjax();
+    parametros = "fechaI=" + document.getElementById("fechaI").value +"&fechaF=" + document.getElementById("fechaF").value + "&entidad=" + document.getElementById("entidad").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&continente=" + document.getElementById("continente").value + "&sector=" + document.getElementById("sector").value + "&logro=" + document.getElementById("logro").value;
+    var tabla = "tabla";
+    url = "procesar/Consultar.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function() {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                    document.getElementById(tabla).innerHTML = ajax.responseText;
+            }
+                document.getElementById(tabla).innerHTML = ajax.responseText;
+
+        } else
+        {
+            document.getElementById(tabla).value = "Cargando ";
+        }
+    }
+
+}
+
+function consultar2() {
+    
+    ajax = nuevoAjax();
+    parametros = "fechaI=" + document.getElementById("fechaI").value +"&fechaF=" + document.getElementById("fechaF").value + "&entidad=" + document.getElementById("entidad").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&continente=" + document.getElementById("continente").value + "&sector=" + document.getElementById("sector").value + "&logro=" + document.getElementById("logro").value;
+    var tabla = "tabla";
+    url = "procesar/Consultar2.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function() {
+
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                    document.getElementById(tabla).innerHTML = ajax.responseText;
+            }
+                document.getElementById(tabla).innerHTML = ajax.responseText;
+
+        } else
+        {
+            document.getElementById(tabla).value = "Cargando ";
+        }
+    }
+
+}

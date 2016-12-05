@@ -12,6 +12,7 @@ package ufps.mincit.negocio.administrador;
 import java.util.ArrayList;
 import java.util.Date;
 import ufps.mincit.datos.dao.AlertaGeneralDAO;
+import ufps.mincit.datos.dao.CuestionarioDAO;
 import ufps.mincit.datos.dao.Entidad_adscritaDAO;
 import ufps.mincit.datos.dao.EventoDAO;
 import ufps.mincit.datos.dao.Evento_EntidadDAO;
@@ -147,11 +148,11 @@ public class Administrador {
         //3. Por cada logro un registro en la tabla Evento_logro
         //4. Un registro en Evento_pais
         //5. Por cada sector economico un registro en la tabla Evento_sector
-        System.out.println("RUTA IMAGEN:"+imagen);
-        char conti1= continen.charAt(0);
-        char conti2= continen.charAt(1);
-        char continente = (char) (conti1+conti2);
-        EventoDTO dto = new EventoDTO(nombre, fecha, hora, lugar,ciudad, participantes, tipo_evento, url, imagen, descripcion);
+        System.out.println("RUTA IMAGEN:" + imagen);
+        char conti1 = continen.charAt(0);
+        char conti2 = continen.charAt(1);
+        char continente = (char) (conti1 + conti2);
+        EventoDTO dto = new EventoDTO(nombre, fecha, hora, lugar, ciudad, participantes, tipo_evento, url, imagen, descripcion);
         EventoDAO dao = new EventoDAO();
         Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
         Evento_logroDAO eveLog = new Evento_logroDAO();
@@ -187,7 +188,7 @@ public class Administrador {
 
             PaisesDAO paises = new PaisesDAO();
             String id_pais = paises.buscarPais(pais);
-            Evento_paisDTO evePaisDTO = new Evento_paisDTO(id, Integer.parseInt(id_pais),continente);
+            Evento_paisDTO evePaisDTO = new Evento_paisDTO(id, Integer.parseInt(id_pais), continente);
             evePais.registrarEve_Pais(evePaisDTO);
 
             String[] sectores = sector_economico.split(",");
@@ -205,154 +206,182 @@ public class Administrador {
 
     }
 
-    public ArrayList<EventoDTO> consultarEventos(String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
+    public ArrayList<EventoDTO> consultarEventos(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
+        System.out.print(fechaI + "---fechaI---" + fechaF + "---fechaF---" + entidad + "---entidad---" + pais + "---pais---" + ciudad + "---ciudad---" + continente + "---continente---" + sector + "---sector---" + logro);
 
         //todos llenos -------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar1(fecha, entidad, pais, ciudad, continente, sector, logro);
+            return dao.consultar1(fechaI, fechaF, entidad, pais, ciudad, continente, sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (!fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar2(fecha);
+            return dao.consultar2(fechaI, fechaF);
         }
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar3(fecha, entidad);
+            return dao.consultar3(fechaI, fechaF, entidad);
         }
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar4(fecha, entidad, pais);
+            return dao.consultar4(fechaI, fechaF, entidad, pais);
         }
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar5(fecha, entidad, pais, ciudad);
+            return dao.consultar5(fechaI, fechaF, entidad, pais, ciudad);
         }
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar6(fecha, entidad, pais, ciudad, continente);
+            return dao.consultar6(fechaI, fechaF, entidad, pais, ciudad, continente);
         }
-        if (!fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
-            return dao.consultar7(fecha, entidad, pais, ciudad, continente, sector);
+            return dao.consultar7(fechaI, fechaF, entidad, pais, ciudad, continente, sector);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar8(entidad);
         }
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar9(entidad, pais);
         }
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar10(entidad, pais, ciudad);
         }
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar11(entidad, pais, ciudad, continente);
         }
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar12(entidad, pais, ciudad, continente, sector);
         }
-        if (fecha.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar13(entidad, pais, ciudad, continente, sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
+            System.out.println("entro");
             return dao.consultar14(pais);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar15(pais, ciudad);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar16(pais, ciudad, continente);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar17(pais, ciudad, continente, sector);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar18(pais, ciudad, continente, sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar19(ciudad);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar20(ciudad, continente);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar21(ciudad, continente, sector);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar22(ciudad, continente, sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar23(continente);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar24(continente, sector);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar25(continente, sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && !sector.equals("ninguno") && logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar26(sector);
         }
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar27(sector, logro);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------
-        if (fecha.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && !logro.equals("ninguno")) {
+        if (fechaI.isEmpty() && fechaF.isEmpty() && entidad.equals("ninguno") && pais.equals("ninguno") && ciudad.isEmpty() && continente.equals("ninguno") && sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();
             return dao.consultar28(logro);
 
         }
-
+//        ArrayList<EventoDTO> M =new ArrayList<>();
+//        EventoDTO o = new EventoDTO();
+//        o.setNombre("laskdjfalksjdal");
+//        M.add(o);
         return null;
     }
+    
+       public String consultarEmprendedor(String cedula) throws Exception {
 
-    public EventoDTO consultarId(String id)throws Exception{
-        
+        UsuarioDAO a = new UsuarioDAO();
+        String emprendedor = a.consultarEmprendedor(cedula);
+        return emprendedor;
+
+    }
+
+    public int contarAlto()throws Exception{
+        CuestionarioDAO c = new CuestionarioDAO();
+        return c.contarAlto();
+    }
+
+    public int contarMedio()throws Exception{
+        CuestionarioDAO c = new CuestionarioDAO();
+        return c.contarMedio();
+    }
+
+    public int contarBajo() throws Exception{
+        CuestionarioDAO c = new CuestionarioDAO();
+        return c.contarBajo();
+    }
+
+    public EventoDTO consultarId(String id) throws Exception {
+
         EventoDAO dao = new EventoDAO();
         EventoDTO dto = dao.consultarPorId(id);
         Evento_EntidadDAO eveEnt = new Evento_EntidadDAO();
         Evento_logroDAO eveLog = new Evento_logroDAO();
         Evento_sectorDAO eveSec = new Evento_sectorDAO();
-        
-        String id_entidades_adscritas=eveEnt.consultarPorId(id);
-        String logros=eveLog.consultarPorId(id);
-        String sectores_economicos=eveSec.consultarPorId(id);
-        
+
+        String id_entidades_adscritas = eveEnt.consultarPorId(id);
+        String logros = eveLog.consultarPorId(id);
+        String sectores_economicos = eveSec.consultarPorId(id);
+
         dto.setEntidades_adscritas(id_entidades_adscritas);
         dto.setLogros(logros);
         dto.setSectores_economicos(sectores_economicos);
         return dto;
-        
+
     }
-    
-    public String actualizarDatos(String idi,String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
-        
+
+    public String actualizarDatos(String idi, String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
+
 //        EventoDAO dao = new EventoDAO();
 //        boolean evento= dao.actualizarDatos(idi, nombre, fecha, hora, lugar, continente, pais, ciudad, participantes, tipo_evento, url, descripcion);
 //        int id = Integer.parseInt(idi);
@@ -409,73 +438,70 @@ public class Administrador {
 //            return "S";
 //        }
         return "N";
-        
+
     }
-    
-    
-    public ArrayList<String> consultarPreguntas()throws Exception{
-        
+
+    public ArrayList<String> consultarPreguntas() throws Exception {
+
         PreguntaDAO dao = new PreguntaDAO();
         return dao.consultarPreguntas();
-        
+
     }
-    
-    
-    public String registrarResultadoEmprendedor(String valor,String nombre, String cedula, String email)throws Exception{
-         
+
+    public String registrarResultadoEmprendedor(String valor, String nombre, String cedula, String email) throws Exception {
+
         Usuario dto = new Usuario(nombre, email, cedula, 3, "123");
-        UsuarioDAO dao = new UsuarioDAO(); 
-        
+        UsuarioDAO dao = new UsuarioDAO();
+
         dao.registrarUsuario(dto);
-        
+
         int resultado = 0;
-        
+
         for (int i = 0; i < 31; i++) {
-            resultado+= Integer.parseInt(valor.charAt(i)+"");
+            resultado += Integer.parseInt(valor.charAt(i) + "");
         }
-        
-        String retornar="Su resultado de la encuesta es=  "+resultado+"   ";
-        
+
+        String retornar = "Su resultado de la encuesta es=  " + resultado + "   ";
+
         RespuestaDAO respDao = new RespuestaDAO();
-        
+
         ArrayList<String> respuestas = respDao.consultarRespuestas();
-        
-        for(String linea:respuestas){
-            
-            String[] divi1=linea.split("=");
-            
+
+        for (String linea : respuestas) {
+
+            String[] divi1 = linea.split("=");
+
             for (int i = 0; i < divi1.length; i++) {
-                if(i==1){
-                    String[] divi2=divi1[i].split("-");    
-                    if(resultado>=Integer.parseInt(divi2[0])&&resultado<=Integer.parseInt(divi2[1])){
-                        retornar+=divi1[2];
+                if (i == 1) {
+                    String[] divi2 = divi1[i].split("-");
+                    if (resultado >= Integer.parseInt(divi2[0]) && resultado <= Integer.parseInt(divi2[1])) {
+                        retornar += divi1[2];
                         break;
                     }
                 }
-            
+
             }
-             
+
         }
         return retornar;
-     }
-    
-    public String modificarAlerta(String numero,String alerta)throws Exception{
-        
+    }
+
+    public String modificarAlerta(String numero, String alerta) throws Exception {
+
         AlertaGeneralDTO dto = new AlertaGeneralDTO(numero, alerta);
         AlertaGeneralDAO dao = new AlertaGeneralDAO();
-        
-        if(dao.modificarAlerta(dto)){
+
+        if (dao.modificarAlerta(dto)) {
             return "S";
         }
-        
+
         return "N";
     }
-    
 
-   public ArrayList<String> consultarAlertas()throws Exception{
-       
-       AlertaGeneralDAO dao = new AlertaGeneralDAO();
-       
-       return dao.consultarAlertas();
-   }
+    public ArrayList<String> consultarAlertas() throws Exception {
+
+        AlertaGeneralDAO dao = new AlertaGeneralDAO();
+
+        return dao.consultarAlertas();
+    }
 }

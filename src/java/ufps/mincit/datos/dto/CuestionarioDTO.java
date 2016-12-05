@@ -5,7 +5,6 @@
  */
 package ufps.mincit.datos.dto;
 
-import java.util.Date;
 
 /**
  *
@@ -13,28 +12,19 @@ import java.util.Date;
  */
 public class CuestionarioDTO {
     
-    private int id;
     private String cedula_usuario;
     private int respuesta;
-    private Date fecha;
+    private String fecha;
     private int valor;
 
     public CuestionarioDTO() {
     }
 
-    public CuestionarioDTO(int id, String cedula_usuario, int respuesta, int valor) {
-        this.id = id;
+    public CuestionarioDTO(String cedula_usuario, int respuesta, String fecha, int valor) {
         this.cedula_usuario = cedula_usuario;
         this.respuesta = respuesta;
+        this.fecha = fecha;
         this.valor = valor;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getCedula_usuario() {
@@ -53,11 +43,11 @@ public class CuestionarioDTO {
         this.respuesta = respuesta;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

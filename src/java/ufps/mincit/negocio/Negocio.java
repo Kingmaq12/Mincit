@@ -96,21 +96,6 @@ public class Negocio {
 
     }
 
-    public ArrayList<EventoDTO> consultarEventos(String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
-        System.out.println("consultar 1 --------------"+fecha + "-" + entidad + "-" + pais + "-" + ciudad + "-" + continente + "-" + sector + "-" + logro);
-        return this.admin.consultarEventos(fecha, entidad, pais, ciudad, continente, sector, logro);
-    }
-
-    public ArrayList<EventoDTO> consultarEventos2(String fecha, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
-        System.out.println("consultar 2 --------------"+fecha + "-" + entidad + "-" + pais + "-" + ciudad + "-" + continente + "-" + sector + "-" + logro);
-        return this.visi.consultarEventos(fecha, entidad, pais, ciudad, continente, sector, logro);
-   }
-    
-    public ArrayList<String> mostrarPaisesC(String continente) throws Exception {
-        PaisesDAO dao = new PaisesDAO();
-        return dao.mostrarPaisesC(continente);
-    }
-
     public Usuario consultarUsuarioTipo(int tipoUsuario) throws Exception {
 
         UsuarioDAO dao = new UsuarioDAO();
@@ -196,7 +181,7 @@ public class Negocio {
                     ciclo2 = false;
                 }
             }
-            res =this.admin.registrarEventoExcel(evento);
+            res = this.admin.registrarEventoExcel(evento);
             if (array == fin - 1) {
                 ciclo = false;
             }
@@ -204,29 +189,32 @@ public class Negocio {
         return res;
     }
 
-    public EventoDTO consultarId(String id)throws Exception{
-        
-       return admin.consultarId(id);
-        
+    public EventoDTO consultarId(String id) throws Exception {
+
+        return admin.consultarId(id);
+
     }
-    
-    public String actualizarDatos(String id,String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
-        
-        return this.admin.actualizarDatos(id,nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url, imagen, logros, descripcion);
-        
+
+    public String actualizarDatos(String id, String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
+
+        return this.admin.actualizarDatos(id, nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url, imagen, logros, descripcion);
+
     }
-    
-    public ArrayList<String> mostrarComentario() throws Exception{
-        
-        ComentarioDAO p = new ComentarioDAO();
-        return p.mostrarComentario();
+
+    public EventoDTO consultarVerEvento(String id) throws Exception {
+
+        return visi.verEvento(id);
+
     }
-     public EventoDTO consultarVerEvento(String id)throws Exception{
-        
-       return visi.verEvento(id);
-        
+
+    public ArrayList<String> mostrarPaisesC(String continente) throws Exception {
+        PaisesDAO dao = new PaisesDAO();
+        return dao.mostrarPaisesC(continente);
     }
-     
-     
-     
+
+    public ArrayList<String> mostrarPaises() throws Exception {
+        PaisesDAO dao = new PaisesDAO();
+        return dao.mostrarPaises();
+    }
+
 }

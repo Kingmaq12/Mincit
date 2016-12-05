@@ -12,17 +12,17 @@ import java.util.Date;
  * @author user
  */
 public class EventoDTO {
-    
+
     private String id;
-    private String nombre; 
-    private String fecha; 
+    private String nombre;
+    private String fecha;
     private String hora;
-    private String lugar ;
+    private String lugar;
     private String ciudad;
     private String participantes;
     private String tipo_evento;
     private String url;
-    private String imagen ;
+    private String imagen;
     private String descripcion;
     private String estado;
     private String entidades_adscritas;
@@ -32,14 +32,30 @@ public class EventoDTO {
     public EventoDTO() {
     }
 
-     public EventoDTO (String id,String nombre, String lugar,  String fecha ,String hora, String ciudad){
-        this.id=id;
-        this.nombre=nombre;
-        this.fecha=fecha;
-        this.lugar =lugar;
-        this.hora=hora;
-        this.ciudad=ciudad;
+    public EventoDTO(String id, String nombre, String fecha, String hora, String lugar, String ciudad, String participantes, String tipoEvento, String url, String ruta_imagen, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.lugar = lugar;
+        this.ciudad = ciudad;
+        this.participantes = participantes;
+        this.tipo_evento = tipoEvento;
+        this.url = url;
+        this.imagen = ruta_imagen;
+        this.descripcion = descripcion;
+        this.estado = "1";
     }
+
+    public EventoDTO(String id, String nombre, String lugar, String fecha, String hora, String ciudad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.lugar = lugar;
+        this.hora = hora;
+        this.ciudad = ciudad;
+    }
+
     public EventoDTO(String nombre, String fecha, String hora, String lugar, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;
@@ -53,24 +69,6 @@ public class EventoDTO {
         this.descripcion = descripcion;
         this.estado = "1";
     }
-    
-    public EventoDTO(String nombre, String fecha, String hora, String lugar, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion,String entidades_adscritas,String logros,String sectores_economicos){
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.hora = hora;
-        this.lugar = lugar;
-        this.ciudad = ciudad;
-        this.participantes = participantes;
-        this.tipo_evento = tipo_evento;
-        this.url = url;
-        this.imagen = imagen;
-        this.descripcion = descripcion;
-        this.estado = "1";
-        this.entidades_adscritas=entidades_adscritas;
-        this.logros=logros;
-        this.sectores_economicos=sectores_economicos;
-    }
-    
 
     public String getTipo_evento() {
         return tipo_evento;
@@ -79,8 +77,6 @@ public class EventoDTO {
     public void setTipo_evento(String tipo_evento) {
         this.tipo_evento = tipo_evento;
     }
-
-    
 
     public String getNombre() {
         return nombre;
@@ -137,7 +133,7 @@ public class EventoDTO {
     public void setUrl(String url) {
         this.url = url;
     }
-    
+
     public String getImagen() {
         return imagen;
     }
@@ -194,6 +190,4 @@ public class EventoDTO {
         this.sectores_economicos = sectores_economicos;
     }
 
-    
-    
 }

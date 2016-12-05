@@ -5,10 +5,17 @@
  */
 package ufps.mincit.datos.interf;
 
+import java.util.ArrayList;
+import ufps.mincit.datos.dto.CuestionarioDTO;
+
 /**
  *
  * @author user
  */
 public interface ICuestionarioDAO {
     
+        public ArrayList<CuestionarioDTO> mostrarCuestionario()throws Exception;
+    public int contarAlto() throws Exception;
+    public int contarMedio() throws Exception;
+    public int contarBajo() throws Exception;
 }

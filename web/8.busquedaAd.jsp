@@ -172,12 +172,18 @@
 
                                         </div>
                                         <div class="container">
-                                            <form  id="consultar" action="javascript:consultar()" method="post">
+                                            <form accept-charset="UTF-8" id="consultar" action="javascript:consultar()" method="post">
                                                 <div class="row">
-                                                    <div class="col-sm-5">
+                                                    <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <label for="firstname">Fecha</label>
-                                                            <input type="date" class="form-control" id="fecha">
+                                                            <label for="firstname">Fecha Inicio </label>
+                                                            <input type="date" class="form-control" id="fechaI">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label for="firstname">Fecha Fin </label>
+                                                            <input type="date" class="form-control" id="fechaF">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -189,10 +195,12 @@
                                                                     Negocio n1 = new Negocio();
                                                                     ArrayList<String> entidades = n1.mostrarEntidades();
                                                                     for (String e : entidades) {
-                                                                        String[] x =e.split(",");
+                                                                        String[] x = e.split(",");
+                                                                        String a = x[0];
+                                                                        String b = x[1];
                                                                 %>
 
-                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
+                                                                <option value="<%=a%>"><%=b%></option>
 
                                                                 <%
                                                                     }
@@ -200,25 +208,45 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="col-sm-5">       
+                                                        <div class="form-group">
+                                                            <label>Continente </label><br>
+                                                            <select class="form-control" name="continente" id="continente" onChange="playVideo(this)">
+                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                <option value="NA">Norte America</option>
+                                                                <option value="SA">Sur America</option>
+                                                                <option value="EU">Europa</option>
+                                                                <option value="AS">Asia</option>
+                                                                <option value="OC">Oceania</option>
+                                                                <option value="AF">Africa</option>
+                                                                <option value="AN">Antartida</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group">
-                                                            <label>País</label>
-                                                            <select class="form-control" name="pais" id="pais">
-                                                                <option value="ninguno">-No seleccionado-</option>
-                                                                <%
-                                                                    Negocio n = new Negocio();
-                                                                    ArrayList<String> paises = n.mostrarPaisesC();
-                                                                    for (String e : paises) {
-                                                                        String[] x =e.split(",");
-                                                                %>
 
-                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
+                                                            <div id="paises" value ="ninguno" name="paises" >
+                                                                <label>País</label>  
+                                                                <select class="form-control" name="pais" id="pais">
+                                                                    <option value="ninguno">-No seleccionado-</option>
+                                                                    <%
+                                                                        Negocio n = new Negocio();
+                                                                        ArrayList<String> pa = n.mostrarPaises();
+                                                                        for (String e : pa) {
+                                                                            String[] x = e.split("-");
+                                                                            String a = x[0];
+                                                                            String b = x[1];
+                                                                    %>
+
+                                                                    <option value="<%=a%>"><%=b%></option>
 
 
-                                                                <%
-                                                                    }
-                                                                %>
-                                                            </select>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -227,31 +255,21 @@
                                                             <input type="text" class="form-control" id="ciudad">
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-5">
-                                                        <div class="form-group">
-                                                            <label>Continente </label><br>
-                                                            <select class="form-control" id="continente">
-                                                                <option value="ninguno">-No seleccionado-</option>
-                                                                <option value="america">America</option>
-                                                                <option value="europa">Europa</option>
-                                                                <option value="asia">Asia</option>
-                                                                <option value="oceania">Oceania</option>
-                                                                <option value="africa">Africa</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+
                                                     <div class="col-sm-5">
                                                         <div class="form-group">
                                                             <label>Sector Economico</label>
                                                             <select class="form-control"  id="sector">
                                                                 <option value="ninguno">-No seleccionado-</option>
                                                                 <%
-                                                                    Negocio n2 = new Negocio();
-                                                                    ArrayList<String> sectores = n2.mostrarSectores();
+                                                                    ArrayList<String> sectores = n1.mostrarSectores();
                                                                     for (String e : sectores) {
-                                                                        String[] x =e.split(",");
+                                                                        String[] x = e.split(",");
+                                                                        String a = x[0];
+                                                                        String b = x[1];
                                                                 %>
-                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
+
+                                                                <option value="<%=a%>"><%=b%></option>
 
                                                                 <%
                                                                     }
@@ -265,13 +283,14 @@
                                                             <select class="form-control" name="logros" id="logro">
                                                                 <option value="ninguno">-No seleccionado-</option>
                                                                 <%
-                                                                    Negocio n3 = new Negocio();
-                                                                    ArrayList<String> logros = n3.mostrarLogros();
+                                                                    ArrayList<String> logros = n1.mostrarLogros();
                                                                     for (String e : logros) {
-                                                                        String[] x =e.split(",");
+                                                                        String[] x = e.split(",");
+                                                                        String a = x[0];
+                                                                        String b = x[1];
                                                                 %>
 
-                                                                <option value="<%=x[0]%>"><%=x[1]%></option>
+                                                                <option value="<%=a%>"><%=b%></option>
 
                                                                 <%
                                                                     }
@@ -281,9 +300,8 @@
                                                     </div>
 
                                                     <div class="col-sm-12 text-center">
-                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Buscar Eventos</button>                                            <br><br>
+                                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-send"></i> Consultar</button>
                                                     </div>
-                                                    <br><br>
                                                 </div>
                                                 <!-- /.row -->
                                             </form>
@@ -307,6 +325,36 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <script type='text/javascript'>
+                                                    function playVideo(a) {
+
+                                                        b = document.getElementById("paises");
+
+                                                        ajax = nuevoAjax();
+                                                        parametros = "continente=" + document.getElementById("continente").value;
+                                                        url = "procesar/mostrarPaises_1.jsp";
+                                                        ajax.open("POST", url, true);
+                                                        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                                        ajax.send(parametros);
+                                                        ajax.onreadystatechange = function() {
+
+                                                            if (ajax.readyState == 4)
+                                                            {
+                                                                if (ajax.status == 200)
+                                                                {
+                                                                    b.innerHTML = ajax.responseText;
+                                                                }
+                                                                b.innerHTML = ajax.responseText;
+
+                                                            } else
+                                                            {
+                                                                b.innerHTML = "Cargando ";
+                                                            }
+                                                        }
+
+                                                    }
+        </script>
 
     </body>
 </html>

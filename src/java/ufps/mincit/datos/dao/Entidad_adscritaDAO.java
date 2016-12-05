@@ -92,4 +92,54 @@ public class Entidad_adscritaDAO implements IEntidad_adscritaDAO{
         return resul;
     }
     
+        public ArrayList<String> mostrarEntidad()throws Exception{
+        
+        conn = ConexionSQL.conectar();
+        ArrayList<String> resul= new ArrayList<>();
+        PreparedStatement stmt = null;
+        try{
+            //NIT DE LA ENTIDAD
+            stmt = conn.prepareStatement("SELECT * FROM  `Entidad adscrita`" );
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+               String cad=res.getString(2)+","+res.getString(3);
+               resul.add(cad);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+        
+    }
+    
+            public String consultarEntidades(String nit)throws Exception{
+        conn = ConexionSQL.conectar();
+        String resul= "";
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * FROM  `Entidad adscrita` WHERE  `nit` = ? " );
+            stmt.setString(1, nit);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+              resul=res.getString(2);
+            }
+            stmt.close();
+            res.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null){
+                conn.close();
+            }
+        }
+        return resul;
+    }
+    
+    
 }

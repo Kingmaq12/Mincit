@@ -125,4 +125,31 @@ public class UsuarioDAO implements IUsuarioDAO{
         return resul;
     }
     
+    @Override
+    public boolean registrarUsuario(Usuario dto)throws Exception{
+       
+        conn = ConexionSQL.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = conn.prepareStatement("INSERT INTO Usuario(`nombre` ,`email` ,`cedula`,`tipo_usuario` ,`contraseña`)VALUES (?,?,?,?,?)");
+            stmt.setString(1, dto.getNombre());
+            stmt.setString(2, dto.getEmail());
+            stmt.setString(3, dto.getCedula());
+            stmt.setInt(4, 3);
+            stmt.setString(5, "123");
+            
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exito;
+    }
+    
 }

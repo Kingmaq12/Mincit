@@ -1,3 +1,4 @@
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page import="ufps.mincit.negocio.Negocio"%>
 <%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <%@page import="org.apache.commons.fileupload.FileItemFactory"%>
@@ -10,9 +11,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
+        response.setContentType("text/html;charset-UTF-8");
+        request.setCharacterEncoding("UTF-8");
+ 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 	double areaEquivalente=0;
-        String mensaje="";
+	String mensaje="";
 	String estado= request.getParameter("hdEstado");
 	String directory="";
 	String nombreImagen="";
@@ -22,6 +26,7 @@
 	if(estado.equals("")){
 		try{
 			if (isMultipart) {
+                                System.out.println("ENTRO EN MULTIPART");
                                 FileItemFactory factory = new DiskFileItemFactory();
 				ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 				servletFileUpload.setSizeMax(100000*1012);		
@@ -37,21 +42,20 @@
 		  		Iterator iter = items.iterator();
 		  		int i=0;
 		  		while (iter.hasNext()) {
-                                FileItem item = (FileItem) iter.next();
+		  		System.out.println("DENTRO DEL WHILE");	
+		  		FileItem item = (FileItem) iter.next();
 		  	    	String name = item.getFieldName();
 	  	        	fileName = name;
 	  	        	if (name.equalsIgnoreCase("directory")) { directory = item.getString(); }
 	  	        	File file=null;
 		  	    	if (!item.isFormField()) {
 			  	    	if(i==0){
+                                            System.out.println("ENTRA A PONER RUTA");
 			  	    		file = new File(directory+"/imagenes/"+fileName);
-                                                session.setAttribute("imagen",directory+"/imagenes/"+fileName);
+                                                session.setAttribute("ruta_imagen",directory+"/imagenes/"+fileName);
                                                 nombreImagen= fileName;
 			  	      	}
-			  	    	if (i==1){
-			  	    		file = new File(directory+"/"+fileName);
-			  	    	}		  	      	 	  	      
-				  	  	File parentFile = file.getParentFile();
+			  	    	  	File parentFile = file.getParentFile();
 			  		
 			  	      	if (parentFile != null) { parentFile.mkdirs();  }
 			  	      	file.deleteOnExit();
@@ -90,12 +94,9 @@
             String url= (String)session.getAttribute("url");
             String logros= (String)session.getAttribute("logros");
             String descripcion= (String) session.getAttribute("descripcion");
-            String imagen = (String) session.getAttribute("imagen");
+            String imagen = (String) session.getAttribute("ruta_imagen");
             
-            System.out.println("IMAGEN EN JSP:"+imagen);
-            
-            
-    Negocio nego = new Negocio();
+    Administrador nego = new Administrador();
     
     String respuesta = nego.registrarEvento(nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url,imagen, logros, descripcion);
     

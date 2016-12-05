@@ -5,10 +5,15 @@
  */
 package ufps.mincit.datos.interf;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author user
  */
 public interface IPreguntaDAO {
+    
+    
+    public ArrayList<String> consultarPreguntas()throws Exception;
     
 }

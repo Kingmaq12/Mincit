@@ -124,6 +124,14 @@
                                                     <span>Configuración</span>
                                                 </a>
                                             </li>
+                                            <li >
+                                                <a href="8.busquedaAs.jsp"  >
+                                                    <i class="fa fa-envelope-o icon">
+                                                        <b class="bg-primary dker"></b>
+                                                    </i>
+                                                    <span>Consultar Eventos</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </nav>
                                     <!-- / nav -->

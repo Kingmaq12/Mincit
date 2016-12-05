@@ -33,21 +33,19 @@ public class EventoDAO implements IEventoDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = conn.prepareStatement("INSERT INTO Evento(`id` ,`nombre` ,`fecha` ,`hora` ,`lugar` ,`continente` ,`pais` ,`ciudad` ,`participantes` ,`tipo_evento`,`url` ,`ruta_imagen` ,`descripcion` ,`estado`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            stmt = conn.prepareStatement("INSERT INTO Evento(`id` ,`nombre` ,`fecha` ,`hora` ,`lugar`,`ciudad` ,`participantes` ,`tipo_evento`,`url` ,`ruta_imagen` ,`descripcion` ,`estado`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, null);
             stmt.setString(2, dto.getNombre());
             stmt.setString(3, dto.getFecha());
             stmt.setString(4, dto.getHora());
             stmt.setString(5, dto.getLugar());
-            stmt.setString(6, dto.getContinente());
-            stmt.setString(7, dto.getPais());
-            stmt.setString(8, dto.getCiudad());
-            stmt.setString(9, dto.getParticipantes());
-            stmt.setString(10, dto.getTipo_evento());
-            stmt.setString(11, dto.getUrl());
-            stmt.setString(12, dto.getImagen());
-            stmt.setString(13, dto.getDescripcion());
-            stmt.setInt(14, Integer.parseInt(dto.getEstado()));
+            stmt.setString(6, dto.getCiudad());
+            stmt.setString(7, dto.getParticipantes());
+            stmt.setString(8, dto.getTipo_evento());
+            stmt.setString(9, dto.getUrl());
+            stmt.setString(10, dto.getImagen());
+            stmt.setString(11, dto.getDescripcion());
+            stmt.setInt(12, Integer.parseInt(dto.getEstado()));
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -865,7 +863,7 @@ public class EventoDAO implements IEventoDAO {
             stmt.setInt(1, Integer.parseInt(id));
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
-                resul=new EventoDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11), res.getString(12), res.getString(13),null,null,null);
+                resul=new EventoDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11),null,null,null);
             }
             stmt.close();
             res.close();

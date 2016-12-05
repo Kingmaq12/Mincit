@@ -18,8 +18,6 @@ public class EventoDTO {
     private String fecha; 
     private String hora;
     private String lugar ;
-    private String continente ;
-    private String pais ;
     private String ciudad;
     private String participantes;
     private String tipo_evento;
@@ -42,13 +40,11 @@ public class EventoDTO {
         this.hora=hora;
         this.ciudad=ciudad;
     }
-    public EventoDTO(String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion) {
+    public EventoDTO(String nombre, String fecha, String hora, String lugar, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
-        this.continente = continente;
-        this.pais = pais;
         this.ciudad = ciudad;
         this.participantes = participantes;
         this.tipo_evento = tipo_evento;
@@ -58,13 +54,11 @@ public class EventoDTO {
         this.estado = "1";
     }
     
-    public EventoDTO(String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion,String entidades_adscritas,String logros,String sectores_economicos){
+    public EventoDTO(String nombre, String fecha, String hora, String lugar, String ciudad, String participantes, String tipo_evento, String url, String imagen, String descripcion,String entidades_adscritas,String logros,String sectores_economicos){
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
-        this.continente = continente;
-        this.pais = pais;
         this.ciudad = ciudad;
         this.participantes = participantes;
         this.tipo_evento = tipo_evento;
@@ -118,22 +112,6 @@ public class EventoDTO {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
-    }
-
-    public String getContinente() {
-        return continente;
-    }
-
-    public void setContinente(String continente) {
-        this.continente = continente;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
     }
 
     public String getCiudad() {

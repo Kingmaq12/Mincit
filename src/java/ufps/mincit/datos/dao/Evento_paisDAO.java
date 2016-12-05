@@ -26,9 +26,10 @@ public class Evento_paisDAO implements IEvento_paisDAO{
         boolean exito =false;
         PreparedStatement stmt = null;
         try{
-            stmt = conn.prepareStatement("INSERT INTO Evento_pais(`id_evento` ,`id_pais`)VALUES (?,?)");
+            stmt = conn.prepareStatement("INSERT INTO Evento_pais(`id_evento` ,`id_pais`,`code_continente`)VALUES (?,?,?)");
             stmt.setInt(1, eveDTO.getId_evento());
             stmt.setInt(2, eveDTO.getId_pais());
+            stmt.setString(3, String.valueOf(eveDTO.getCode_continente()));
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();

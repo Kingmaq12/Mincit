@@ -4,17 +4,14 @@
     Author     : ALEJANDRA
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%      
         String nombre = (String) session.getAttribute("nombre");
-        System.out.println("nombre en divImagen: "+nombre);
 %>
 <div class="col-sm-4 col-sm-offset-1">
 
     <div class="form-group">
         <label>Imagen </label> <br>
-        <input type="file" class="filestyle" name="<%=nombre%>" id="<%=nombre%>" data-icon="false" required="required">
+        <input type="file" class="file" name="<%=nombre%>" id="<%=nombre%>" data-icon="false" required="required">
     </div>
 </div>
 <br>

@@ -111,11 +111,11 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="9.ver_comentario.jsp"  >
+                                                <a href=""  >
                                                     <i class="fa fa-book icon">
                                                         <b class="bg-primary"></b>
                                                     </i>
-                                                    <span>Comentarios</span>
+                                                    <span>Eventos Visitantes</span>
                                                 </a>
                                             </li>
                                             <li>

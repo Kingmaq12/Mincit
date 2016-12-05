@@ -19,4 +19,5 @@ public interface IUsuarioDAO {
     
     public boolean cambiarContraseña(String cedula,String tipo_usuario,String nueva)throws Exception;
     
+    public boolean registrarUsuario(Usuario dto)throws Exception;
 }

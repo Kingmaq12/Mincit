@@ -395,7 +395,7 @@
                                                             <div id="menu4" class="tab-pane fade delinear">
                                                                 <br>
                                                                 <br>
-                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
+                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="POST" action="procesar/registrarEventoManual.jsp" enctype="multipart/form-data">
                                                                     <div id="resetear">
 
                                                                         <h3>Primero termine el paso 1</h3>
@@ -407,7 +407,7 @@
                                                     </div>
 
                                                     <div id="menu2" class="tab-pane fade ">
-                                                        <form name="registrarExcel" id="registrarExcel" method="post" action="procesar/registrarEventoExcel.jsp"enctype="multipart/form-data">
+                                                        <form name="registrarExcel" id="registrarExcel" method="post" action="procesar/registrarEventoExcel.jsp" enctype="multipart/form-data">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
                                                                 <label>Archivo Microsoft Excel </label> <br>
@@ -448,6 +448,7 @@
 
         <script src="procesar/ajax/procesos.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
         <script type='text/javascript'>
             function playVideo(a) {
                 

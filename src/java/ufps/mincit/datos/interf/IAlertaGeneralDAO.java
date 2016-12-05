@@ -6,13 +6,16 @@
 package ufps.mincit.datos.interf;
 
 import java.util.ArrayList;
+import ufps.mincit.datos.dto.AlertaGeneralDTO;
 
 /**
  *
- * @author user
+ * @author CESAR
  */
-public interface IRespuestaDAO {
+public interface IAlertaGeneralDAO {
     
-     public ArrayList<String> consultarRespuestas()throws Exception;
+    public boolean modificarAlerta(AlertaGeneralDTO dto)throws Exception;
+    
+    public ArrayList<String> consultarAlertas()throws Exception;
     
 }

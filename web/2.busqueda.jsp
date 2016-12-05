@@ -123,7 +123,7 @@
                                         <a href="3.calendario.jsp" >Calendario</b></a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="4.contacto.jsp" >Contactenos</b></a>
+                                        <a href="" >Registre Evento</b></a>
                                     </li>
                                 </ul>
 
@@ -201,27 +201,27 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-sm-6">       
+                                            <div class="form-group">
+                                                <label>Continente </label><br>
+                                                <select class="form-control" name="continente" id="continente" onChange="playVideo(this)">
+                                                    <option value="ninguno">-No seleccionado-</option>
+                                                    <option value="1">Norte America</option>
+                                                    <option value="2">Sur America</option>
+                                                    <option value="3">Europa</option>
+                                                    <option value="4">Asia</option>
+                                                    <option value="5">Oceania</option>
+                                                    <option value="6">Africa</option>
+                                                    <option value="7">Antartida</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label>País</label>
-                                                <select class="form-control" name="pais" id="pais">
-                                                    <option value="ninguno">-No seleccionado-</option>
-                                                    <%
-                                                        Negocio n = new Negocio();
-                                                        ArrayList<String> paises = n.mostrarPaisesC();
-                                                        for (String e : paises) {
-                                                            String[] x = e.split(",");
-                                                            String a = x[0];
-                                                            String b = x[1];
-                                                    %>
 
-                                                    <option value="<%=a%>"><%=b%></option>
+                                                <div id="paises" name="paises">
 
-
-                                                    <%
-                                                        }
-                                                    %>
-                                                </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -230,19 +230,7 @@
                                                 <input type="text" class="form-control" id="ciudad">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>Continente </label><br>
-                                                <select class="form-control" id="continente">
-                                                    <option value="ninguno">-No seleccionado-</option>
-                                                    <option value="america">America</option>
-                                                    <option value="europa">Europa</option>
-                                                    <option value="asia">Asia</option>
-                                                    <option value="oceania">Oceania</option>
-                                                    <option value="africa">Africa</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Sector Economico</label>
@@ -361,22 +349,6 @@
             </div>
             <!-- /#content -->
 
-            <!-- *** GET IT ***
-    _________________________________________________________ -->
-
-            <div id="get-it">
-                <div class="container">
-                    <div class="col-md-8 col-sm-12">
-                        <h3>Quieres mostrar tu evento en esta pagina?</h3>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a href="4contacto.jsp" class="btn btn-template-transparent-primary">Contactanos</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- *** GET IT END *** -->
 
 
             <!-- *** FOOTER ***
@@ -406,8 +378,6 @@
                             <br>
                             <strong>Colombia</strong>
                         </p>
-
-                        <a href="4.contacto.jsp" class="btn btn-small btn-template-main">Ir a la pagina de Contactenos</a>
 
                         <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -448,7 +418,7 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
-            window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+                                                window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
         </script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
@@ -457,7 +427,37 @@
         <script src="js/jquery.counterup.min.js"></script>
         <script src="js/jquery.parallax-1.1.3.js"></script>
         <script src="js/front.js"></script>
+        <script type='text/javascript'>
+                                                function playVideo(a) {
 
+                                                    b = document.getElementById("paises");
+
+                                                    ajax = nuevoAjax();
+                                                    parametros = "continente=" + document.getElementById("continente").value;
+                                                    url = "procesar/mostrarPaises_1.jsp";
+                                                    ajax.open("POST", url, true);
+                                                    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                                    ajax.send(parametros);
+                                                    ajax.onreadystatechange = function () {
+
+                                                        if (ajax.readyState == 4)
+                                                        {
+                                                            if (ajax.status == 200)
+                                                            {
+                                                                b.innerHTML = ajax.responseText;
+                                                            }
+                                                            b.innerHTML = ajax.responseText;
+
+                                                        } else
+                                                        {
+                                                            b.innerHTML = "Cargando ";
+                                                        }
+                                                    }
+
+
+
+                                                }
+        </script>
 
 
         <!-- owl carousel -->

@@ -118,7 +118,7 @@
                                         <a href="3.calendario.jsp" >Calendario</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="4.contacto.jsp" >Contactenos</a>
+                                        <a href="" >Registre Evento</a>
                                     </li>
                                 </ul>
 
@@ -234,24 +234,6 @@
             <!-- /#content -->
 
 
-            <!-- *** GET IT ***
-    _________________________________________________________ -->
-
-            <div id="get-it">
-                <div class="container">
-                    <div class="col-md-8 col-sm-12">
-                        <h3>Quieres mostrar tu evento en esta pagina?</h3>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <a href="4.contacto.jsp" class="btn btn-template-transparent-primary">Contactanos</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- *** GET IT END *** -->
-
-
             <!-- *** FOOTER ***
     _________________________________________________________ -->
 
@@ -283,8 +265,6 @@
                             <br>
                             <strong>Colombia</strong>
                         </p>
-
-                        <a href="4.contacto.jsp" class="btn btn-small btn-template-main">Ir a la pagina de Contactenos</a>
 
                         <hr class="hidden-md hidden-lg hidden-sm">
 

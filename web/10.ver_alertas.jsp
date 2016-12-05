@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" class="app">
@@ -158,121 +160,81 @@
                             </header>
                             <section class="scrollable">
                                 <section class="hbox stretch">
-
+                                    <%
+                                        Administrador admin = new Administrador();
+                                        ArrayList<String> alertas = admin.consultarAlertas();
+                                    %>
 
                                     <section>
-                                        <div class="container contacto delinear">
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#menu1">Registrar Alerta</a></li>
-                                                    <li><a data-toggle="tab" href="#menu2">Modificar Alerta</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-content">	
-                                                <div id="menu1" class="tab-pane fade in active">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-md-6 col-md-offset-3">
-                                                                <div class="text-center">
-                                                                    <h2>Registrar Alerta</h2>
-
-                                                                </div>
-                                                                <hr>
-                                                            </div>
-                                                        </div>
+                                        <div class="container contacto">
+                                            <div class="row">
+                                                <div class="col-md-5 col-md-offset-3">
+                                                    <div class="text-center">
+                                                        <h2>Modificar Alerta</h2>
+                                                        <p>En esta opción se pueden modificar las Alertas generales del sistema.<br>
+                                                            Si quiere agregar una alerta especifica por favor ingrese a Consultar eventos y en 
+                                                            el boton Opcion de cada evento estara ese registro.<br>
+                                                        </p>
                                                     </div>
-                                                    <div>
-                                                        <div class="col-sm-5 ">
-
-                                                            <div class="form-group">
-                                                                <label>Fecha *</label>
-                                                                <input type="date" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Evento *</label>
-                                                                <input type="text" name="name" class="form-control" required="required">
-                                                            </div>
-                                                            <div class="col-sm-12">
-                                                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Registrar</button>
-                                                            </div>			
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-5">
-                                                        <table class="table table-hover col-sm-6">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>#</th>
-                                                                    <th>Nombre Evento</th>
-                                                                    <th>DescripciÃ³n</th>
-                                                                    <th>Opcion</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>Alerta 1 </td>
-                                                                    <td>alguna descripciÃ³n</td>
-                                                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn">Consultar y/o Modificar</button></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2</td>
-                                                                    <td>Alerta 2</td>
-                                                                    <td>alguna descripciÃ³n</td>
-                                                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn2">Consultar y/o Modificar</button></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3</td>
-                                                                    <td>Alerta 3</td>
-                                                                    <td>alguna descripciÃ³n</td>
-                                                                    <td><button type="button" class="btn btn-info btn-lg" id="myBtn3">Consultar y/o Modificar</button></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div id="menu2" class="tab-pane fade">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-md-5 col-md-offset-3">
-                                                                <div class="text-center">
-                                                                    <h2>Modificar Alerta</h2>
-                                                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                                                                        vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                                                                    </p>
-                                                                </div>
-                                                                <hr>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-5 ">
-                                                        <div class="form-group">
-                                                            <label>Fecha *</label>
-                                                            <input type="date" name="name" class="form-control" required="required">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Evento *</label>
-                                                            <input type="text" name="name" class="form-control" required="required">
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
-
-                                                        </div><br><br>		<br>	
-                                                    </div>
-                                                    <div class="col-sm-5">
-                                                        <div class="text-center">
-                                                            <h4>Alerta del sistema: Descripcion</h4>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-                                                                vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-
+                                                    <hr>
                                                 </div>
                                             </div>
+                                            <form name="alerta1" id="alerta1" method="post" action="javascript:modificarAlerta()">
+                                                <div class="col-sm-5 ">
+                                                    <div class="form-group">
+                                                        <label>Alerta 1 </label>
+                                                        <label><%=alertas.get(0)%></label>        
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Dias antes:</label>
+                                                        <input type="number" name="alerta1" id="alerta1" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
+
+                                                    </div><br><br>		<br>	
+                                                    <label id="campo" name="campo"></label>
+                                                    <br><br>
+                                                </div>
+                                            </form>
+                                            <form name="alerta1" id="alerta1" method="post" action="javascript:modificarAlerta2()">
+                                                <div class="col-sm-5 ">
+                                                    <div class="form-group">
+                                                        <label>Alerta 2 </label>
+                                                        <label><%=alertas.get(1)%></label>        
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Dias antes:</label>
+                                                        <input type="number" name="alerta2" id="alerta2" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
+
+                                                    </div><br><br>		<br>	
+                                                    <label id="campo2" name="campo2"></label>
+                                                    <br><br>
+                                                </div>
+                                            </form>
+                                            <form name="alerta1" id="alerta1" method="post" action="javascript:modificarAlerta3()">
+                                                <div class="col-sm-5 ">
+                                                    <div class="form-group">
+                                                        <label>Alerta 3 </label>
+                                                        <label><%=alertas.get(2)%></label>        
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Dias antes:</label>
+                                                        <input type="number" name="alerta3" id="alerta3" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Modificar</button>
+
+                                                    </div><br><br>		<br>	
+                                                    <label id="campo3" name="campo3"></label>
+                                                    <br><br>
+                                                </div>
+                                            </form>
                                         </div>
                                     </section>
-
-
                                 </section>
                             </section>
                         </section>
@@ -288,5 +250,9 @@
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
+        <script src="procesar/ajax/procesos.js"></script>
+
     </body>
+
+
 </html>

@@ -105,15 +105,10 @@ public class Negocio {
         System.out.println("consultar 2 --------------"+fecha + "-" + entidad + "-" + pais + "-" + ciudad + "-" + continente + "-" + sector + "-" + logro);
         return this.visi.consultarEventos(fecha, entidad, pais, ciudad, continente, sector, logro);
    }
-    public String registrarEvento(String nombre, String fecha, String hora, String lugar, String entidad_adscrita, String continente, String pais, String ciudad, String participantes, String tipo_evento, String sector_economico, String url, String imagen, String logros, String descripcion) throws Exception {
-
-        return this.admin.registrarEvento(nombre, fecha, hora, lugar, entidad_adscrita, continente, pais, ciudad, participantes, tipo_evento, sector_economico, url, imagen, logros, descripcion);
-
-    }
     
-    public ArrayList<String> mostrarPaisesC() throws Exception {
+    public ArrayList<String> mostrarPaisesC(String continente) throws Exception {
         PaisesDAO dao = new PaisesDAO();
-        return dao.mostrarPaisesC();
+        return dao.mostrarPaisesC(continente);
     }
 
     public Usuario consultarUsuarioTipo(int tipoUsuario) throws Exception {
@@ -231,4 +226,7 @@ public class Negocio {
        return visi.verEvento(id);
         
     }
+     
+     
+     
 }

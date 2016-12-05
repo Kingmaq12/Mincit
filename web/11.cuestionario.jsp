@@ -4,6 +4,8 @@
     Author     : user
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="ufps.mincit.negocio.administrador.Administrador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -26,7 +28,7 @@
 
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $('#example').DataTable();
             });
         </script>
@@ -160,127 +162,101 @@
                                 <section class="hbox stretch">
 
                                     <section>
+                                        <!-- action="javascript:responderEncuesta()" -->
                                         <div class="container">
-                                            <div class="row">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-5 col-md-offset-3">
-                                                            <div class="text-center">
-                                                                <h2>Emprendedor ¡Evaluate!</h2>
+                                            <form name="encuesta" id="encuesta" method="post" onsubmit="return validate()">
+                                                <div class="row">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-5 col-md-offset-3">
+                                                                <div class="text-center">
+                                                                    <h2>Emprendedor ¡Evaluate!</h2>
+                                                                </div>
+                                                                <hr>
                                                             </div>
-                                                            <hr>
                                                         </div>
                                                     </div>
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="col-sm-4">    
+                                                                    <div class="form-group">
+                                                                        <label>Nombre </label><br>
+                                                                        <input type="text" name="nombre" id="nombre" class="form-control" required="required">
+                                                                    </div>
+                                                                </div> 
+                                                                <div class="col-sm-4">    
+                                                                    <div class="form-group">
+                                                                        <label>Cedula </label><br>
+                                                                        <input type="text" name="cedula" id="cedula" class="form-control" required="required">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4">    
+                                                                    <div class="form-group">
+                                                                        <label>Email </label><br>
+                                                                        <input type="text" name="email" id="email" class="form-control" required="required">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <table id="example" >
+                                                        <thead>
+                                                            <tr>
+                                                                <th>-Pregunta-</th>
+                                                                <th>Si</th>
+                                                                <th>No</th>
+                                                                <th>Quizas</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <%
+
+                                                            Administrador ad = new Administrador();
+
+                                                            ArrayList<String> preguntas = ad.consultarPreguntas();
+
+                                                            for (String pregunta : preguntas) {
+                                                                String[] x = pregunta.split("-");
+                                                                //     System.out.println(x[0]+","+x[1]);
+                                                        %>
+
+                                                        <div class="col-md-4 text-center2">
+                                                            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                                                <tr>
+                                                                    <td><h4 class="media-heading  text-center2 "><%=x[0]+"."+x[1]%></h4></td>
+                                                                    <td>
+                                                                        <div class="radio">
+                                                                            <label><input type="radio" name="<%=x[0]%>" id="<%=x[0]%>" value="3"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="radio">
+                                                                            <label><input type="radio" name="<%=x[0]%>" id="<%=x[0]%>" value="2"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="radio">
+                                                                            <label><input type="radio" name="<%=x[0]%>" id="<%=x[0]%>" value="0"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </div>
+                                                        </div>
+                                                        <%
+                                                            }
+                                                        %>     
+
+                                                    </table>
+                                                    <div class="col-sm-12 text-center">
+                                                        <button type="submit" name="submit" class="btn btn-primary btn-s-sm" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
+                                                        <br><br>
+                                                    </div>       
                                                 </div>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="col-sm-4">    
-                                                                <div class="form-group">
-                                                                    <label>Nombre </label><br>
-                                                                    <input type="date" name="name" class="form-control" required="required">
-                                                                </div>
-                                                            </div> 
-                                                            <div class="col-sm-4">    
-                                                                <div class="form-group">
-                                                                    <label>Cedula </label><br>
-                                                                    <input type="date" name="name" class="form-control" required="required">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4">    
-                                                                <div class="form-group">
-                                                                    <label>Email </label><br>
-                                                                    <input type="date" name="name" class="form-control" required="required">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <table id="example" >
-                                                    <thead>
-                                                        <tr>
-                                                            <th>-Pregunta-</th>
-                                                            <th>Si</th>
-                                                            <th>No</th>
-                                                            <th>Quizas</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <div class="col-md-4 text-center2">
-                                                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                            <tr>
-                                                                <td><h4 class="media-heading  text-center2 ">Percibo los problemas como desafíos y oportunidades.</h4></td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio"></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-4 text-center2">
-                                                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                            <tr>
-                                                                <td><h4 class="media-heading  text-center2 ">Tengo capital o activos para invertir y estoy dispuesto a perder gran parte de mis ahorros.</h4></td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio1"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio1"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio1"></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-4 text-center2">
-                                                        <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-                                                            <tr>
-                                                                <td><h4 class="media-heading  text-center2 ">Tengo buen juicio y seré capaz de emplear a la gente indicada para mi negocio.</h4></td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio2"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio2"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="radio">
-                                                                        <label><input type="radio" name="optradio2"></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </div>
-                                                    </div>
-
-                                                </table>
-                                            </div>
+                                            </form> 
                                         </div>
-                                        <div class="col-sm-12 text-center">
-                                            <button type="submit" name="submit" class="btn btn-primary btn-s-sm" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Guardar</button>
-                                            <br><br>
-                                        </div>
+
+
                                     </section>
 
                                 </section>
@@ -299,27 +275,7 @@
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
 
 
-        <script>
-            $(document).ready(function () {
-                $("#myBtn").click(function () {
-                    $("#myModal").modal("show");
-                });
-                $("#myModal").on('show.bs.modal', function () {
-                    //alert('The modal is about to be shown.');
-                });
-            });
-        </script>
-
-        <script>
-            $(document).ready(function () {
-                $("#myBtn1").click(function () {
-                    $("#myModal1").modal("show");
-                });
-                $("#myModal1").on('show.bs.modal', function () {
-                    //alert('The modal is about to be shown.');
-                });
-            });
-        </script>
+        <script src="procesar/ajax/procesos.js"></script>
 
     </body>
 </html>

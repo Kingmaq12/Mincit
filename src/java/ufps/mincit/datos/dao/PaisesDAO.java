@@ -44,12 +44,14 @@ public class PaisesDAO implements IPaisesDAO {
 
     }
 
-    public ArrayList<String> mostrarPaisesC() throws Exception {
+    public ArrayList<String> mostrarPaisesC(String continente) throws Exception {
         conn = ConexionSQL.conectar();
         ArrayList<String> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM  `paises`");
+            System.out.println(continente);
+            stmt = conn.prepareStatement("SELECT * FROM  `countries` WHERE id = ?");
+             stmt.setString(1, continente);
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 resul.add(res.getString(1) + "," + res.getString(3));

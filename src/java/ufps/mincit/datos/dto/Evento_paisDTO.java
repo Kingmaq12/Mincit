@@ -13,13 +13,23 @@ public class Evento_paisDTO {
     
  private int id_evento;
  private int id_pais;
+ private char code_continente;
 
     public Evento_paisDTO() {
     }
 
-    public Evento_paisDTO(int id_evento, int id_pais) {
+    public Evento_paisDTO(int id_evento, int id_pais, char code_continente) {
         this.id_evento = id_evento;
         this.id_pais = id_pais;
+        this.code_continente = code_continente;
+    }
+
+    public char getCode_continente() {
+        return code_continente;
+    }
+
+    public void setCode_continente(char code_continente) {
+        this.code_continente = code_continente;
     }
 
     public int getId_evento() {

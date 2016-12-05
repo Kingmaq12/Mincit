@@ -79,6 +79,14 @@ public class Negocio {
         return dao.mostrarEntidades();
 
     }
+    
+        public ArrayList<String> mostrarEntidades2() throws Exception {
+
+        Entidad_adscritaDAO dao = new Entidad_adscritaDAO();
+
+        return dao.mostrarEntidad();
+
+    }
 
     public ArrayList<String> mostrarSectores() throws Exception {
 

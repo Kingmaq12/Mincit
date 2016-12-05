@@ -63,7 +63,6 @@
         <%
             response.setContentType("text/html;charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
-            System.out.println("holis entra aquiiiiiiiiiiiiiiiiiii");
 
             String fechaI = request.getParameter("fechaI");
             String fechaF = request.getParameter("fechaF");

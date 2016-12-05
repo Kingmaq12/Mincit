@@ -109,7 +109,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -140,7 +140,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -172,7 +172,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -204,7 +204,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -236,7 +236,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -268,7 +268,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -300,7 +300,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -331,7 +331,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -363,7 +363,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -395,7 +395,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -426,7 +426,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -458,7 +458,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -490,7 +490,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -522,7 +522,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -553,7 +553,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -583,7 +583,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -614,7 +614,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -645,7 +645,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -677,7 +677,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -708,7 +708,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -739,7 +739,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -771,7 +771,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -803,7 +803,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -834,7 +834,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -865,7 +865,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -897,7 +897,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -929,7 +929,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -960,7 +960,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;
@@ -991,7 +991,7 @@ public class EventoDAO implements IEventoDAO {
             }
         }
         if (resul.isEmpty()) {
-            System.out.println("entro aqui");
+            System.out.println("entro aqui, no hay eventos");
             resul = null;
         }
         return resul;

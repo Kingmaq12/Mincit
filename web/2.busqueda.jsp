@@ -173,10 +173,18 @@
                                 </div>
                                 <form accept-charset="UTF-8" id="consultar" action="javascript:consultar2()" method="post">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <p>Eventos que esten en este Rango.</p>
+
+                                        <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label for="firstname">Fecha</label>
-                                                <input type="date" class="form-control" id="fecha">
+                                                <label for="firstname">Fecha Inicio </label>
+                                                <input type="date" class="form-control" id="fechaI">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="firstname">Fecha Fin </label>
+                                                <input type="date" class="form-control" id="fechaF">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -206,13 +214,13 @@
                                                 <label>Continente </label><br>
                                                 <select class="form-control" name="continente" id="continente" onChange="playVideo(this)">
                                                     <option value="ninguno">-No seleccionado-</option>
-                                                    <option value="1">Norte America</option>
-                                                    <option value="2">Sur America</option>
-                                                    <option value="3">Europa</option>
-                                                    <option value="4">Asia</option>
-                                                    <option value="5">Oceania</option>
-                                                    <option value="6">Africa</option>
-                                                    <option value="7">Antartida</option>
+                                                    <option value="NA">Norte America</option>
+                                                    <option value="SA">Sur America</option>
+                                                    <option value="EU">Europa</option>
+                                                    <option value="AS">Asia</option>
+                                                    <option value="OC">Oceania</option>
+                                                    <option value="AF">Africa</option>
+                                                    <option value="AN">Antartida</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -221,7 +229,7 @@
 
                                                 <div id="paises" name="paises">
                                                     <label>Paises</label>
-                                                    <select class="form-control">
+                                                    <select name="pais" id="pais" class="form-control">
                                                         <option value="ninguno">-No seleccionado-</option>
                                                         <%
                                                             ArrayList<String> p = n1.mostrarPaises();

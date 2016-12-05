@@ -70,7 +70,6 @@ function iniciarSesion() {
 
 }
 
-
 function guardarDatos() {
 
     var entidad_adscrita = "";
@@ -912,21 +911,6 @@ function modificarAlerta3() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function consultar() {
 
     ajax = nuevoAjax();
@@ -955,7 +939,7 @@ function consultar() {
 }
 
 function consultar2() {
-    
+
     ajax = nuevoAjax();
     parametros = "fechaI=" + document.getElementById("fechaI").value +"&fechaF=" + document.getElementById("fechaF").value + "&entidad=" + document.getElementById("entidad").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&continente=" + document.getElementById("continente").value + "&sector=" + document.getElementById("sector").value + "&logro=" + document.getElementById("logro").value;
     var tabla = "tabla";

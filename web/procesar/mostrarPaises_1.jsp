@@ -18,7 +18,7 @@
 
 %>
 
-    <label>País</label>    
+    <label>Paises</label>    
     <select class="form-control" name="pais" id="pais" >
         <option value="ninguno">-No seleccionado-</option>
         <%        for (String e : paises) {

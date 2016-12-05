@@ -220,19 +220,24 @@
                                             <div class="form-group">
 
                                                 <div id="paises" name="paises">
-                                                    <%
-                                                        ArrayList<String> p = n1.mostrarPaises();
-                                                        for (String e : p) {
-                                                            String[] x = e.split(",");
-                                                            String a = x[0];
-                                                            String b = x[1];
-                                                    %>
+                                                    <label>Paises</label>
+                                                    <select class="form-control">
+                                                        <option value="ninguno">-No seleccionado-</option>
+                                                        <%
+                                                            ArrayList<String> p = n1.mostrarPaises();
+                                                            for (String e : p) {
+                                                                String[] x = e.split("-");
+                                                                String a = x[0];
+                                                                String b = x[1];
+                                                        %>
 
-                                                    <option value="<%=a%>"><%=b%></option>
+                                                        <option value="<%=a%>"><%=b%></option>
 
-                                                    <%
-                                                        }
-                                                    %>
+                                                        <%
+                                                            }
+                                                        %>
+                                                    </select>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -428,7 +433,7 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
-                                                window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+                                                    window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
         </script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
@@ -438,35 +443,35 @@
         <script src="js/jquery.parallax-1.1.3.js"></script>
         <script src="js/front.js"></script>
         <script type='text/javascript'>
-                                                function playVideo(a) {
+                                                    function playVideo(a) {
 
-                                                    b = document.getElementById("paises");
+                                                        b = document.getElementById("paises");
 
-                                                    ajax = nuevoAjax();
-                                                    parametros = "continente=" + document.getElementById("continente").value;
-                                                    url = "procesar/mostrarPaises_1.jsp";
-                                                    ajax.open("POST", url, true);
-                                                    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                                                    ajax.send(parametros);
-                                                    ajax.onreadystatechange = function () {
+                                                        ajax = nuevoAjax();
+                                                        parametros = "continente=" + document.getElementById("continente").value;
+                                                        url = "procesar/mostrarPaises_1.jsp";
+                                                        ajax.open("POST", url, true);
+                                                        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                                        ajax.send(parametros);
+                                                        ajax.onreadystatechange = function() {
 
-                                                        if (ajax.readyState == 4)
-                                                        {
-                                                            if (ajax.status == 200)
+                                                            if (ajax.readyState == 4)
                                                             {
+                                                                if (ajax.status == 200)
+                                                                {
+                                                                    b.innerHTML = ajax.responseText;
+                                                                }
                                                                 b.innerHTML = ajax.responseText;
+
+                                                            } else
+                                                            {
+                                                                b.innerHTML = "Cargando ";
                                                             }
-                                                            b.innerHTML = ajax.responseText;
-
-                                                        } else
-                                                        {
-                                                            b.innerHTML = "Cargando ";
                                                         }
+
+
+
                                                     }
-
-
-
-                                                }
         </script>
 
 

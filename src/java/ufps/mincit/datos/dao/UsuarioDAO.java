@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import ufps.mincit.datos.conexion.ConexionSQL;
-import ufps.mincit.datos.dto.Usuario;
+import ufps.mincit.datos.dto.UsuarioDTO;
 import ufps.mincit.datos.interf.IUsuarioDAO;
 
 /**
@@ -20,7 +20,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
     private Connection conn = null;
 
-    public String iniciarSesion(Usuario usu) throws Exception {
+    public String iniciarSesion(UsuarioDTO usu) throws Exception {
 
         conn = ConexionSQL.conectar();
         String resul = "";
@@ -46,10 +46,10 @@ public class UsuarioDAO implements IUsuarioDAO {
     }
 
     @Override
-    public Usuario consultarUsuarioTipo(int tipoUsuario) throws Exception {
+    public UsuarioDTO consultarUsuarioTipo(int tipoUsuario) throws Exception {
 
         conn = ConexionSQL.conectar();
-        Usuario resul = null;
+        UsuarioDTO resul = null;
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement("SELECT * FROM  `Usuario` WHERE  `tipo_usuario` = ?");
@@ -57,7 +57,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
-                resul = new Usuario(res.getString(1), res.getString(2), res.getString(3), Integer.parseInt(res.getString(4)), res.getString(5));
+                resul = new UsuarioDTO(res.getString(1), res.getString(2), res.getString(3), Integer.parseInt(res.getString(4)), res.getString(5));
             }
             stmt.close();
             res.close();
@@ -125,7 +125,7 @@ public class UsuarioDAO implements IUsuarioDAO {
     }
 
     @Override
-    public boolean registrarUsuario(Usuario dto) throws Exception {
+    public boolean registrarUsuario(UsuarioDTO dto) throws Exception {
 
         conn = ConexionSQL.conectar();
         boolean exito = false;
@@ -177,6 +177,34 @@ public class UsuarioDAO implements IUsuarioDAO {
         return resul;
     }
 
+
+    @Override
+    public UsuarioDTO consultarVisitante(String id) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        UsuarioDTO resul = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM  `Usuario` as usuario INNER JOIN `Evento_visitante` as evento on usuario.cedula= evento.cedula_usuario and evento.id_evento= ?");
+            stmt.setString(1, id);
+
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                resul = new UsuarioDTO(res.getString(1), res.getString(2), res.getString(3), res.getInt(4), res.getString(5));
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return resul;
+
+    }
+    
+    
+    
 }
-
-

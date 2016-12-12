@@ -182,13 +182,12 @@
                                                 <div class="tab-content">	
                                                     <br>
                                                     <%
-                                                    
-                                                    String fecha=(String)session.getAttribute("fecha");
-                                                    String[] f = fecha.split("/");
-                                                    String fech = f[2]+"-"+f[1]+"-"+f[0];
-                                                    
+
+                                                        String fecha = (String) session.getAttribute("fecha");
+                                                        
+
                                                     %>
-                                                    
+
                                                     <form name="registrarManual" id="registrarManual" method="POST" action="javascript:guardarDatos2()">
                                                         <div class="col-sm-4 col-sm-offset-1">
                                                             <div class="form-group">
@@ -197,7 +196,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Fecha </label>
-                                                                <input type="date" name="fecha" id="fecha" class="form-control" required="required" value="<%=fech%>" >
+                                                                <input type="date" name="fecha" id="fecha" class="form-control" required="required" value="<%=fecha%>" >
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Hora </label>
@@ -239,23 +238,30 @@
                                                                 </select>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <label>País: <%=session.getAttribute("pais")%></label>
-                                                                <select class="form-control" name="pais" id="pais">
-                                                                    <option value="ninguno">-No seleccionado-</option>
-                                                                    <%
-                                                                        Negocio n = new Negocio();
-                                                                        ArrayList<String> paises = n.mostrarPaises();
-                                                                        for (String e : paises) {
-                                                                    %>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
 
-                                                                    <option value="<%=e%>"><%=e%></option>
+                                                                    <div id="paises" name="paises">
+                                                                        <label>Paises</label>
+                                                                        <select name="pais" id="pais" class="form-control">
+                                                                            <option value="ninguno">-No seleccionado-</option>
+                                                                            <%
+                                                                                ArrayList<String> p = n1.mostrarPaises();
+                                                                                for (String e : p) {
+                                                                                    String[] x = e.split("-");
+                                                                                    String a = x[0];
+                                                                                    String b = x[1];
+                                                                            %>
 
+                                                                            <option value="<%=a%>"><%=b%></option>
 
-                                                                    <%
-                                                                        }
-                                                                    %>
-                                                                </select>
+                                                                            <%
+                                                                                }
+                                                                            %>
+                                                                        </select>
+
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Ciudad </label>
@@ -366,6 +372,39 @@
 
         <script src="procesar/ajax/procesos.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <script type='text/javascript'>
+            function playVideo(a) {
+
+                b = document.getElementById("paises");
+
+                ajax = nuevoAjax();
+                parametros = "continente=" + document.getElementById("continente").value;
+                url = "procesar/mostrarPaises_1.jsp";
+                ajax.open("POST", url, true);
+                ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                ajax.send(parametros);
+                ajax.onreadystatechange = function () {
+
+                    if (ajax.readyState == 4)
+                    {
+                        if (ajax.status == 200)
+                        {
+                            b.innerHTML = ajax.responseText;
+                        }
+                        b.innerHTML = ajax.responseText;
+
+                    } else
+                    {
+                        b.innerHTML = "Cargando ";
+                    }
+                }
+
+
+
+            }
+        </script>
+
 
     </body>
 </html>

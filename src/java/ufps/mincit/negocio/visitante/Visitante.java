@@ -20,17 +20,9 @@ import ufps.mincit.datos.dto.EventoDTO;
  */
 public class Visitante {
 
-    public boolean recibirMensaje(String nombre_empresa, String nombre_empleado, String email, String asunto, String mensaje) throws Exception {
-
-        ComentarioDTO comen = new ComentarioDTO(nombre_empresa, nombre_empleado, email, asunto, mensaje, true);
-        ComentarioDAO dao = new ComentarioDAO();
-
-        return dao.recibirMensaje(comen);
-    }
-
     public ArrayList<EventoDTO> consultarEventos(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
         System.out.print(fechaI + "---fechaI---" + fechaF + "---fechaF---" + entidad + "---entidad---" + pais + "---pais---" + ciudad + "---ciudad---" + continente + "---continente---" + sector + "---sector---" + logro);
-
+        //VISITANTE SOLO VERA LOS EVENTOS CON ESTADO 1 QUE ES PUBLICADO
         //todos llenos -------------------------------------------------------------------------------------------------------------------------------------------------------
         if (!fechaI.isEmpty() && !fechaF.isEmpty() && !entidad.equals("ninguno") && !pais.equals("ninguno") && !ciudad.isEmpty() && !continente.equals("ninguno") && !sector.equals("ninguno") && !logro.equals("ninguno")) {
             EventoDAO dao = new EventoDAO();

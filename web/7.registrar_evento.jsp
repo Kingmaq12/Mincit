@@ -35,47 +35,42 @@
             session.removeAttribute("descripcion");
 
             String evento_registrado = (String) session.getAttribute("evento_registrado");
-            
-            
-            if(evento_registrado!=null){
-                if(evento_registrado.equalsIgnoreCase("S")){
-            
+
+            if (evento_registrado != null) {
+                if (evento_registrado.equalsIgnoreCase("S")) {
+
         %>
 
         <script>
-            
-            
+
+
             alert("Evento Registrado Existosamente");
-            
+
         </script>
-        
-        
-        <%
-        
-            }else{
-                
-            
+
+
+        <%        } else {
+
+
         %>
-        
-        
+
+
         <script>
-            
-            
+
+
             alert("Hubo un error en el registro");
-            
+
         </script>
-        
-        
-        
-        <%
-        
-            }
+
+
+
+        <%                }
                 session.removeAttribute("evento_registrado");
             }
-            
-        
+
+
         %>
-        
+
         <section class="vbox">
             <header class="bg-dark dk header navbar navbar-fixed-top-xs">
                 <div class="navbar-header aside-md">
@@ -266,8 +261,7 @@
                                                                         <div class="form-group">
                                                                             <label>Entidad Adscrita</label>
                                                                             <div class="checkbox">
-                                                                                <%
-                                                                                    Negocio n1 = new Negocio();
+                                                                                <%                                                                                    Negocio n1 = new Negocio();
                                                                                     ArrayList<String> entidades = n1.mostrarEntidades();
                                                                                     for (String e : entidades) {
                                                                                         String[] a = e.split(",");
@@ -282,26 +276,44 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="form-group">
+                                                                        <div class="form-group">    
                                                                             <label>Continente </label><br>
-                                                                            <select class="form-control" name="continente" id="continente" onChange="playVideo(this)">
-                                                                                <option value="ninguno">-No seleccionado-</option>
+                                                                            <select id="continente" name="continente" onChange="playVideo(this)">
+                                                                                <option value ="ninguno">-No seleccionado-</option>
                                                                                 <option value="NA">Norte America</option>
                                                                                 <option value="SA">Sur America</option>
                                                                                 <option value="EU">Europa</option>
                                                                                 <option value="AS">Asia</option>
                                                                                 <option value="OC">Oceania</option>
                                                                                 <option value="AF">Africa</option>
-                                                                                <option value="AN">Antartida</option>
+                                                                                <option value="AN">Antardita</option>
                                                                             </select>
                                                                         </div>
-
                                                                         <div class="form-group">
-                                                                            
+
                                                                             <div id="paises" name="paises">
-                                                                            
+                                                                                <label>Paises</label>
+                                                                                <select name="pais" id="pais" class="form-control">
+                                                                                    <option value="ninguno">-No seleccionado-</option>
+                                                                                    <%
+                                                                                        ArrayList<String> p = n1.mostrarPaises();
+                                                                                        for (String e : p) {
+                                                                                            String[] x = e.split("-");
+                                                                                            String a = x[0];
+                                                                                            String b = x[1];
+                                                                                    %>
+
+                                                                                    <option value="<%=b%>"><%=b%></option>
+
+                                                                                    <%
+                                                                                        }
+                                                                                    %>
+                                                                                </select>
+
                                                                             </div>
-                                                                        </div>
+                                                                        </div> 
+                                                                        </br>
+
                                                                         <div class="form-group">
                                                                             <label>Ciudad </label>
                                                                             <input type="text" name="ciudad" id="ciudad" class="form-control" required="required">
@@ -337,8 +349,8 @@
                                                                             <label>Sector Economico</label>
                                                                             <div class="checkbox">
                                                                                 <%
-                                                                                    Negocio n2 = new Negocio();
-                                                                                    ArrayList<String> sectores = n2.mostrarSectores();
+                                                                                    Negocio n22 = new Negocio();
+                                                                                    ArrayList<String> sectores = n22.mostrarSectores();
                                                                                     for (String e : sectores) {
                                                                                         String[] a = e.split(",");
                                                                                 %>
@@ -351,7 +363,6 @@
                                                                                 %>
                                                                             </div>
                                                                         </div>
-
                                                                         <div class="form-group">
                                                                             <label>URL </label>
                                                                             <input type="text" name="url" id="url" class="form-control" required="required">
@@ -360,8 +371,8 @@
                                                                             <label>Logros</label>
                                                                             <div class="checkbox">
                                                                                 <%
-                                                                                    Negocio n3 = new Negocio();
-                                                                                    ArrayList<String> logros = n3.mostrarLogros();
+                                                                                    Negocio n33 = new Negocio();
+                                                                                    ArrayList<String> logros = n33.mostrarLogros();
                                                                                     for (String e : logros) {
                                                                                         String[] a = e.split(",");
                                                                                 %>
@@ -395,7 +406,7 @@
                                                             <div id="menu4" class="tab-pane fade delinear">
                                                                 <br>
                                                                 <br>
-                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="POST" action="procesar/registrarEventoManual.jsp" enctype="multipart/form-data">
+                                                                <form name="registrarManualImagen" id="registrarManualImagen" method="post" action="procesar/registrarEventoManual.jsp"enctype="multipart/form-data">
                                                                     <div id="resetear">
 
                                                                         <h3>Primero termine el paso 1</h3>
@@ -407,20 +418,20 @@
                                                     </div>
 
                                                     <div id="menu2" class="tab-pane fade ">
-                                                        <form name="registrarExcel" id="registrarExcel" method="post" action="procesar/registrarEventoExcel.jsp" enctype="multipart/form-data">
-                                                        <div class="col-sm-4 col-sm-offset-1">
-                                                            <div class="form-group">
-                                                                <label>Archivo Microsoft Excel </label> <br>
-                                                                <input type="file" id="archivo_excel" name="archivo_excel" class="filestyle" data-icon="false" >
+                                                        <form name="registrarExcel" id="registrarExcel" method="post" action="procesar/registrarEventoExcel.jsp"enctype="multipart/form-data">
+                                                            <div class="col-sm-4 col-sm-offset-1">
+                                                                <div class="form-group">
+                                                                    <label>Archivo Microsoft Excel </label> <br>
+                                                                    <input type="file" id="archivo_excel" name="archivo_excel" class="filestyle" data-icon="false" >
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <br>
-                                                        <div class="col-sm-12">
                                                             <br>
-                                                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
-                                                            <br>
-                                                            <label id="campo" name="campo"></label>
-                                                        </div>
+                                                            <div class="col-sm-12">
+                                                                <br>
+                                                                <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"><span class="glyphicon glyphicon-ok-circle"></span> Registrar Evento</button>
+                                                                <br>
+                                                                <label id="campo" name="campo"></label>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -438,6 +449,7 @@
                 </section>
             </section>
         </section>
+
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="js/bootstrap.js"></script>
@@ -445,40 +457,41 @@
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-
         <script src="procesar/ajax/procesos.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+
         <script type='text/javascript'>
-            function playVideo(a) {
-                
-                b = document.getElementById("paises");
-                
-                ajax = nuevoAjax();
-                parametros = "continente=" + document.getElementById("continente").value;
-                url = "procesar/mostrarPaises.jsp";
-                ajax.open("POST", url, true);
-                ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                ajax.send(parametros);
-                ajax.onreadystatechange = function() {
+                                                                                function playVideo(a) {
 
-                    if (ajax.readyState == 4)
-                    {
-                        if (ajax.status == 200)
-                        {
-                                b.innerHTML  = ajax.responseText;
-                        }
-                            b.innerHTML = ajax.responseText;
+                                                                                    b = document.getElementById("paises");
 
-                    } else
-                    {
-                        b.innerHTML  = "Cargando ";
-                    }
-                }
-                
-                
-                
-            }
+                                                                                    ajax = nuevoAjax();
+                                                                                    parametros = "continente=" + document.getElementById("continente").value;
+                                                                                    url = "procesar/mostrarPaises_1.jsp";
+                                                                                    ajax.open("POST", url, true);
+                                                                                    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                                                                    ajax.send(parametros);
+                                                                                    ajax.onreadystatechange = function () {
+
+                                                                                        if (ajax.readyState == 4)
+                                                                                        {
+                                                                                            if (ajax.status == 200)
+                                                                                            {
+                                                                                                b.innerHTML = ajax.responseText;
+                                                                                            }
+                                                                                            b.innerHTML = ajax.responseText;
+
+                                                                                        } else
+                                                                                        {
+                                                                                            b.innerHTML = "Cargando ";
+                                                                                        }
+                                                                                    }
+
+
+
+                                                                                }
         </script>
+
+
     </body>
 </html>

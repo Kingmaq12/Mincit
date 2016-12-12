@@ -162,7 +162,6 @@
                                 <section class="hbox stretch">
 
                                     <section>
-                                        <!-- action="javascript:responderEncuesta()" -->
                                         <div class="container">
                                             <form name="encuesta" id="encuesta" method="post" onsubmit="return validate()">
                                                 <div class="row">
@@ -218,11 +217,11 @@
 
                                                             for (String pregunta : preguntas) {
                                                                 String[] x = pregunta.split("-");
-                                                                //     System.out.println(x[0]+","+x[1]);
+                                                                     System.out.println(x[0]);
                                                         %>
 
                                                         <div class="col-md-4 text-center2">
-                                                            <div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+                                                            
                                                                 <tr>
                                                                     <td><h4 class="media-heading  text-center2 "><%=x[0]+"."+x[1]%></h4></td>
                                                                     <td>
@@ -241,7 +240,7 @@
                                                                         </div>
                                                                     </td>
                                                                 </tr>
-                                                            </div>
+                                                            
                                                         </div>
                                                         <%
                                                             }

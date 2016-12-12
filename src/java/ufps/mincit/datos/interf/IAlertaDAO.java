@@ -5,10 +5,18 @@
  */
 package ufps.mincit.datos.interf;
 
+import java.util.ArrayList;
+import ufps.mincit.datos.dto.AlertaDTO;
+
 /**
  *
  * @author user
  */
 public interface IAlertaDAO {
     
+    public ArrayList<AlertaDTO> consultarAlertasEspe(String id)throws Exception;
+    
+    public boolean eliminarAlertaEspe(String id_alerta)throws Exception;
+    
+    public boolean registrarAlertaEspe(AlertaDTO dto)throws Exception;
 }

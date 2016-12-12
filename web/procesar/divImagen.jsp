@@ -6,12 +6,13 @@
 
 <%      
         String nombre = (String) session.getAttribute("nombre");
+        
 %>
 <div class="col-sm-4 col-sm-offset-1">
 
     <div class="form-group">
         <label>Imagen </label> <br>
-        <input type="file" class="file" name="<%=nombre%>" id="<%=nombre%>" data-icon="false" required="required">
+        <input type="file" class="file" name="<%=nombre%>" id="<%=nombre%>" required="required">
     </div>
 </div>
 <br>

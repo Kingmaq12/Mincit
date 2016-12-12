@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import ufps.mincit.datos.conexion.ConexionSQL;
+import ufps.mincit.datos.dto.AlertaDTO;
 import ufps.mincit.datos.dto.AlertaGeneralDTO;
 import ufps.mincit.datos.interf.IAlertaGeneralDAO;
 
@@ -66,4 +67,6 @@ public class AlertaGeneralDAO implements IAlertaGeneralDAO{
         return resul;
         
     }
+    
+    
 }

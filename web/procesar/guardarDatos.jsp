@@ -27,7 +27,7 @@
     String url = request.getParameter("url");
     String logros = request.getParameter("logros");
     String descripcion = request.getParameter("descripcion");
-
+    
     session.setAttribute("nombre", nombre);
     session.setAttribute("fecha", fecha);
     session.setAttribute("hora", hora);

@@ -14,7 +14,7 @@ function nuevoAjax() {
             // Creacion del objet AJAX para IE
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         } catch (E) {
-            if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+            if (!xmlhttp && typeof XMLHttpRequest !== 'undefined')
                 xmlhttp = new XMLHttpRequest();
         }
     }
@@ -70,6 +70,88 @@ function iniciarSesion() {
 
 }
 
+function guardarDatos3(){
+
+    var entidad_adscrita = "";
+    var i = 0;
+    for (i = 1; i < 13; i++) {
+        var x = i + ".1";
+        var ii = document.getElementById(x).checked;
+        if (ii === true) {
+            entidad_adscrita += i + ",";
+        }
+    }
+
+
+    var sector_economico = "";
+    var j = 0;
+    for (j = 1; j < 11; j++) {
+        var k = j + ".2";
+        var oo = document.getElementById(k).checked;
+        if (oo === true) {
+            sector_economico += j + ",";
+        }
+    }
+
+    var logros = "";
+    var s = 0;
+    for (s = 1; s < 16; s++) {
+        var z = s + ".3";
+        var pipi = document.getElementById(z).checked;
+        if (pipi === true) {
+            logros += s + ",";
+        }
+    }
+
+    ajax = nuevoAjax();
+    parametros = "nombre_visitante=" + document.getElementById("nombre_visitante").value + "&email=" + document.getElementById("email").value + "&cedula=" + document.getElementById("cedula").value + "&nombre=" + document.getElementById("nombre").value + "&fecha=" + document.getElementById("fecha").value + "&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&entidad_adscrita=" + entidad_adscrita + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participantes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + sector_economico + "&url=" + document.getElementById("url").value + "&logros=" + logros + "&descripcion=" + document.getElementById("descripcion").value;
+
+    url = "procesar/guardarDatosVisitante.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function() {
+
+        if (ajax.readyState === 4)
+        {
+            if (ajax.status === 200)
+            {
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    document.getElementById("campo").innerHTML = "Datos Guardados, puede hacer Paso 2.";
+                    $("#resetear").load("procesar/divImagen.jsp");
+                    $("#registrarManual")[0].reset();
+
+                } else {
+
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrarManual")[0].reset();
+                }
+            } else
+            {
+
+                var rta = ajax.responseText;
+                if (rta.indexOf("S") > 0) {
+                    document.getElementById("campo").innerHTML = "Datos Guardados, puede hacer Paso 2.";
+                    //SE RECARGA ES EL DIV
+                    $("#resetear").load("procesar/divImagen.jsp");
+                    $("#registrarManual")[0].reset();
+
+
+                } else {
+
+                    document.getElementById("campo").innerHTML = "Ha ocurrido un error.";
+                    $("#registrarManual")[0].reset();
+                }
+            }
+        } else
+        {
+            document.getElementById(campo).value = "Procesando registro";
+        }
+    }
+
+}
+
 function guardarDatos() {
 
     var entidad_adscrita = "";
@@ -104,7 +186,7 @@ function guardarDatos() {
     }
 
     ajax = nuevoAjax();
-    parametros = "nombre=" + document.getElementById("nombre").value + "&fecha=" + document.getElementById("fecha").value + "&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&entidad_adscrita=" + entidad_adscrita + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais").value + "&ciudad=" + document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participantes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + sector_economico + "&url=" + document.getElementById("url").value + "&logros=" + logros + "&descripcion=" + document.getElementById("descripcion").value;
+    parametros = "nombre=" + document.getElementById("nombre").value + "&fecha=" + document.getElementById("fecha").value + "&hora=" + document.getElementById("hora").value + "&lugar=" + document.getElementById("lugar").value + "&entidad_adscrita=" + entidad_adscrita + "&continente=" + document.getElementById("continente").value + "&pais=" + document.getElementById("pais") + "&ciudad=" + document.getElementById("ciudad").value + "&participantes=" + document.getElementById("participantes").value + "&tipo_evento=" + document.getElementById("tipo_evento").value + "&sector_economico=" + sector_economico + "&url=" + document.getElementById("url").value + "&logros=" + logros + "&descripcion=" + document.getElementById("descripcion").value;
 
     url = "procesar/guardarDatos.jsp";
     ajax.open("POST", url, true);
@@ -280,7 +362,7 @@ function validate() {
 
     var valor = 0;
 
-    var a = 0, rdbtn = document.getElementsByName("1");
+      var a = 0, rdbtn = document.getElementsByName("1");
     for (i = 0; i < rdbtn.length; i++) {
         if (rdbtn.item(i).checked === false) {
             a++;
@@ -491,11 +573,221 @@ function validate() {
 
 
     }
+        
+        a = 0;
+        rdbtn = document.getElementsByName("16");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 16");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("17");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 17");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("18");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked == false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 18");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("19");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 19");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("20");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 20");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("21");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 21");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("22");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 22");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("23");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 23");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("24");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 24");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("25");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 25");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("26");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 26");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("27");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked === false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a === rdbtn.length) {
+            alert("No ha seleccionado la pregunta 27");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("28");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked == false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a ==  rdbtn.length) {
+            alert("No ha seleccionado la pregunta 28");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("29");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked ==  false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a ==  rdbtn.length) {
+            alert("No ha seleccionado la pregunta 29");
+
+        }
+
+        a = 0;
+        rdbtn = document.getElementsByName("30");
+        for (i = 0; i < rdbtn.length; i++) {
+            if (rdbtn.item(i).checked ==  false) {
+                a++;
+            } else {
+                valor += rdbtn[i].value;
+            }
+        }
+        if (a ==  rdbtn.length) {
+            alert("No ha seleccionado la pregunta 30");
+
+        }
     
     a = 0;
     rdbtn = document.getElementsByName("15");
     for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
+        if (rdbtn.item(i).checked == false) {
             a++;
         }else{
             valor += rdbtn[i].value;
@@ -507,233 +799,9 @@ function validate() {
 
     }
     
-    a = 0;
-    rdbtn = document.getElementsByName("16");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 16");
-
-
-    }
     
     
-    a = 0;
-    rdbtn = document.getElementsByName("17");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 17");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("18");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 18");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("19");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 19");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("20");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 20");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("21");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 21");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("22");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 22");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("23");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 23");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("24");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 24");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("25");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 25");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("26");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 26");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("27");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 27");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("28");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 28");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("29");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 29");
-
-
-    }
-    
-    a = 0;
-    rdbtn = document.getElementsByName("30");
-    for (i = 0; i < rdbtn.length; i++) {
-        if (rdbtn.item(i).checked === false) {
-            a++;
-        }else{
-            valor += rdbtn[i].value;
-        }
-    }
-    if (a === rdbtn.length) {
-        alert("No ha seleccionado la pregunta 30");
-
-
-    }
-    
-    if(valor === 30){
+    if(valor.length>30){
     
     ajax = nuevoAjax();
     parametros = "valor=" + valor + "&nombre=" + document.getElementById("nombre").value + "&cedula=" + document.getElementById("cedula").value + "&email=" + document.getElementById("email").value;

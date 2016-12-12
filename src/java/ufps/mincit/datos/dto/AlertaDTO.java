@@ -13,19 +13,33 @@ import java.util.Date;
  */
 public class AlertaDTO {
     
+    private int id;
     private int id_evento;
-    private Date fecha;
-    private int repetir;
+    private String fecha;
     private String descripcion;
 
     public AlertaDTO() {
     }
 
-    public AlertaDTO(int id_evento, Date fecha, int repetir, String descripcion) {
+    public AlertaDTO(int id_evento, String fecha, String descripcion) {
         this.id_evento = id_evento;
         this.fecha = fecha;
-        this.repetir = repetir;
         this.descripcion = descripcion;
+    }
+    
+    public AlertaDTO(int id,int id_evento, String fecha,String descripcion) {
+        this.id=id;
+        this.id_evento = id_evento;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId_evento() {
@@ -36,20 +50,12 @@ public class AlertaDTO {
         this.id_evento = id_evento;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
-    }
-
-    public int getRepetir() {
-        return repetir;
-    }
-
-    public void setRepetir(int repetir) {
-        this.repetir = repetir;
     }
 
     public String getDescripcion() {

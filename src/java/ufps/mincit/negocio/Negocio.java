@@ -18,7 +18,7 @@ import ufps.mincit.datos.dao.PaisesDAO;
 import ufps.mincit.datos.dao.Sector_economicoDAO;
 import ufps.mincit.datos.dao.UsuarioDAO;
 import ufps.mincit.datos.dto.EventoDTO;
-import ufps.mincit.datos.dto.Usuario;
+import ufps.mincit.datos.dto.UsuarioDTO;
 import ufps.mincit.negocio.administrador.Administrador;
 import ufps.mincit.negocio.visitante.Visitante;
 import java.io.File;
@@ -30,16 +30,17 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import java.util.Iterator;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
-
-import org.apache.poi.ss.usermodel.Row;
-
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import ufps.mincit.datos.dao.ComentarioDAO;
+import ufps.mincit.datos.dao.EventoDAO;
+//
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.DateUtil;
+//
+//import org.apache.poi.ss.usermodel.Row;
+//
+//import org.apache.poi.xssf.usermodel.XSSFSheet;
+//
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import ufps.mincit.datos.dao.ComentarioDAO;
 
 /**
  *
@@ -79,8 +80,8 @@ public class Negocio {
         return dao.mostrarEntidades();
 
     }
-    
-        public ArrayList<String> mostrarEntidades2() throws Exception {
+
+    public ArrayList<String> mostrarEntidades2() throws Exception {
 
         Entidad_adscritaDAO dao = new Entidad_adscritaDAO();
 
@@ -104,7 +105,7 @@ public class Negocio {
 
     }
 
-    public Usuario consultarUsuarioTipo(int tipoUsuario) throws Exception {
+    public UsuarioDTO consultarUsuarioTipo(int tipoUsuario) throws Exception {
 
         UsuarioDAO dao = new UsuarioDAO();
 
@@ -130,41 +131,42 @@ public class Negocio {
 
     public String registrarEventoExcel(File archivo) throws FileNotFoundException, IOException, Exception {
 
-        FileInputStream file = new FileInputStream(new File(archivo.getAbsolutePath()));
-
-        XSSFWorkbook workbook = new XSSFWorkbook(file);
-
-        XSSFSheet sheet = workbook.getSheetAt(0);
-
-        Iterator<Row> rowIterator = sheet.iterator();
-
-        Row row;
-
-        ArrayList<String> evento = new ArrayList<>();
-        int i = 0;
-        while (rowIterator.hasNext()) {
-
-            row = rowIterator.next();
-
-            Iterator<Cell> cellIterator = row.cellIterator();
-
-            Cell celda;
-
-            while (cellIterator.hasNext()) {
-
-                celda = cellIterator.next();
-                //System.out.println(celda.getStringCellValue());
-                evento.add(celda.getStringCellValue());
-                i++;
-
-            }
-
-        }
-        String res = this.registrarEventos(evento);
-        file.close();
-        workbook.close();
-
-        return res;
+//        FileInputStream file = new FileInputStream(new File(archivo.getAbsolutePath()));
+//
+//        XSSFWorkbook workbook = new XSSFWorkbook(file);
+//
+//        XSSFSheet sheet = workbook.getSheetAt(0);
+//
+//        Iterator<Row> rowIterator = sheet.iterator();
+//
+//        Row row;
+//
+//        ArrayList<String> evento = new ArrayList<>();
+//        int i = 0;
+//        while (rowIterator.hasNext()) {
+//
+//            row = rowIterator.next();
+//
+//            Iterator<Cell> cellIterator = row.cellIterator();
+//
+//            Cell celda;
+//
+//            while (cellIterator.hasNext()) {
+//
+//                celda = cellIterator.next();
+//                //System.out.println(celda.getStringCellValue());
+//                evento.add(celda.getStringCellValue());
+//                i++;
+//
+//            }
+//
+//        }
+//        String res = this.registrarEventos(evento);
+//        file.close();
+//        workbook.close();
+//
+//        return res;
+        return "";
     }
 
     public String registrarEventos(ArrayList<String> eventos) throws Exception {
@@ -223,6 +225,27 @@ public class Negocio {
     public ArrayList<String> mostrarPaises() throws Exception {
         PaisesDAO dao = new PaisesDAO();
         return dao.mostrarPaises();
+    }
+
+    public void mierda() {
+
+//        
+    }
+
+    public boolean enviarCorreoRechazado(String id, String correo) throws Exception {
+
+        //enviar correo de que ha sido rechazado
+        SendEmail n = new SendEmail(correo, "Eventos del MinCIT", "Por lo consiguiente se le ha rechazado el acceso a publicar su evento, vuelve a solicitar la publicación con la adecuada información.");
+
+        //cambiar estado 3= rechazado
+        EventoDAO d = new EventoDAO();
+        return d.rechazarEvento(id);
+    }
+
+    public ArrayList<EventoDTO> consultarCarrusel() throws Exception {
+
+        EventoDAO d = new EventoDAO();
+        return d.consultarCarrusel();
     }
 
 }

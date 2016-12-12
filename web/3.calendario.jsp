@@ -158,7 +158,7 @@
             </div>
 
             <div class="row ">
-                <iframe class="center-block" name="mipagina" width="800" height="600" src="CLNDR/demo/index.html"></iframe>
+                <iframe class="center-block" name="mipagina" width="800" height="600" src="CLNDR/demo/index.jsp"></iframe>
             </div>
 
             <!-- *** FOOTER ***

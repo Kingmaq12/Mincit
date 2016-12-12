@@ -6,6 +6,7 @@
 package ufps.mincit.datos.interf;
 
 import java.util.ArrayList;
+import ufps.mincit.datos.dto.AlertaDTO;
 import ufps.mincit.datos.dto.AlertaGeneralDTO;
 
 /**
@@ -17,5 +18,7 @@ public interface IAlertaGeneralDAO {
     public boolean modificarAlerta(AlertaGeneralDTO dto)throws Exception;
     
     public ArrayList<String> consultarAlertas()throws Exception;
+    
+    
     
 }

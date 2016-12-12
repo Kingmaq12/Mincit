@@ -15,13 +15,13 @@
         request.setCharacterEncoding("UTF-8");
  
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+        System.out.print(isMultipart);
 	double areaEquivalente=0;
 	String mensaje="";
 	String estado= request.getParameter("hdEstado");
 	String directory="";
 	String nombreImagen="";
-	String datos="";
-        if (estado==null) estado="";
+	if (estado==null) estado="";
 	
 	if(estado.equals("")){
 		try{
@@ -31,7 +31,8 @@
 				ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 				servletFileUpload.setSizeMax(100000*1012);		
 				String  fileName="";	  			  			  		
-		  		directory =getServletContext().getRealPath("/archivos/").replace("./","/");
+		  		//directory =getServletContext().getRealPath("/archivos/").replace("./","/");
+                                directory ="C:/Users/CESAR/Desktop/imagenes";
 		  		if(directory==null){
 		  			if(directory.equals("")){
 		  				mensaje="Error al obtener el directorio";

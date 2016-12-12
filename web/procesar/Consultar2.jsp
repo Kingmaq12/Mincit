@@ -93,7 +93,7 @@
                     <div class="bg"></div>
 
                     <div class="text">
-                        <p class="hidden-sm hidden-lg hidden-md">Fecha: <%=e.getFecha()%>, <%=e.getHora()%>, Ñugar:<%=e.getLugar()%></p>
+                        <p class="hidden-sm hidden-lg hidden-md">Fecha: <%=e.getFecha()%>, <%=e.getHora()%>, Lugar:<%=e.getLugar()%></p>
                         <p class="buttons">
                             <a href="ver_evento.jsp?id=<%=e.getId()%>" class="btn btn-template-transparent-primary">Ver Detalles </a>
                             <br> <br>

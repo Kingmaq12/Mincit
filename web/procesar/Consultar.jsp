@@ -82,10 +82,9 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="procesar/editar.jsp?id=<%=e.getId()%>">Editar</a></li>
-                                    <li><a href="#">Agregar Alerta</a></li>
-                                    <li><a href="#">Enviar Invitaciones</a></li>
+                                    <li><a href="procesar/agregar_alerta.jsp?id=<%=e.getId()%>">Agregar Alerta</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Publicar Facebook y Twitter</a></li>
+                                    <li><a href="ver_evento.jsp?id=<%=e.getId()%>" class="btn btn-template-transparent-primary">Ver Detalles </a></li>
                                 </ul>
                             </div> 
                             <!-- <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required" id="myBtn"><span class="glyphicon glyphicon-ok-circle"></span> Descripción</button> -->

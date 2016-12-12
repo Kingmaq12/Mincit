@@ -83,7 +83,64 @@ public class EventoDAO implements IEventoDAO {
 
     }
 
-  @Override
+    @Override
+    public EventoDTO consultarPorId(String id) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        EventoDTO resul = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` WHERE  `id` = ?");
+            stmt.setInt(1, Integer.parseInt(id));
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                resul = new EventoDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11), null, null, null);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return resul;
+
+    }
+
+    @Override
+    public boolean actualizarDatos(String id, String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String descripcion) throws Exception {
+        conn = ConexionSQL.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("UPDATE  `Evento` SET  `nombre` =  ?,`fecha` = ?,`hora` = ?,`lugar` = ?,`continente` = ?,`pais` = ?,`ciudad` = ?,`participantes` = ?,`tipo_evento` = ?,`url` = ?,`descripcion` = ?  WHERE `id` = ?");
+            stmt.setString(1, nombre);
+            stmt.setString(2, fecha);
+            stmt.setString(3, hora);
+            stmt.setString(4, lugar);
+            stmt.setString(5, continente);
+            stmt.setString(6, pais);
+            stmt.setString(7, ciudad);
+            stmt.setString(8, participantes);
+            stmt.setString(9, tipo_evento);
+            stmt.setString(10, url);
+            stmt.setString(11, descripcion);
+            stmt.setString(12, id);
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exito;
+    }
+
+    @Override
     public ArrayList<EventoDTO> consultar1(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
 
         conn = ConexionSQL.conectar();
@@ -91,7 +148,7 @@ public class EventoDAO implements IEventoDAO {
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA  INNER JOIN `Evento_logro` AS Elogro\n"
-                    + " INNER JOIN `Logro` AS logro  INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND evento.id= Elogro.id_evento AND evento.id= Epais.id_evento AND evento.id = Esector.id_evento AND Eentidad.nit_entidad = entidadA.nit AND Elogro.id_logro = logro.id AND Epais.id_countries = paises.country_id AND Esector.id_sector = sector.id AND entidadA.nit = '" + entidad + "' AND logro.id = '" + logro + "' AND paises.country_id = '" + pais + "' AND sector.id = '" + sector + "'  AND paises.continent_code = '" + continente + "'AND evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND evento.ciudad ='" + ciudad + "'");
+                    + " INNER JOIN `Logro` AS logro  INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND evento.id= Elogro.id_evento AND evento.id= Epais.id_evento AND evento.id = Esector.id_evento AND Eentidad.nit_entidad = entidadA.nit AND Elogro.id_logro = logro.id AND Epais.id_countries = paises.country_id AND Esector.id_sector = sector.id AND entidadA.nit = '" + entidad + "' AND logro.id = '" + logro + "' AND paises.country_id = '" + pais + "' AND sector.id = '" + sector + "'  AND paises.continent_code = '" + continente + "'AND evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND evento.ciudad ='" + ciudad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -122,7 +179,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM Evento WHERE fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "'");
+            stmt = conn.prepareStatement("SELECT * FROM Evento WHERE fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -154,7 +211,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -186,7 +243,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -218,7 +275,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -250,7 +307,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -282,7 +339,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -312,7 +369,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA ON evento.id = Eentidad.id_evento  AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "'");
+                stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA ON evento.id = Eentidad.id_evento  AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
 
             while (res.next()) {
@@ -345,7 +402,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -377,7 +434,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -408,7 +465,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -440,7 +497,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -472,7 +529,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -504,7 +561,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -535,7 +592,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -565,7 +622,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -596,7 +653,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -627,7 +684,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -659,7 +716,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` WHERE `ciudad` =" + "'" + ciudad + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` WHERE `ciudad` =" + "'" + ciudad + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -690,7 +747,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' ");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -721,7 +778,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -753,7 +810,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -785,7 +842,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -816,7 +873,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -847,7 +904,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -879,7 +936,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -911,7 +968,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -942,7 +999,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS x INNER JOIN `Evento_logro` AS e INNER JOIN `Logro` AS a ON x.id = e.id_evento AND e.id_logro = a.id AND a.id =" + "'" + logro + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS x INNER JOIN `Evento_logro` AS e INNER JOIN `Logro` AS a ON x.id = e.id_evento AND e.id_logro = a.id AND a.id =" + "'" + logro + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -973,7 +1030,7 @@ public class EventoDAO implements IEventoDAO {
         ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento   INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND paises.continent_code = '" + continente + "'");
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento   INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND paises.continent_code = '" + continente + "' AND evento.estado like 1 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 //columnas que se va a mostrar
@@ -996,19 +1053,22 @@ public class EventoDAO implements IEventoDAO {
         }
         return resul;
     }
-    
+
     @Override
-    public EventoDTO consultarPorId(String id) throws Exception {
+    public ArrayList<EventoDTO> consultar11(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
 
         conn = ConexionSQL.conectar();
-        EventoDTO resul = null;
+        ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("SELECT * FROM `Evento` WHERE  `id` = ?");
-            stmt.setInt(1, Integer.parseInt(id));
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA  INNER JOIN `Evento_logro` AS Elogro\n"
+                    + " INNER JOIN `Logro` AS logro  INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND evento.id= Elogro.id_evento AND evento.id= Epais.id_evento AND evento.id = Esector.id_evento AND Eentidad.nit_entidad = entidadA.nit AND Elogro.id_logro = logro.id AND Epais.id_countries = paises.country_id AND Esector.id_sector = sector.id AND entidadA.nit = '" + entidad + "' AND logro.id = '" + logro + "' AND paises.country_id = '" + pais + "' AND sector.id = '" + sector + "'  AND paises.continent_code = '" + continente + "'AND evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND evento.ciudad ='" + ciudad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
-                resul=new EventoDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11),null,null,null);
+                //columnas que se va a mostrar
+                //id, nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
             }
             stmt.close();
             res.close();
@@ -1019,39 +1079,998 @@ public class EventoDAO implements IEventoDAO {
                 conn.close();
             }
         }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar22(String fechaI, String fechaF) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM Evento WHERE fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
         return resul;
 
     }
-    
+
     @Override
-    public boolean actualizarDatos(String id,String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento,String url,String descripcion) throws Exception{
+    public ArrayList<EventoDTO> consultar33(String fechaI, String fechaF, String entidad) throws Exception {
+
         conn = ConexionSQL.conectar();
-        boolean exito =false;
+        ArrayList<EventoDTO> resul = new ArrayList<>();
         PreparedStatement stmt = null;
-        try{
-              stmt = conn.prepareStatement("UPDATE  `Evento` SET  `nombre` =  ?,`fecha` = ?,`hora` = ?,`lugar` = ?,`continente` = ?,`pais` = ?,`ciudad` = ?,`participantes` = ?,`tipo_evento` = ?,`url` = ?,`descripcion` = ?  WHERE `id` = ?");
-            stmt.setString(1, nombre);
-            stmt.setString(2, fecha);
-            stmt.setString(3, hora);
-            stmt.setString(4, lugar);
-            stmt.setString(5, continente);
-            stmt.setString(6, pais);
-            stmt.setString(7, ciudad);
-            stmt.setString(8, participantes);
-            stmt.setString(9, tipo_evento);
-            stmt.setString(10, url);
-            stmt.setString(11, descripcion);
-            stmt.setString(12, id);
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar44(String fechaI, String fechaF, String entidad, String pais) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar55(String fechaI, String fechaF, String entidad, String pais, String ciudad) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar66(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar77(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_Entidad` AS Eentidad INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.fecha BETWEEN '" + fechaI + "' AND '" + fechaF + "' AND Eentidad.id_evento= evento.id AND Eentidad.nit_entidad= entidadA.nit AND entidadA.nit ='" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad ='" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar88(String entidad) throws Exception {
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA ON evento.id = Eentidad.id_evento  AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar99(String entidad, String pais) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar100(String entidad, String pais, String ciudad) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar111(String entidad, String pais, String ciudad, String continente) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar122(String entidad, String pais, String ciudad, String continente, String sector) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar133(String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_Entidad` AS Eentidad  INNER JOIN `Entidad adscrita` AS entidadA INNER JOIN `Evento_pais` AS Epais  INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector  INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Eentidad.id_evento AND Eentidad.nit_entidad = entidadA.nit AND entidadA.nit = '" + entidad + "' AND evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "'AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar144(String pais) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar155(String pais, String ciudad) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar166(String pais, String ciudad, String continente) throws Exception {
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar177(String pais, String ciudad, String continente, String sector) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar188(String pais, String ciudad, String continente, String sector, String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises  INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND evento.ciudad= '" + ciudad + "' AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar199(String ciudad) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` WHERE `ciudad` =" + "'" + ciudad + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar200(String ciudad, String continente) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar211(String ciudad, String continente, String sector) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar222(String ciudad, String continente, String sector, String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON Epais. id_countries = paises.country_id AND evento.id= Epais.id_evento AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar233(String continente) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar244(String continente, String sector) throws Exception {
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar255(String continente, String sector, String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento  INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON  evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.continent_code = '" + continente + "' AND evento.id = Esector.id_evento AND Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar266(String sector) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar277(String sector, String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento INNER JOIN `Evento_sector` AS Esector INNER JOIN `Sector_economico` AS sector INNER JOIN `Evento_logro` AS Elogro  INNER JOIN `Logro` AS logro ON evento.id = Esector.id_evento Esector.id_sector = sector.id AND sector.id = '" + sector + "' AND evento.id= Elogro.id_evento AND Elogro.id_logro = logro.id AND logro.id = '" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar288(String logro) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS x INNER JOIN `Evento_logro` AS e INNER JOIN `Logro` AS a ON x.id = e.id_evento AND e.id_logro = a.id AND a.id =" + "'" + logro + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultar299(String pais, String continente) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` AS evento   INNER JOIN `Evento_pais` AS Epais   INNER JOIN `countries` AS paises ON evento.id= Epais.id_evento AND Epais.id_countries = paises.country_id AND paises.country_id = '" + pais + "' AND paises.continent_code = '" + continente + "' AND NOT evento.estado like 3 AND NOT evento.estado like 2 ORDER BY evento.fecha DESC");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultarEventoVisitante() throws Exception {
+
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM `Evento` where estado like 2");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
+
+    }
+
+    @Override
+    public boolean rechazarEvento(String id) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("UPDATE `Evento` SET `estado`= 3 WHERE id like ?");
+            stmt.setString(1, id);
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
                 exito = true;
             }
-             stmt.close();
-        }catch(Exception e){
-          e.printStackTrace();
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return exito;
     }
+
+    @Override
+    public boolean publicarEventosVisitante(String id) throws Exception {
+
+        conn = ConexionSQL.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("UPDATE `Evento` SET `estado`= 1 WHERE id like ?");
+            stmt.setString(1, id);
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return exito;
+    }
+
+    @Override
+    public ArrayList<EventoDTO> consultarCarrusel() throws Exception {
+        
+        conn = ConexionSQL.conectar();
+        ArrayList<EventoDTO> resul = new ArrayList<>();
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM Evento ORDER BY id DESC LIMIT 4");
+                       ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                //columnas que se va a mostrar
+                //nombre, Fecha, Hora, ciudad, URL
+                EventoDTO e = new EventoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10), res.getString(11));
+                resul.add(e);
+            }
+            stmt.close();
+            res.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        if (resul.isEmpty()) {
+            System.out.println("entro aqui, no hay eventos");
+            resul = null;
+        }
+        return resul;
     
+    }
 }

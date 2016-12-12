@@ -20,6 +20,8 @@ public interface IEventoDAO {
 
     public EventoDTO consultarPorId(String id) throws Exception;
 
+    public boolean actualizarDatos(String id, String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String descripcion) throws Exception;
+
     public ArrayList<EventoDTO> consultar1(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception;
 
     public ArrayList<EventoDTO> consultar2(String fechaI, String fechaF) throws Exception;
@@ -78,6 +80,70 @@ public interface IEventoDAO {
 
     public ArrayList<EventoDTO> consultar29(String pais, String continente) throws Exception;
 
-    public boolean actualizarDatos(String id, String nombre, String fecha, String hora, String lugar, String continente, String pais, String ciudad, String participantes, String tipo_evento, String url, String descripcion) throws Exception;
+    public ArrayList<EventoDTO> consultar11(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar22(String fechaI, String fechaF) throws Exception;
+
+    public ArrayList<EventoDTO> consultar33(String fechaI, String fechaF, String entidad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar44(String fechaI, String fechaF, String entidad, String pais) throws Exception;
+
+    public ArrayList<EventoDTO> consultar55(String fechaI, String fechaF, String entidad, String pais, String ciudad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar66(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultar77(String fechaI, String fechaF, String entidad, String pais, String ciudad, String continente, String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar88(String entidad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar99(String entidad, String pais) throws Exception;
+
+    public ArrayList<EventoDTO> consultar100(String entidad, String pais, String ciudad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar111(String entidad, String pais, String ciudad, String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultar122(String entidad, String pais, String ciudad, String continente, String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar133(String entidad, String pais, String ciudad, String continente, String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar144(String pais) throws Exception;
+
+    public ArrayList<EventoDTO> consultar155(String pais, String ciudad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar166(String pais, String ciudad, String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultar177(String pais, String ciudad, String continente, String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar188(String pais, String ciudad, String continente, String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar199(String ciudad) throws Exception;
+
+    public ArrayList<EventoDTO> consultar200(String ciudad, String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultar211(String ciudad, String continente, String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar222(String ciudad, String continente, String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar233(String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultar244(String continente, String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar255(String continente, String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar266(String sector) throws Exception;
+
+    public ArrayList<EventoDTO> consultar277(String sector, String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar288(String logro) throws Exception;
+
+    public ArrayList<EventoDTO> consultar299(String pais, String continente) throws Exception;
+
+    public ArrayList<EventoDTO> consultarEventoVisitante() throws Exception;
+
+    public boolean publicarEventosVisitante(String id) throws Exception;
+
+    public boolean rechazarEvento(String id) throws Exception;
+
+    public ArrayList<EventoDTO> consultarCarrusel() throws Exception;
 
 }

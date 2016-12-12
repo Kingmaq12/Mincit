@@ -20,8 +20,6 @@
     session.setAttribute("fecha", evento.getFecha());
     session.setAttribute("hora", evento.getHora());
     session.setAttribute("lugar", evento.getLugar());
-    session.setAttribute("continente", evento.getContinente());
-    session.setAttribute("pais", evento.getPais());
     session.setAttribute("ciudad", evento.getCiudad());
     session.setAttribute("participantes", evento.getParticipantes());
     session.setAttribute("tipo_evento", evento.getTipo_evento());

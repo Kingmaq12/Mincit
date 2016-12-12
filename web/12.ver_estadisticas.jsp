@@ -195,7 +195,7 @@
                                                 <hr>
                                             </div>
                                             <div class="col-sm-12 ">
-                                                <%                                                    ArrayList<CuestionarioDTO> c = a.mostrarCuestionario();
+                                                <%   ArrayList<CuestionarioDTO> c = a.mostrarCuestionario();
                                                     if (c != null) {
                                                 %>
                                                 <div class="col-md-12">

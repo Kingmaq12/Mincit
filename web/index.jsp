@@ -1,7 +1,14 @@
+<%@page import="ufps.mincit.datos.dto.EventoDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="ufps.mincit.negocio.Negocio"%>
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
+        <%
+            Negocio n = new Negocio();
+        %>
         <meta charset="utf-8">
         <meta name="robots" content="all,follow">
         <meta name="googlebot" content="index,follow,snippet,archive">
@@ -49,7 +56,7 @@
     </head>
 
     <body>
-       
+
 
         <div id="all">
 
@@ -61,15 +68,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-5 contact">
-                                <p class="hidden-sm hidden-xs">Contactenos +057555555 or mincitEventos@gmail.com.</p>
+                                <p class="hidden-sm hidden-xs">Contactenos +0000000 or eventomincit@gmail.com.</p>
                                 <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                                 </p>
                             </div>
                             <div class="col-xs-7">
                                 <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/MincomercioCo/" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/mincomercioco/" class="external instagram" data-animate-hover="pulse"><i class="fa fa-user" ></i></a>
+                                    <a href="https://twitter.com/MincomercioCo" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
                                     <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                                 </div>
 
@@ -120,7 +127,7 @@
                                         <a href="3.calendario.jsp" >Calendario</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="" >Registre Evento</a>
+                                        <a href="4.contacto.jsp" >Registre Evento</a>
                                     </li>
                                 </ul>
 
@@ -146,21 +153,12 @@
 
                 <div class="container">
                     <div class="homepage owl-carousel">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <p>
-                                        <img src="img/logo.png" alt="">
-                                    </p>
-                                    <h1>Evento 1 </h1>
-                                    <p>Comercio. Turismo. Comida.
-                                        <br />Patrocinadores: Empresa X.</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/eve1.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
+                        <%
+                            ArrayList<EventoDTO> p = n.consultarCarrusel();
+
+                            if (p != null) {
+                                for (EventoDTO e : p) {
+                        %>
                         <div class="item">
                             <div class="row">
 
@@ -169,47 +167,22 @@
                                 </div>
 
                                 <div class="col-sm-5">
-                                    <h2>Evento 2</h2>
+                                    <h2><%=e.getNombre()%></h2>
                                     <ul class="list-style-none">
-                                        <li>Sliders and carousels</li>
-                                        <li>4 Header variations</li>
-                                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                                        <li>+ 11 extra pages showing template features</li>
+                                        <li>Fecha: <%=e.getFecha()%>, <%=e.getHora()%>, Lugar:<%=e.getLugar()%></li>
+                                        <li><a href="ver_evento.jsp?id=<%=e.getId()%>" target="_blank" class="btn btn-template-transparent-primary">Ver Detalles </a></li>
                                     </ul>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <h1>Evento 3</h1>
-                                    <ul class="list-style-none">
-                                        <li>Clean and elegant design</li>
-                                        <li>Full width and boxed mode</li>
-                                        <li>Easily readable Roboto font and awesome icons</li>
-                                        <li>7 preprepared colour variations</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/eve3.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/eve4.jpg" alt="">
-                                </div>
-                                <div class="col-sm-5">
-                                    <h1>Evento 400</h1>
-                                    <ul class="list-style-none">
-                                        <li>7 preprepared colour variations.</li>
-                                        <li>Easily to change fonts</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <%
+                                }
+                            }
+                        %>
+
+
+
                     </div>
                     <!-- /.project owl-slider -->
                 </div>
@@ -657,7 +630,7 @@ _________________________________________________________ -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-    window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 

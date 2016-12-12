@@ -5,7 +5,7 @@
  */
 package ufps.mincit.datos.interf;
 
-import ufps.mincit.datos.dto.Usuario;
+import ufps.mincit.datos.dto.UsuarioDTO;
 
 /**
  *
@@ -13,13 +13,16 @@ import ufps.mincit.datos.dto.Usuario;
  */
 public interface IUsuarioDAO {
 
-    public Usuario consultarUsuarioTipo(int tipoUsuario) throws Exception;
+    public UsuarioDTO consultarUsuarioTipo(int tipoUsuario) throws Exception;
 
     public boolean consultarContraseña(String cedula, String antigua) throws Exception;
 
     public boolean cambiarContraseña(String cedula, String tipo_usuario, String nueva) throws Exception;
 
-    public boolean registrarUsuario(Usuario dto) throws Exception;
+    public boolean registrarUsuario(UsuarioDTO dto) throws Exception;
 
     public String consultarEmprendedor(String cedula) throws Exception;
+
+    public UsuarioDTO consultarVisitante (String id) throws Exception;
+    
 }

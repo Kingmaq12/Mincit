@@ -31,9 +31,8 @@
 				ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 				servletFileUpload.setSizeMax(100000*1012);		
 				String  fileName="";	  			  			  		
-		  		//directory =getServletContext().getRealPath("/archivos/").replace("./","/");
-                                directory ="C:/Users/CESAR/Desktop/imagenes";
-		  		if(directory==null){
+		  		directory =getServletContext().getRealPath("/archivos/").replace("./","/");
+                                if(directory==null){
 		  			if(directory.equals("")){
 		  				mensaje="Error al obtener el directorio";
 		  				throw new Exception("Error al obtener el directorio");

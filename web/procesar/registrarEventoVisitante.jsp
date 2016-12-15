@@ -36,8 +36,7 @@
                                 ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
                                 servletFileUpload.setSizeMax(100000*1012);		
                                 String  fileName="";	  			  			  		
-		  		//directory =getServletContext().getRealPath("/archivos/").replace("./","/"); ESTE ES EL HPTA ERROR
-		  		directory ="C:/Users/CESAR/Desktop/imagenes";
+		  		directory =getServletContext().getRealPath("/archivos/").replace("./","/");
 		  		if(directory==null){
 		  			if(directory.equals("")){
                                            
